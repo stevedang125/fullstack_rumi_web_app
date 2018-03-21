@@ -1,0 +1,102 @@
+ 
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark justify-content-between" id="navbar">
+  <!-- Rumi logo -->
+  <a class="navbar-brand" [routerLink]="['/']"><img src="../assets/rumi logo.png" width="50" alt=""></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Links -->
+  <div class="collapse navbar-collapse" id="navbarColor01">
+
+      <!-- Left links -->
+      <ul class="navbar-nav mr-auto navbar-left">
+        
+        <!-- Home -->
+        <li class="nav-item active"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions] ="{exact:true}">
+          <a class="nav-link btn" [routerLink]="['/']">Home</a>
+        </li>
+        
+        &nbsp;&nbsp;
+
+        <!-- About -->
+        <li class="nav-item active"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions] ="{exact:true}">
+          <a class="nav-link btn" [routerLink]="['/about']">About</a>
+        </li>
+      </ul>
+      <!-- End left links -->
+
+      <!-- Right links -->
+      <ul class="navbar-nav navbar-right">
+
+        <!-- After logged in: Dashboard -->
+        <li class="nav-item active"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions] ="{exact:true}"
+        *ngIf="authService.isLoggedIn()">
+          <a class="nav-link btn" [routerLink]="['/user/dashboard']">Dashboard <span class="sr-only">(current)</span></a>
+        </li>
+        &nbsp;&nbsp;
+
+        <!-- After logged in: Friends -->
+        <li class="nav-item active"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions] ="{exact:true}"
+        *ngIf="authService.isLoggedIn()">
+          <a class="nav-link btn" [routerLink]="['/user/friends']">Friends</a>
+        </li>
+        &nbsp;&nbsp;
+
+        <!-- After logged in: Transactions -->
+        <li class="nav-item active"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions] ="{exact:true}"
+        *ngIf="authService.isLoggedIn()">
+          <a class="nav-link btn" [routerLink]="['/user/transactions']">Transactions</a>
+        </li>
+        &nbsp;&nbsp;
+
+        <!-- After logged in: Receipts -->
+        <li class="nav-item active"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions] ="{exact:true}"
+        *ngIf="authService.isLoggedIn()">
+          <a class="nav-link btn" [routerLink]="['/user/receipts']">Receipts</a>
+        </li>
+        &nbsp;&nbsp;
+
+        <!-- After logged in: Setting -->
+        <li class="nav-item active"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions] ="{exact:true}"
+        *ngIf="authService.isLoggedIn()">
+          <a class="nav-link btn" [routerLink]="['/user/setting']">Setting</a>
+        </li>
+        &nbsp;&nbsp;
+
+        <!-- After logged in: Register wont show -->
+        <li class="nav-item active"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions] ="{exact:true}"
+        *ngIf="!authService.isLoggedIn()">
+          <a class="nav-link btn" [routerLink]="['/register']">Register</a>
+        </li>
+        &nbsp;&nbsp;
+
+         <!-- Before logged in: Log out wont show -->
+        <li class="nav-item active"
+        *ngIf="authService.isLoggedIn()">
+          <a class="nav-link btn" [routerLink]="['/']" (click)="onLogoutClick()">Log out</a>
+        </li>
+        
+      </ul>
+      <!-- End right links -->
+  
+    </div>
+
+</nav>
