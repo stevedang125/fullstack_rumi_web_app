@@ -16,7 +16,7 @@ This project utilizes the MEAN stack: MongoDB(mLab), Express, Angular5, and Node
 ## Run the Project!
 To run the project, you have to first clone it:
 ```
-$ git clone https://github.com/stevedang125/fullstack_rumi.git
+$ git clone https://github.com/stevedang125/fullstack_rumi_web_app.git
 ```
 
 After cloning, make sure you have Nodejs and Angular5 installed, cd into the project directory.
