@@ -3,7 +3,7 @@ import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 import { AuthService }  from '../services/auth.service';
 import { Router, Route } from '@angular/router';
 import { Contact } from '../services/contact';
-
+import { ValidationService } from '../services/validation.service';
 @Component({
   selector: 'app-friends',
   templateUrl: './friends.component.html',
@@ -35,6 +35,7 @@ export class FriendsComponent implements OnInit {
 
   constructor(private authService: AuthService,
               private router: Router,
+              private validationService: ValidationService,
               public toastr: ToastsManager, vcr: ViewContainerRef) 
     {
       this.toastr.setRootViewContainerRef(vcr);
@@ -43,6 +44,23 @@ export class FriendsComponent implements OnInit {
   ngOnInit() {
     this.getDashboard();
   }
+
+    // ========== Toastr Messages =======================================
+    showSuccess(msg) {
+      this.toastr.success(msg, 'Success!');
+    }
+  
+    showWarning(msg) {
+      this.toastr.warning(msg, 'Alert!');
+    }
+  
+    showError(msg) {
+      this.toastr.error(msg, 'Oops!');
+    }
+
+    showInfo(msg){
+      this.toastr.info(msg, 'Info!');
+    }
 
     // ========= Helper functions ============================
     clear(){
@@ -55,12 +73,12 @@ export class FriendsComponent implements OnInit {
       this.homePhone = undefined;
       this.cellPhone = undefined;
       this.user_id = undefined;
-      // alert('Cleared!');
+      // this.showInfo('Cleared!');
     }
 
     clearSearch(){
       this.inputString = undefined;
-      // alert('Cleared Search!');
+      this.showInfo('Cleared Search!');
     }
   
     hack(val){
@@ -75,7 +93,6 @@ export class FriendsComponent implements OnInit {
     this.user = dashboard['user'];
     this.userID = dashboard['user']._id;
     this.contactlist = dashboard['contactlist'];
-    // alert('Success! Dashboard!'+this.user+","+this.userID+","+this.contactlist);
   }, err =>{
     console.log('Failed to get the dashboard! err: '+err);
     this.router.navigate(['']);
@@ -97,7 +114,17 @@ export class FriendsComponent implements OnInit {
       cellPhone: this.cellPhone,
       user_id: this.userID
     }
-    
+
+    if(!this.validationService.validateAdd(new_contact)){
+      this.showWarning('Please fill in all fields');
+      return false;
+    }
+
+    if(!this.validationService.validateEmail(new_contact.email)){
+      this.showWarning('Please use a valid email.');
+      return false;
+    }
+
     if(new_contact._id == null){
       this.add_contact(new_contact);
     }else{
@@ -117,27 +144,27 @@ onEditButton(contact){
   this.homePhone = contact.homePhone;
   this.cellPhone = contact.cellPhone;
   this.user_id = contact.userID;
-  // alert('A contact is being updated!');
+  this.showWarning('A contact is being updated!');
 }
 
 add_contact(newContact){
-  this.authService.addContact(newContact).subscribe(data=>{
-    // alert('Contact added!');
+    this.authService.addContact(newContact).subscribe(data=>{
+    this.showSuccess('Friend added!');
   }, err=>{
-    alert('Failed to add a contact!'+err);
+    this.showError('Failed to add a contact!'+err);
   });
 
   this.clear();
-  // Double powerful fetch, there won't be a hit and miss!! 
+  // Double powerful fetch, there won't be a hit or miss!! 
   this.getDashboard();
   this.getDashboard();
 }
 
 edit_contact(existing_contact){
-  this.authService.updateContact(existing_contact).subscribe(data =>{
-    // alert('Updated Contact!');
+    this.authService.updateContact(existing_contact).subscribe(data =>{
+    this.showSuccess('Updated Contact!');
   }, err=>{
-    alert('Failed to update a contact!'+err);
+    this.showError('Failed to update a contact!'+err);
   });
   this.clear();
   // Feel the power of the twin!! 
@@ -147,7 +174,7 @@ edit_contact(existing_contact){
 
 search_contact(){
   if(this.inputString == undefined){
-    // alert('Empty search!');
+    this.showError('Empty search!');
     return false;
   }
 }
@@ -155,9 +182,9 @@ search_contact(){
 onDeleteButton(contact){
   this.authService.deleteContact(contact).subscribe(data=>{
     this.contactlist.splice(this.contactlist.indexOf(contact),1);
-    // alert('Deleted a contact');
+    this.showSuccess('Deleted a contact');
   }, err =>{
-    alert('Failed to delete a contact!'+err);
+    console.log('Failed to delete a contact!'+err);
   });
 }
 

@@ -47,3 +47,20 @@ module.exports.comparePassword = function(input_password, hash, callback){
 module.exports.getUserById = function(id, callback){
     User.findById(id, callback);
 }
+
+// Add a new user to the database with the new password
+module.exports.saveUserUpdate = function(newContact, callback){   
+    newContact.save(callback);
+}
+
+module.exports.encryptPassword = function(password, callback){
+    bcrypt.genSalt(10, (err, salt)=>{
+        if(err) throw err;
+        bcrypt.hash(password, salt, (err, hash)=>{
+            if(err) throw err;
+            password = hash;
+            callback(null, password);
+        });
+    });
+}
+
