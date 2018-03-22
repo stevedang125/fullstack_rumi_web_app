@@ -35,7 +35,7 @@ $ nodemon server.js
 Or:(this is what the npm start will do)
 ```
 $ npm install
-$ cd rumiClient && npm install && ng build
+$ cd rumiFrontend && npm install && ng build
 $ cd ..
 $ node server.js
 ```
@@ -46,7 +46,7 @@ $ npm install
 ```
 Go into the Angular frontend folder and install the front end dependencies:
 ```
-$ cd rumiClient
+$ cd rumiFrontend
 $ npm install
 ```
 Build the frontend to the public folder so the backend can run it:
@@ -63,6 +63,24 @@ $ node server.js
 
 If all is successful, it should be available at your `localhost` on `port 8080` (`http://localhost:8080/`).
 
+To use the live server for the front end, cd into rumiFrontend and run ng serve
+```
+$ cd rumiFrontend
+$ ng serve
+```
+The live server is on `http://localhost:4200/`
+Make sure you run the backend at the same time too:(`http://localhost:8080/`)
+```
+$ node server.js
+```
 
+To build the finish product, and run it with the backend:
+(in the rumiFrontend run ng build, the output folder public will be created for the server to use) 
+```
+$ ng build
+$ cd ..
+$ node server
+```
+Now test it at localhost:8080
 
 
