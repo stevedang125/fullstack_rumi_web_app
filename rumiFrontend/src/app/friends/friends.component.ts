@@ -1,9 +1,9 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
-import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import { Component, OnInit, ViewContainerRef , ComponentFactoryResolver, NgZone, ApplicationRef} from '@angular/core';
+import { ToastsManager, ToastOptions } from 'ng2-toastr/ng2-toastr';
 import { AuthService }  from '../services/auth.service';
 import { Router, Route } from '@angular/router';
 import { Contact } from '../services/contact';
-import { ValidationService } from '../services/validation.service';
+import { ValidationService  } from '../services/validation.service';
 @Component({
   selector: 'app-friends',
   templateUrl: './friends.component.html',
@@ -23,7 +23,7 @@ export class FriendsComponent implements OnInit {
   contactlist:Contact[];
 
   // Initialize theses for adding a new contact
-  _id:string = null;
+  _id:string;
   firstName: string;
   lastName: string;
   preferredName: string;
@@ -36,9 +36,26 @@ export class FriendsComponent implements OnInit {
   constructor(private authService: AuthService,
               private router: Router,
               private validationService: ValidationService,
-              public toastr: ToastsManager, vcr: ViewContainerRef) 
+              public toastr: ToastsManager, vcr: ViewContainerRef,
+              componentFactoryResolver: ComponentFactoryResolver, ngZone: NgZone, appRef: ApplicationRef, options: ToastOptions) 
     {
       this.toastr.setRootViewContainerRef(vcr);
+      Object.assign(options, {
+      maxShown: 1,
+      positionClass: "toast-top-center",
+      showCloseButton: true,
+      toastLife: 3000
+      });
+
+      // =============== More Toastr message options here: ===============
+      // toast-top-right (Default)
+      // toast-top-center
+      // toast-top-left
+      // toast-top-full-width
+      // toast-bottom-right
+      // toast-bottom-center
+      // toast-bottom-left
+      // toast-bottom-full-width
     }
 
   ngOnInit() {
@@ -125,13 +142,13 @@ export class FriendsComponent implements OnInit {
       return false;
     }
 
-    if(new_contact._id == null){
+    if(new_contact._id == undefined){
       this.add_contact(new_contact);
-    }else{
-      if(new_contact._id != null){
-        this.edit_contact(new_contact);
-      }
     }
+    if(new_contact._id != undefined){
+      this.edit_contact(new_contact);
+    }
+    
 }
 
 onEditButton(contact){
@@ -150,25 +167,23 @@ onEditButton(contact){
 add_contact(newContact){
     this.authService.addContact(newContact).subscribe(data=>{
     this.showSuccess('Friend added!');
+    this.getDashboard();
   }, err=>{
     this.showError('Failed to add a contact!'+err);
   });
-
+  this.getDashboard();
   this.clear();
-  // Double powerful fetch, there won't be a hit or miss!! 
-  this.getDashboard();
-  this.getDashboard();
 }
 
 edit_contact(existing_contact){
     this.authService.updateContact(existing_contact).subscribe(data =>{
+    this.getDashboard();
     this.showSuccess('Updated Contact!');
   }, err=>{
     this.showError('Failed to update a contact!'+err);
   });
   this.clear();
-  // Feel the power of the twin!! 
-  this.getDashboard();
+  // Feel the power of the twin!! or not
   this.getDashboard();
 }
 
@@ -183,9 +198,11 @@ onDeleteButton(contact){
   this.authService.deleteContact(contact).subscribe(data=>{
     this.contactlist.splice(this.contactlist.indexOf(contact),1);
     this.showSuccess('Deleted a contact');
+    this.getDashboard();
   }, err =>{
     console.log('Failed to delete a contact!'+err);
   });
+  this.getDashboard();
 }
 
 }

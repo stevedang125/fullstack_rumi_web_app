@@ -27,7 +27,7 @@ module.exports = ""
 /***/ "./src/app/about/about.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  about works! yayyyyyyyyy\r\n</p>\r\n"
+module.exports = "<p>\r\n  about works! yayyyyyyyyy\r\n</p>\r\n<div class=\"alert alert-success alert-dismissible\">\r\n    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\r\n    <strong>Success!</strong> This alert box could indicate a successful or positive action.\r\n  </div>\r\n  <div class=\"alert alert-info alert-dismissible\">\r\n    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\r\n    <strong>Info!</strong> This alert box could indicate a neutral informative change or action.\r\n  </div>\r\n  <div class=\"alert alert-warning alert-dismissible\">\r\n    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\r\n    <strong>Alert!</strong> This alert box could indicate a warning that might need attention.\r\n  </div>\r\n  <div class=\"alert alert-danger alert-dismissible\">\r\n    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\r\n    <strong>Oops!</strong> This alert box could indicate a dangerous or potentially negative action.\r\n  </div>"
 
 /***/ }),
 
@@ -315,14 +315,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var FriendsComponent = /** @class */ (function () {
-    function FriendsComponent(authService, router, validationService, toastr, vcr) {
+    function FriendsComponent(authService, router, validationService, toastr, vcr, componentFactoryResolver, ngZone, appRef, options) {
         this.authService = authService;
         this.router = router;
         this.validationService = validationService;
         this.toastr = toastr;
-        // Initialize theses for adding a new contact
-        this._id = null;
         this.toastr.setRootViewContainerRef(vcr);
+        Object.assign(options, {
+            maxShown: 1,
+            positionClass: "toast-top-center",
+            showCloseButton: true,
+            toastLife: 3000
+        });
+        // =============== More Toastr message options here: ===============
+        // toast-top-right (Default)
+        // toast-top-center
+        // toast-top-left
+        // toast-top-full-width
+        // toast-bottom-right
+        // toast-bottom-center
+        // toast-bottom-left
+        // toast-bottom-full-width
     }
     FriendsComponent.prototype.ngOnInit = function () {
         this.getDashboard();
@@ -396,13 +409,11 @@ var FriendsComponent = /** @class */ (function () {
             this.showWarning('Please use a valid email.');
             return false;
         }
-        if (new_contact._id == null) {
+        if (new_contact._id == undefined) {
             this.add_contact(new_contact);
         }
-        else {
-            if (new_contact._id != null) {
-                this.edit_contact(new_contact);
-            }
+        if (new_contact._id != undefined) {
+            this.edit_contact(new_contact);
         }
     };
     FriendsComponent.prototype.onEditButton = function (contact) {
@@ -421,24 +432,23 @@ var FriendsComponent = /** @class */ (function () {
         var _this = this;
         this.authService.addContact(newContact).subscribe(function (data) {
             _this.showSuccess('Friend added!');
+            _this.getDashboard();
         }, function (err) {
             _this.showError('Failed to add a contact!' + err);
         });
+        this.getDashboard();
         this.clear();
-        // Double powerful fetch, there won't be a hit or miss!! 
-        this.getDashboard();
-        this.getDashboard();
     };
     FriendsComponent.prototype.edit_contact = function (existing_contact) {
         var _this = this;
         this.authService.updateContact(existing_contact).subscribe(function (data) {
+            _this.getDashboard();
             _this.showSuccess('Updated Contact!');
         }, function (err) {
             _this.showError('Failed to update a contact!' + err);
         });
         this.clear();
-        // Feel the power of the twin!! 
-        this.getDashboard();
+        // Feel the power of the twin!! or not
         this.getDashboard();
     };
     FriendsComponent.prototype.search_contact = function () {
@@ -452,9 +462,11 @@ var FriendsComponent = /** @class */ (function () {
         this.authService.deleteContact(contact).subscribe(function (data) {
             _this.contactlist.splice(_this.contactlist.indexOf(contact), 1);
             _this.showSuccess('Deleted a contact');
+            _this.getDashboard();
         }, function (err) {
             console.log('Failed to delete a contact!' + err);
         });
+        this.getDashboard();
     };
     FriendsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -465,7 +477,8 @@ var FriendsComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__services_validation_service__["a" /* ValidationService */],
-            __WEBPACK_IMPORTED_MODULE_1_ng2_toastr_ng2_toastr__["ToastsManager"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"]])
+            __WEBPACK_IMPORTED_MODULE_1_ng2_toastr_ng2_toastr__["ToastsManager"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"],
+            __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentFactoryResolver"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ApplicationRef"], __WEBPACK_IMPORTED_MODULE_1_ng2_toastr_ng2_toastr__["ToastOptions"]])
     ], FriendsComponent);
     return FriendsComponent;
 }());
@@ -534,7 +547,7 @@ module.exports = ""
 /***/ "./src/app/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div class=\"row\" id=\"user_form\" *ngIf=\"!authService.isLoggedIn()\">\r\n  <div class=\"col align-self-center\">\r\n    <h2 class=\"page-header\">Login</h2>\r\n    <!-- Start form -->\r\n    <form class=\"form-signin\">\r\n\r\n      <!-- Username -->\r\n      <div class=\"form-group row\">\r\n        <label for=\"Username\" class=\"col-sm-3 col-form-label\">Username</label>\r\n        <div class=\"col-sm-9\">\r\n          <input type=\"text\" class=\"form-control\" placeholder=\"*michaelscott\" [(ngModel)]=\"username\" name=\"username\">\r\n        </div>\r\n      </div>\r\n\r\n      <!-- Password -->\r\n      <div class=\"form-group row\">\r\n        <label for=\"Password\" class=\"col-sm-3 col-form-label\">Password</label>\r\n        <div class=\"col-sm-9\">\r\n          <input type=\"password\" class=\"form-control\" placeholder=\"******\" [(ngModel)]=\"password\" name=\"password\">\r\n        </div>\r\n      </div>\r\n\r\n      <!-- Buttons -->\r\n      <button class=\"btn btn-success\" (click)=\"onLoginSubmit()\">Login</button>&nbsp;\r\n      <button class=\"btn btn-danger\" (click)=\"onCancelSubmit()\">Cancel</button><br><br>\r\n\r\n      <!-- Navigate back to register page -->\r\n      <p>Don't have an account yet? <a [routerLink] = \"['/register']\">Register Here</a></p> \r\n    </form>\r\n\r\n  </div>\r\n</div>\r\n      "
+module.exports = "\r\n<div class=\"row\" id=\"user_form\" *ngIf=\"!authService.isLoggedIn()\">\r\n  <div class=\"col align-self-center\">\r\n    <h2 class=\"page-header\">Login</h2>\r\n\r\n    <!-- Start form -->\r\n    <form class=\"form-signin\">\r\n\r\n      <!-- Username -->\r\n      <div class=\"form-group row\">\r\n        <label for=\"Username\" class=\"col-sm-3 col-form-label\">Username</label>\r\n        <div class=\"col-sm-9\">\r\n          <input type=\"text\" class=\"form-control\" placeholder=\"*michaelscott\" [(ngModel)]=\"username\" name=\"username\">\r\n        </div>\r\n      </div>\r\n\r\n      <!-- Password -->\r\n      <div class=\"form-group row\">\r\n        <label for=\"Password\" class=\"col-sm-3 col-form-label\">Password</label>\r\n        <div class=\"col-sm-9\">\r\n          <input type=\"password\" class=\"form-control\" placeholder=\"******\" [(ngModel)]=\"password\" name=\"password\">\r\n        </div>\r\n      </div>\r\n\r\n      <!-- Buttons -->\r\n      <button class=\"btn btn-success\" (click)=\"onLoginSubmit()\">Login</button>&nbsp;\r\n      <button class=\"btn btn-danger\" (click)=\"onCancelSubmit()\">Cancel</button><br><br>\r\n\r\n      <!-- Navigate back to register page -->\r\n      <p>Don't have an account yet? <a [routerLink] = \"['/register']\">Register Here</a></p> \r\n    </form>\r\n\r\n  </div>\r\n</div>\r\n      "
 
 /***/ }),
 
@@ -565,12 +578,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var LoginComponent = /** @class */ (function () {
     // Inject into the constructor
-    function LoginComponent(router, validateService, authService, toastr, vcr) {
+    function LoginComponent(router, validateService, authService, toastr, vcr, componentFactoryResolver, ngZone, appRef, options) {
         this.router = router;
         this.validateService = validateService;
         this.authService = authService;
         this.toastr = toastr;
+        this.warningMsg = "Please fill in all fields!";
         this.toastr.setRootViewContainerRef(vcr);
+        Object.assign(options, {
+            maxShown: 1,
+            positionClass: "toast-top-center",
+            showCloseButton: true,
+            toastLife: 3000
+        });
+        // =============== More Toastr message options here: ===============
+        // toast-top-right (Default)
+        // toast-top-center
+        // toast-top-left
+        // toast-top-full-width
+        // toast-bottom-right
+        // toast-bottom-center
+        // toast-bottom-left
+        // toast-bottom-full-width
     }
     LoginComponent.prototype.ngOnInit = function () {
     };
@@ -579,6 +608,7 @@ var LoginComponent = /** @class */ (function () {
         this.toastr.success(msg, 'Success!');
     };
     LoginComponent.prototype.showWarning = function (msg) {
+        // this.toastr.setupToast(toast:Toas, Position='toast-top-right');
         this.toastr.warning(msg, 'Alert!');
     };
     LoginComponent.prototype.showError = function (msg) {
@@ -592,6 +622,7 @@ var LoginComponent = /** @class */ (function () {
             password: this.password
         };
         if (!this.validateService.validateLogin(user)) {
+            this.warning = true;
             this.showWarning('Please fill in all fields!');
             return false;
         }
@@ -630,7 +661,8 @@ var LoginComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3__services_validation_service__["a" /* ValidationService */],
             __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_4_ng2_toastr_ng2_toastr__["ToastsManager"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"]])
+            __WEBPACK_IMPORTED_MODULE_4_ng2_toastr_ng2_toastr__["ToastsManager"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"],
+            __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentFactoryResolver"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ApplicationRef"], __WEBPACK_IMPORTED_MODULE_4_ng2_toastr_ng2_toastr__["ToastOptions"]])
     ], LoginComponent);
     return LoginComponent;
 }());
@@ -796,12 +828,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var RegisterComponent = /** @class */ (function () {
-    function RegisterComponent(router, validateService, authService, toastr, vcr) {
+    function RegisterComponent(router, validateService, authService, toastr, vcr, componentFactoryResolver, ngZone, appRef, options) {
         this.router = router;
         this.validateService = validateService;
         this.authService = authService;
         this.toastr = toastr;
         this.toastr.setRootViewContainerRef(vcr);
+        Object.assign(options, {
+            maxShown: 1,
+            positionClass: "toast-top-center",
+            showCloseButton: true,
+            toastLife: 3000
+        });
     }
     RegisterComponent.prototype.ngOnInit = function () {
     };
@@ -857,7 +895,8 @@ var RegisterComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3__services_validation_service__["a" /* ValidationService */],
             __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_4_ng2_toastr_ng2_toastr__["ToastsManager"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"]])
+            __WEBPACK_IMPORTED_MODULE_4_ng2_toastr_ng2_toastr__["ToastsManager"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"],
+            __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentFactoryResolver"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ApplicationRef"], __WEBPACK_IMPORTED_MODULE_4_ng2_toastr_ng2_toastr__["ToastOptions"]])
     ], RegisterComponent);
     return RegisterComponent;
 }());
@@ -1194,13 +1233,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var SettingComponent = /** @class */ (function () {
-    function SettingComponent(authService, router, toastr, vcr) {
+    function SettingComponent(authService, router, toastr, vcr, componentFactoryResolver, ngZone, appRef, options) {
         this.authService = authService;
         this.router = router;
         this.toastr = toastr;
         // this is for hide/show the input form for changing password
         this.buttonclicked = false;
         this.toastr.setRootViewContainerRef(vcr);
+        Object.assign(options, {
+            maxShown: 1,
+            positionClass: "toast-top-center",
+            showCloseButton: true,
+            toastLife: 3000
+        });
+        // =============== More Toastr message options here: ===============
+        // toast-top-right (Default)
+        // toast-top-center
+        // toast-top-left
+        // toast-top-full-width
+        // toast-bottom-right
+        // toast-bottom-center
+        // toast-bottom-left
+        // toast-bottom-full-width
     }
     SettingComponent.prototype.ngOnInit = function () {
         this.getUserProfile();
@@ -1267,7 +1321,8 @@ var SettingComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_1_ng2_toastr_ng2_toastr__["ToastsManager"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"]])
+            __WEBPACK_IMPORTED_MODULE_1_ng2_toastr_ng2_toastr__["ToastsManager"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"],
+            __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentFactoryResolver"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ApplicationRef"], __WEBPACK_IMPORTED_MODULE_1_ng2_toastr_ng2_toastr__["ToastOptions"]])
     ], SettingComponent);
     return SettingComponent;
 }());

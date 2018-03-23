@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
-import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import { Component, OnInit, ViewContainerRef, ComponentFactoryResolver, NgZone, ApplicationRef } from '@angular/core';
+import { ToastsManager, ToastOptions } from 'ng2-toastr/ng2-toastr';
 import { AuthService }  from '../services/auth.service';
 import { Router, Route } from '@angular/router';
 
@@ -28,9 +28,26 @@ export class SettingComponent implements OnInit {
 
   constructor(private authService: AuthService,
     private router: Router,
-    public toastr: ToastsManager, vcr: ViewContainerRef) 
+    public toastr: ToastsManager, vcr: ViewContainerRef,
+    componentFactoryResolver: ComponentFactoryResolver, ngZone: NgZone, appRef: ApplicationRef, options: ToastOptions) 
     {
       this.toastr.setRootViewContainerRef(vcr);
+      Object.assign(options, {
+        maxShown: 1,
+        positionClass: "toast-top-center",
+        showCloseButton: true,
+        toastLife: 3000
+        });
+  
+        // =============== More Toastr message options here: ===============
+        // toast-top-right (Default)
+        // toast-top-center
+        // toast-top-left
+        // toast-top-full-width
+        // toast-bottom-right
+        // toast-bottom-center
+        // toast-bottom-left
+        // toast-bottom-full-width
     }
 
     ngOnInit() {
