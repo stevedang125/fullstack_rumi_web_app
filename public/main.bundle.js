@@ -125,22 +125,27 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_toastr_ng2_toastr__ = __webpack_require__("./node_modules/ng2-toastr/ng2-toastr.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_toastr_ng2_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_ng2_toastr_ng2_toastr__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/animations.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__home_home_component__ = __webpack_require__("./src/app/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__register_register_component__ = __webpack_require__("./src/app/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__dashboard_dashboard_component__ = __webpack_require__("./src/app/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__friends_friends_component__ = __webpack_require__("./src/app/friends/friends.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__transactions_transactions_component__ = __webpack_require__("./src/app/transactions/transactions.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__receipts_receipts_component__ = __webpack_require__("./src/app/receipts/receipts.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__setting_setting_component__ = __webpack_require__("./src/app/setting/setting.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_filter_pipe__ = __webpack_require__("./src/app/services/filter.pipe.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__about_about_component__ = __webpack_require__("./src/app/about/about.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__navbar_navbar_component__ = __webpack_require__("./src/app/navbar/navbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_validation_service__ = __webpack_require__("./src/app/services/validation.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__login_login_component__ = __webpack_require__("./src/app/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_guard_service__ = __webpack_require__("./src/app/services/guard.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_loggedinguard_service__ = __webpack_require__("./src/app/services/loggedinguard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angularfire2__ = __webpack_require__("./node_modules/angularfire2/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2_database__ = __webpack_require__("./node_modules/angularfire2/database/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_angularfire2_firestore__ = __webpack_require__("./node_modules/angularfire2/firestore/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_angularfire2_storage__ = __webpack_require__("./node_modules/angularfire2/storage/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__home_home_component__ = __webpack_require__("./src/app/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__register_register_component__ = __webpack_require__("./src/app/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__dashboard_dashboard_component__ = __webpack_require__("./src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__friends_friends_component__ = __webpack_require__("./src/app/friends/friends.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__transactions_transactions_component__ = __webpack_require__("./src/app/transactions/transactions.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__receipts_receipts_component__ = __webpack_require__("./src/app/receipts/receipts.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__setting_setting_component__ = __webpack_require__("./src/app/setting/setting.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_filter_pipe__ = __webpack_require__("./src/app/services/filter.pipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__about_about_component__ = __webpack_require__("./src/app/about/about.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__navbar_navbar_component__ = __webpack_require__("./src/app/navbar/navbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_validation_service__ = __webpack_require__("./src/app/services/validation.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__login_login_component__ = __webpack_require__("./src/app/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_guard_service__ = __webpack_require__("./src/app/services/guard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__services_loggedinguard_service__ = __webpack_require__("./src/app/services/loggedinguard.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -154,6 +159,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 // import array: (Messages)
+
+
+// import array: (Firebase Storage for Pictures upload)
+
+
+
 
 
 // declarations array:
@@ -176,15 +187,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 // all the routes:
 var appRoutes = [
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_8__home_home_component__["a" /* HomeComponent */] },
-    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_9__register_register_component__["a" /* RegisterComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_22__services_loggedinguard_service__["a" /* LoggedinguardService */]] },
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_20__login_login_component__["a" /* LoginComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_22__services_loggedinguard_service__["a" /* LoggedinguardService */]] },
-    { path: 'user/dashboard', component: __WEBPACK_IMPORTED_MODULE_10__dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_21__services_guard_service__["a" /* GuardService */]] },
-    { path: 'user/friends', component: __WEBPACK_IMPORTED_MODULE_11__friends_friends_component__["a" /* FriendsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_21__services_guard_service__["a" /* GuardService */]] },
-    { path: 'user/transactions', component: __WEBPACK_IMPORTED_MODULE_12__transactions_transactions_component__["a" /* TransactionsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_21__services_guard_service__["a" /* GuardService */]] },
-    { path: 'user/receipts', component: __WEBPACK_IMPORTED_MODULE_13__receipts_receipts_component__["a" /* ReceiptsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_21__services_guard_service__["a" /* GuardService */]] },
-    { path: 'user/setting', component: __WEBPACK_IMPORTED_MODULE_14__setting_setting_component__["a" /* SettingComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_21__services_guard_service__["a" /* GuardService */]] },
-    { path: 'about', component: __WEBPACK_IMPORTED_MODULE_16__about_about_component__["a" /* AboutComponent */] },
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_13__home_home_component__["a" /* HomeComponent */] },
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_14__register_register_component__["a" /* RegisterComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_27__services_loggedinguard_service__["a" /* LoggedinguardService */]] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_25__login_login_component__["a" /* LoginComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_27__services_loggedinguard_service__["a" /* LoggedinguardService */]] },
+    { path: 'user/dashboard', component: __WEBPACK_IMPORTED_MODULE_15__dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_26__services_guard_service__["a" /* GuardService */]] },
+    { path: 'user/friends', component: __WEBPACK_IMPORTED_MODULE_16__friends_friends_component__["a" /* FriendsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_26__services_guard_service__["a" /* GuardService */]] },
+    { path: 'user/transactions', component: __WEBPACK_IMPORTED_MODULE_17__transactions_transactions_component__["a" /* TransactionsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_26__services_guard_service__["a" /* GuardService */]] },
+    { path: 'user/receipts', component: __WEBPACK_IMPORTED_MODULE_18__receipts_receipts_component__["a" /* ReceiptsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_26__services_guard_service__["a" /* GuardService */]] },
+    { path: 'user/setting', component: __WEBPACK_IMPORTED_MODULE_19__setting_setting_component__["a" /* SettingComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_26__services_guard_service__["a" /* GuardService */]] },
+    { path: 'about', component: __WEBPACK_IMPORTED_MODULE_21__about_about_component__["a" /* AboutComponent */] },
     { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 var AppModule = /** @class */ (function () {
@@ -193,29 +204,33 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_8__home_home_component__["a" /* HomeComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__register_register_component__["a" /* RegisterComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__dashboard_dashboard_component__["a" /* DashboardComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__friends_friends_component__["a" /* FriendsComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__transactions_transactions_component__["a" /* TransactionsComponent */],
-                __WEBPACK_IMPORTED_MODULE_13__receipts_receipts_component__["a" /* ReceiptsComponent */],
-                __WEBPACK_IMPORTED_MODULE_14__setting_setting_component__["a" /* SettingComponent */],
-                __WEBPACK_IMPORTED_MODULE_15__services_filter_pipe__["a" /* FilterPipe */],
-                __WEBPACK_IMPORTED_MODULE_16__about_about_component__["a" /* AboutComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__navbar_navbar_component__["a" /* NavbarComponent */],
-                __WEBPACK_IMPORTED_MODULE_20__login_login_component__["a" /* LoginComponent */]
+                __WEBPACK_IMPORTED_MODULE_12__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__home_home_component__["a" /* HomeComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__register_register_component__["a" /* RegisterComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__dashboard_dashboard_component__["a" /* DashboardComponent */],
+                __WEBPACK_IMPORTED_MODULE_16__friends_friends_component__["a" /* FriendsComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__transactions_transactions_component__["a" /* TransactionsComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__receipts_receipts_component__["a" /* ReceiptsComponent */],
+                __WEBPACK_IMPORTED_MODULE_19__setting_setting_component__["a" /* SettingComponent */],
+                __WEBPACK_IMPORTED_MODULE_20__services_filter_pipe__["a" /* FilterPipe */],
+                __WEBPACK_IMPORTED_MODULE_21__about_about_component__["a" /* AboutComponent */],
+                __WEBPACK_IMPORTED_MODULE_22__navbar_navbar_component__["a" /* NavbarComponent */],
+                __WEBPACK_IMPORTED_MODULE_25__login_login_component__["a" /* LoginComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["BrowserModule"],
                 __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["b" /* HttpClientModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+                __WEBPACK_IMPORTED_MODULE_7_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_8__environments_environment__["a" /* environment */].firebaseConfig),
+                __WEBPACK_IMPORTED_MODULE_9_angularfire2_database__["b" /* AngularFireDatabaseModule */],
+                __WEBPACK_IMPORTED_MODULE_10_angularfire2_firestore__["a" /* AngularFirestoreModule */],
+                __WEBPACK_IMPORTED_MODULE_11_angularfire2_storage__["b" /* AngularFireStorageModule */],
                 __WEBPACK_IMPORTED_MODULE_5_ng2_toastr_ng2_toastr__["ToastModule"].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* RouterModule */].forRoot(appRoutes)
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_18__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_19__services_validation_service__["a" /* ValidationService */], __WEBPACK_IMPORTED_MODULE_21__services_guard_service__["a" /* GuardService */], __WEBPACK_IMPORTED_MODULE_22__services_loggedinguard_service__["a" /* LoggedinguardService */], __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["b" /* HttpClientModule */]],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_23__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_24__services_validation_service__["a" /* ValidationService */], __WEBPACK_IMPORTED_MODULE_26__services_guard_service__["a" /* GuardService */], __WEBPACK_IMPORTED_MODULE_27__services_loggedinguard_service__["a" /* LoggedinguardService */], __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["b" /* HttpClientModule */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_12__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -741,14 +756,14 @@ var NavbarComponent = /** @class */ (function () {
 /***/ "./src/app/receipts/receipts.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\r\nimg {\r\n    \r\n    max-width:  300px;\r\n  }"
 
 /***/ }),
 
 /***/ "./src/app/receipts/receipts.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  receipts works!\r\n</p>\r\n"
+module.exports = "<p>\r\n  receipts works!\r\n</p>\r\n\r\n<h1>Photos</h1>\r\n<input type=\"file\" (change)=\"featuredPhotoSelected($event)\"><br><hr>\r\n<!-- <img [src]=\"(featuredPhotoStream)?.url\" alt=\"Featured Photo\"><hr> -->\r\n<!-- <img [src]=\"photoUrl\"> -->\r\n<div class=\"container\">\r\n  <img [src]=\"photoUrl\" alt=\"Photo from firebase\">\r\n</div>"
 
 /***/ }),
 
@@ -758,6 +773,8 @@ module.exports = "<p>\r\n  receipts works!\r\n</p>\r\n"
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReceiptsComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_storage__ = __webpack_require__("./node_modules/angularfire2/storage/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__("./node_modules/angularfire2/database/index.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -768,21 +785,81 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var ReceiptsComponent = /** @class */ (function () {
-    function ReceiptsComponent() {
+    function ReceiptsComponent(afStorage, db) {
+        this.afStorage = afStorage;
+        this.db = db;
+        this.featuredPhotoStream = this.db.object('/upload/');
     }
     ReceiptsComponent.prototype.ngOnInit = function () {
     };
+    // ============================= Helper Functions ===========================================
+    ReceiptsComponent.prototype.getLink = function (url) {
+        this.photoUrl = url;
+        console.log("In getLink(), here is the photo URL from firebase: ", this.photoUrl);
+    };
+    // ================== Getting file info and upload to Firebase Storage =====================
+    // // Fun way for file info:
+    // featuredPhotoSelected(event : MSInputMethodContext){
+    //   const target : HTMLInputElement = <HTMLInputElement>event.target;
+    //   const files: FileList = target.files;
+    //   const file: File = files[0];
+    //   console.log("Selected filename: ", file.name);
+    // }
+    // Faster way in TypeScript:
+    ReceiptsComponent.prototype.featuredPhotoSelected = function (event) {
+        var _this = this;
+        var file = event.target.files[0];
+        console.log("Selected filename: ", file.name);
+        // // Store the photo
+        // const metaData = {'contentType': file.type};
+        // const storageRef: firebase.storage.Reference = firebase.storage().ref('/upload/'+file.name);
+        // // const storageRef: firebase.storage.Reference = firebase.storage().ref('/photos/');
+        // storageRef.put(file, metaData);
+        // console.log("Uploading filename: ", file.name);
+        // This way works too
+        this.afStorage.upload('/upload/' + file.name, file);
+        console.log("Uploading file: ", file);
+        console.log("Uploading filename: ", file.name);
+        this.afStorage.storage.ref('/upload/' + file.name).getDownloadURL().then(function (url) {
+            console.log('This is the url in getDownloadURL(): ' + url);
+            _this.getLink(url);
+        }).catch(function (err) {
+            // A full list of error codes is available at
+            // https://firebase.google.com/docs/storage/web/handle-errors
+            switch (err.code) {
+                case 'storage/object_not_found':
+                    // File doesn't exist
+                    console.log('storage/object_not_found');
+                    break;
+                case 'storage/unauthorized':
+                    // User doesn't have permission to access the object
+                    console.log(' User doesnt have permission to access the object');
+                    break;
+                case 'storage/canceled':
+                    console.log(' storage/canceled');
+                    // User canceled the upload
+                    break;
+                case 'storage/unknown':
+                    console.log(' storage/unknown');
+                    // Unknown error occurred, inspect the server response
+                    break;
+            }
+        });
+    }; // end of featuredPhotoSelected
     ReceiptsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-receipts',
             template: __webpack_require__("./src/app/receipts/receipts.component.html"),
             styles: [__webpack_require__("./src/app/receipts/receipts.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_storage__["a" /* AngularFireStorage */],
+            __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */]])
     ], ReceiptsComponent);
     return ReceiptsComponent;
-}());
+}()); // end of export class
 
 
 
@@ -1391,7 +1468,16 @@ var TransactionsComponent = /** @class */ (function () {
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 var environment = {
-    production: false
+    production: false,
+    // Initialize Firebase
+    firebaseConfig: {
+        apiKey: "AIzaSyCrFHf3gTQZYgFK6IyHn2qdynxfPcZwEMM",
+        authDomain: "rumi-web-app-dc4af.firebaseapp.com",
+        databaseURL: "https://rumi-web-app-dc4af.firebaseio.com",
+        projectId: "rumi-web-app-dc4af",
+        storageBucket: "rumi-web-app-dc4af.appspot.com",
+        messagingSenderId: "353669083115"
+    },
 };
 
 

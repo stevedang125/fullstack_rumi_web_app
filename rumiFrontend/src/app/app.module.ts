@@ -8,6 +8,12 @@ import { HttpClientModule } from '@angular/common/http';
 // import array: (Messages)
 import { ToastModule } from 'ng2-toastr/ng2-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import array: (Firebase Storage for Pictures upload)
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 
 // declarations array:
 import { AppComponent } from './app.component';
@@ -63,6 +69,10 @@ const appRoutes: Routes =[
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireStorageModule, // imports firebase/storage only needed for storage features
     ToastModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
