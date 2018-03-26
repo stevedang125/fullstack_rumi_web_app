@@ -1,3 +1,36 @@
+## Dev Fams, eyyyy !!
+To run the project, please folllow these steps:
+```
+$ git clone https://github.com/stevedang125/fullstack_rumi_web_app.git
+$ cd fullstack_rumi_web_app
+$ git branch dev
+$ git checkout dev
+$ git pull origin dev
+$ npm start
+```
+For Linux or Mac, you might need to use sudo
+```
+$ sudo npm start
+```
+If all is successful, it should be available at your `localhost` on `port 8080` (`http://localhost:8080/`).
+
+Dev mode:
+Keep both backend and frontend on,
+Backend, in "fullstack_rumi_web_app" folder:(localhost:8080)
+```
+$ node server.js
+```
+Frontend, in "rumiFrontend" folder:(localhost:4200)
+```
+$ ng serve
+```
+Ready to test your awesome code?
+```
+$ ng build
+```
+Then, check it at `http://localhost:8080/`.
+============================================================================================================
+
 # Rumi Web App:
 
 This project is a personal reciept manager web app:
