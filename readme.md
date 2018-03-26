@@ -15,7 +15,7 @@ $ sudo npm start
 If all is successful, it should be available at your `localhost` on `port 8080` (`http://localhost:8080/`).
 
 Dev mode:
-Keep both backend and frontend on,
+Keep both backend and frontend on.
 Backend, in "fullstack_rumi_web_app" folder:(localhost:8080)
 ```
 $ node server.js
@@ -29,7 +29,6 @@ Ready to test your awesome code?
 $ ng build
 ```
 Then, check it at `http://localhost:8080/`.
-============================================================================================================
 
 # Rumi Web App:
 
