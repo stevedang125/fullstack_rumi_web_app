@@ -26,4 +26,13 @@ export class ValidationService {
     return re.test(String(email).toLowerCase());
   }
 
+  validateAdd(user){
+    if((user.firstName == undefined|| user.lastName == undefined|| user.preferredName == undefined|| user.address == undefined || user.email== undefined || user.homePhone == undefined|| user.cellPhone== undefined)){
+      return false;
+    }else{
+      return true;
+    }
+  }
+
+
 }

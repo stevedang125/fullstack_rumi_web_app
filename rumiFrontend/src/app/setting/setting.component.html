@@ -1,3 +1,22 @@
-<p>
-  setting works!
-</p>
+<div class="row">
+
+  <div *ngIf="user" class="container">
+      <h2 class="page-header" style="color: rgb(223, 56, 35)" >Welcome back, {{user.name}}.</h2>
+      <ul class="list-group">
+        <li class="list-group-item">ID: {{user._id}}</li>
+        <li class="list-group-item">Name: {{user.name}}</li>
+        <li class="list-group-item">Username: {{user.username}}</li>
+        <li class="list-group-item">Email: {{user.email}}</li>
+        <li class="list-group-item">Password: {{user.password}} <button class="btn btn-info" (click)="onChangeButton()">Change Password</button></li>
+        <li *ngIf="buttonclicked" class="list-group-item">
+            <div class="form-group">
+                <input placeholder="*New Password" type="text" name="newpassword" [(ngModel)] = "newpassword" class="form-control">
+            </div>
+            <button class="btn btn-info" (click)="onSubmitButton()">Submit</button>
+            <button class="btn btn-danger" (click)="onCancelButton()">Cancel</button>
+        </li>
+
+      </ul>
+    </div>
+  
+  </div>

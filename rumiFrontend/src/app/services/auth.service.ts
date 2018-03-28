@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Contact } from './contact';
+import { Userinfo } from './userinfo';
 
 @Injectable()
 export class AuthService {
@@ -62,21 +63,15 @@ export class AuthService {
     return this.http.post(this.baseUri+'/login', user, {headers:this.headers});
   }
 
-    // GET: user profile
-    userProfile(){
-      // Load the token into the authToken const:
-      this.loadToken();
-      this.headers = new HttpHeaders().set('Authorization', this.authToken);
-      return this.http.get(this.baseUri+'/user/setting', {headers:this.headers});
-    }
   
-    // GET: user dashboard
-    userDashboard(){
-      // Load the token into the authToken const:
-      this.loadToken();
-      this.headers = new HttpHeaders().set('Authorization', this.authToken);
-      return this.http.get(this.baseUri+'/user/friends', {headers:this.headers});
-    }
+
+  // GET: user dashboard
+  userDashboard(){
+    // Load the token into the authToken const:
+    this.loadToken();
+    this.headers = new HttpHeaders().set('Authorization', this.authToken);
+    return this.http.get(this.baseUri+'/user/friends', {headers:this.headers});
+  }
     
     // ========== Http Add, Update, Delete request functions =====
 
@@ -93,5 +88,18 @@ export class AuthService {
       return this.http.delete(this.baseUri+'/user/friends/delete/'+id, {headers:this.headers});
     }
   
+    // ===================== Setting =======================================================
+    // GET: user profile
+    userProfile(){
+      // Load the token into the authToken const:
+      this.loadToken();
+    
+      this.headers = new HttpHeaders().set('Authorization', this.authToken);
+      return this.http.get(this.baseUri+'/user/setting', {headers:this.headers});
+    }
 
+    changePassword(update_user: Userinfo){
+      return this.http.put(this.baseUri+'/user/setting/changepassword', update_user, {headers:this.headers});
+ 
+    }
 }
