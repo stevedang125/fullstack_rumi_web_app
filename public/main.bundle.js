@@ -27,7 +27,7 @@ module.exports = ""
 /***/ "./src/app/about/about.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  about works! yayyyyyyyyy\n</p>\n"
+module.exports = "<p>\r\n  about works! yayyyyyyyyy\r\n</p>\r\n<div class=\"alert alert-success alert-dismissible\">\r\n    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\r\n    <strong>Success!</strong> This alert box could indicate a successful or positive action.\r\n  </div>\r\n  <div class=\"alert alert-info alert-dismissible\">\r\n    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\r\n    <strong>Info!</strong> This alert box could indicate a neutral informative change or action.\r\n  </div>\r\n  <div class=\"alert alert-warning alert-dismissible\">\r\n    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\r\n    <strong>Alert!</strong> This alert box could indicate a warning that might need attention.\r\n  </div>\r\n  <div class=\"alert alert-danger alert-dismissible\">\r\n    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\r\n    <strong>Oops!</strong> This alert box could indicate a dangerous or potentially negative action.\r\n  </div>"
 
 /***/ }),
 
@@ -77,7 +77,7 @@ module.exports = ""
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<!-- Nav bar -->\n<app-navbar></app-navbar>\n\n<!-- Other routes -->\n<router-outlet></router-outlet>\n\n  \n"
+module.exports = "\r\n<!-- Nav bar -->\r\n<app-navbar></app-navbar>\r\n\r\n<!-- Other routes -->\r\n<router-outlet></router-outlet>\r\n\r\n  \r\n"
 
 /***/ }),
 
@@ -235,7 +235,7 @@ module.exports = ""
 /***/ "./src/app/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  dashboard works!\n</p>\n"
+module.exports = "<p>\r\n  dashboard works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -285,7 +285,7 @@ module.exports = ""
 /***/ "./src/app/friends/friends.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n      <div class=\"col-md-2\">\n        <!-- Search -->\n        <!-- <div class=\"card\"> -->\n            <form>\n                <!-- <div class=\"card-body\"> -->\n                  <!-- <h6 class=\"card-title\"> -->\n                  <h6>\n                    <strong>Search</strong>\n                  </h6>\n                  \n                  <table class=\"table table-hover\">\n                    <tbody>\n                      <tr>\n                        <td>\n                          <div class=\"form-group\">\n                              <input placeholder=\"*Enter Name\" type=\"text\" name=\"inputString\" [(ngModel)] = \"inputString\" class=\"form-control\">\n                          </div>\n                        </td>\n                      </tr>\n                      <tr>\n                        <button class=\"btn btn-success\" (click)=\"search_contact()\">Search</button>&nbsp;\n                        <button class=\"btn btn-danger\" (click)=\"clearSearch()\">Clear</button>\n                      </tr>\n                    </tbody>\n                  </table>\n                <!-- </div> -->\n              </form>\n          <!-- </div> -->\n        <!-- End Search -->\n  \n        <!-- Add -->\n        <form>\n            <!-- <div class=\"card-body half\"> -->\n              <!-- <h4 class=\"card-title\"><strong>Add Contact</strong></h4> -->\n              <h6><strong>Add Contact</strong></h6>\n              <table class=\"table table-hover\">\n                <tbody>\n                  <tr>\n                    <td>\n                      <div class=\"form-group\">\n                        <!-- <label><h6><strong>Firstname:</strong></h6></label> -->\n                        <input placeholder=\"*Enter Firstname\" type=\"text\" name=\"firstName\" [(ngModel)] = \"firstName\" class=\"form-control\">\n                      </div>\n                      <div class=\"form-group\">\n                          <!-- <label><h6><strong>Lastname:</strong></h6></label> -->\n                          <input placeholder=\"*Enter Lastname\" type=\"text\" name=\"lastName\" [(ngModel)] = \"lastName\" class=\"form-control\">\n                      </div>\n                      <div class=\"form-group\">\n                          <!-- <label><h6><strong>Preferred Name:</strong></h6></label> -->\n                          <input placeholder=\"*Enter Preferred Name\" type=\"text\" name=\"preferredName\" [(ngModel)] = \"preferredName\" class=\"form-control\">\n                      </div>\n                      <div class=\"form-group\">\n                          <!-- <label><h6><strong>Address:</strong></h6></label> -->\n                          <input placeholder=\"*Enter Address\" type=\"text\" name=\"address\" [(ngModel)] = \"address\" class=\"form-control\">\n                      </div>\n                      <div class=\"form-group\">\n                          <!-- <label><h6><strong>Email:</strong></h6></label> -->\n                          <input placeholder=\"*Enter Email\" type=\"text\" name=\"email\" [(ngModel)] = \"email\" class=\"form-control\">\n                      </div>\n                      <div class=\"form-group\">\n                          <!-- <label><h6><strong>Home Phone:</strong></h6></label> -->\n                          <input placeholder=\"*Enter Home Phone\" type=\"text\" name=\"homePhone\" [(ngModel)] = \"homePhone\" class=\"form-control\">\n                      </div>\n                      <div class=\"form-group\">\n                          <!-- <label><h6><strong>Cell Phone:</strong></h6></label> -->\n                          <input placeholder=\"*Enter Cell Phone\" type=\"text\" name=\"cellPhone\" [(ngModel)] = \"cellPhone\" class=\"form-control\">\n                      </div>\n                    </td>\n                  </tr>\n                  <tr>\n                    <td>\n                        <!-- <input type=\"submit\" value=\"Submit\" class=\"btn btn-success\"> -->\n                        <button class=\"btn btn-success\" (click)=\"onSubmitButton()\">Submit</button>&nbsp;\n                        <button class=\"btn btn-danger\" (click)=\"clear()\">Clear</button>\n                    </td>\n                  </tr>\n                </tbody>\n              </table>\n            <!-- </div> -->\n          </form>\n        <!-- End add -->\n      </div>\n  \n  \n      <div class=\"col-md-10\">\n        <!-- Contact list -->\n        <!-- Contact list -->\n    <!-- <div class=\"card\"> -->\n        <!-- <div class=\"card-body\"> -->\n          <!-- <h4 class=\"card-title\"><strong>Contact List</strong></h4> -->\n          <h6><strong>Contact List</strong></h6>\n          <table class=\"table table-hover\">\n            <thead>\n              <tr>\n                <th><h6><strong>Number</strong></h6></th>\n                <th><h6><strong>Firstname</strong></h6></th>\n                <th><h6><strong>Lastname</strong></h6></th>\n                <th><h6><strong>Preferred Name</strong></h6></th>\n                <th><h6><strong>Address</strong></h6></th>\n                <th><h6><strong>Email</strong></h6></th>\n                <th><h6><strong>Home Phone</strong></h6></th>\n                <th><h6><strong>Cell Phone</strong></h6></th>\n                <th><h6><strong>Options</strong></h6></th>\n              </tr>\n            </thead>\n            <tbody>\n                <!-- <tr *ngFor=\"let contact of hack(contactlist); let i = index\"> -->\n                <tr *ngFor=\"let contact of hack(contactlist) | filter:inputString; let i = index\">\n                  <td>{{i+1}}</td>\n                  <td>{{contact.firstName}}</td>\n                  <td>{{contact.lastName}}</td>\n                  <td>{{contact.preferredName}}</td>\n                  <td>{{contact.address}}</td>\n                  <td>{{contact.email}}</td>\n                  <td>{{contact.homePhone}}</td>\n                  <td>{{contact.cellPhone}}</td>\n                  <td>\n                      <button class=\"btn btn-danger\" (click)=\"onDeleteButton(contact)\">Delete</button>&nbsp;\n                      <button class=\"btn btn-info\" (click)=\"onEditButton(contact)\" >Edit</button>\n                  </td>\n              </tr>\n            </tbody>\n          </table>\n        <!-- </div> -->\n  \n        <!-- End of contact list -->\n      </div>\n    </div>\n  </div>\n  \n  \n"
+module.exports = "\r\n\r\n  <div class=\"container-fluid\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-2\">\r\n        <!-- Search -->\r\n        <!-- <div class=\"card\"> -->\r\n            <form>\r\n                <!-- <div class=\"card-body\"> -->\r\n                  <!-- <h6 class=\"card-title\"> -->\r\n                  <h6>\r\n                    <strong>Search</strong>\r\n                  </h6>\r\n                  \r\n                  <table class=\"table table-hover\">\r\n                    <tbody>\r\n                      <tr>\r\n                        <td>\r\n                          <div class=\"form-group\">\r\n                              <input placeholder=\"*Enter Name\" type=\"text\" name=\"inputString\" [(ngModel)] = \"inputString\" class=\"form-control\">\r\n                          </div>\r\n                        </td>\r\n                      </tr>\r\n                      <tr>\r\n                        <button class=\"btn btn-success\" (click)=\"search_contact()\">Search</button>&nbsp;\r\n                        <button class=\"btn btn-danger\" (click)=\"clearSearch()\">Clear</button>\r\n                      </tr>\r\n                    </tbody>\r\n                  </table>\r\n                <!-- </div> -->\r\n              </form>\r\n          <!-- </div> -->\r\n        <!-- End Search -->\r\n  \r\n        <!-- Add -->\r\n        <form>\r\n            <!-- <div class=\"card-body half\"> -->\r\n              <!-- <h4 class=\"card-title\"><strong>Add Contact</strong></h4> -->\r\n              <h6><strong>Add Contact</strong></h6>\r\n              <table class=\"table table-hover\">\r\n                <tbody>\r\n                  <tr>\r\n                    <td>\r\n                      <div class=\"form-group\">\r\n                        <!-- <label><h6><strong>Firstname:</strong></h6></label> -->\r\n                        <input placeholder=\"*Enter Firstname\" type=\"text\" name=\"firstName\" [(ngModel)] = \"firstName\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Lastname:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Lastname\" type=\"text\" name=\"lastName\" [(ngModel)] = \"lastName\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Preferred Name:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Preferred Name\" type=\"text\" name=\"preferredName\" [(ngModel)] = \"preferredName\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Address:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Address\" type=\"text\" name=\"address\" [(ngModel)] = \"address\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Email:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Email\" type=\"text\" name=\"email\" [(ngModel)] = \"email\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Home Phone:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Home Phone\" type=\"text\" name=\"homePhone\" [(ngModel)] = \"homePhone\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Cell Phone:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Cell Phone\" type=\"text\" name=\"cellPhone\" [(ngModel)] = \"cellPhone\" class=\"form-control\">\r\n                      </div>\r\n                    </td>\r\n                  </tr>\r\n                  <tr>\r\n                    <td>\r\n                        <!-- <input type=\"submit\" value=\"Submit\" class=\"btn btn-success\"> -->\r\n                        <button class=\"btn btn-success\" (click)=\"onSubmitButton()\">Submit</button>&nbsp;\r\n                        <button class=\"btn btn-danger\" (click)=\"clear()\">Clear</button>\r\n                    </td>\r\n                  </tr>\r\n                </tbody>\r\n              </table>\r\n            <!-- </div> -->\r\n          </form>\r\n        <!-- End add -->\r\n      </div>\r\n  \r\n  \r\n      <div class=\"col-md-10\">\r\n        <!-- Contact list -->\r\n        <!-- Contact list -->\r\n    <!-- <div class=\"card\"> -->\r\n        <!-- <div class=\"card-body\"> -->\r\n          <!-- <h4 class=\"card-title\"><strong>Contact List</strong></h4> -->\r\n          <h6><strong>Contact List</strong></h6>\r\n          <table class=\"table table-hover\">\r\n            <thead>\r\n              <tr>\r\n                <th><h6><strong>Number</strong></h6></th>\r\n                <th><h6><strong>Firstname</strong></h6></th>\r\n                <th><h6><strong>Lastname</strong></h6></th>\r\n                <th><h6><strong>Preferred Name</strong></h6></th>\r\n                <th><h6><strong>Address</strong></h6></th>\r\n                <th><h6><strong>Email</strong></h6></th>\r\n                <th><h6><strong>Home Phone</strong></h6></th>\r\n                <th><h6><strong>Cell Phone</strong></h6></th>\r\n                <th><h6><strong>Options</strong></h6></th>\r\n              </tr>\r\n            </thead>\r\n            <tbody>\r\n                <!-- <tr *ngFor=\"let contact of hack(contactlist); let i = index\"> -->\r\n                <tr *ngFor=\"let contact of hack(contactlist) | filter:inputString; let i = index\">\r\n                  <td>{{i+1}}</td>\r\n                  <td>{{contact.firstName}}</td>\r\n                  <td>{{contact.lastName}}</td>\r\n                  <td>{{contact.preferredName}}</td>\r\n                  <td>{{contact.address}}</td>\r\n                  <td>{{contact.email}}</td>\r\n                  <td>{{contact.homePhone}}</td>\r\n                  <td>{{contact.cellPhone}}</td>\r\n                  <td>\r\n                      <button class=\"btn btn-danger\" (click)=\"onDeleteButton(contact)\">Delete</button>&nbsp;\r\n                      <button class=\"btn btn-info\" (click)=\"onEditButton(contact)\" >Edit</button>\r\n                  </td>\r\n              </tr>\r\n            </tbody>\r\n          </table>\r\n        <!-- </div> -->\r\n  \r\n        <!-- End of contact list -->\r\n      </div>\r\n    </div>\r\n  </div>\r\n  \r\n  \r\n"
 
 /***/ }),
 
@@ -299,6 +299,7 @@ module.exports = "\n\n  <div class=\"container-fluid\">\n    <div class=\"row\">
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_toastr_ng2_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_ng2_toastr_ng2_toastr__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_validation_service__ = __webpack_require__("./src/app/services/validation.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -312,17 +313,45 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var FriendsComponent = /** @class */ (function () {
-    function FriendsComponent(authService, router, toastr, vcr) {
+    function FriendsComponent(authService, router, validationService, toastr, vcr, componentFactoryResolver, ngZone, appRef, options) {
         this.authService = authService;
         this.router = router;
+        this.validationService = validationService;
         this.toastr = toastr;
-        // Initialize theses for adding a new contact
-        this._id = null;
         this.toastr.setRootViewContainerRef(vcr);
+        Object.assign(options, {
+            maxShown: 1,
+            positionClass: "toast-top-center",
+            showCloseButton: true,
+            toastLife: 3000
+        });
+        // =============== More Toastr message options here: ===============
+        // toast-top-right (Default)
+        // toast-top-center
+        // toast-top-left
+        // toast-top-full-width
+        // toast-bottom-right
+        // toast-bottom-center
+        // toast-bottom-left
+        // toast-bottom-full-width
     }
     FriendsComponent.prototype.ngOnInit = function () {
         this.getDashboard();
+    };
+    // ========== Toastr Messages =======================================
+    FriendsComponent.prototype.showSuccess = function (msg) {
+        this.toastr.success(msg, 'Success!');
+    };
+    FriendsComponent.prototype.showWarning = function (msg) {
+        this.toastr.warning(msg, 'Alert!');
+    };
+    FriendsComponent.prototype.showError = function (msg) {
+        this.toastr.error(msg, 'Oops!');
+    };
+    FriendsComponent.prototype.showInfo = function (msg) {
+        this.toastr.info(msg, 'Info!');
     };
     // ========= Helper functions ============================
     FriendsComponent.prototype.clear = function () {
@@ -335,11 +364,11 @@ var FriendsComponent = /** @class */ (function () {
         this.homePhone = undefined;
         this.cellPhone = undefined;
         this.user_id = undefined;
-        // alert('Cleared!');
+        // this.showInfo('Cleared!');
     };
     FriendsComponent.prototype.clearSearch = function () {
         this.inputString = undefined;
-        // alert('Cleared Search!');
+        this.showInfo('Cleared Search!');
     };
     FriendsComponent.prototype.hack = function (val) {
         console.log("hack: " + val);
@@ -353,7 +382,6 @@ var FriendsComponent = /** @class */ (function () {
             _this.user = dashboard['user'];
             _this.userID = dashboard['user']._id;
             _this.contactlist = dashboard['contactlist'];
-            // alert('Success! Dashboard!'+this.user+","+this.userID+","+this.contactlist);
         }, function (err) {
             console.log('Failed to get the dashboard! err: ' + err);
             _this.router.navigate(['']);
@@ -373,13 +401,19 @@ var FriendsComponent = /** @class */ (function () {
             cellPhone: this.cellPhone,
             user_id: this.userID
         };
-        if (new_contact._id == null) {
+        if (!this.validationService.validateAdd(new_contact)) {
+            this.showWarning('Please fill in all fields');
+            return false;
+        }
+        if (!this.validationService.validateEmail(new_contact.email)) {
+            this.showWarning('Please use a valid email.');
+            return false;
+        }
+        if (new_contact._id == undefined) {
             this.add_contact(new_contact);
         }
-        else {
-            if (new_contact._id != null) {
-                this.edit_contact(new_contact);
-            }
+        if (new_contact._id != undefined) {
+            this.edit_contact(new_contact);
         }
     };
     FriendsComponent.prototype.onEditButton = function (contact) {
@@ -392,33 +426,34 @@ var FriendsComponent = /** @class */ (function () {
         this.homePhone = contact.homePhone;
         this.cellPhone = contact.cellPhone;
         this.user_id = contact.userID;
-        // alert('A contact is being updated!');
+        this.showWarning('A contact is being updated!');
     };
     FriendsComponent.prototype.add_contact = function (newContact) {
+        var _this = this;
         this.authService.addContact(newContact).subscribe(function (data) {
-            // alert('Contact added!');
+            _this.showSuccess('Friend added!');
+            _this.getDashboard();
         }, function (err) {
-            alert('Failed to add a contact!' + err);
+            _this.showError('Failed to add a contact!' + err);
         });
+        this.getDashboard();
         this.clear();
-        // Double powerful fetch, there won't be a hit and miss!! 
-        this.getDashboard();
-        this.getDashboard();
     };
     FriendsComponent.prototype.edit_contact = function (existing_contact) {
+        var _this = this;
         this.authService.updateContact(existing_contact).subscribe(function (data) {
-            // alert('Updated Contact!');
+            _this.getDashboard();
+            _this.showSuccess('Updated Contact!');
         }, function (err) {
-            alert('Failed to update a contact!' + err);
+            _this.showError('Failed to update a contact!' + err);
         });
         this.clear();
-        // Feel the power of the twin!! 
-        this.getDashboard();
+        // Feel the power of the twin!! or not
         this.getDashboard();
     };
     FriendsComponent.prototype.search_contact = function () {
         if (this.inputString == undefined) {
-            // alert('Empty search!');
+            this.showError('Empty search!');
             return false;
         }
     };
@@ -426,10 +461,12 @@ var FriendsComponent = /** @class */ (function () {
         var _this = this;
         this.authService.deleteContact(contact).subscribe(function (data) {
             _this.contactlist.splice(_this.contactlist.indexOf(contact), 1);
-            // alert('Deleted a contact');
+            _this.showSuccess('Deleted a contact');
+            _this.getDashboard();
         }, function (err) {
-            alert('Failed to delete a contact!' + err);
+            console.log('Failed to delete a contact!' + err);
         });
+        this.getDashboard();
     };
     FriendsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -439,7 +476,9 @@ var FriendsComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_1_ng2_toastr_ng2_toastr__["ToastsManager"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"]])
+            __WEBPACK_IMPORTED_MODULE_4__services_validation_service__["a" /* ValidationService */],
+            __WEBPACK_IMPORTED_MODULE_1_ng2_toastr_ng2_toastr__["ToastsManager"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"],
+            __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentFactoryResolver"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ApplicationRef"], __WEBPACK_IMPORTED_MODULE_1_ng2_toastr_ng2_toastr__["ToastOptions"]])
     ], FriendsComponent);
     return FriendsComponent;
 }());
@@ -458,7 +497,7 @@ module.exports = ""
 /***/ "./src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\" id=\"row\">\n    <div class=\"col\" id=\"col\">\n        <img src=\"../../assets/rumi logo.png\" width=\"400\" href=\"/\" class=\"align-self-center\">\n    </div>\n  \n    <div class=\"col align-self-center\" id=\"col\">\n      <!-- {{ tagline }} -->\n      <p>\n      <p>\n        <a ui-sref=\"register\" [routerLink]=\"['/register']\" class=\"btn\" id=\"button_main_color\">Get Started!</a>\n        <a ui-sref=\"download\" href=\"https://www.youtube.com/watch?v=vTcf4Io209E\" class=\"btn\" id=\"button_main_color\">Download</a>\n      </p>\n      <p>\n      <p>Already have an account?  <a ui-sref=\"login\" [routerLink]=\"['/login']\" >Login here</a>.\n    </div>\n  </div>\n  "
+module.exports = "<div class=\"row\" id=\"row\">\r\n    <div class=\"col\" id=\"col\">\r\n        <img src=\"../../assets/rumi logo.png\" width=\"400\" href=\"/\" class=\"align-self-center\">\r\n    </div>\r\n  \r\n    <div class=\"col align-self-center\" id=\"col\">\r\n      <!-- {{ tagline }} -->\r\n      <p>\r\n      <p>\r\n        <a ui-sref=\"register\" [routerLink]=\"['/register']\" class=\"btn\" id=\"button_main_color\">Get Started!</a>\r\n        <a ui-sref=\"download\" href=\"https://www.youtube.com/watch?v=vTcf4Io209E\" class=\"btn\" id=\"button_main_color\">Download</a>\r\n      </p>\r\n      <p>\r\n      <p>Already have an account?  <a ui-sref=\"login\" [routerLink]=\"['/login']\" >Login here</a>.\r\n    </div>\r\n  </div>\r\n  "
 
 /***/ }),
 
@@ -508,7 +547,7 @@ module.exports = ""
 /***/ "./src/app/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"row\" id=\"user_form\" *ngIf=\"!authService.isLoggedIn()\">\n  <div class=\"col align-self-center\">\n    <h2 class=\"page-header\">Login</h2>\n    <!-- Start form -->\n    <form class=\"form-signin\">\n\n      <!-- Username -->\n      <div class=\"form-group row\">\n        <label for=\"Username\" class=\"col-sm-3 col-form-label\">Username</label>\n        <div class=\"col-sm-9\">\n          <input type=\"text\" class=\"form-control\" placeholder=\"*michaelscott\" [(ngModel)]=\"username\" name=\"username\">\n        </div>\n      </div>\n\n      <!-- Password -->\n      <div class=\"form-group row\">\n        <label for=\"Password\" class=\"col-sm-3 col-form-label\">Password</label>\n        <div class=\"col-sm-9\">\n          <input type=\"password\" class=\"form-control\" placeholder=\"******\" [(ngModel)]=\"password\" name=\"password\">\n        </div>\n      </div>\n\n      <!-- Buttons -->\n      <button class=\"btn btn-success\" (click)=\"onLoginSubmit()\">Login</button>&nbsp;\n      <button class=\"btn btn-danger\" (click)=\"onCancelSubmit()\">Cancel</button><br><br>\n\n      <!-- Navigate back to register page -->\n      <p>Don't have an account yet? <a [routerLink] = \"['/register']\">Register Here</a></p> \n    </form>\n\n  </div>\n</div>\n      "
+module.exports = "\r\n<div class=\"row\" id=\"user_form\" *ngIf=\"!authService.isLoggedIn()\">\r\n  <div class=\"col align-self-center\">\r\n    <h2 class=\"page-header\">Login</h2>\r\n\r\n    <!-- Start form -->\r\n    <form class=\"form-signin\">\r\n\r\n      <!-- Username -->\r\n      <div class=\"form-group row\">\r\n        <label for=\"Username\" class=\"col-sm-3 col-form-label\">Username</label>\r\n        <div class=\"col-sm-9\">\r\n          <input type=\"text\" class=\"form-control\" placeholder=\"*michaelscott\" [(ngModel)]=\"username\" name=\"username\">\r\n        </div>\r\n      </div>\r\n\r\n      <!-- Password -->\r\n      <div class=\"form-group row\">\r\n        <label for=\"Password\" class=\"col-sm-3 col-form-label\">Password</label>\r\n        <div class=\"col-sm-9\">\r\n          <input type=\"password\" class=\"form-control\" placeholder=\"******\" [(ngModel)]=\"password\" name=\"password\">\r\n        </div>\r\n      </div>\r\n\r\n      <!-- Buttons -->\r\n      <button class=\"btn btn-success\" (click)=\"onLoginSubmit()\">Login</button>&nbsp;\r\n      <button class=\"btn btn-danger\" (click)=\"onCancelSubmit()\">Cancel</button><br><br>\r\n\r\n      <!-- Navigate back to register page -->\r\n      <p>Don't have an account yet? <a [routerLink] = \"['/register']\">Register Here</a></p> \r\n    </form>\r\n\r\n  </div>\r\n</div>\r\n      "
 
 /***/ }),
 
@@ -539,12 +578,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var LoginComponent = /** @class */ (function () {
     // Inject into the constructor
-    function LoginComponent(router, validateService, authService, toastr, vcr) {
+    function LoginComponent(router, validateService, authService, toastr, vcr, componentFactoryResolver, ngZone, appRef, options) {
         this.router = router;
         this.validateService = validateService;
         this.authService = authService;
         this.toastr = toastr;
+        this.warningMsg = "Please fill in all fields!";
         this.toastr.setRootViewContainerRef(vcr);
+        Object.assign(options, {
+            maxShown: 1,
+            positionClass: "toast-top-center",
+            showCloseButton: true,
+            toastLife: 3000
+        });
+        // =============== More Toastr message options here: ===============
+        // toast-top-right (Default)
+        // toast-top-center
+        // toast-top-left
+        // toast-top-full-width
+        // toast-bottom-right
+        // toast-bottom-center
+        // toast-bottom-left
+        // toast-bottom-full-width
     }
     LoginComponent.prototype.ngOnInit = function () {
     };
@@ -553,6 +608,7 @@ var LoginComponent = /** @class */ (function () {
         this.toastr.success(msg, 'Success!');
     };
     LoginComponent.prototype.showWarning = function (msg) {
+        // this.toastr.setupToast(toast:Toas, Position='toast-top-right');
         this.toastr.warning(msg, 'Alert!');
     };
     LoginComponent.prototype.showError = function (msg) {
@@ -566,6 +622,7 @@ var LoginComponent = /** @class */ (function () {
             password: this.password
         };
         if (!this.validateService.validateLogin(user)) {
+            this.warning = true;
             this.showWarning('Please fill in all fields!');
             return false;
         }
@@ -604,7 +661,8 @@ var LoginComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3__services_validation_service__["a" /* ValidationService */],
             __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_4_ng2_toastr_ng2_toastr__["ToastsManager"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"]])
+            __WEBPACK_IMPORTED_MODULE_4_ng2_toastr_ng2_toastr__["ToastsManager"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"],
+            __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentFactoryResolver"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ApplicationRef"], __WEBPACK_IMPORTED_MODULE_4_ng2_toastr_ng2_toastr__["ToastOptions"]])
     ], LoginComponent);
     return LoginComponent;
 }());
@@ -623,7 +681,7 @@ module.exports = ""
 /***/ "./src/app/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = " \n<!-- Navbar -->\n<nav class=\"navbar navbar-expand-lg navbar-dark justify-content-between\" id=\"navbar\">\n  <!-- Rumi logo -->\n  <a class=\"navbar-brand\" [routerLink]=\"['/']\"><img src=\"../assets/rumi logo.png\" width=\"50\" alt=\"\"></a>\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n\n  <!-- Links -->\n  <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\n\n      <!-- Left links -->\n      <ul class=\"navbar-nav mr-auto navbar-left\">\n        \n        <!-- Home -->\n        <li class=\"nav-item active\"\n        [routerLinkActive]=\"['active']\"\n        [routerLinkActiveOptions] =\"{exact:true}\">\n          <a class=\"nav-link btn\" [routerLink]=\"['/']\">Home</a>\n        </li>\n        \n        &nbsp;&nbsp;\n\n        <!-- About -->\n        <li class=\"nav-item active\"\n        [routerLinkActive]=\"['active']\"\n        [routerLinkActiveOptions] =\"{exact:true}\">\n          <a class=\"nav-link btn\" [routerLink]=\"['/about']\">About</a>\n        </li>\n      </ul>\n      <!-- End left links -->\n\n      <!-- Right links -->\n      <ul class=\"navbar-nav navbar-right\">\n\n        <!-- After logged in: Dashboard -->\n        <li class=\"nav-item active\"\n        [routerLinkActive]=\"['active']\"\n        [routerLinkActiveOptions] =\"{exact:true}\"\n        *ngIf=\"authService.isLoggedIn()\">\n          <a class=\"nav-link btn\" [routerLink]=\"['/user/dashboard']\">Dashboard <span class=\"sr-only\">(current)</span></a>\n        </li>\n        &nbsp;&nbsp;\n\n        <!-- After logged in: Friends -->\n        <li class=\"nav-item active\"\n        [routerLinkActive]=\"['active']\"\n        [routerLinkActiveOptions] =\"{exact:true}\"\n        *ngIf=\"authService.isLoggedIn()\">\n          <a class=\"nav-link btn\" [routerLink]=\"['/user/friends']\">Friends</a>\n        </li>\n        &nbsp;&nbsp;\n\n        <!-- After logged in: Transactions -->\n        <li class=\"nav-item active\"\n        [routerLinkActive]=\"['active']\"\n        [routerLinkActiveOptions] =\"{exact:true}\"\n        *ngIf=\"authService.isLoggedIn()\">\n          <a class=\"nav-link btn\" [routerLink]=\"['/user/transactions']\">Transactions</a>\n        </li>\n        &nbsp;&nbsp;\n\n        <!-- After logged in: Receipts -->\n        <li class=\"nav-item active\"\n        [routerLinkActive]=\"['active']\"\n        [routerLinkActiveOptions] =\"{exact:true}\"\n        *ngIf=\"authService.isLoggedIn()\">\n          <a class=\"nav-link btn\" [routerLink]=\"['/user/receipts']\">Receipts</a>\n        </li>\n        &nbsp;&nbsp;\n\n        <!-- After logged in: Setting -->\n        <li class=\"nav-item active\"\n        [routerLinkActive]=\"['active']\"\n        [routerLinkActiveOptions] =\"{exact:true}\"\n        *ngIf=\"authService.isLoggedIn()\">\n          <a class=\"nav-link btn\" [routerLink]=\"['/user/setting']\">Setting</a>\n        </li>\n        &nbsp;&nbsp;\n\n        <!-- After logged in: Register wont show -->\n        <li class=\"nav-item active\"\n        [routerLinkActive]=\"['active']\"\n        [routerLinkActiveOptions] =\"{exact:true}\"\n        *ngIf=\"!authService.isLoggedIn()\">\n          <a class=\"nav-link btn\" [routerLink]=\"['/register']\">Register</a>\n        </li>\n        &nbsp;&nbsp;\n\n         <!-- Before logged in: Log out wont show -->\n        <li class=\"nav-item active\"\n        *ngIf=\"authService.isLoggedIn()\">\n          <a class=\"nav-link btn\" [routerLink]=\"['/']\" (click)=\"onLogoutClick()\">Log out</a>\n        </li>\n        \n      </ul>\n      <!-- End right links -->\n  \n    </div>\n\n</nav>"
+module.exports = " \r\n<!-- Navbar -->\r\n<nav class=\"navbar navbar-expand-lg navbar-dark justify-content-between\" id=\"navbar\">\r\n  <!-- Rumi logo -->\r\n  <a class=\"navbar-brand\" [routerLink]=\"['/']\"><img src=\"../assets/rumi logo.png\" width=\"50\" alt=\"\"></a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <!-- Links -->\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\r\n\r\n      <!-- Left links -->\r\n      <ul class=\"navbar-nav mr-auto navbar-left\">\r\n        \r\n        <!-- Home -->\r\n        <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/']\">Home</a>\r\n        </li>\r\n        \r\n        &nbsp;&nbsp;\r\n\r\n        <!-- About -->\r\n        <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/about']\">About</a>\r\n        </li>\r\n      </ul>\r\n      <!-- End left links -->\r\n\r\n      <!-- Right links -->\r\n      <ul class=\"navbar-nav navbar-right\">\r\n\r\n        <!-- After logged in: Dashboard -->\r\n        <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\"\r\n        *ngIf=\"authService.isLoggedIn()\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/user/dashboard']\">Dashboard <span class=\"sr-only\">(current)</span></a>\r\n        </li>\r\n        &nbsp;&nbsp;\r\n\r\n        <!-- After logged in: Friends -->\r\n        <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\"\r\n        *ngIf=\"authService.isLoggedIn()\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/user/friends']\">Friends</a>\r\n        </li>\r\n        &nbsp;&nbsp;\r\n\r\n        <!-- After logged in: Transactions -->\r\n        <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\"\r\n        *ngIf=\"authService.isLoggedIn()\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/user/transactions']\">Transactions</a>\r\n        </li>\r\n        &nbsp;&nbsp;\r\n\r\n        <!-- After logged in: Receipts -->\r\n        <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\"\r\n        *ngIf=\"authService.isLoggedIn()\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/user/receipts']\">Receipts</a>\r\n        </li>\r\n        &nbsp;&nbsp;\r\n\r\n        <!-- After logged in: Setting -->\r\n        <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\"\r\n        *ngIf=\"authService.isLoggedIn()\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/user/setting']\">Setting</a>\r\n        </li>\r\n        &nbsp;&nbsp;\r\n\r\n        <!-- After logged in: Register wont show -->\r\n        <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\"\r\n        *ngIf=\"!authService.isLoggedIn()\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/register']\">Register</a>\r\n        </li>\r\n        &nbsp;&nbsp;\r\n\r\n         <!-- Before logged in: Log out wont show -->\r\n        <li class=\"nav-item active\"\r\n        *ngIf=\"authService.isLoggedIn()\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/']\" (click)=\"onLogoutClick()\">Log out</a>\r\n        </li>\r\n        \r\n      </ul>\r\n      <!-- End right links -->\r\n  \r\n    </div>\r\n\r\n</nav>"
 
 /***/ }),
 
@@ -690,7 +748,7 @@ module.exports = ""
 /***/ "./src/app/receipts/receipts.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  receipts works!\n</p>\n"
+module.exports = "<p>\r\n  receipts works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -740,7 +798,7 @@ module.exports = ""
 /***/ "./src/app/register/register.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"row\" id=\"user_form\" *ngIf=\"!authService.isLoggedIn()\">\n    <div class=\"col align-self-center\">\n    <h2 class=\"page-header\">Register</h2>\n    <form class=\"form-signin\">\n        <!-- <div class=\"form-group row\">\n          <label for=\"firstname\" class=\"col-sm-3 col-form-label\">First Name</label>\n          <div class=\"col-sm-9\">\n            <input type=\"text\" class=\"form-control\" placeholder=\"*Michael\" [(ngModel)]=\"firstname\" name=\"firstname\">\n          </div>\n        </div>\n\n        <div class=\"form-group row\">\n            <label for=\"lastname\" class=\"col-sm-3 col-form-label\">Last Name</label>\n            <div class=\"col-sm-9\">\n              <input type=\"text\" class=\"form-control\" placeholder=\"*Scott\" [(ngModel)]=\"lastname\" name=\"lastname\">\n            </div>\n        </div> -->\n        \n        <div class=\"form-group row\">\n            <label for=\"name\" class=\"col-sm-3 col-form-label\">Name</label>\n            <div class=\"col-sm-9\">\n              <input type=\"text\" class=\"form-control\" placeholder=\"*Michael Scott\" [(ngModel)]=\"name\" name=\"name\">\n            </div>\n        </div>\n    \n        <div class=\"form-group row\">\n            <label for=\"email\" class=\"col-sm-3 col-form-label\">Email</label>\n            <div class=\"col-sm-9\">\n              <input type=\"text\" class=\"form-control\" placeholder=\"*mscott@dundermifflin.com\" [(ngModel)]=\"email\" name=\"email\">\n            </div>\n        </div>\n\n        <div class=\"form-group row\">\n            <label for=\"username\" class=\"col-sm-3 col-form-label\">Username</label>\n            <div class=\"col-sm-9\">\n              <input type=\"text\" class=\"form-control\" placeholder=\"*michaelscott\" [(ngModel)]=\"username\" name=\"username\">\n            </div>\n        </div>\n\n        <div class=\"form-group row\">\n            <label for=\"password\" class=\"col-sm-3 col-form-label\">Password</label>\n            <div class=\"col-sm-9\">\n              <input type=\"password\" class=\"form-control\" placeholder=\"*******\" [(ngModel)]=\"password\" name=\"password\">\n            </div>\n        </div>\n\n      </form>\n      \n      <button class=\"btn btn-success\" (click)=\"onRegisterSubmit()\">Register</button>&nbsp;\n      <button class=\"btn btn-danger\" (click)=\"onCancelSubmit()\">Cancel</button><br><br>\n      <p>Already have an account? <a [routerLink] = \"['/login']\">Login Here</a></p>\n \n</div>\n</div>"
+module.exports = "\r\n<div class=\"row\" id=\"user_form\" *ngIf=\"!authService.isLoggedIn()\">\r\n    <div class=\"col align-self-center\">\r\n    <h2 class=\"page-header\">Register</h2>\r\n    <form class=\"form-signin\">\r\n        <!-- <div class=\"form-group row\">\r\n          <label for=\"firstname\" class=\"col-sm-3 col-form-label\">First Name</label>\r\n          <div class=\"col-sm-9\">\r\n            <input type=\"text\" class=\"form-control\" placeholder=\"*Michael\" [(ngModel)]=\"firstname\" name=\"firstname\">\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"form-group row\">\r\n            <label for=\"lastname\" class=\"col-sm-3 col-form-label\">Last Name</label>\r\n            <div class=\"col-sm-9\">\r\n              <input type=\"text\" class=\"form-control\" placeholder=\"*Scott\" [(ngModel)]=\"lastname\" name=\"lastname\">\r\n            </div>\r\n        </div> -->\r\n        \r\n        <div class=\"form-group row\">\r\n            <label for=\"name\" class=\"col-sm-3 col-form-label\">Name</label>\r\n            <div class=\"col-sm-9\">\r\n              <input type=\"text\" class=\"form-control\" placeholder=\"*Michael Scott\" [(ngModel)]=\"name\" name=\"name\">\r\n            </div>\r\n        </div>\r\n    \r\n        <div class=\"form-group row\">\r\n            <label for=\"email\" class=\"col-sm-3 col-form-label\">Email</label>\r\n            <div class=\"col-sm-9\">\r\n              <input type=\"text\" class=\"form-control\" placeholder=\"*mscott@dundermifflin.com\" [(ngModel)]=\"email\" name=\"email\">\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"form-group row\">\r\n            <label for=\"username\" class=\"col-sm-3 col-form-label\">Username</label>\r\n            <div class=\"col-sm-9\">\r\n              <input type=\"text\" class=\"form-control\" placeholder=\"*michaelscott\" [(ngModel)]=\"username\" name=\"username\">\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"form-group row\">\r\n            <label for=\"password\" class=\"col-sm-3 col-form-label\">Password</label>\r\n            <div class=\"col-sm-9\">\r\n              <input type=\"password\" class=\"form-control\" placeholder=\"*******\" [(ngModel)]=\"password\" name=\"password\">\r\n            </div>\r\n        </div>\r\n\r\n      </form>\r\n      \r\n      <button class=\"btn btn-success\" (click)=\"onRegisterSubmit()\">Register</button>&nbsp;\r\n      <button class=\"btn btn-danger\" (click)=\"onCancelSubmit()\">Cancel</button><br><br>\r\n      <p>Already have an account? <a [routerLink] = \"['/login']\">Login Here</a></p>\r\n \r\n</div>\r\n</div>"
 
 /***/ }),
 
@@ -770,12 +828,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var RegisterComponent = /** @class */ (function () {
-    function RegisterComponent(router, validateService, authService, toastr, vcr) {
+    function RegisterComponent(router, validateService, authService, toastr, vcr, componentFactoryResolver, ngZone, appRef, options) {
         this.router = router;
         this.validateService = validateService;
         this.authService = authService;
         this.toastr = toastr;
         this.toastr.setRootViewContainerRef(vcr);
+        Object.assign(options, {
+            maxShown: 1,
+            positionClass: "toast-top-center",
+            showCloseButton: true,
+            toastLife: 3000
+        });
     }
     RegisterComponent.prototype.ngOnInit = function () {
     };
@@ -831,7 +895,8 @@ var RegisterComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */],
             __WEBPACK_IMPORTED_MODULE_3__services_validation_service__["a" /* ValidationService */],
             __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_4_ng2_toastr_ng2_toastr__["ToastsManager"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"]])
+            __WEBPACK_IMPORTED_MODULE_4_ng2_toastr_ng2_toastr__["ToastsManager"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"],
+            __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentFactoryResolver"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ApplicationRef"], __WEBPACK_IMPORTED_MODULE_4_ng2_toastr_ng2_toastr__["ToastOptions"]])
     ], RegisterComponent);
     return RegisterComponent;
 }());
@@ -904,13 +969,6 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.loginUser = function (user) {
         return this.http.post(this.baseUri + '/login', user, { headers: this.headers });
     };
-    // GET: user profile
-    AuthService.prototype.userProfile = function () {
-        // Load the token into the authToken const:
-        this.loadToken();
-        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', this.authToken);
-        return this.http.get(this.baseUri + '/user/setting', { headers: this.headers });
-    };
     // GET: user dashboard
     AuthService.prototype.userDashboard = function () {
         // Load the token into the authToken const:
@@ -928,6 +986,17 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.deleteContact = function (contact) {
         var id = contact._id;
         return this.http.delete(this.baseUri + '/user/friends/delete/' + id, { headers: this.headers });
+    };
+    // ===================== Setting =======================================================
+    // GET: user profile
+    AuthService.prototype.userProfile = function () {
+        // Load the token into the authToken const:
+        this.loadToken();
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', this.authToken);
+        return this.http.get(this.baseUri + '/user/setting', { headers: this.headers });
+    };
+    AuthService.prototype.changePassword = function (update_user) {
+        return this.http.put(this.baseUri + '/user/setting/changepassword', update_user, { headers: this.headers });
     };
     AuthService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
@@ -1107,6 +1176,14 @@ var ValidationService = /** @class */ (function () {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
     };
+    ValidationService.prototype.validateAdd = function (user) {
+        if ((user.firstName == undefined || user.lastName == undefined || user.preferredName == undefined || user.address == undefined || user.email == undefined || user.homePhone == undefined || user.cellPhone == undefined)) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    };
     ValidationService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [])
@@ -1128,7 +1205,7 @@ module.exports = ""
 /***/ "./src/app/setting/setting.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  setting works!\n</p>\n"
+module.exports = "<div class=\"row\">\r\n\r\n  <div *ngIf=\"user\" class=\"container\">\r\n      <h2 class=\"page-header\" style=\"color: rgb(223, 56, 35)\" >Welcome back, {{user.name}}.</h2>\r\n      <ul class=\"list-group\">\r\n        <li class=\"list-group-item\">ID: {{user._id}}</li>\r\n        <li class=\"list-group-item\">Name: {{user.name}}</li>\r\n        <li class=\"list-group-item\">Username: {{user.username}}</li>\r\n        <li class=\"list-group-item\">Email: {{user.email}}</li>\r\n        <li class=\"list-group-item\">Password: {{user.password}} <button class=\"btn btn-info\" (click)=\"onChangeButton()\">Change Password</button></li>\r\n        <li *ngIf=\"buttonclicked\" class=\"list-group-item\">\r\n            <div class=\"form-group\">\r\n                <input placeholder=\"*New Password\" type=\"text\" name=\"newpassword\" [(ngModel)] = \"newpassword\" class=\"form-control\">\r\n            </div>\r\n            <button class=\"btn btn-info\" (click)=\"onSubmitButton()\">Submit</button>\r\n            <button class=\"btn btn-danger\" (click)=\"onCancelButton()\">Cancel</button>\r\n        </li>\r\n\r\n      </ul>\r\n    </div>\r\n  \r\n  </div>\r\n"
 
 /***/ }),
 
@@ -1138,6 +1215,10 @@ module.exports = "<p>\n  setting works!\n</p>\n"
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SettingComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_toastr_ng2_toastr__ = __webpack_require__("./node_modules/ng2-toastr/ng2-toastr.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_toastr_ng2_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_ng2_toastr_ng2_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1148,10 +1229,89 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
 var SettingComponent = /** @class */ (function () {
-    function SettingComponent() {
+    function SettingComponent(authService, router, toastr, vcr, componentFactoryResolver, ngZone, appRef, options) {
+        this.authService = authService;
+        this.router = router;
+        this.toastr = toastr;
+        // this is for hide/show the input form for changing password
+        this.buttonclicked = false;
+        this.toastr.setRootViewContainerRef(vcr);
+        Object.assign(options, {
+            maxShown: 1,
+            positionClass: "toast-top-center",
+            showCloseButton: true,
+            toastLife: 3000
+        });
+        // =============== More Toastr message options here: ===============
+        // toast-top-right (Default)
+        // toast-top-center
+        // toast-top-left
+        // toast-top-full-width
+        // toast-bottom-right
+        // toast-bottom-center
+        // toast-bottom-left
+        // toast-bottom-full-width
     }
     SettingComponent.prototype.ngOnInit = function () {
+        this.getUserProfile();
+    };
+    SettingComponent.prototype.showError = function (msg) {
+        this.toastr.error(msg, 'Oops!');
+    };
+    SettingComponent.prototype.showSuccess = function (msg) {
+        this.toastr.success(msg, 'Success!');
+    };
+    // Get the user data from the database:
+    SettingComponent.prototype.getUserProfile = function () {
+        var _this = this;
+        this.authService.userProfile().subscribe(function (profile) {
+            _this.user = profile['user'];
+            _this.userID = profile['user']._id;
+            _this.name = profile['user'].name;
+            _this.username = profile['user'].username;
+            _this.email = profile['user'].email;
+            _this.password = profile['user'].password;
+        }, function (err) {
+            console.log('Failed to get the profile! err: ' + err);
+            _this.router.navigate(['user/dashboard']);
+            return false;
+        });
+    };
+    SettingComponent.prototype.onChangeButton = function () {
+        (this.buttonclicked == false) ? this.buttonclicked = true : this.buttonclicked = false;
+    };
+    SettingComponent.prototype.onCancelButton = function () {
+        this.newpassword = undefined;
+        this.buttonclicked = false;
+    };
+    SettingComponent.prototype.onSubmitButton = function () {
+        var _this = this;
+        // Get the data from the user with the new password to change it
+        var update_user = {
+            _id: this.userID,
+            name: this.name,
+            username: this.username,
+            email: this.email,
+            password: this.newpassword
+        };
+        if (update_user.password == undefined) {
+            this.showError("Please enter your new password!");
+            return false;
+        }
+        // User authService (services/auth.service.ts) to make a call to the backend, routes/contacts.js
+        this.authService.changePassword(update_user).subscribe(function (data) {
+            _this.showSuccess('Password Updated!');
+            // Get the new updated data
+            _this.getUserProfile();
+            // Clear out the input form and close/hide it
+            _this.onCancelButton();
+        }, function (err) {
+            console.log('this is an err with http client ' + err);
+        });
     };
     SettingComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -1159,7 +1319,10 @@ var SettingComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/setting/setting.component.html"),
             styles: [__webpack_require__("./src/app/setting/setting.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_1_ng2_toastr_ng2_toastr__["ToastsManager"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"],
+            __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentFactoryResolver"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ApplicationRef"], __WEBPACK_IMPORTED_MODULE_1_ng2_toastr_ng2_toastr__["ToastOptions"]])
     ], SettingComponent);
     return SettingComponent;
 }());
@@ -1178,7 +1341,7 @@ module.exports = ""
 /***/ "./src/app/transactions/transactions.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  transactions works!\n</p>\n"
+module.exports = "<p>\r\n  transactions works!\r\n</p>\r\n"
 
 /***/ }),
 

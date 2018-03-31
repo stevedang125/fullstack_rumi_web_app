@@ -1,5 +1,5 @@
 {
-  "name": "personal_contact_manager",
+  "name": "rumi",
   "version": "1.0.0",
   "description": "This is a web app using the MEAN stack.",
   "main": "server.js",
@@ -50,6 +50,6 @@
     "tslint": "~5.9.1",
     "typescript": "~2.5.3"
   },
-  "author": "Steve",
+  "author": "Abe, Alana, Dita, Joshua, John, Steve, Subhash",
   "license": "ISC"
 }
