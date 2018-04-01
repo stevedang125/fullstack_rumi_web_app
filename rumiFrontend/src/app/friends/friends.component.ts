@@ -4,6 +4,8 @@ import { AuthService }  from '../services/auth.service';
 import { Router, Route } from '@angular/router';
 import { Contact } from '../services/contact';
 import { ValidationService  } from '../services/validation.service';
+
+
 @Component({
   selector: 'app-friends',
   templateUrl: './friends.component.html',

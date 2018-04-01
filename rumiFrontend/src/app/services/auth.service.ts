@@ -69,6 +69,7 @@ export class AuthService {
   userDashboard(){
     // Load the token into the authToken const:
     this.loadToken();
+    console.log('userDashboard service: ', this.authToken)
     this.headers = new HttpHeaders().set('Authorization', this.authToken);
     return this.http.get(this.baseUri+'/user/friends', {headers:this.headers});
   }
@@ -101,5 +102,21 @@ export class AuthService {
     changePassword(update_user: Userinfo){
       return this.http.put(this.baseUri+'/user/setting/changepassword', update_user, {headers:this.headers});
  
+    }
+
+    // ====================== Receipts ======================================================
+    // GET: getReceipts
+    getReceipts(){
+      // Load the token into the authToken const:
+      this.loadToken();
+      this.headers = new HttpHeaders().set('Authorization', this.authToken);
+      return this.http.get(this.baseUri+'/user/receipts', {headers:this.headers});
+    }
+
+    // POST: save the receipts to the mLab database under "receipts" collection
+    addReceipts(receipts){
+      this.loadToken();
+      this.headers = new HttpHeaders().set('Authorization', this.authToken);
+      return this.http.post(this.baseUri+'/user/receipts/upload', receipts, {headers:this.headers})
     }
 }
