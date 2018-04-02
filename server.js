@@ -13,6 +13,7 @@ const config = require('./config/database');
 const userRoutes = require('./routes/users');
 const contactRoutes = require('./routes/contacts');
 const receiptsRoutes = require('./routes/receipts');
+const transactionRoutes = require('./routes/transactions');
 
 
 
@@ -47,6 +48,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', userRoutes);
 app.use('/user', contactRoutes);
 app.use('/user', receiptsRoutes);
+app.use('/user', transactionRoutes);
+
+
 
 
 
