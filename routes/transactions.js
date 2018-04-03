@@ -30,6 +30,52 @@ router.get('/transactions', passport.authenticate('jwt', {session: false}), (req
     });
 });
 
+router.put('/transactions/names', passport.authenticate('jwt', {session: false}), (req,res,next)=>{
+    console.log('1',req.body.friend_id);
+    User.findById(req.body.friend_id, (err, user) => {
+        if(err){
+            res.status(500).json({errmsg:'Failed to find user to send back, here is the err: '+err});
+        }
+        // Successful found the user
+        console.log('The fuking name is ====== : ', user.name);
+        const name = user.name
+        res.status(200).json({name : name});
+    });
+    
+    
+    
+    
+
+
+    // res.json({success: true, msg: "Got you"});
+
+    // Contact.getContactById(req.body._id, (err, contact)=>{
+    //     if(err){
+    //         res.status(500).json({errmsg:'Failed to find contact to update, here is the err: '+err});
+    //     }
+    //     // Successful found the contact, ready to update it:
+    //     contact._id = req.body._id,
+    //     contact.firstName = req.body.firstName,
+    //     contact.lastName = req.body.lastName,
+    //     contact.preferredName = req.body.preferredName,
+    //     contact.address = req.body.address,
+    //     contact.email = req.body.email,
+    //     contact.homePhone = req.body.homePhone,
+    //     contact.cellPhone = req.body.cellPhone,
+    //     contact.user_id = req.body.user_id
+
+    //     Contact.addContact(contact, (err, savedContact)=>{
+    //         if(err){
+    //             res.status(500).json({success: false, msg:'Failed to update, here is the err: '+err});
+    //         }else{
+    //             res.status(200).json({success: true, msg: 'Friend Info updated!'});
+    //         }
+    //     });
+
+    // });
+
+});
+
 // Add a new receipt
 router.post('/transactions/add', passport.authenticate('jwt', {session: false}), (req,res,next)=>{
     // Create a new object to hold the new contact informaiton from the request.body
@@ -46,7 +92,9 @@ router.post('/transactions/add', passport.authenticate('jwt', {session: false}),
         total: req.body.total,
         friends_ids: req.body.friends_ids,
         num_friends: req.body.num_friends,
+        friend_names:  req.body.friend_names,
         each_pay: req.body.each_pay,
+        date: req.body.date,
         user_id: user_id
     });
 
@@ -73,7 +121,9 @@ module.exports = router;
 //     "total": "968.34",
 //     "friends_ids":["5abbea15257ae80bffed89eb", "5ab558dedbb9e4694c0ac765"],
 //     "num_friends": "2",
+//     "friend_names": ["Dita Dewindita", "Alana"],
 //     "each_pay": "322.78",
+//     "date": "Tue Apr 03 2018",
 //     "user_id": "5ab53589b2ad3d2590615546"
 // }
 
@@ -87,7 +137,25 @@ module.exports = router;
 //     "total": "1293.98",
 //     "friends_ids":["5abbea15257ae80bffed89eb", "5ab558dedbb9e4694c0ac765"],
 //     "num_friends": "2",
+//     "friend_names": ["Dita Dewindita", "Alana"],
 //     "each_pay": "431.32",
+//     "date": "Tue Apr 03 2018",
+//     "user_id": "5ab53589b2ad3d2590615546"
+// }
+
+// {
+//     "group_name": "No Name",
+//     "receipt_link": "https://firebasestorage.googleapis.com/v0/b/rumi-web-app-dc4af.appspot.com/o/uploads%2Fqxxpqe1522612910958?alt=media&token=38e0f1d6-e361-4a42-9dd4-0414799ff2e4",
+//     "company_name": "Walgreen",
+//     "transaction_type": "Drugs",
+//     "items": [ "Pills", "Monster", "Red Bull" ],
+//     "prices":["23.9", "89.9", "968.34"],
+//     "total": "1293.98",
+//     "friends_ids":["5abbea15257ae80bffed89eb", "5ab558dedbb9e4694c0ac765"],
+//     "num_friends": "2",
+//     "friend_names": ["Dita Dewindita", "Alana"],
+//     "each_pay": "431.32",
+//     "date": "Tue Apr 03 2018",
 //     "user_id": "5ab53589b2ad3d2590615546"
 // }
 

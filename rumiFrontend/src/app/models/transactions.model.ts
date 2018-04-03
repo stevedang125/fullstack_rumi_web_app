@@ -10,5 +10,7 @@ export class Transactions {
     public friends_ids: string;
     public num_friends: string;
     public each_pay: string;
+    public friend_names :  string ;
     public user_id: string;
+    
 }

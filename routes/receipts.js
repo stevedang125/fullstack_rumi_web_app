@@ -44,6 +44,7 @@ router.post('/receipts/upload', passport.authenticate('jwt', {session: false}), 
         key: req.body.pic_key,
         name: req.body.pic_name,
         link: req.body.pic_link,
+        date: req.body.pic_date,
         user_id: user_id
     });
 

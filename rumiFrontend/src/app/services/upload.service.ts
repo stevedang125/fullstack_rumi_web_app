@@ -92,7 +92,7 @@ export class UploadService {
     (): any => {
       upload.url = uploadTask.snapshot.downloadURL;
       upload.name = new_name;
-      
+      upload.createOn = new Date().toDateString();
       this.saveFileData(upload);
     } );
 
@@ -110,8 +110,10 @@ export class UploadService {
         const picture = {
         pic_key: res.key,
         pic_name: upload.name,
-        pic_link: upload.url     
+        pic_link: upload.url,
+        pic_date: upload.createOn     
       };
+      console.log("in upload servic: ", picture.pic_date);
       this.imageList.push(picture);
       // console.log('this is the LIST ******', this.imageList);
       this.image = picture;

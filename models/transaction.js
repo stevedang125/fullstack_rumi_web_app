@@ -10,18 +10,14 @@ var transactionSchema = new Schema({
     receipt_link: { type: String },
     company_name: { type: String },
     transaction_type: { type: String },// Rent? Restaurant? and so on...
-    items: [
-        
-    ],
-    prices: [
-       
-    ],
+    items: [],
+    prices: [],
     total: { type: String },
-    friends_ids: [ 
-           
-    ],
+    friends_ids: [],
     num_friends: { type: String },
     each_pay: { type: String },
+    friend_names: [],
+    date: { type: String },
     user_id: { type : String }
 });
 

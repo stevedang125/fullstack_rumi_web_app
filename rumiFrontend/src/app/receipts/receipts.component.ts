@@ -47,6 +47,7 @@ export class ReceiptsComponent implements OnInit, OnChanges {
 
   // Initialize the type for these variables
   files:FileList;
+
   upload:FileDetails;
   pic:ImgDetails;
 
@@ -135,7 +136,7 @@ export class ReceiptsComponent implements OnInit, OnChanges {
     });
 
     this.fbGetData();
-    this.getPictures();
+    // this.getPictures();
   }
 
   // To be deleted :)

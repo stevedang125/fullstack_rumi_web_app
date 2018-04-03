@@ -131,6 +131,7 @@ export class FriendsComponent implements OnInit {
       email: this.email,
       homePhone: this.homePhone,
       cellPhone: this.cellPhone,
+      date: new Date().toDateString(),
       user_id: this.userID
     }
 

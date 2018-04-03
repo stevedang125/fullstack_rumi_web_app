@@ -122,14 +122,12 @@ export class AuthService {
 
     // ====================== Transactions ======================================================
     get_names(friend_id){
-      this.loadToken();
+      // this.loadToken();
       console.log('auth ', friend_id);
-      this.headers = new HttpHeaders().set('Authorization', this.authToken);
-      return this.http.post(this.baseUri+'/user/transactions/names', friend_id, {headers:this.headers});
+      // this.headers = new HttpHeaders().set('Authorization', this.authToken);
+      return this.http.put(this.baseUri+'/user/transactions/names', friend_id, {headers:this.headers});
     }
-    // updateContact(contact: Contact){
-    //   return this.http.put(this.baseUri+'/user/friends/update', contact, {headers:this.headers});
-    // }
+
 
     // GET: getReceipts
     getTransactions(){

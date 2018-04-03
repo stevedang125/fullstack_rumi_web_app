@@ -7,5 +7,6 @@ export class Contact {
     public email: string;
     public homePhone: string;
     public cellPhone: string;
+    public date: string = new Date().toDateString();
     public user_id: string;
 }

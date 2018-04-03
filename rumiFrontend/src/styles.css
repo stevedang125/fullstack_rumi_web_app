@@ -21,6 +21,21 @@
 .alert-danger hr{border-top-color:#e4b9c0}
 .alert-danger .alert-link{color:#843534}
 
+.floating-box {
+  float: left;
+  width: 100%;
+  height: 30%;
+  margin: 10px;
+  border: 1px solid rgba(192, 204, 175, 0.616);
+  color: #021316;
+  background-color: lightblue;
+  
+}
+
+.after-box {
+  clear: left;
+  border: 1px solid rgba(192, 204, 175, 0.616);      
+}
 
 /* Other CSS */
 
