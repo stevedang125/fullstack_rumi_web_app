@@ -1162,6 +1162,23 @@ var AuthService = /** @class */ (function () {
         this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', this.authToken);
         return this.http.post(this.baseUri + '/user/receipts/upload', receipts, { headers: this.headers });
     };
+    // ====================== Transactions ======================================================
+    AuthService.prototype.get_names = function (friend_id) {
+        this.loadToken();
+        console.log('auth ', friend_id);
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', this.authToken);
+        return this.http.post(this.baseUri + '/user/transactions/names', friend_id, { headers: this.headers });
+    };
+    // updateContact(contact: Contact){
+    //   return this.http.put(this.baseUri+'/user/friends/update', contact, {headers:this.headers});
+    // }
+    // GET: getReceipts
+    AuthService.prototype.getTransactions = function () {
+        // Load the token into the authToken const:
+        this.loadToken();
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', this.authToken);
+        return this.http.get(this.baseUri + '/user/transactions', { headers: this.headers });
+    };
     AuthService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
@@ -1630,7 +1647,7 @@ module.exports = ""
 /***/ "./src/app/transactions/transactions.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  transactions works!\r\n</p>\r\n"
+module.exports = "<div class=\"row\">\r\n  <div class=\"col-md-12\">\r\n      <h6><strong>Transactions</strong></h6>\r\n      <table class=\"table table-hover\">\r\n        <thead>\r\n          <tr>\r\n            <th><h6><strong>Number</strong></h6></th>\r\n            <th><h6><strong>Receipt Name</strong></h6></th>\r\n            <!-- <th><h6><strong>Receipt Link</strong></h6></th> -->\r\n            <th><h6><strong>Company Name</strong></h6></th>\r\n            <th><h6><strong>Type</strong></h6></th>\r\n            <th><h6><strong>Items</strong></h6></th>\r\n            <th><h6><strong>Prices</strong></h6></th>\r\n            <th><h6><strong>Total</strong></h6></th>\r\n            <th><h6><strong>Roommates</strong></h6></th>\r\n            <th><h6><strong>Numfriends</strong></h6></th>\r\n            <th><h6><strong>Each Pay</strong></h6></th>\r\n            <th><h6><strong>User_ID</strong></h6></th>\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n            <!-- <tr *ngFor=\"let contact of hack(contactlist); let i = index\"> -->\r\n            <tr *ngFor=\"let tran of hack(transactionsList); let i = index\">\r\n              <td>{{i+1}}</td>\r\n              <td><a href=\"{{tran.receipt_link}}\">{{tran.group_name}}</a></td>\r\n              <!-- <td><a href=\"{{tran.receipt_link}}\">{{tran.receipt_link}}</a></td> -->\r\n              <td>{{tran.company_name}}</td>\r\n              <td>{{tran.transaction_type}}</td>\r\n              <td>{{tran.items}}</td> \r\n              <td>${{tran.prices}}</td> \r\n              <td>${{tran.total}}</td>\r\n              <td>{{tran.friends_ids}}</td>\r\n              <!-- <td>{{names}}</td>               -->\r\n              <td>{{tran.num_friends}}</td>\r\n              <td>${{tran.each_pay}}</td>\r\n              <td>{{tran.user_id}}</td>\r\n          </tr>\r\n        </tbody>\r\n      </table>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1640,6 +1657,9 @@ module.exports = "<p>\r\n  transactions works!\r\n</p>\r\n"
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransactionsComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash__ = __webpack_require__("./node_modules/lodash/lodash.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_lodash__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1650,10 +1670,51 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+ // to help loop over files 
 var TransactionsComponent = /** @class */ (function () {
-    function TransactionsComponent() {
+    function TransactionsComponent(authService) {
+        this.authService = authService;
+        this.toNames = [];
+        this.names = [];
     }
     TransactionsComponent.prototype.ngOnInit = function () {
+        this.getAllTransactions();
+    };
+    TransactionsComponent.prototype.getAllTransactions = function () {
+        var _this = this;
+        this.authService.getTransactions().subscribe(function (transactions) {
+            _this.user = transactions['user'];
+            _this.userID = transactions['user']._id;
+            _this.transactionsList = transactions['transactionList'];
+            console.log('Sucess! got the transactions list from the backend.');
+            // this.getFriendNames();
+            console.log(_this.transactionsList[0].friends_ids);
+            _this.names = _this.transactionsList[0].friends_ids;
+            console.log("names are: ", _this.names);
+            var length = __WEBPACK_IMPORTED_MODULE_2_lodash__["range"](_this.names.length);
+            __WEBPACK_IMPORTED_MODULE_2_lodash__["each"](length, function (index) {
+                _this.name = _this.names[index];
+                console.log(_this.name);
+            });
+        }, function (err) {
+            console.log('Failed to get the transactions list! err: ' + err);
+            // this.router.navigate(['']);
+            return false;
+        });
+    };
+    // getFriendNames(inputname){
+    //   this.authService.get_names(inputname).subscribe(data => {
+    //     // this.names = data['nameList'];
+    //     this.toNames.push(data);
+    //     console.log('Success! Names in front end: ', this.toNames);
+    //   }, err => {
+    //     console.log('Failed to get the names from the friend\'s ids, ', err);
+    //     return false;
+    //   });
+    // }
+    TransactionsComponent.prototype.hack = function (list) {
+        return list;
     };
     TransactionsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -1661,7 +1722,7 @@ var TransactionsComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/transactions/transactions.component.html"),
             styles: [__webpack_require__("./src/app/transactions/transactions.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]])
     ], TransactionsComponent);
     return TransactionsComponent;
 }());

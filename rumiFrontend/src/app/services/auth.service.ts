@@ -119,4 +119,30 @@ export class AuthService {
       this.headers = new HttpHeaders().set('Authorization', this.authToken);
       return this.http.post(this.baseUri+'/user/receipts/upload', receipts, {headers:this.headers})
     }
+
+    // ====================== Transactions ======================================================
+    get_names(friend_id){
+      this.loadToken();
+      console.log('auth ', friend_id);
+      this.headers = new HttpHeaders().set('Authorization', this.authToken);
+      return this.http.post(this.baseUri+'/user/transactions/names', friend_id, {headers:this.headers});
+    }
+    // updateContact(contact: Contact){
+    //   return this.http.put(this.baseUri+'/user/friends/update', contact, {headers:this.headers});
+    // }
+
+    // GET: getReceipts
+    getTransactions(){
+      // Load the token into the authToken const:
+      this.loadToken();
+      this.headers = new HttpHeaders().set('Authorization', this.authToken);
+      return this.http.get(this.baseUri+'/user/transactions', {headers:this.headers});
+    }
+
+    // POST: save the receipts to the mLab database under "receipts" collection
+    // addReceipts(receipts){
+    //   this.loadToken();
+    //   this.headers = new HttpHeaders().set('Authorization', this.authToken);
+    //   return this.http.post(this.baseUri+'/user/receipts/upload', receipts, {headers:this.headers})
+    // }
 }
