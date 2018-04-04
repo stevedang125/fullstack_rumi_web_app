@@ -14,6 +14,7 @@ const userRoutes = require('./routes/users');
 const contactRoutes = require('./routes/contacts');
 const receiptsRoutes = require('./routes/receipts');
 const transactionRoutes = require('./routes/transactions');
+const dashboardRoutes = require('./routes/dashboard');
 
 
 
@@ -31,7 +32,7 @@ mongoose.connection.on('error', (err)=>{
     console.log('Err! Could not connect to the database: '+err);
 });
 
-// Set the middleware for the server: 
+// Set the middleware for the server:
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -49,6 +50,7 @@ app.use('/', userRoutes);
 app.use('/user', contactRoutes);
 app.use('/user', receiptsRoutes);
 app.use('/user', transactionRoutes);
+app.use('/user', dashboardRoutes);
 
 
 
