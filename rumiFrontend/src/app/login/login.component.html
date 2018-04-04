@@ -1,4 +1,4 @@
-
+<div class="left" style="padding-top:500px;">
 <div class="row" id="user_form" *ngIf="!authService.isLoggedIn()">
   <div class="col align-self-center">
     <h2 class="page-header">Login</h2>
@@ -10,7 +10,7 @@
       <div class="form-group row">
         <label for="Username" class="col-sm-3 col-form-label">Username</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" placeholder="*michaelscott" [(ngModel)]="username" name="username">
+          <input type="text" class="form-control" placeholder="*Enter Username" [(ngModel)]="username" name="username">
         </div>
       </div>
 
@@ -18,7 +18,7 @@
       <div class="form-group row">
         <label for="Password" class="col-sm-3 col-form-label">Password</label>
         <div class="col-sm-9">
-          <input type="password" class="form-control" placeholder="******" [(ngModel)]="password" name="password">
+          <input type="password" class="form-control" placeholder="*Enter Password" [(ngModel)]="password" name="password">
         </div>
       </div>
 
@@ -32,4 +32,4 @@
 
   </div>
 </div>
-      
+</div>

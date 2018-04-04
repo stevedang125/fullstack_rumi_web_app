@@ -86,6 +86,7 @@ export class RegisterComponent implements OnInit {
     this.name = undefined;
     this.email = undefined;
     this.password = undefined;
+    this.router.navigate(['/']);
   }
 
 

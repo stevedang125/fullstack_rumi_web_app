@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark justify-content-between" id="navbar">
+<nav  class="navbar navbar-expand-lg navbar-dark justify-content-between" id="navbar">
   <!-- Rumi logo -->
   <a class="navbar-brand" [routerLink]="['/']"><img src="../assets/rumi logo.png" width="50" alt=""></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,19 +19,19 @@
       <ul class="navbar-nav navbar-right">
 
         <!-- After logged in: Dashboard -->
-<!--         <li class="nav-item active"
+        <!-- <li class="nav-item active"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions] ="{exact:true}"
         *ngIf="authService.isLoggedIn()">
           <a class="nav-link btn" [routerLink]="['/user/dashboard']">Dashboard <span class="sr-only">(current)</span></a>
         </li>
-        &nbsp;&nbsp;
- -->
+        &nbsp;&nbsp; -->
+
         <!-- Home -->
         <li class="nav-item active"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions] ="{exact:true}">
-          <a class="nav-link btn" [routerLink]="['/']">Home</a>
+          <a class="nav-link btn" [routerLink]="['/user/dashboard']">Home</a>
         </li>
         
         &nbsp;&nbsp;
@@ -64,27 +64,12 @@
     </div>
 
 </nav>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<body>
 
-<div class="w3-sidebar w3-bar-block w3-xxlarge w3-animate-left" style="width:230px; background-color:#71e7bb;" id="mySidebar">
+<!-- <li class="nav-item active"
+[routerLinkActive]="['active']"
+[routerLinkActiveOptions] ="{exact:true}"
+*ngIf="authService.isLoggedIn()">
+  <a class="nav-link btn" [routerLink]="['/user/dashboard']">Dashboard <span class="sr-only">(current)</span></a>
+</li>
+&nbsp;&nbsp; -->
 
-  <a ui-sref="dashboard" [routerLink]="['/dashboard']" class="w3-bar-item w3-button w3-hover-white" style="height: 80px;border-bottom: 1px solid white;"><img style="max-height: 40px; padding-left:5px;" src="..\..\assets\M.png"><p style="padding-left:8px; display:inline; font-family:Cousine; font-size:20px;">Dashboard</p></a> 
-  <a ui-sref="friends" [routerLink]="['/friends']" class="w3-bar-item w3-button w3-hover-white" style="height: 80px; border-bottom: 1px solid white;"><img style="max-height: 40px;" src="..\..\assets\friends.png"><p style="padding-left:8px; display:inline; font-family:Cousine; font-size:20px;">Friends</p></a> 
-  <a ui-sref="transactions" [routerLink]="['/transactions']" class="w3-bar-item w3-button w3-hover-white" style="height: 80px; border-bottom: 1px solid white;"><img style="max-height: 40px;" src="..\..\assets\transactions.png"><p style="padding-left:8px; display:inline; font-family:Cousine; font-size:20px;">Transactions</p></a> 
-  <a ui-sref="receipts" [routerLink]="['/receipts']" class="w3-bar-item w3-button w3-hover-white" style="height: 80px; border-bottom: 1px solid white;"><img style="max-height: 40px;" src="..\..\assets\receipts.png"><p style="padding-left:8px; display:inline; font-family:Cousine; font-size:20px;">Receipts</p></a>
-  <a ui-sref="settings" [routerLink]="['/settings']" class="w3-bar-item w3-button w3-hover-white" style="height: 80px; border-bottom: 1px solid white;"><img style="max-height: 40px;" src="..\..\assets\settings.png"><p style="padding-left:8px; display:inline; font-family:Cousine; font-size:20px;">Settings</p></a> 
-  <a ui-sref="download" [routerLink]="['/download']" class="w3-bar-item w3-button w3-hover-white" style="height: 80px; margin-top:26.94vh; border-bottom: 1px solid white;"><img style="max-height: 40px;" src="..\..\assets\download.png"><p style="padding-left:8px; display:inline; font-family:Cousine; font-size:20px;">Download</p></a> 
-  
-</div>
-
-<div class="w3-animate-left" id="menuContent">
-  <div class="w3-container">
-    <h2>Sidebar Icons</h2>
-    <p>In this example we have used icons in the sidebar.</p>
-  </div>
-
-</div>
-</body>

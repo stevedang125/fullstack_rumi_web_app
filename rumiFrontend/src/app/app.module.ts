@@ -29,6 +29,7 @@ import { SettingComponent } from './setting/setting.component';
 import { FilterPipe } from './services/filter.pipe';
 import { AboutComponent } from './about/about.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 // provider array:
 import { AuthService } from './services/auth.service'; 
@@ -65,7 +66,8 @@ const appRoutes: Routes =[
     FilterPipe,
     AboutComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
