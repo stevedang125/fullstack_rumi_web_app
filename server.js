@@ -12,6 +12,10 @@ const cors = require('cors');
 const config = require('./config/database');
 const userRoutes = require('./routes/users');
 const contactRoutes = require('./routes/contacts');
+const receiptsRoutes = require('./routes/receipts');
+const transactionRoutes = require('./routes/transactions');
+
+
 
 // Port number:
 const port = process.env.PORT || 8080;
@@ -43,6 +47,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 // These will be the api/routes for this web app:
 app.use('/', userRoutes);
 app.use('/user', contactRoutes);
+app.use('/user', receiptsRoutes);
+app.use('/user', transactionRoutes);
+
+
+
 
 
 // For all other routes, send the user back to home:
