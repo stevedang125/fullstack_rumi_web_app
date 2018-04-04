@@ -104,6 +104,7 @@ export class LoginComponent implements OnInit  {
   onCancelSubmit(){
     this.username = undefined;
     this.password = undefined;
+    this.router.navigate(['/']);
   }
 
 }

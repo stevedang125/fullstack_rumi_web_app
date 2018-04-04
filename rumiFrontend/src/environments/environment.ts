@@ -4,5 +4,13 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase : {
+    apiKey: "AIzaSyCrFHf3gTQZYgFK6IyHn2qdynxfPcZwEMM",
+    authDomain: "rumi-web-app-dc4af.firebaseapp.com",
+    databaseURL: "https://rumi-web-app-dc4af.firebaseio.com",
+    projectId: "rumi-web-app-dc4af",
+    storageBucket: "rumi-web-app-dc4af.appspot.com",
+    messagingSenderId: "353669083115"
+  }
 };

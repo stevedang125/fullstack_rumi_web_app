@@ -5,9 +5,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 // import array: (Messages)
 import { ToastModule } from 'ng2-toastr/ng2-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// Firebase;
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+// initialize for firebase
+import { environment } from '../environments/environment'; 
+
 
 // declarations array:
 import { AppComponent } from './app.component';
@@ -21,6 +29,7 @@ import { SettingComponent } from './setting/setting.component';
 import { FilterPipe } from './services/filter.pipe';
 import { AboutComponent } from './about/about.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 // provider array:
 import { AuthService } from './services/auth.service'; 
@@ -28,6 +37,7 @@ import { ValidationService } from './services/validation.service';
 import { LoginComponent } from './login/login.component';
 import { GuardService } from './services/guard.service';
 import { LoggedinguardService } from './services/loggedinguard.service';
+import { UploadService } from './services/upload.service';
 
 // all the routes:
 const appRoutes: Routes =[
@@ -56,17 +66,29 @@ const appRoutes: Routes =[
     FilterPipe,
     AboutComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
     ToastModule.forRoot(),
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
-  providers: [AuthService, ValidationService, GuardService, LoggedinguardService, HttpClientModule],
+  providers: [AuthService, 
+    ValidationService, 
+    GuardService, 
+    LoggedinguardService,  
+    HttpClientModule, 
+    HttpModule,
+    UploadService
+  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

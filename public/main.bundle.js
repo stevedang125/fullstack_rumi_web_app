@@ -77,7 +77,7 @@ module.exports = ""
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<!-- Nav bar -->\r\n<app-navbar></app-navbar>\r\n\r\n<!-- Other routes -->\r\n<router-outlet></router-outlet>\r\n\r\n  \r\n"
+module.exports = "\r\n<!-- Nav bar -->\r\n<div style=\"position:sticky;top:0;\" >\r\n<app-navbar></app-navbar>\r\n</div>\r\n<!-- Sidebar -->\r\n<app-sidebar></app-sidebar>\r\n<div class=\"w3-animate-left\" id=\"menuContent\">\r\n    <!-- <div class=\"w3-container\"> -->\r\n      <router-outlet></router-outlet>\r\n    <!-- </div> -->\r\n  <!-- <router-outlet></router-outlet> -->\r\n</div>\r\n\r\n<!-- <div *ngIf=\"!authService.isLoggedIn()\">\r\n    <router-outlet></router-outlet>\r\n</div> -->\r\n\r\n<!-- Other routes -->\r\n<!-- <router-outlet></router-outlet> -->\r\n\r\n  \r\n"
 
 /***/ }),
 
@@ -87,23 +87,44 @@ module.exports = "\r\n<!-- Nav bar -->\r\n<app-navbar></app-navbar>\r\n\r\n<!-- 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_toastr_ng2_toastr__ = __webpack_require__("./node_modules/ng2-toastr/ng2-toastr.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_toastr_ng2_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_toastr_ng2_toastr__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+    function AppComponent(authService, toastr, vcr) {
+        this.authService = authService;
+        this.toastr = toastr;
         this.title = 'app';
+        this.toastr.setRootViewContainerRef(vcr);
     }
+    // ========== Toastr Messages =======================================
+    AppComponent.prototype.showSuccess = function (msg) {
+        this.toastr.info(msg, 'Success!');
+    };
+    AppComponent.prototype.onLogoutClick = function () {
+        this.showSuccess('You have logged out!');
+        this.authService.logout();
+    };
     AppComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-root',
             template: __webpack_require__("./src/app/app.component.html"),
             styles: [__webpack_require__("./src/app/app.component.css")]
-        })
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2_ng2_toastr_ng2_toastr__["ToastsManager"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -122,25 +143,31 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_toastr_ng2_toastr__ = __webpack_require__("./node_modules/ng2-toastr/ng2-toastr.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_toastr_ng2_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_ng2_toastr_ng2_toastr__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/animations.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__home_home_component__ = __webpack_require__("./src/app/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__register_register_component__ = __webpack_require__("./src/app/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__dashboard_dashboard_component__ = __webpack_require__("./src/app/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__friends_friends_component__ = __webpack_require__("./src/app/friends/friends.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__transactions_transactions_component__ = __webpack_require__("./src/app/transactions/transactions.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__receipts_receipts_component__ = __webpack_require__("./src/app/receipts/receipts.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__setting_setting_component__ = __webpack_require__("./src/app/setting/setting.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_filter_pipe__ = __webpack_require__("./src/app/services/filter.pipe.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__about_about_component__ = __webpack_require__("./src/app/about/about.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__navbar_navbar_component__ = __webpack_require__("./src/app/navbar/navbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_validation_service__ = __webpack_require__("./src/app/services/validation.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__login_login_component__ = __webpack_require__("./src/app/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_guard_service__ = __webpack_require__("./src/app/services/guard.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_loggedinguard_service__ = __webpack_require__("./src/app/services/loggedinguard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_toastr_ng2_toastr__ = __webpack_require__("./node_modules/ng2-toastr/ng2-toastr.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_toastr_ng2_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_ng2_toastr_ng2_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/animations.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2__ = __webpack_require__("./node_modules/angularfire2/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2_database__ = __webpack_require__("./node_modules/angularfire2/database/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__home_home_component__ = __webpack_require__("./src/app/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__register_register_component__ = __webpack_require__("./src/app/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__dashboard_dashboard_component__ = __webpack_require__("./src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__friends_friends_component__ = __webpack_require__("./src/app/friends/friends.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__transactions_transactions_component__ = __webpack_require__("./src/app/transactions/transactions.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__receipts_receipts_component__ = __webpack_require__("./src/app/receipts/receipts.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__setting_setting_component__ = __webpack_require__("./src/app/setting/setting.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_filter_pipe__ = __webpack_require__("./src/app/services/filter.pipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__about_about_component__ = __webpack_require__("./src/app/about/about.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__navbar_navbar_component__ = __webpack_require__("./src/app/navbar/navbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__sidebar_sidebar_component__ = __webpack_require__("./src/app/sidebar/sidebar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_validation_service__ = __webpack_require__("./src/app/services/validation.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__login_login_component__ = __webpack_require__("./src/app/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_guard_service__ = __webpack_require__("./src/app/services/guard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__services_loggedinguard_service__ = __webpack_require__("./src/app/services/loggedinguard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__services_upload_service__ = __webpack_require__("./src/app/services/upload.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -153,10 +180,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 // import array: (Messages)
 
 
+// Firebase;
+
+
+// initialize for firebase
+
 // declarations array:
+
 
 
 
@@ -174,17 +208,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 // all the routes:
 var appRoutes = [
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_8__home_home_component__["a" /* HomeComponent */] },
-    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_9__register_register_component__["a" /* RegisterComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_22__services_loggedinguard_service__["a" /* LoggedinguardService */]] },
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_20__login_login_component__["a" /* LoginComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_22__services_loggedinguard_service__["a" /* LoggedinguardService */]] },
-    { path: 'user/dashboard', component: __WEBPACK_IMPORTED_MODULE_10__dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_21__services_guard_service__["a" /* GuardService */]] },
-    { path: 'user/friends', component: __WEBPACK_IMPORTED_MODULE_11__friends_friends_component__["a" /* FriendsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_21__services_guard_service__["a" /* GuardService */]] },
-    { path: 'user/transactions', component: __WEBPACK_IMPORTED_MODULE_12__transactions_transactions_component__["a" /* TransactionsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_21__services_guard_service__["a" /* GuardService */]] },
-    { path: 'user/receipts', component: __WEBPACK_IMPORTED_MODULE_13__receipts_receipts_component__["a" /* ReceiptsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_21__services_guard_service__["a" /* GuardService */]] },
-    { path: 'user/setting', component: __WEBPACK_IMPORTED_MODULE_14__setting_setting_component__["a" /* SettingComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_21__services_guard_service__["a" /* GuardService */]] },
-    { path: 'about', component: __WEBPACK_IMPORTED_MODULE_16__about_about_component__["a" /* AboutComponent */] },
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_12__home_home_component__["a" /* HomeComponent */] },
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_13__register_register_component__["a" /* RegisterComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_27__services_loggedinguard_service__["a" /* LoggedinguardService */]] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_25__login_login_component__["a" /* LoginComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_27__services_loggedinguard_service__["a" /* LoggedinguardService */]] },
+    { path: 'user/dashboard', component: __WEBPACK_IMPORTED_MODULE_14__dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_26__services_guard_service__["a" /* GuardService */]] },
+    { path: 'user/friends', component: __WEBPACK_IMPORTED_MODULE_15__friends_friends_component__["a" /* FriendsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_26__services_guard_service__["a" /* GuardService */]] },
+    { path: 'user/transactions', component: __WEBPACK_IMPORTED_MODULE_16__transactions_transactions_component__["a" /* TransactionsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_26__services_guard_service__["a" /* GuardService */]] },
+    { path: 'user/receipts', component: __WEBPACK_IMPORTED_MODULE_17__receipts_receipts_component__["a" /* ReceiptsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_26__services_guard_service__["a" /* GuardService */]] },
+    { path: 'user/setting', component: __WEBPACK_IMPORTED_MODULE_18__setting_setting_component__["a" /* SettingComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_26__services_guard_service__["a" /* GuardService */]] },
+    { path: 'about', component: __WEBPACK_IMPORTED_MODULE_20__about_about_component__["a" /* AboutComponent */] },
     { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 var AppModule = /** @class */ (function () {
@@ -193,29 +228,40 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_8__home_home_component__["a" /* HomeComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__register_register_component__["a" /* RegisterComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__dashboard_dashboard_component__["a" /* DashboardComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__friends_friends_component__["a" /* FriendsComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__transactions_transactions_component__["a" /* TransactionsComponent */],
-                __WEBPACK_IMPORTED_MODULE_13__receipts_receipts_component__["a" /* ReceiptsComponent */],
-                __WEBPACK_IMPORTED_MODULE_14__setting_setting_component__["a" /* SettingComponent */],
-                __WEBPACK_IMPORTED_MODULE_15__services_filter_pipe__["a" /* FilterPipe */],
-                __WEBPACK_IMPORTED_MODULE_16__about_about_component__["a" /* AboutComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__navbar_navbar_component__["a" /* NavbarComponent */],
-                __WEBPACK_IMPORTED_MODULE_20__login_login_component__["a" /* LoginComponent */]
+                __WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_12__home_home_component__["a" /* HomeComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__register_register_component__["a" /* RegisterComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__dashboard_dashboard_component__["a" /* DashboardComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__friends_friends_component__["a" /* FriendsComponent */],
+                __WEBPACK_IMPORTED_MODULE_16__transactions_transactions_component__["a" /* TransactionsComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__receipts_receipts_component__["a" /* ReceiptsComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__setting_setting_component__["a" /* SettingComponent */],
+                __WEBPACK_IMPORTED_MODULE_19__services_filter_pipe__["a" /* FilterPipe */],
+                __WEBPACK_IMPORTED_MODULE_20__about_about_component__["a" /* AboutComponent */],
+                __WEBPACK_IMPORTED_MODULE_21__navbar_navbar_component__["a" /* NavbarComponent */],
+                __WEBPACK_IMPORTED_MODULE_25__login_login_component__["a" /* LoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_22__sidebar_sidebar_component__["a" /* SidebarComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["BrowserModule"],
+                __WEBPACK_IMPORTED_MODULE_5__angular_http__["a" /* HttpModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["b" /* HttpClientModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-                __WEBPACK_IMPORTED_MODULE_5_ng2_toastr_ng2_toastr__["ToastModule"].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* RouterModule */].forRoot(appRoutes)
+                __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+                __WEBPACK_IMPORTED_MODULE_6_ng2_toastr_ng2_toastr__["ToastModule"].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* RouterModule */].forRoot(appRoutes),
+                __WEBPACK_IMPORTED_MODULE_8_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_10__environments_environment__["a" /* environment */].firebase),
+                __WEBPACK_IMPORTED_MODULE_9_angularfire2_database__["b" /* AngularFireDatabaseModule */]
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_18__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_19__services_validation_service__["a" /* ValidationService */], __WEBPACK_IMPORTED_MODULE_21__services_guard_service__["a" /* GuardService */], __WEBPACK_IMPORTED_MODULE_22__services_loggedinguard_service__["a" /* LoggedinguardService */], __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["b" /* HttpClientModule */]],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_23__services_auth_service__["a" /* AuthService */],
+                __WEBPACK_IMPORTED_MODULE_24__services_validation_service__["a" /* ValidationService */],
+                __WEBPACK_IMPORTED_MODULE_26__services_guard_service__["a" /* GuardService */],
+                __WEBPACK_IMPORTED_MODULE_27__services_loggedinguard_service__["a" /* LoggedinguardService */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_http__["a" /* HttpModule */],
+                __WEBPACK_IMPORTED_MODULE_28__services_upload_service__["a" /* UploadService */]
+            ],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -235,7 +281,7 @@ module.exports = ""
 /***/ "./src/app/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  dashboard works!\r\n</p>\r\n"
+module.exports = "<!-- <div class=\"container w3-animate-left\" id=\"menuContent\"> -->\r\n  <h5>Recent Activities</h5>\r\n  <!-- <div class=\"container\"> -->\r\n    <p>Send helps! :/</p>\r\n\r\n  <!-- </div> -->\r\n<!-- </div> -->\r\n"
 
 /***/ }),
 
@@ -285,7 +331,7 @@ module.exports = ""
 /***/ "./src/app/friends/friends.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n\r\n  <div class=\"container-fluid\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-2\">\r\n        <!-- Search -->\r\n        <!-- <div class=\"card\"> -->\r\n            <form>\r\n                <!-- <div class=\"card-body\"> -->\r\n                  <!-- <h6 class=\"card-title\"> -->\r\n                  <h6>\r\n                    <strong>Search</strong>\r\n                  </h6>\r\n                  \r\n                  <table class=\"table table-hover\">\r\n                    <tbody>\r\n                      <tr>\r\n                        <td>\r\n                          <div class=\"form-group\">\r\n                              <input placeholder=\"*Enter Name\" type=\"text\" name=\"inputString\" [(ngModel)] = \"inputString\" class=\"form-control\">\r\n                          </div>\r\n                        </td>\r\n                      </tr>\r\n                      <tr>\r\n                        <button class=\"btn btn-success\" (click)=\"search_contact()\">Search</button>&nbsp;\r\n                        <button class=\"btn btn-danger\" (click)=\"clearSearch()\">Clear</button>\r\n                      </tr>\r\n                    </tbody>\r\n                  </table>\r\n                <!-- </div> -->\r\n              </form>\r\n          <!-- </div> -->\r\n        <!-- End Search -->\r\n  \r\n        <!-- Add -->\r\n        <form>\r\n            <!-- <div class=\"card-body half\"> -->\r\n              <!-- <h4 class=\"card-title\"><strong>Add Contact</strong></h4> -->\r\n              <h6><strong>Add Contact</strong></h6>\r\n              <table class=\"table table-hover\">\r\n                <tbody>\r\n                  <tr>\r\n                    <td>\r\n                      <div class=\"form-group\">\r\n                        <!-- <label><h6><strong>Firstname:</strong></h6></label> -->\r\n                        <input placeholder=\"*Enter Firstname\" type=\"text\" name=\"firstName\" [(ngModel)] = \"firstName\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Lastname:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Lastname\" type=\"text\" name=\"lastName\" [(ngModel)] = \"lastName\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Preferred Name:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Preferred Name\" type=\"text\" name=\"preferredName\" [(ngModel)] = \"preferredName\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Address:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Address\" type=\"text\" name=\"address\" [(ngModel)] = \"address\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Email:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Email\" type=\"text\" name=\"email\" [(ngModel)] = \"email\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Home Phone:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Home Phone\" type=\"text\" name=\"homePhone\" [(ngModel)] = \"homePhone\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Cell Phone:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Cell Phone\" type=\"text\" name=\"cellPhone\" [(ngModel)] = \"cellPhone\" class=\"form-control\">\r\n                      </div>\r\n                    </td>\r\n                  </tr>\r\n                  <tr>\r\n                    <td>\r\n                        <!-- <input type=\"submit\" value=\"Submit\" class=\"btn btn-success\"> -->\r\n                        <button class=\"btn btn-success\" (click)=\"onSubmitButton()\">Submit</button>&nbsp;\r\n                        <button class=\"btn btn-danger\" (click)=\"clear()\">Clear</button>\r\n                    </td>\r\n                  </tr>\r\n                </tbody>\r\n              </table>\r\n            <!-- </div> -->\r\n          </form>\r\n        <!-- End add -->\r\n      </div>\r\n  \r\n  \r\n      <div class=\"col-md-10\">\r\n        <!-- Contact list -->\r\n        <!-- Contact list -->\r\n    <!-- <div class=\"card\"> -->\r\n        <!-- <div class=\"card-body\"> -->\r\n          <!-- <h4 class=\"card-title\"><strong>Contact List</strong></h4> -->\r\n          <h6><strong>Contact List</strong></h6>\r\n          <table class=\"table table-hover\">\r\n            <thead>\r\n              <tr>\r\n                <th><h6><strong>Number</strong></h6></th>\r\n                <th><h6><strong>Firstname</strong></h6></th>\r\n                <th><h6><strong>Lastname</strong></h6></th>\r\n                <th><h6><strong>Preferred Name</strong></h6></th>\r\n                <th><h6><strong>Address</strong></h6></th>\r\n                <th><h6><strong>Email</strong></h6></th>\r\n                <th><h6><strong>Home Phone</strong></h6></th>\r\n                <th><h6><strong>Cell Phone</strong></h6></th>\r\n                <th><h6><strong>Options</strong></h6></th>\r\n              </tr>\r\n            </thead>\r\n            <tbody>\r\n                <!-- <tr *ngFor=\"let contact of hack(contactlist); let i = index\"> -->\r\n                <tr *ngFor=\"let contact of hack(contactlist) | filter:inputString; let i = index\">\r\n                  <td>{{i+1}}</td>\r\n                  <td>{{contact.firstName}}</td>\r\n                  <td>{{contact.lastName}}</td>\r\n                  <td>{{contact.preferredName}}</td>\r\n                  <td>{{contact.address}}</td>\r\n                  <td>{{contact.email}}</td>\r\n                  <td>{{contact.homePhone}}</td>\r\n                  <td>{{contact.cellPhone}}</td>\r\n                  <td>\r\n                      <button class=\"btn btn-danger\" (click)=\"onDeleteButton(contact)\">Delete</button>&nbsp;\r\n                      <button class=\"btn btn-info\" (click)=\"onEditButton(contact)\" >Edit</button>\r\n                  </td>\r\n              </tr>\r\n            </tbody>\r\n          </table>\r\n        <!-- </div> -->\r\n  \r\n        <!-- End of contact list -->\r\n      </div>\r\n    </div>\r\n  </div>\r\n  \r\n  \r\n"
+module.exports = "\r\n\r\n  <div class=\"container-fluid\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-2\">\r\n        <!-- Search -->\r\n        <!-- <div class=\"card\"> -->\r\n            <form>\r\n                <!-- <div class=\"card-body\"> -->\r\n                  <!-- <h6 class=\"card-title\"> -->\r\n                  <h6>\r\n                    <strong>Search</strong>\r\n                  </h6>\r\n                  \r\n                  <table class=\"table table-hover\">\r\n                    <tbody>\r\n                      <tr>\r\n                        <td>\r\n                          <div class=\"form-group\">\r\n                              <input placeholder=\"*Enter Name\" type=\"text\" name=\"inputString\" [(ngModel)] = \"inputString\" class=\"form-control\">\r\n                          </div>\r\n                        </td>\r\n                      </tr>\r\n                      <tr>\r\n                        <button class=\"btn btn-success\" (click)=\"search_contact()\">Search</button>&nbsp;\r\n                        <button class=\"btn btn-danger\" (click)=\"clearSearch()\">Clear</button>\r\n                      </tr>\r\n                    </tbody>\r\n                  </table>\r\n                <!-- </div> -->\r\n              </form>\r\n          <!-- </div> -->\r\n        <!-- End Search -->\r\n  \r\n        <!-- Add -->\r\n        <form>\r\n            <!-- <div class=\"card-body half\"> -->\r\n              <!-- <h4 class=\"card-title\"><strong>Add Contact</strong></h4> -->\r\n              <h6><strong>Add Contact</strong></h6>\r\n              <table class=\"table table-hover\">\r\n                <tbody>\r\n                  <tr>\r\n                    <td>\r\n                      <div class=\"form-group\">\r\n                        <!-- <label><h6><strong>Firstname:</strong></h6></label> -->\r\n                        <input placeholder=\"*Enter Firstname\" type=\"text\" name=\"firstName\" [(ngModel)] = \"firstName\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Lastname:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Lastname\" type=\"text\" name=\"lastName\" [(ngModel)] = \"lastName\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Preferred Name:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Preferred Name\" type=\"text\" name=\"preferredName\" [(ngModel)] = \"preferredName\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Address:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Address\" type=\"text\" name=\"address\" [(ngModel)] = \"address\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Email:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Email\" type=\"text\" name=\"email\" [(ngModel)] = \"email\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Home Phone:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Home Phone\" type=\"text\" name=\"homePhone\" [(ngModel)] = \"homePhone\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Cell Phone:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Cell Phone\" type=\"text\" name=\"cellPhone\" [(ngModel)] = \"cellPhone\" class=\"form-control\">\r\n                      </div>\r\n                    </td>\r\n                  </tr>\r\n                  <tr>\r\n                    <td>\r\n                        <!-- <input type=\"submit\" value=\"Submit\" class=\"btn btn-success\"> -->\r\n                        <button class=\"btn btn-success\" (click)=\"onSubmitButton()\">Submit</button>&nbsp;\r\n                        <button class=\"btn btn-danger\" (click)=\"clear()\">Clear</button>\r\n                    </td>\r\n                  </tr>\r\n                </tbody>\r\n              </table>\r\n            <!-- </div> -->\r\n          </form>\r\n        <!-- End add -->\r\n      </div>\r\n  \r\n  \r\n      <div class=\"col-md-10\">\r\n        <!-- Contact list -->\r\n        <!-- Contact list -->\r\n    <!-- <div class=\"card\"> -->\r\n        <!-- <div class=\"card-body\"> -->\r\n          <!-- <h4 class=\"card-title\"><strong>Contact List</strong></h4> -->\r\n          <h6><strong>Contact List</strong></h6>\r\n          <table class=\"table table-hover\">\r\n            <thead>\r\n              <tr>\r\n                <th><h6><strong>Number</strong></h6></th>\r\n                <th><h6><strong>Firstname</strong></h6></th>\r\n                <th><h6><strong>Lastname</strong></h6></th>\r\n                <th><h6><strong>Preferred Name</strong></h6></th>\r\n                <th><h6><strong>Address</strong></h6></th>\r\n                <th><h6><strong>Email</strong></h6></th>\r\n                <th><h6><strong>Home Phone</strong></h6></th>\r\n                <th><h6><strong>Cell Phone</strong></h6></th>\r\n                <th><h6><strong>Date Added</strong></h6></th>\r\n                <th><h6><strong>Options</strong></h6></th>\r\n              </tr>\r\n            </thead>\r\n            <tbody>\r\n                <!-- <tr *ngFor=\"let contact of hack(contactlist); let i = index\"> -->\r\n                <tr *ngFor=\"let contact of hack(contactlist) | filter:inputString; let i = index\">\r\n                  <td>{{i+1}}</td>\r\n                  <td>{{contact.firstName}}</td>\r\n                  <td>{{contact.lastName}}</td>\r\n                  <td>{{contact.preferredName}}</td>\r\n                  <td>{{contact.address}}</td>\r\n                  <td>{{contact.email}}</td>\r\n                  <td>{{contact.homePhone}}</td>\r\n                  <td>{{contact.cellPhone}}</td>\r\n                  <td>{{contact.date}}</td>\r\n                  <td>\r\n                      <button class=\"btn btn-danger\" (click)=\"onDeleteButton(contact)\">Delete</button>&nbsp;\r\n                      <button class=\"btn btn-info\" (click)=\"onEditButton(contact)\" >Edit</button>\r\n                  </td>\r\n              </tr>\r\n            </tbody>\r\n          </table>\r\n        <!-- </div> -->\r\n  \r\n        <!-- End of contact list -->\r\n      </div>\r\n    </div>\r\n  </div>\r\n  \r\n  \r\n"
 
 /***/ }),
 
@@ -399,6 +445,7 @@ var FriendsComponent = /** @class */ (function () {
             email: this.email,
             homePhone: this.homePhone,
             cellPhone: this.cellPhone,
+            date: new Date().toDateString(),
             user_id: this.userID
         };
         if (!this.validationService.validateAdd(new_contact)) {
@@ -547,7 +594,7 @@ module.exports = ""
 /***/ "./src/app/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div class=\"row\" id=\"user_form\" *ngIf=\"!authService.isLoggedIn()\">\r\n  <div class=\"col align-self-center\">\r\n    <h2 class=\"page-header\">Login</h2>\r\n\r\n    <!-- Start form -->\r\n    <form class=\"form-signin\">\r\n\r\n      <!-- Username -->\r\n      <div class=\"form-group row\">\r\n        <label for=\"Username\" class=\"col-sm-3 col-form-label\">Username</label>\r\n        <div class=\"col-sm-9\">\r\n          <input type=\"text\" class=\"form-control\" placeholder=\"*michaelscott\" [(ngModel)]=\"username\" name=\"username\">\r\n        </div>\r\n      </div>\r\n\r\n      <!-- Password -->\r\n      <div class=\"form-group row\">\r\n        <label for=\"Password\" class=\"col-sm-3 col-form-label\">Password</label>\r\n        <div class=\"col-sm-9\">\r\n          <input type=\"password\" class=\"form-control\" placeholder=\"******\" [(ngModel)]=\"password\" name=\"password\">\r\n        </div>\r\n      </div>\r\n\r\n      <!-- Buttons -->\r\n      <button class=\"btn btn-success\" (click)=\"onLoginSubmit()\">Login</button>&nbsp;\r\n      <button class=\"btn btn-danger\" (click)=\"onCancelSubmit()\">Cancel</button><br><br>\r\n\r\n      <!-- Navigate back to register page -->\r\n      <p>Don't have an account yet? <a [routerLink] = \"['/register']\">Register Here</a></p> \r\n    </form>\r\n\r\n  </div>\r\n</div>\r\n      "
+module.exports = "<div class=\"left\" style=\"padding-top:500px;\">\r\n<div class=\"row\" id=\"user_form\" *ngIf=\"!authService.isLoggedIn()\">\r\n  <div class=\"col align-self-center\">\r\n    <h2 class=\"page-header\">Login</h2>\r\n\r\n    <!-- Start form -->\r\n    <form class=\"form-signin\">\r\n\r\n      <!-- Username -->\r\n      <div class=\"form-group row\">\r\n        <label for=\"Username\" class=\"col-sm-3 col-form-label\">Username</label>\r\n        <div class=\"col-sm-9\">\r\n          <input type=\"text\" class=\"form-control\" placeholder=\"*Enter Username\" [(ngModel)]=\"username\" name=\"username\">\r\n        </div>\r\n      </div>\r\n\r\n      <!-- Password -->\r\n      <div class=\"form-group row\">\r\n        <label for=\"Password\" class=\"col-sm-3 col-form-label\">Password</label>\r\n        <div class=\"col-sm-9\">\r\n          <input type=\"password\" class=\"form-control\" placeholder=\"*Enter Password\" [(ngModel)]=\"password\" name=\"password\">\r\n        </div>\r\n      </div>\r\n\r\n      <!-- Buttons -->\r\n      <button class=\"btn btn-success\" (click)=\"onLoginSubmit()\">Login</button>&nbsp;\r\n      <button class=\"btn btn-danger\" (click)=\"onCancelSubmit()\">Cancel</button><br><br>\r\n\r\n      <!-- Navigate back to register page -->\r\n      <p>Don't have an account yet? <a [routerLink] = \"['/register']\">Register Here</a></p> \r\n    </form>\r\n\r\n  </div>\r\n</div>\r\n</div>"
 
 /***/ }),
 
@@ -651,6 +698,7 @@ var LoginComponent = /** @class */ (function () {
     LoginComponent.prototype.onCancelSubmit = function () {
         this.username = undefined;
         this.password = undefined;
+        this.router.navigate(['/']);
     };
     LoginComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -671,6 +719,24 @@ var LoginComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/models/fileDetails.model.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileDetails; });
+var FileDetails = /** @class */ (function () {
+    function FileDetails(file) {
+        // createOn: Date = new Date();
+        this.createOn = new Date().toString();
+        this.file = file;
+    }
+    return FileDetails;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/navbar/navbar.component.css":
 /***/ (function(module, exports) {
 
@@ -681,7 +747,7 @@ module.exports = ""
 /***/ "./src/app/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = " \r\n<!-- Navbar -->\r\n<nav class=\"navbar navbar-expand-lg navbar-dark justify-content-between\" id=\"navbar\">\r\n  <!-- Rumi logo -->\r\n  <a class=\"navbar-brand\" [routerLink]=\"['/']\"><img src=\"../assets/rumi logo.png\" width=\"50\" alt=\"\"></a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <!-- Links -->\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\r\n\r\n      <!-- Left links -->\r\n      <ul class=\"navbar-nav mr-auto navbar-left\">\r\n        \r\n        <!-- Home -->\r\n        <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/']\">Home</a>\r\n        </li>\r\n        \r\n        &nbsp;&nbsp;\r\n\r\n        <!-- About -->\r\n        <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/about']\">About</a>\r\n        </li>\r\n      </ul>\r\n      <!-- End left links -->\r\n\r\n      <!-- Right links -->\r\n      <ul class=\"navbar-nav navbar-right\">\r\n\r\n        <!-- After logged in: Dashboard -->\r\n        <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\"\r\n        *ngIf=\"authService.isLoggedIn()\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/user/dashboard']\">Dashboard <span class=\"sr-only\">(current)</span></a>\r\n        </li>\r\n        &nbsp;&nbsp;\r\n\r\n        <!-- After logged in: Friends -->\r\n        <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\"\r\n        *ngIf=\"authService.isLoggedIn()\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/user/friends']\">Friends</a>\r\n        </li>\r\n        &nbsp;&nbsp;\r\n\r\n        <!-- After logged in: Transactions -->\r\n        <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\"\r\n        *ngIf=\"authService.isLoggedIn()\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/user/transactions']\">Transactions</a>\r\n        </li>\r\n        &nbsp;&nbsp;\r\n\r\n        <!-- After logged in: Receipts -->\r\n        <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\"\r\n        *ngIf=\"authService.isLoggedIn()\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/user/receipts']\">Receipts</a>\r\n        </li>\r\n        &nbsp;&nbsp;\r\n\r\n        <!-- After logged in: Setting -->\r\n        <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\"\r\n        *ngIf=\"authService.isLoggedIn()\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/user/setting']\">Setting</a>\r\n        </li>\r\n        &nbsp;&nbsp;\r\n\r\n        <!-- After logged in: Register wont show -->\r\n        <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\"\r\n        *ngIf=\"!authService.isLoggedIn()\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/register']\">Register</a>\r\n        </li>\r\n        &nbsp;&nbsp;\r\n\r\n         <!-- Before logged in: Log out wont show -->\r\n        <li class=\"nav-item active\"\r\n        *ngIf=\"authService.isLoggedIn()\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/']\" (click)=\"onLogoutClick()\">Log out</a>\r\n        </li>\r\n        \r\n      </ul>\r\n      <!-- End right links -->\r\n  \r\n    </div>\r\n\r\n</nav>"
+module.exports = "<!-- Navbar -->\r\n<nav  class=\"navbar navbar-expand-lg navbar-dark justify-content-between\" id=\"navbar\">\r\n  <!-- Rumi logo -->\r\n  <a class=\"navbar-brand\" [routerLink]=\"['/']\"><img src=\"../assets/rumi logo.png\" width=\"50\" alt=\"\"></a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <!-- Links -->\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\r\n\r\n      <!-- Left links -->\r\n      <ul class=\"navbar-nav mr-auto navbar-left\">\r\n        \r\n      </ul>\r\n      <!-- End left links -->\r\n\r\n      <!-- Right links -->\r\n      <ul class=\"navbar-nav navbar-right\">\r\n\r\n        <!-- After logged in: Dashboard -->\r\n        <!-- <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\"\r\n        *ngIf=\"authService.isLoggedIn()\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/user/dashboard']\">Dashboard <span class=\"sr-only\">(current)</span></a>\r\n        </li>\r\n        &nbsp;&nbsp; -->\r\n\r\n        <!-- Home -->\r\n        <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/user/dashboard']\">Home</a>\r\n        </li>\r\n        \r\n        &nbsp;&nbsp;\r\n\r\n        <!-- About -->\r\n        <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/about']\">About</a>\r\n        </li>\r\n\r\n        <!-- After logged in: Register wont show -->\r\n        <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\"\r\n        *ngIf=\"!authService.isLoggedIn()\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/register']\">Register</a>\r\n        </li>\r\n        &nbsp;&nbsp;\r\n\r\n         <!-- Before logged in: Log out wont show -->\r\n        <li class=\"nav-item active\"\r\n        *ngIf=\"authService.isLoggedIn()\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/']\" (click)=\"onLogoutClick()\">Log out</a>\r\n        </li>\r\n        \r\n      </ul>\r\n      <!-- End right links -->\r\n  \r\n    </div>\r\n\r\n</nav>\r\n\r\n<!-- <li class=\"nav-item active\"\r\n[routerLinkActive]=\"['active']\"\r\n[routerLinkActiveOptions] =\"{exact:true}\"\r\n*ngIf=\"authService.isLoggedIn()\">\r\n  <a class=\"nav-link btn\" [routerLink]=\"['/user/dashboard']\">Dashboard <span class=\"sr-only\">(current)</span></a>\r\n</li>\r\n&nbsp;&nbsp; -->\r\n\r\n"
 
 /***/ }),
 
@@ -741,14 +807,14 @@ var NavbarComponent = /** @class */ (function () {
 /***/ "./src/app/receipts/receipts.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "ul { padding:0; width:1200px; margin:20px auto}\r\nli { display:inline;}\r\n.tn {\r\n  margin:6px 6px;\r\n  border: 4px solid #eee;\r\n  -webkit-box-shadow:#555 1px 1px 8px 1px;\r\n          box-shadow:#555 1px 1px 8px 1px;\r\n  cursor: pointer;\r\n  width: 300px;\r\n}\r\nh2{\r\n  margin-bottom: 20px;\r\n}"
 
 /***/ }),
 
 /***/ "./src/app/receipts/receipts.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  receipts works!\r\n</p>\r\n"
+module.exports = "\r\n<div class=\"container\">\r\n  <h2 class=\"heading\">Upload New Images</h2>\r\n  <!-- Progress Bar -->\r\n  <div *ngIf=\"upload\">\r\n    <div class=\"progress\">\r\n      <div class=\"progress-bar progress-bar-animated\"\r\n        [ngStyle]=\"{ 'width': upload?.progress + '%' }\">\r\n      </div>\r\n    </div>\r\n    Progress: {{upload?.progress}}% Complete\r\n  </div><hr>\r\n  <!-- Input and Upload Button -->\r\n  <input type=\"file\" (change)=\"handleFiles($event)\" multiple>\r\n  <button class=\"btn btn-primary\" (click)=\"uploadFiles()\">Upload Images</button>  \r\n  <button class=\"btn btn-danger\" (click)=\"reload()\">Refesh ittt</button>\r\n</div>\r\n\r\n<!-- Display Images -->\r\n<div class=\"row\">\r\n  <h2>Latest Photos</h2>\r\n  <ul id=\"thumbnailsList\">\r\n      <li *ngFor=\"let image of receiptsList\" class=\"img\">\r\n          <!-- <a [routerLink]=\"['/image', image.key]\"> -->\r\n          <a href=\"{{image.link}}\">\r\n          <img src=\"{{image.link}}\" class=\"tn\">\r\n          </a>\r\n      </li>\r\n  </ul>\r\n</div>"
 
 /***/ }),
 
@@ -758,6 +824,25 @@ module.exports = "<p>\r\n  receipts works!\r\n</p>\r\n"
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReceiptsComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_upload_service__ = __webpack_require__("./src/app/services/upload.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_fileDetails_model__ = __webpack_require__("./src/app/models/fileDetails.model.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_lodash__ = __webpack_require__("./node_modules/lodash/lodash.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_lodash__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase__ = __webpack_require__("./node_modules/firebase/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_firebase__);
+// Logic: 
+// Get the file/image info in the list of files/images (handleFiles method)
+// Store the files/images into another database (firebase console).
+// (UploadFiles method will call uploadFile() in services/upload.service)
+// ^ The purpose of this is to store the file/img somewhere else
+// instead for mLab (which saved me some pains) and get the URL link
+// of the img/file then store the link in our mLab
+// Retrieve the file/img URL, and make a POST request to the backend and 
+// save the file/image info into our mLab remote database under
+// the "receipts" collection. 
+// (addPictureToMlab() method in services/upload.service will call 
+// addReceipts() method in services/auth.service to make an http POST request)
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -767,19 +852,110 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+// If you have any question about he frontend or backend, let me know.
+// Steve _m_(^___^)_m_
+
+
+
+ // to help loop over files 
+
 
 var ReceiptsComponent = /** @class */ (function () {
-    function ReceiptsComponent() {
+    // Inject the uploadservice and authservice 
+    // to upload the files/images and make a POST request 
+    // to the backend and save the picture details into mLab
+    function ReceiptsComponent(uploadService, authService) {
+        this.uploadService = uploadService;
+        this.authService = authService;
+        this.checkpoint = 0;
     }
+    // Make a GET request to the backend on the first load
+    // to retrive the files/images
     ReceiptsComponent.prototype.ngOnInit = function () {
+        this.getPictures();
+        // this.fbGetData();
     };
+    ReceiptsComponent.prototype.reload = function () {
+        // console.log('In here');
+        this.getPictures();
+    };
+    ReceiptsComponent.prototype.ngOnChanges = function (changes) {
+        console.log(changes.finishedProgress.currentValue); // current selected value
+        console.log(changes.finishedProgress.previousValue); // previous selected value
+        this.getPictures();
+    };
+    // This method listener will watch for changes from the firebase console
+    // whenever a new file/img add to the database, this will fire and call the 
+    // backend the load the new file/img to the receiptList.
+    ReceiptsComponent.prototype.fbGetData = function () {
+        var _this = this;
+        __WEBPACK_IMPORTED_MODULE_5_firebase__["database"]().ref('/uploads/').on('child_added', function (result) {
+            console.log('Just ADDED a child !!!!');
+            console.log(result.val());
+            // this.receiptsList.push(result.val());
+            _this.getPictures();
+        });
+    };
+    // On the first load, get the user info
+    // user id and the receiptList from "receipts" collection
+    // in mLab database
+    ReceiptsComponent.prototype.getPictures = function () {
+        var _this = this;
+        this.authService.getReceipts().subscribe(function (data) {
+            _this.user = data['user'];
+            _this.userID = data['user']._id;
+            _this.receiptsList = data['receiptList'];
+            console.log('Success! Got the pic infor.');
+            console.log(_this.receiptsList);
+        }, function (err) {
+            console.log('Failed to get the picture! err: ' + err);
+            // this.router.navigate(['']);
+            return false;
+        });
+    };
+    // Only take the files/images info from the $event
+    ReceiptsComponent.prototype.handleFiles = function (event) {
+        // console.log(event.target.files); 
+        this.files = event.target.files;
+    };
+    // Loop through each file/img in the file/img list and call 
+    // upload service to upload each file/img to Firebase Console
+    ReceiptsComponent.prototype.uploadFiles = function () {
+        var _this = this;
+        // Get the files from the global var "files"
+        var filesToUpload = this.files;
+        var length = __WEBPACK_IMPORTED_MODULE_3_lodash__["range"](filesToUpload.length);
+        __WEBPACK_IMPORTED_MODULE_3_lodash__["each"](length, function (index) {
+            // each log will print out the each file infor in the array filesToUpload 
+            // console.log(filesToUpload[index]);
+            _this.upload = new __WEBPACK_IMPORTED_MODULE_2__models_fileDetails_model__["a" /* FileDetails */](filesToUpload[index]);
+            _this.uploadService.uploadFile(_this.upload);
+        });
+        this.fbGetData();
+        // this.getPictures();
+    };
+    // To be deleted :)
+    ReceiptsComponent.prototype.get = function () {
+        console.log(this.uploadService.getImageId());
+        console.log(this.uploadService.getImageLink());
+        console.log(this.uploadService.getImageName());
+    };
+    // To be deleted :)
+    ReceiptsComponent.prototype.clearArray = function () {
+        this.uploadService.clearList();
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", Object)
+    ], ReceiptsComponent.prototype, "finishedProgress", void 0);
     ReceiptsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-receipts',
             template: __webpack_require__("./src/app/receipts/receipts.component.html"),
             styles: [__webpack_require__("./src/app/receipts/receipts.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_upload_service__["a" /* UploadService */],
+            __WEBPACK_IMPORTED_MODULE_4__services_auth_service__["a" /* AuthService */]])
     ], ReceiptsComponent);
     return ReceiptsComponent;
 }());
@@ -798,7 +974,7 @@ module.exports = ""
 /***/ "./src/app/register/register.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div class=\"row\" id=\"user_form\" *ngIf=\"!authService.isLoggedIn()\">\r\n    <div class=\"col align-self-center\">\r\n    <h2 class=\"page-header\">Register</h2>\r\n    <form class=\"form-signin\">\r\n        <!-- <div class=\"form-group row\">\r\n          <label for=\"firstname\" class=\"col-sm-3 col-form-label\">First Name</label>\r\n          <div class=\"col-sm-9\">\r\n            <input type=\"text\" class=\"form-control\" placeholder=\"*Michael\" [(ngModel)]=\"firstname\" name=\"firstname\">\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"form-group row\">\r\n            <label for=\"lastname\" class=\"col-sm-3 col-form-label\">Last Name</label>\r\n            <div class=\"col-sm-9\">\r\n              <input type=\"text\" class=\"form-control\" placeholder=\"*Scott\" [(ngModel)]=\"lastname\" name=\"lastname\">\r\n            </div>\r\n        </div> -->\r\n        \r\n        <div class=\"form-group row\">\r\n            <label for=\"name\" class=\"col-sm-3 col-form-label\">Name</label>\r\n            <div class=\"col-sm-9\">\r\n              <input type=\"text\" class=\"form-control\" placeholder=\"*Michael Scott\" [(ngModel)]=\"name\" name=\"name\">\r\n            </div>\r\n        </div>\r\n    \r\n        <div class=\"form-group row\">\r\n            <label for=\"email\" class=\"col-sm-3 col-form-label\">Email</label>\r\n            <div class=\"col-sm-9\">\r\n              <input type=\"text\" class=\"form-control\" placeholder=\"*mscott@dundermifflin.com\" [(ngModel)]=\"email\" name=\"email\">\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"form-group row\">\r\n            <label for=\"username\" class=\"col-sm-3 col-form-label\">Username</label>\r\n            <div class=\"col-sm-9\">\r\n              <input type=\"text\" class=\"form-control\" placeholder=\"*michaelscott\" [(ngModel)]=\"username\" name=\"username\">\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"form-group row\">\r\n            <label for=\"password\" class=\"col-sm-3 col-form-label\">Password</label>\r\n            <div class=\"col-sm-9\">\r\n              <input type=\"password\" class=\"form-control\" placeholder=\"*******\" [(ngModel)]=\"password\" name=\"password\">\r\n            </div>\r\n        </div>\r\n\r\n      </form>\r\n      \r\n      <button class=\"btn btn-success\" (click)=\"onRegisterSubmit()\">Register</button>&nbsp;\r\n      <button class=\"btn btn-danger\" (click)=\"onCancelSubmit()\">Cancel</button><br><br>\r\n      <p>Already have an account? <a [routerLink] = \"['/login']\">Login Here</a></p>\r\n \r\n</div>\r\n</div>"
+module.exports = "<div class=\"left\" style=\"padding-top:500px;\">\r\n<div class=\"row\" id=\"user_form\" *ngIf=\"!authService.isLoggedIn()\">\r\n    <div class=\"col align-self-center\">\r\n    <h2 class=\"page-header\">Register</h2>\r\n    <form class=\"form-signin\">\r\n        <!-- <div class=\"form-group row\">\r\n          <label for=\"firstname\" class=\"col-sm-3 col-form-label\">First Name</label>\r\n          <div class=\"col-sm-9\">\r\n            <input type=\"text\" class=\"form-control\" placeholder=\"*Michael\" [(ngModel)]=\"firstname\" name=\"firstname\">\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"form-group row\">\r\n            <label for=\"lastname\" class=\"col-sm-3 col-form-label\">Last Name</label>\r\n            <div class=\"col-sm-9\">\r\n              <input type=\"text\" class=\"form-control\" placeholder=\"*Scott\" [(ngModel)]=\"lastname\" name=\"lastname\">\r\n            </div>\r\n        </div> -->\r\n        \r\n        <div class=\"form-group row\">\r\n            <label for=\"name\" class=\"col-sm-3 col-form-label\">Name</label>\r\n            <div class=\"col-sm-9\">\r\n              <input type=\"text\" class=\"form-control\" placeholder=\"*Enter Name\" [(ngModel)]=\"name\" name=\"name\">\r\n            </div>\r\n        </div>\r\n    \r\n        <div class=\"form-group row\">\r\n            <label for=\"email\" class=\"col-sm-3 col-form-label\">Email</label>\r\n            <div class=\"col-sm-9\">\r\n              <input type=\"text\" class=\"form-control\" placeholder=\"*Enter Valid Email\" [(ngModel)]=\"email\" name=\"email\">\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"form-group row\">\r\n            <label for=\"username\" class=\"col-sm-3 col-form-label\">Username</label>\r\n            <div class=\"col-sm-9\">\r\n              <input type=\"text\" class=\"form-control\" placeholder=\"*Enter Username\" [(ngModel)]=\"username\" name=\"username\">\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"form-group row\">\r\n            <label for=\"password\" class=\"col-sm-3 col-form-label\">Password</label>\r\n            <div class=\"col-sm-9\">\r\n              <input type=\"password\" class=\"form-control\" placeholder=\"*Enter Password\" [(ngModel)]=\"password\" name=\"password\">\r\n            </div>\r\n        </div>\r\n\r\n      </form>\r\n      \r\n      <button class=\"btn btn-success\" (click)=\"onRegisterSubmit()\">Register</button>&nbsp;\r\n      <button class=\"btn btn-danger\" (click)=\"onCancelSubmit()\">Cancel</button><br><br>\r\n      <p>Already have an account? <a [routerLink] = \"['/login']\">Login Here</a></p>\r\n \r\n</div>\r\n</div>\r\n</div>"
 
 /***/ }),
 
@@ -885,6 +1061,7 @@ var RegisterComponent = /** @class */ (function () {
         this.name = undefined;
         this.email = undefined;
         this.password = undefined;
+        this.router.navigate(['/']);
     };
     RegisterComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -973,6 +1150,7 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.userDashboard = function () {
         // Load the token into the authToken const:
         this.loadToken();
+        console.log('userDashboard service: ', this.authToken);
         this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', this.authToken);
         return this.http.get(this.baseUri + '/user/friends', { headers: this.headers });
     };
@@ -997,6 +1175,34 @@ var AuthService = /** @class */ (function () {
     };
     AuthService.prototype.changePassword = function (update_user) {
         return this.http.put(this.baseUri + '/user/setting/changepassword', update_user, { headers: this.headers });
+    };
+    // ====================== Receipts ======================================================
+    // GET: getReceipts
+    AuthService.prototype.getReceipts = function () {
+        // Load the token into the authToken const:
+        this.loadToken();
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', this.authToken);
+        return this.http.get(this.baseUri + '/user/receipts', { headers: this.headers });
+    };
+    // POST: save the receipts to the mLab database under "receipts" collection
+    AuthService.prototype.addReceipts = function (receipts) {
+        this.loadToken();
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', this.authToken);
+        return this.http.post(this.baseUri + '/user/receipts/upload', receipts, { headers: this.headers });
+    };
+    // ====================== Transactions ======================================================
+    AuthService.prototype.get_names = function (friend_id) {
+        // this.loadToken();
+        console.log('auth ', friend_id);
+        // this.headers = new HttpHeaders().set('Authorization', this.authToken);
+        return this.http.put(this.baseUri + '/user/transactions/names', friend_id, { headers: this.headers });
+    };
+    // GET: getReceipts
+    AuthService.prototype.getTransactions = function () {
+        // Load the token into the authToken const:
+        this.loadToken();
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', this.authToken);
+        return this.http.get(this.baseUri + '/user/transactions', { headers: this.headers });
     };
     AuthService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
@@ -1131,6 +1337,134 @@ var LoggedinguardService = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]])
     ], LoggedinguardService);
     return LoggedinguardService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/upload.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UploadService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2__ = __webpack_require__("./node_modules/angularfire2/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__("./node_modules/angularfire2/database/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__("./node_modules/firebase/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+// Bring in firebase
+
+
+
+
+var UploadService = /** @class */ (function () {
+    function UploadService(ngFire, db, authService) {
+        this.ngFire = ngFire;
+        this.db = db;
+        this.authService = authService;
+        this.basePath = '/uploads';
+        this.imageList = [];
+    }
+    UploadService.prototype.getList = function () {
+        return;
+    };
+    UploadService.prototype.getImageLink = function () {
+        return this.link;
+    };
+    UploadService.prototype.getImageId = function () {
+        return this.key;
+    };
+    UploadService.prototype.getImageName = function () {
+        return this.name;
+    };
+    UploadService.prototype.uploadFile = function (upload) {
+        var _this = this;
+        var new_name = Math.random().toString(36).substring(7) + new Date().getTime();
+        console.log('New name is: ', new_name);
+        // Get the the ref of storage in firebse console
+        var storageRef = __WEBPACK_IMPORTED_MODULE_3_firebase__["storage"]().ref();
+        // Upload the file to storage
+        var uploadTask = storageRef.child(this.basePath + "/" + new_name)
+            .put(upload.file);
+        // All of these are for the progress bar beauty >___< 
+        uploadTask.on(__WEBPACK_IMPORTED_MODULE_3_firebase__["storage"].TaskEvent.STATE_CHANGED, 
+        // Three observers
+        // 1) State_changed observer
+        function (snapshot) {
+            //upload in progress
+            upload.progress = Math.round((uploadTask.snapshot.bytesTransferred
+                / uploadTask.snapshot.totalBytes) * 100);
+            console.log(upload.progress + '%');
+        }, 
+        // 2) error observer
+        function (err) {
+            // upload failed
+            console.log('Upload failed, pay ur electricity bill, err msg => : ', err);
+        }, 
+        // 3) success observer
+        function () {
+            upload.url = uploadTask.snapshot.downloadURL;
+            upload.name = new_name;
+            upload.createOn = new Date().toDateString();
+            _this.saveFileData(upload);
+        });
+    };
+    // This method will save the file/img data to the database
+    // because we stored the img/file into the storage already.
+    // Easy for later if we need to look up the file/img in the
+    // firebase console, maybe delete/edit feature? :) 
+    // NOTE: *********** delete/edit the file/img in the firebase 
+    // console database.(FEATURES!)
+    UploadService.prototype.saveFileData = function (upload) {
+        var _this = this;
+        this.db.list(this.basePath + "/").push(upload).then(function (res) {
+            var picture = {
+                pic_key: res.key,
+                pic_name: upload.name,
+                pic_link: upload.url,
+                pic_date: upload.createOn
+            };
+            console.log("in upload servic: ", picture.pic_date);
+            _this.imageList.push(picture);
+            // console.log('this is the LIST ******', this.imageList);
+            _this.image = picture;
+            _this.addPictureToMlab();
+        });
+    };
+    UploadService.prototype.clearList = function () {
+        this.imageList.length = 0;
+        console.log('this is the LIST ****** after cleared', this.imageList);
+    };
+    // Make an http POST request to the backend to save the file/img
+    // to the mLab remote database
+    UploadService.prototype.addPictureToMlab = function () {
+        var _this = this;
+        this.authService.addReceipts(this.image).subscribe(function (data) {
+            console.log('Success Uploaded!', data);
+            _this.finishedProgress = true;
+        }, function (err) {
+            console.log('Failed!! please not here, err msg: ', err);
+        });
+    };
+    UploadService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2__["a" /* AngularFireModule */],
+            __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */],
+            __WEBPACK_IMPORTED_MODULE_4__services_auth_service__["a" /* AuthService */]])
+    ], UploadService);
+    return UploadService;
 }());
 
 
@@ -1331,26 +1665,29 @@ var SettingComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/transactions/transactions.component.css":
+/***/ "./src/app/sidebar/sidebar.component.css":
 /***/ (function(module, exports) {
 
 module.exports = ""
 
 /***/ }),
 
-/***/ "./src/app/transactions/transactions.component.html":
+/***/ "./src/app/sidebar/sidebar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  transactions works!\r\n</p>\r\n"
+module.exports = "<!-- Sidebar -->\n\n\n<!-- <body> -->\n\n<div *ngIf=\"authService.isLoggedIn()\" \nclass=\"w3-sidebar w3-bar-block w3-xxlarge w3-animate-left\" \nstyle=\"width:200px; height:100%; background-color:#71e7bb;\" id=\"mySidebar\"\n>\n\n<!-- Dashboard -->\n  <a ui-sref=\"dashboard\" \n  [routerLink]=\"['/user/dashboard']\" \n  class=\"w3-bar-item w3-button w3-hover-white\" \n  style=\"height: 80px;border-bottom: 1px solid white;\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n\n  >\n  <img style=\"max-height: 40px; padding-left:5px;\" src=\"..\\..\\assets\\M.png\">\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:20px;\">Dashboard</p></a> \n  <!-- End Dashboard -->\n\n  <!-- Friends -->\n  <a ui-sref=\"friends\" \n  [routerLink]=\"['/user/friends']\" \n  class=\"w3-bar-item w3-button w3-hover-white\" \n  style=\"height: 80px; border-bottom: 1px solid white;\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n\n  >\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\friends.png\">\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:20px;\">Friends</p></a> \n  <!-- End Friends -->\n\n  <!-- Transactions -->\n  <a ui-sref=\"transactions\" \n  [routerLink]=\"['/user/transactions']\" \n  class=\"w3-bar-item w3-button w3-hover-white\" \n  style=\"height: 80px; border-bottom: 1px solid white;\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n  \n  >\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\transactions.png\">\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:20px;\">Transactions</p></a> \n  <!-- End Transactions -->\n\n  <!-- Receipts -->\n  <a ui-sref=\"receipts\" \n  [routerLink]=\"['/user/receipts']\" \n  class=\"w3-bar-item w3-button w3-hover-white\" \n  style=\"height: 80px; border-bottom: 1px solid white;\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n  \n  >\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\receipts.png\">\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:20px;\">Receipts</p></a>\n  <!-- End Receipts -->\n\n  <!-- Settings -->\n  <a ui-sref=\"settings\" \n  [routerLink]=\"['/user/setting']\" \n  class=\"w3-bar-item w3-button w3-hover-white\" \n  style=\"height: 80px; border-bottom: 1px solid white;\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n  \n  >\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\settings.png\">\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:20px;\">Settings</p></a> \n  <!-- End Settings -->\n\n  <!-- Download -->\n  <a ui-sref=\"download\" \n  [routerLink]=\"['/user/download']\" \n  class=\"w3-bar-item w3-button w3-hover-white\" \n  style=\"height: 80px; position:absolute; bottom:61px; border-top: 1px solid white; border-bottom: 1px solid white;\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n  \n  >\n  <!-- style=\"height: 80px; margin-top:26.94vh; border-bottom: 1px solid white;\" -->\n  \n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\download.png\">\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:20px;\">Download</p></a> \n  <!-- End Download -->\n\n</div>\n\n\n<!-- </body> -->\n\n<!-- End sidebar -->\n"
 
 /***/ }),
 
-/***/ "./src/app/transactions/transactions.component.ts":
+/***/ "./src/app/sidebar/sidebar.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransactionsComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SidebarComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_toastr_ng2_toastr__ = __webpack_require__("./node_modules/ng2-toastr/ng2-toastr.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_toastr_ng2_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_toastr_ng2_toastr__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1361,10 +1698,106 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+var SidebarComponent = /** @class */ (function () {
+    function SidebarComponent(authService, toastr, vcr) {
+        this.authService = authService;
+        this.toastr = toastr;
+        this.toastr.setRootViewContainerRef(vcr);
+    }
+    SidebarComponent.prototype.ngOnInit = function () {
+    };
+    // ========== Toastr Messages =======================================
+    SidebarComponent.prototype.showSuccess = function (msg) {
+        this.toastr.info(msg, 'Success!');
+    };
+    SidebarComponent.prototype.onLogoutClick = function () {
+        this.showSuccess('You have logged out!');
+        this.authService.logout();
+    };
+    SidebarComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-sidebar',
+            template: __webpack_require__("./src/app/sidebar/sidebar.component.html"),
+            styles: [__webpack_require__("./src/app/sidebar/sidebar.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2_ng2_toastr_ng2_toastr__["ToastsManager"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"]])
+    ], SidebarComponent);
+    return SidebarComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/transactions/transactions.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/transactions/transactions.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "\r\n<div class=\"row\">\r\n  <div class=\"col\">\r\n      <h6><strong>Transactions</strong></h6>\r\n      <table class=\"table table-hover\">\r\n        <thead>\r\n          <tr>\r\n            <th><h6><strong>Number</strong></h6></th>\r\n            <th><h6><strong>Receipt Name</strong></h6></th>\r\n            <!-- <th><h6><strong>Receipt Link</strong></h6></th> -->\r\n            <th><h6><strong>Company Name</strong></h6></th>\r\n            <th><h6><strong>Type</strong></h6></th>\r\n            <th><h6><strong>Items</strong></h6></th>\r\n            <th><h6><strong>Prices</strong></h6></th>\r\n            <th><h6><strong>Total</strong></h6></th>\r\n            <th><h6><strong>Roommates</strong></h6></th>\r\n            <!-- <th><h6><strong>Friend's IDs</strong></h6></th>            -->\r\n            <th><h6><strong>Numfriends</strong></h6></th>\r\n            <th><h6><strong>Each Pay</strong></h6></th>\r\n            <th><h6><strong>Date</strong></h6></th>\r\n            \r\n            <!-- <th><h6><strong>User_ID</strong></h6></th> -->\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n            <!-- <tr *ngFor=\"let contact of hack(contactlist); let i = index\"> -->\r\n            <tr *ngFor=\"let tran of hack(transactionsList); let friend of hack(testing);  let i = index\">\r\n              <td>{{i+1}}</td>\r\n              <td><a href=\"{{tran.receipt_link}}\">{{tran.group_name}}</a></td>\r\n              <!-- <td><a href=\"{{tran.receipt_link}}\">{{tran.receipt_link}}</a></td> -->\r\n              <td>{{tran.company_name}}</td>\r\n              <td>{{tran.transaction_type}}</td>\r\n              <td>{{tran.items}}</td> \r\n              <td>${{tran.prices}}</td> \r\n              <td>${{tran.total}}</td>\r\n              <td>{{tran.friend_names}}</td>\r\n              <!-- <td>{{tran.friends_ids}}</td>                                     -->\r\n              <td>{{tran.num_friends}}</td>\r\n              <td>${{tran.each_pay}}</td>\r\n              <td>{{tran.date}}</td>\r\n              <!-- <td>{{tran.user_id}}</td> -->\r\n          </tr>\r\n        </tbody>\r\n      </table>\r\n  </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n"
+
+/***/ }),
+
+/***/ "./src/app/transactions/transactions.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransactionsComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
 var TransactionsComponent = /** @class */ (function () {
-    function TransactionsComponent() {
+    function TransactionsComponent(authService) {
+        this.authService = authService;
     }
     TransactionsComponent.prototype.ngOnInit = function () {
+        this.getAllTransactions();
+    };
+    TransactionsComponent.prototype.getAllTransactions = function () {
+        var _this = this;
+        this.authService.getTransactions().subscribe(function (transactions) {
+            _this.user = transactions['user'];
+            _this.userID = transactions['user']._id;
+            _this.transactionsList = transactions['transactionList'];
+            console.log('Sucess! got the transactions list from the backend.');
+        }, function (err) {
+            console.log('Failed to get the transactions list! err: ' + err);
+            // this.router.navigate(['']);
+            return false;
+        });
+    };
+    TransactionsComponent.prototype.getFriendNames = function (inputname) {
+        console.log('**Input name: ', inputname);
+        var newInput = {
+            friend_id: inputname
+        };
+        this.authService.get_names(newInput).subscribe(function (data) {
+            console.log('Return data: ', data['name']);
+        }, function (err) {
+            console.log('Failed to get the names from the friend\'s ids, ', err);
+            return false;
+        });
+    };
+    TransactionsComponent.prototype.hack = function (list) {
+        return list;
     };
     TransactionsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -1372,7 +1805,7 @@ var TransactionsComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/transactions/transactions.component.html"),
             styles: [__webpack_require__("./src/app/transactions/transactions.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]])
     ], TransactionsComponent);
     return TransactionsComponent;
 }());
@@ -1391,7 +1824,15 @@ var TransactionsComponent = /** @class */ (function () {
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 var environment = {
-    production: false
+    production: false,
+    firebase: {
+        apiKey: "AIzaSyCrFHf3gTQZYgFK6IyHn2qdynxfPcZwEMM",
+        authDomain: "rumi-web-app-dc4af.firebaseapp.com",
+        databaseURL: "https://rumi-web-app-dc4af.firebaseio.com",
+        projectId: "rumi-web-app-dc4af",
+        storageBucket: "rumi-web-app-dc4af.appspot.com",
+        messagingSenderId: "353669083115"
+    }
 };
 
 

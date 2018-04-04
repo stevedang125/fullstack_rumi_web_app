@@ -4,6 +4,8 @@ import { AuthService }  from '../services/auth.service';
 import { Router, Route } from '@angular/router';
 import { Contact } from '../services/contact';
 import { ValidationService  } from '../services/validation.service';
+
+
 @Component({
   selector: 'app-friends',
   templateUrl: './friends.component.html',
@@ -129,6 +131,7 @@ export class FriendsComponent implements OnInit {
       email: this.email,
       homePhone: this.homePhone,
       cellPhone: this.cellPhone,
+      date: new Date().toDateString(),
       user_id: this.userID
     }
 

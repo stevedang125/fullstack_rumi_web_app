@@ -94,11 +94,12 @@ router.post('/friends/add', passport.authenticate('jwt', {session: false}), (req
         email: req.body.email,
         homePhone: req.body.homePhone,
         cellPhone: req.body.cellPhone,
+        date: req.body.date,
         user_id: req.body.user_id
     });
 
     Contact.addContact(newContact, (err, contact)=>{
-        (err) ? res.json({success: false, msg: 'Error! Failed to add new contact.'}) : res.json({success: true, msg: 'Contact registered!'});
+        (err) ? res.json({success: false, msg: 'Error! Failed to add new contact.'}) : res.json({success: true, msg: 'Friend added!'});
     });
 
 });
