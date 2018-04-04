@@ -26,37 +26,16 @@
 * {
     box-sizing: border-box;
 }
-
-.sidenav {
-    position: fixed;
-    float: left;
-    border: 2px solid white;
-    background-color: #59b68e;
-    width: 15%;
-    height: 100%;
-  }
-  /* Style the buttons inside the tab */
-  .sidenav a {
-    display: block;
-    background-color: inherit;
-    color: black;
-    padding: 32px 16px;
-    width: 100%;
-    border: black;
-    outline: black;
-    text-align: left;
-    cursor: pointer;
-    transition: 0.3s;
-    font-size: 17px;
-    text-align: left;
-    border-bottom: 2px solid white;
-  }
   
   .main {
     margin-left: 15%; /* Same as the width of the sidenav */
     padding: 0px 15px;
   }
   
+#menuContent {
+  margin-left:230px;
+}
+
   .recentA {
     background-color: rgb(198, 223, 215);
   }
@@ -110,7 +89,7 @@
   }
   
   a:hover {
-    color: #000;
+    color: #ffffff;
   }
   
   #navbar {
@@ -119,14 +98,6 @@
   
   #col {
     padding:10px;
-  }
-  
-  #row {
-    width:80%;
-    position: absolute;
-    top: 50%;
-    left:50%;
-    transform: translate(-50%,-50%);
   }
   
   #button_main_color {
@@ -141,4 +112,3 @@
     left:50%;
     transform: translate(-50%,-50%);
   }
-  

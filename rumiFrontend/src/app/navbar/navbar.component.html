@@ -1,4 +1,3 @@
- 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark justify-content-between" id="navbar">
   <!-- Rumi logo -->
@@ -13,6 +12,21 @@
       <!-- Left links -->
       <ul class="navbar-nav mr-auto navbar-left">
         
+      </ul>
+      <!-- End left links -->
+
+      <!-- Right links -->
+      <ul class="navbar-nav navbar-right">
+
+        <!-- After logged in: Dashboard -->
+<!--         <li class="nav-item active"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions] ="{exact:true}"
+        *ngIf="authService.isLoggedIn()">
+          <a class="nav-link btn" [routerLink]="['/user/dashboard']">Dashboard <span class="sr-only">(current)</span></a>
+        </li>
+        &nbsp;&nbsp;
+ -->
         <!-- Home -->
         <li class="nav-item active"
         [routerLinkActive]="['active']"
@@ -28,56 +42,6 @@
         [routerLinkActiveOptions] ="{exact:true}">
           <a class="nav-link btn" [routerLink]="['/about']">About</a>
         </li>
-      </ul>
-      <!-- End left links -->
-
-      <!-- Right links -->
-      <ul class="navbar-nav navbar-right">
-
-        <!-- After logged in: Dashboard -->
-        <li class="nav-item active"
-        [routerLinkActive]="['active']"
-        [routerLinkActiveOptions] ="{exact:true}"
-        *ngIf="authService.isLoggedIn()">
-          <a class="nav-link btn" [routerLink]="['/user/dashboard']">Dashboard <span class="sr-only">(current)</span></a>
-        </li>
-        &nbsp;&nbsp;
-
-        <!-- After logged in: Friends -->
-        <li class="nav-item active"
-        [routerLinkActive]="['active']"
-        [routerLinkActiveOptions] ="{exact:true}"
-        *ngIf="authService.isLoggedIn()">
-          <a class="nav-link btn" [routerLink]="['/user/friends']">Friends</a>
-        </li>
-        &nbsp;&nbsp;
-
-        <!-- After logged in: Transactions -->
-        <li class="nav-item active"
-        [routerLinkActive]="['active']"
-        [routerLinkActiveOptions] ="{exact:true}"
-        *ngIf="authService.isLoggedIn()">
-          <a class="nav-link btn" [routerLink]="['/user/transactions']">Transactions</a>
-        </li>
-        &nbsp;&nbsp;
-
-        <!-- After logged in: Receipts -->
-        <li class="nav-item active"
-        [routerLinkActive]="['active']"
-        [routerLinkActiveOptions] ="{exact:true}"
-        *ngIf="authService.isLoggedIn()">
-          <a class="nav-link btn" [routerLink]="['/user/receipts']">Receipts</a>
-        </li>
-        &nbsp;&nbsp;
-
-        <!-- After logged in: Setting -->
-        <li class="nav-item active"
-        [routerLinkActive]="['active']"
-        [routerLinkActiveOptions] ="{exact:true}"
-        *ngIf="authService.isLoggedIn()">
-          <a class="nav-link btn" [routerLink]="['/user/setting']">Setting</a>
-        </li>
-        &nbsp;&nbsp;
 
         <!-- After logged in: Register wont show -->
         <li class="nav-item active"
@@ -100,3 +64,27 @@
     </div>
 
 </nav>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+
+<div class="w3-sidebar w3-bar-block w3-xxlarge w3-animate-left" style="width:230px; background-color:#71e7bb;" id="mySidebar">
+
+  <a ui-sref="dashboard" [routerLink]="['/dashboard']" class="w3-bar-item w3-button w3-hover-white" style="height: 80px;border-bottom: 1px solid white;"><img style="max-height: 40px; padding-left:5px;" src="..\..\assets\M.png"><p style="padding-left:8px; display:inline; font-family:Cousine; font-size:20px;">Dashboard</p></a> 
+  <a ui-sref="friends" [routerLink]="['/friends']" class="w3-bar-item w3-button w3-hover-white" style="height: 80px; border-bottom: 1px solid white;"><img style="max-height: 40px;" src="..\..\assets\friends.png"><p style="padding-left:8px; display:inline; font-family:Cousine; font-size:20px;">Friends</p></a> 
+  <a ui-sref="transactions" [routerLink]="['/transactions']" class="w3-bar-item w3-button w3-hover-white" style="height: 80px; border-bottom: 1px solid white;"><img style="max-height: 40px;" src="..\..\assets\transactions.png"><p style="padding-left:8px; display:inline; font-family:Cousine; font-size:20px;">Transactions</p></a> 
+  <a ui-sref="receipts" [routerLink]="['/receipts']" class="w3-bar-item w3-button w3-hover-white" style="height: 80px; border-bottom: 1px solid white;"><img style="max-height: 40px;" src="..\..\assets\receipts.png"><p style="padding-left:8px; display:inline; font-family:Cousine; font-size:20px;">Receipts</p></a>
+  <a ui-sref="settings" [routerLink]="['/settings']" class="w3-bar-item w3-button w3-hover-white" style="height: 80px; border-bottom: 1px solid white;"><img style="max-height: 40px;" src="..\..\assets\settings.png"><p style="padding-left:8px; display:inline; font-family:Cousine; font-size:20px;">Settings</p></a> 
+  <a ui-sref="download" [routerLink]="['/download']" class="w3-bar-item w3-button w3-hover-white" style="height: 80px; margin-top:26.94vh; border-bottom: 1px solid white;"><img style="max-height: 40px;" src="..\..\assets\download.png"><p style="padding-left:8px; display:inline; font-family:Cousine; font-size:20px;">Download</p></a> 
+  
+</div>
+
+<div class="w3-animate-left" id="menuContent">
+  <div class="w3-container">
+    <h2>Sidebar Icons</h2>
+    <p>In this example we have used icons in the sidebar.</p>
+  </div>
+
+</div>
+</body>
