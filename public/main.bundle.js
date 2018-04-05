@@ -77,7 +77,7 @@ module.exports = ""
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<!-- Nav bar -->\r\n<div style=\"position:sticky;top:0;\" >\r\n<app-navbar></app-navbar>\r\n</div>\r\n<!-- Sidebar -->\r\n<app-sidebar></app-sidebar>\r\n<div class=\"w3-animate-left\" id=\"menuContent\">\r\n    <!-- <div class=\"w3-container\"> -->\r\n      <router-outlet></router-outlet>\r\n    <!-- </div> -->\r\n  <!-- <router-outlet></router-outlet> -->\r\n</div>\r\n\r\n<!-- <div *ngIf=\"!authService.isLoggedIn()\">\r\n    <router-outlet></router-outlet>\r\n</div> -->\r\n\r\n<!-- Other routes -->\r\n<!-- <router-outlet></router-outlet> -->\r\n\r\n  \r\n"
+module.exports = "\r\n<!-- Nav bar -->\r\n<!-- <div style=\"position:sticky;top:0;\" > -->\r\n<app-navbar></app-navbar>\r\n<!-- </div> -->\r\n<!-- Sidebar -->\r\n<app-sidebar></app-sidebar>\r\n<div class=\"w3-animate-left\" id=\"menuContent\">\r\n    <!-- <div class=\"w3-container\"> -->\r\n    <div class=\"container\">\r\n      <router-outlet></router-outlet>\r\n    </div>\r\n    <!-- </div> -->\r\n  <!-- <router-outlet></router-outlet> -->\r\n</div>\r\n\r\n<!-- <div *ngIf=\"!authService.isLoggedIn()\">\r\n    <router-outlet></router-outlet>\r\n</div> -->\r\n\r\n<!-- Other routes -->\r\n<!-- <router-outlet></router-outlet> -->\r\n\r\n  \r\n"
 
 /***/ }),
 
@@ -284,7 +284,7 @@ module.exports = ".tn {\r\n    margin:6px 6px;\r\n    border: 4px solid #eee;\r\
 /***/ "./src/app/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<!-- The days got messed up for this one, need a better approach -->\r\n<button class=\"btn btn-success\" (click)=\"getData()\">Get The Data Version 1</button>\r\n<!-- Correct date by order but the logic based on friend list of json objects(no good), need a better approach -->\r\n<button class=\"btn btn-success\" (click)=\"click()\">Get The Data Version 2</button>\r\n<!-- <div *ngIf=\"friends | async\"> -->\r\n<div class=\"row\">\r\n    <div class=\"col\">\r\n        <h6><strong>Recent Activities</strong></h6>\r\n        <div style=\"margin-left:25%\" *ngFor=\"let recent of hack(recentActivities) \">\r\n            <br>\r\n            <!-- Transactions -->\r\n            <div style=\"background-color:#4a148c; color:white; width:50%;\" class=\"center\" *ngIf=\"recent.group_name\">\r\n                <p>{{recent.date}}</p>\r\n                <p>{{recent.total}}</p>\r\n                <p>Split With: {{recent.friend_names}}</p>\r\n                <p>{{recent.transaction_type}}</p>\r\n            </div><!-- Transactions -->\r\n            <!-- Friends -->\r\n            <div style=\"background-color:#01579b; color:white;  width:50%;\" class=\"center\"  *ngIf=\"recent.firstName\">\r\n                <p>{{recent.date}}</p>\r\n                <p>Added New Friend: {{recent.firstName}}</p>\r\n                <p>New Friend</p>\r\n            </div><!-- Friends -->\r\n            <!-- Receipts -->\r\n            <div style=\"background-color:#1b5e20; color:white; width:50%;\" class=\"center\"  *ngIf=\"recent.name\">\r\n                <p>{{recent.date}}</p>\r\n                <p>Added New Receipt</p>\r\n                <img src=\"{{recent.link}}\" alt=\"Receipt\" class=\"img tn\" >\r\n            </div><!-- Receipts -->\r\n        </div><!-- *ngFor -->\r\n    </div>\r\n  </div>\r\n<!-- </div> -->"
+module.exports = "\r\n<!-- <div *ngIf=\"friends | async\"> -->\r\n<div class=\"row\">\r\n    <div class=\"col\">\r\n        <h6><strong>Recent Activities</strong></h6>\r\n        <div style=\"margin-left:25%\" *ngFor=\"let recent of hack(recentActivities)\">\r\n            <br>\r\n            <!-- Transactions -->\r\n            <div style=\"background-color:#4a148c; color:white; width:50%;\" class=\"center\" *ngIf=\"recent.group_name\">\r\n                <p>{{recent.date}}</p>\r\n                <p>${{recent.total}}</p>\r\n                <p>Split With: {{recent.friend_names}}</p>\r\n                <p>{{recent.transaction_type}}</p>\r\n            </div><!-- Transactions -->\r\n            <!-- Friends -->\r\n            <div style=\"background-color:#01579b; color:white;  width:50%;\" class=\"center\"  *ngIf=\"recent.firstName\">\r\n                <p>{{recent.date}}</p>\r\n                <p>Added New Friend: {{recent.firstName}}</p>\r\n                <p>New Friend</p>\r\n            </div><!-- Friends -->\r\n            <!-- Receipts -->\r\n            <div style=\"background-color:#1b5e20; color:white; width:50%;\" class=\"center\"  *ngIf=\"recent.name\">\r\n                <p>{{recent.date}}</p>\r\n                <p>Added New Receipt</p>\r\n                <img src=\"{{recent.link}}\" alt=\"Receipt\" class=\"img tn\" >\r\n            </div><!-- Receipts -->\r\n        </div><!-- *ngFor -->\r\n    </div>\r\n  </div>\r\n<!-- </div> -->"
 
 /***/ }),
 
@@ -296,8 +296,6 @@ module.exports = "\r\n<!-- The days got messed up for this one, need a better ap
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_lodash__ = __webpack_require__("./node_modules/lodash/lodash.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_lodash__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -310,17 +308,38 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
- // to help loop over array
 var DashboardComponent = /** @class */ (function () {
     function DashboardComponent(authService, router) {
         this.authService = authService;
         this.router = router;
-        this.fri = [];
+        this.debug = false;
+        this.recentActivities = [];
         this.arrived = false;
     }
     DashboardComponent.prototype.ngOnInit = function () {
         this.getTheDashboard();
     };
+    DashboardComponent.prototype.ngOnChanges = function () {
+        // this.getTheDashboard();
+        // this.click();
+    };
+    // ========================== Helper functions ===========================
+    DashboardComponent.prototype.compareDate = function (a, b) {
+        return (Date.parse(a) > Date.parse(b)) ? a : b;
+    };
+    DashboardComponent.prototype.hack = function (list) {
+        return list;
+    };
+    DashboardComponent.prototype.sortDateArray = function (array) {
+        var i = 0;
+        for (i = 0; i < array.length; i++)
+            array[i] = Date.parse(array[i]);
+        array = array.sort().reverse();
+        for (i = 0; i < array.length; i++)
+            array[i] = new Date(array[i]).toDateString();
+        return array;
+    };
+    // =========================== HTTP GET request ==========================
     DashboardComponent.prototype.getTheDashboard = function () {
         var _this = this;
         // Make a call to the services for a HTTP GET request to the backend in routes/dashboard
@@ -333,149 +352,85 @@ var DashboardComponent = /** @class */ (function () {
             _this.transactions = _this.transactions.reverse();
             _this.receipts = _this.receipts.reverse();
             _this.friends = _this.friends.reverse();
-            _this.filtersLoaded = Promise.resolve(true);
+            _this.clickForData();
         }); // End of getDashboard()
-        // setTimeout(this.click(), 5000);
-        // this.click();
-        // console.log('Here****', this.friends);
     };
-    DashboardComponent.prototype.hack = function (list) {
-        return list;
-    };
-    DashboardComponent.prototype.getData = function () {
-        console.log('Here****', this.friends);
-        // Init. and declared variables
-        var i = 0, x = 0, y = 0, z = 0;
-        var array = [];
+    DashboardComponent.prototype.clickForData = function () {
+        var mostRecentDate = "";
+        var maxLen = 0, i = 0, x = 0, y = 0, z = 0;
+        var arrayOfDate = [];
+        var tempDate = "";
         var recent = [];
-        var len = 0;
-        var temp = this.friends[0].date; // April 5th
-        var tempTran = this.transactions[0].date; // April 6th
-        var tempRe = this.receipts[0].date; // April 7th
-        array.push(temp);
-        // Check if the date is already in the array, 
-        // if not add it and change the temp(most recent date)
-        if (!array.includes(this.transactions[0].date)) {
-            array.push(tempTran);
-            temp = tempTran;
+        // This part will get the most recent date out of all three list of json objects
+        if (this.debug) {
+            console.log('mostRecentDate friends: ', this.friends[0].date);
+            console.log('mostRecentDate transactions: ', this.transactions[0].date);
+            console.log('mostRecentDate receipts: ', this.receipts[0].date);
         }
-        if (!array.includes(this.receipts[0].date)) {
-            array.push(tempRe);
-            temp = tempRe;
-        }
-        len = Math.max(this.friends.length, Math.max(this.transactions.length, this.receipts.length));
-        // Only add distinct date
-        for (i = 0; i < len; i++) {
-            // if((i < this.friends.length) && (this.friends[i].date ===  temp)){
-            //   continue;
-            // }
-            // if((i < this.transactions.length) && (this.transactions[i].date ===  temp) ){
-            //   continue;
-            // }
-            // if(( i < this.receipts.length) && (this.receipts[i].date ===  temp)){
-            //   continue;
-            // }
-            if ((i < this.friends.length) && (temp !== this.friends[i].date)) {
-                temp = this.friends[i].date;
-                array.push(temp);
-            }
-            if ((i < this.transactions.length) && (temp !== this.transactions[i].date)) {
-                temp = this.transactions[i].date;
-                array.push(temp);
-            }
-            if ((i < this.receipts.length) && (temp !== this.receipts[i].date)) {
-                temp = this.receipts[i].date;
-                array.push(temp);
-            }
-        }
-        for (i = 0; i <= array.length; i++) {
-            for (x = 0; x < this.transactions.length; x++) {
-                if (this.transactions[x].date === array[i]) {
-                    recent.push(this.transactions[x]);
-                }
-            }
-            for (y = 0; y < this.receipts.length; y++) {
-                if (this.receipts[y].date === array[i]) {
-                    recent.push(this.receipts[y]);
-                }
-            }
-            for (z = 0; z < this.friends.length; z++) {
-                if (this.friends[z].date === array[i]) {
-                    recent.push(this.friends[z]);
-                }
-            }
-        }
-        this.recentActivities = recent;
-        console.log('Final: ', this.recentActivities);
-    };
-    DashboardComponent.prototype.click = function () {
-        console.log('Here****', this.friends);
-        var lengthFriends = __WEBPACK_IMPORTED_MODULE_3_lodash__["range"](this.friends.length);
-        var theLen = this.friends.length;
-        console.log('theLen days: ', theLen);
-        console.log('theLen days: ', this.friends[(theLen - 1)].date);
-        console.log('theLen days: ', (this.friends[0].date));
-        var first = new Date(this.friends[0].date);
-        var last = new Date(this.friends[(theLen - 1)].date);
-        var retval = Math.abs(first - last) / (1000 * 24 * 60 * 60);
-        console.log('retval is: ', retval);
-        var dayLen = String((this.friends[0].date) - (this.friends[(theLen - 1)].date));
-        console.log('running for this many days: ', dayLen);
-        console.log('Len: ', lengthFriends);
-        var i = 0;
-        var temp = this.friends[0].date;
-        var array = [];
-        array.push(temp);
-        console.log('array: ', array);
-        console.log('Contains: ', array.includes(temp));
-        for (i = 0; i < this.friends.length; i++) {
-            if (this.friends[i].date === temp) {
-                console.log('In here**** wont add', i);
+        mostRecentDate = this.compareDate(this.friends[0].date, this.transactions[0].date);
+        mostRecentDate = this.compareDate(mostRecentDate, this.receipts[0].date);
+        if (this.debug)
+            console.log('mostRecentDate: ', mostRecentDate);
+        // This part will get the max len 
+        maxLen = Math.max(this.friends.length, Math.max(this.transactions.length, this.receipts.length));
+        if (this.debug)
+            console.log('maxLen: ', maxLen);
+        // This part will get all the date added from all the lists
+        arrayOfDate.push(mostRecentDate);
+        // tempDate = mostRecentDate;
+        if (this.debug)
+            console.log('arrayOfDate: ', arrayOfDate);
+        for (i = 0; i < maxLen; i++) {
+            // If the date is already there, skip
+            if ((i < this.transactions.length) && (tempDate === this.transactions[i].date)) {
                 continue;
             }
-            if (temp !== this.friends[i].date) {
-                console.log('In here**** adding', i);
-                temp = this.friends[i].date;
-                array.push(temp);
+            if ((i < this.friends.length) && (tempDate === this.friends[i].date)) {
+                continue;
             }
-        }
-        console.log('array: ', array);
-        console.log('array len: ', array.length);
-        var recent = [];
-        var x = 0, y = 0, z = 0;
-        // console.log('Object ** :', this.friends[0])
-        for (i = 0; i <= array.length; i++) {
+            if ((i < this.receipts.length) && (tempDate === this.receipts[i].date)) {
+                continue;
+            }
+            // If the date is not in the array, change the tempDate and add it to the array
+            if ((i < this.transactions.length) && (tempDate !== this.transactions[i].date) && (!arrayOfDate.includes(this.transactions[i].date))) {
+                tempDate = this.transactions[i].date;
+                arrayOfDate.push(tempDate);
+            }
+            if ((i < this.friends.length) && (tempDate !== this.friends[i].date) && (!arrayOfDate.includes(this.friends[i].date))) {
+                tempDate = this.friends[i].date;
+                arrayOfDate.push(tempDate);
+            }
+            if ((i < this.receipts.length) && (tempDate !== this.receipts[i].date) && (!arrayOfDate.includes(this.receipts[i].date))) {
+                tempDate = this.receipts[i].date;
+                arrayOfDate.push(tempDate);
+            }
+        } // End of for loop
+        // Array of Date all sorted from most recent date.
+        arrayOfDate = this.sortDateArray(arrayOfDate);
+        if (this.debug)
+            console.log('arrayOfDate all sorted: ', arrayOfDate);
+        // Loop through all the list of json Objects to add the objects sort by the date:
+        for (i = 0; i <= arrayOfDate.length; i++) {
             for (x = 0; x < this.transactions.length; x++) {
-                if (this.transactions[x].date === array[i]) {
-                    console.log('In x adding: ', this.transactions[x].date);
+                if (this.transactions[x].date === arrayOfDate[i]) {
                     recent.push(this.transactions[x]);
                 }
             }
             for (y = 0; y < this.receipts.length; y++) {
-                if (this.receipts[y].date === array[i]) {
-                    console.log('In y adding: ', this.receipts[y].date);
+                if (this.receipts[y].date === arrayOfDate[i]) {
                     recent.push(this.receipts[y]);
                 }
             }
             for (z = 0; z < this.friends.length; z++) {
-                if (this.friends[z].date === array[i]) {
-                    console.log('In z adding: ', this.friends[z].date);
+                if (this.friends[z].date === arrayOfDate[i]) {
                     recent.push(this.friends[z]);
                 }
             }
-        }
+        } // End of the big for loop
+        if (this.debug)
+            console.log("Recent array: ", recent);
         this.recentActivities = recent;
-        console.log('Final: ', this.recentActivities);
-        // _.each(2, (days) => {
-        //   _.each(lengthFriends, (index) => {
-        //     // console.log('index: ', index);
-        //       if(this.friends[index].date ===  "Wed Apr 04 2018"){
-        //         console.log('In here****', index);
-        //       }
-        //       // this.fri.unshift(this.friends[index].date);
-        //     }); 
-        // });
-    };
+    }; // End of the clickForData()
     DashboardComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-dashboard',
