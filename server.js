@@ -52,10 +52,6 @@ app.use('/user', receiptsRoutes);
 app.use('/user', transactionRoutes);
 app.use('/user', dashboardRoutes);
 
-
-
-
-
 // For all other routes, send the user back to home:
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/index.html'));
