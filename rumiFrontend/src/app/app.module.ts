@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { CommonModule } from '@angular/common';
 // import array:
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -71,6 +71,7 @@ const appRoutes: Routes =[
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     HttpModule,
     HttpClientModule,
     FormsModule,

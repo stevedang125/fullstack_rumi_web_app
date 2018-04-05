@@ -140,40 +140,42 @@ var AppComponent = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/platform-browser.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_toastr_ng2_toastr__ = __webpack_require__("./node_modules/ng2-toastr/ng2-toastr.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_toastr_ng2_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_ng2_toastr_ng2_toastr__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/animations.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2__ = __webpack_require__("./node_modules/angularfire2/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2_database__ = __webpack_require__("./node_modules/angularfire2/database/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__home_home_component__ = __webpack_require__("./src/app/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__register_register_component__ = __webpack_require__("./src/app/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__dashboard_dashboard_component__ = __webpack_require__("./src/app/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__friends_friends_component__ = __webpack_require__("./src/app/friends/friends.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__transactions_transactions_component__ = __webpack_require__("./src/app/transactions/transactions.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__receipts_receipts_component__ = __webpack_require__("./src/app/receipts/receipts.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__setting_setting_component__ = __webpack_require__("./src/app/setting/setting.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_filter_pipe__ = __webpack_require__("./src/app/services/filter.pipe.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__about_about_component__ = __webpack_require__("./src/app/about/about.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__navbar_navbar_component__ = __webpack_require__("./src/app/navbar/navbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__sidebar_sidebar_component__ = __webpack_require__("./src/app/sidebar/sidebar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_validation_service__ = __webpack_require__("./src/app/services/validation.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__login_login_component__ = __webpack_require__("./src/app/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_guard_service__ = __webpack_require__("./src/app/services/guard.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__services_loggedinguard_service__ = __webpack_require__("./src/app/services/loggedinguard.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__services_upload_service__ = __webpack_require__("./src/app/services/upload.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ng2_toastr_ng2_toastr__ = __webpack_require__("./node_modules/ng2-toastr/ng2-toastr.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ng2_toastr_ng2_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_ng2_toastr_ng2_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/animations.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2__ = __webpack_require__("./node_modules/angularfire2/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_angularfire2_database__ = __webpack_require__("./node_modules/angularfire2/database/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__home_home_component__ = __webpack_require__("./src/app/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__register_register_component__ = __webpack_require__("./src/app/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__dashboard_dashboard_component__ = __webpack_require__("./src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__friends_friends_component__ = __webpack_require__("./src/app/friends/friends.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__transactions_transactions_component__ = __webpack_require__("./src/app/transactions/transactions.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__receipts_receipts_component__ = __webpack_require__("./src/app/receipts/receipts.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__setting_setting_component__ = __webpack_require__("./src/app/setting/setting.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_filter_pipe__ = __webpack_require__("./src/app/services/filter.pipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__about_about_component__ = __webpack_require__("./src/app/about/about.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__navbar_navbar_component__ = __webpack_require__("./src/app/navbar/navbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__sidebar_sidebar_component__ = __webpack_require__("./src/app/sidebar/sidebar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__services_validation_service__ = __webpack_require__("./src/app/services/validation.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__login_login_component__ = __webpack_require__("./src/app/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__services_guard_service__ = __webpack_require__("./src/app/services/guard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__services_loggedinguard_service__ = __webpack_require__("./src/app/services/loggedinguard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__services_upload_service__ = __webpack_require__("./src/app/services/upload.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 // import array:
@@ -211,15 +213,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 // all the routes:
 var appRoutes = [
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_12__home_home_component__["a" /* HomeComponent */] },
-    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_13__register_register_component__["a" /* RegisterComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_27__services_loggedinguard_service__["a" /* LoggedinguardService */]] },
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_25__login_login_component__["a" /* LoginComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_27__services_loggedinguard_service__["a" /* LoggedinguardService */]] },
-    { path: 'user/dashboard', component: __WEBPACK_IMPORTED_MODULE_14__dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_26__services_guard_service__["a" /* GuardService */]] },
-    { path: 'user/friends', component: __WEBPACK_IMPORTED_MODULE_15__friends_friends_component__["a" /* FriendsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_26__services_guard_service__["a" /* GuardService */]] },
-    { path: 'user/transactions', component: __WEBPACK_IMPORTED_MODULE_16__transactions_transactions_component__["a" /* TransactionsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_26__services_guard_service__["a" /* GuardService */]] },
-    { path: 'user/receipts', component: __WEBPACK_IMPORTED_MODULE_17__receipts_receipts_component__["a" /* ReceiptsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_26__services_guard_service__["a" /* GuardService */]] },
-    { path: 'user/setting', component: __WEBPACK_IMPORTED_MODULE_18__setting_setting_component__["a" /* SettingComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_26__services_guard_service__["a" /* GuardService */]] },
-    { path: 'about', component: __WEBPACK_IMPORTED_MODULE_20__about_about_component__["a" /* AboutComponent */] },
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_13__home_home_component__["a" /* HomeComponent */] },
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_14__register_register_component__["a" /* RegisterComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_28__services_loggedinguard_service__["a" /* LoggedinguardService */]] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_26__login_login_component__["a" /* LoginComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_28__services_loggedinguard_service__["a" /* LoggedinguardService */]] },
+    { path: 'user/dashboard', component: __WEBPACK_IMPORTED_MODULE_15__dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_27__services_guard_service__["a" /* GuardService */]] },
+    { path: 'user/friends', component: __WEBPACK_IMPORTED_MODULE_16__friends_friends_component__["a" /* FriendsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_27__services_guard_service__["a" /* GuardService */]] },
+    { path: 'user/transactions', component: __WEBPACK_IMPORTED_MODULE_17__transactions_transactions_component__["a" /* TransactionsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_27__services_guard_service__["a" /* GuardService */]] },
+    { path: 'user/receipts', component: __WEBPACK_IMPORTED_MODULE_18__receipts_receipts_component__["a" /* ReceiptsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_27__services_guard_service__["a" /* GuardService */]] },
+    { path: 'user/setting', component: __WEBPACK_IMPORTED_MODULE_19__setting_setting_component__["a" /* SettingComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_27__services_guard_service__["a" /* GuardService */]] },
+    { path: 'about', component: __WEBPACK_IMPORTED_MODULE_21__about_about_component__["a" /* AboutComponent */] },
     { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 var AppModule = /** @class */ (function () {
@@ -228,40 +230,41 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__home_home_component__["a" /* HomeComponent */],
-                __WEBPACK_IMPORTED_MODULE_13__register_register_component__["a" /* RegisterComponent */],
-                __WEBPACK_IMPORTED_MODULE_14__dashboard_dashboard_component__["a" /* DashboardComponent */],
-                __WEBPACK_IMPORTED_MODULE_15__friends_friends_component__["a" /* FriendsComponent */],
-                __WEBPACK_IMPORTED_MODULE_16__transactions_transactions_component__["a" /* TransactionsComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__receipts_receipts_component__["a" /* ReceiptsComponent */],
-                __WEBPACK_IMPORTED_MODULE_18__setting_setting_component__["a" /* SettingComponent */],
-                __WEBPACK_IMPORTED_MODULE_19__services_filter_pipe__["a" /* FilterPipe */],
-                __WEBPACK_IMPORTED_MODULE_20__about_about_component__["a" /* AboutComponent */],
-                __WEBPACK_IMPORTED_MODULE_21__navbar_navbar_component__["a" /* NavbarComponent */],
-                __WEBPACK_IMPORTED_MODULE_25__login_login_component__["a" /* LoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_22__sidebar_sidebar_component__["a" /* SidebarComponent */]
+                __WEBPACK_IMPORTED_MODULE_12__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__home_home_component__["a" /* HomeComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__register_register_component__["a" /* RegisterComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__dashboard_dashboard_component__["a" /* DashboardComponent */],
+                __WEBPACK_IMPORTED_MODULE_16__friends_friends_component__["a" /* FriendsComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__transactions_transactions_component__["a" /* TransactionsComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__receipts_receipts_component__["a" /* ReceiptsComponent */],
+                __WEBPACK_IMPORTED_MODULE_19__setting_setting_component__["a" /* SettingComponent */],
+                __WEBPACK_IMPORTED_MODULE_20__services_filter_pipe__["a" /* FilterPipe */],
+                __WEBPACK_IMPORTED_MODULE_21__about_about_component__["a" /* AboutComponent */],
+                __WEBPACK_IMPORTED_MODULE_22__navbar_navbar_component__["a" /* NavbarComponent */],
+                __WEBPACK_IMPORTED_MODULE_26__login_login_component__["a" /* LoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_23__sidebar_sidebar_component__["a" /* SidebarComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["BrowserModule"],
-                __WEBPACK_IMPORTED_MODULE_5__angular_http__["a" /* HttpModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["b" /* HttpClientModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-                __WEBPACK_IMPORTED_MODULE_6_ng2_toastr_ng2_toastr__["ToastModule"].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* RouterModule */].forRoot(appRoutes),
-                __WEBPACK_IMPORTED_MODULE_8_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_10__environments_environment__["a" /* environment */].firebase),
-                __WEBPACK_IMPORTED_MODULE_9_angularfire2_database__["b" /* AngularFireDatabaseModule */]
+                __WEBPACK_IMPORTED_MODULE_2__angular_common__["CommonModule"],
+                __WEBPACK_IMPORTED_MODULE_6__angular_http__["a" /* HttpModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+                __WEBPACK_IMPORTED_MODULE_7_ng2_toastr_ng2_toastr__["ToastModule"].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* RouterModule */].forRoot(appRoutes),
+                __WEBPACK_IMPORTED_MODULE_9_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_11__environments_environment__["a" /* environment */].firebase),
+                __WEBPACK_IMPORTED_MODULE_10_angularfire2_database__["b" /* AngularFireDatabaseModule */]
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_23__services_auth_service__["a" /* AuthService */],
-                __WEBPACK_IMPORTED_MODULE_24__services_validation_service__["a" /* ValidationService */],
-                __WEBPACK_IMPORTED_MODULE_26__services_guard_service__["a" /* GuardService */],
-                __WEBPACK_IMPORTED_MODULE_27__services_loggedinguard_service__["a" /* LoggedinguardService */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["b" /* HttpClientModule */],
-                __WEBPACK_IMPORTED_MODULE_5__angular_http__["a" /* HttpModule */],
-                __WEBPACK_IMPORTED_MODULE_28__services_upload_service__["a" /* UploadService */]
+            providers: [__WEBPACK_IMPORTED_MODULE_24__services_auth_service__["a" /* AuthService */],
+                __WEBPACK_IMPORTED_MODULE_25__services_validation_service__["a" /* ValidationService */],
+                __WEBPACK_IMPORTED_MODULE_27__services_guard_service__["a" /* GuardService */],
+                __WEBPACK_IMPORTED_MODULE_28__services_loggedinguard_service__["a" /* LoggedinguardService */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_6__angular_http__["a" /* HttpModule */],
+                __WEBPACK_IMPORTED_MODULE_29__services_upload_service__["a" /* UploadService */]
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* AppComponent */]]
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_12__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -274,14 +277,14 @@ var AppModule = /** @class */ (function () {
 /***/ "./src/app/dashboard/dashboard.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".tn {\r\n    margin:6px 6px;\r\n    border: 4px solid #eee;\r\n    -webkit-box-shadow:#555 1px 1px 8px 1px;\r\n            box-shadow:#555 1px 1px 8px 1px;\r\n    cursor: pointer;\r\n    width: 300px;\r\n  }"
 
 /***/ }),
 
 /***/ "./src/app/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div class=\"container w3-animate-left\" id=\"menuContent\"> -->\r\n  <h5>Recent Activities</h5>\r\n  <!-- <div class=\"container\"> -->\r\n    <p>Send helps! :/</p>\r\n\r\n  <!-- </div> -->\r\n<!-- </div> -->\r\n"
+module.exports = "\r\n<!-- The days got messed up for this one, need a better approach -->\r\n<button class=\"btn btn-success\" (click)=\"getData()\">Get The Data Version 1</button>\r\n<!-- Correct date by order but the logic based on friend list of json objects(no good), need a better approach -->\r\n<button class=\"btn btn-success\" (click)=\"click()\">Get The Data Version 2</button>\r\n<!-- <div *ngIf=\"friends | async\"> -->\r\n<div class=\"row\">\r\n    <div class=\"col\">\r\n        <h6><strong>Recent Activities</strong></h6>\r\n        <div style=\"margin-left:25%\" *ngFor=\"let recent of hack(recentActivities) \">\r\n            <br>\r\n            <!-- Transactions -->\r\n            <div style=\"background-color:#4a148c; color:white; width:50%;\" class=\"center\" *ngIf=\"recent.group_name\">\r\n                <p>{{recent.date}}</p>\r\n                <p>{{recent.total}}</p>\r\n                <p>Split With: {{recent.friend_names}}</p>\r\n                <p>{{recent.transaction_type}}</p>\r\n            </div><!-- Transactions -->\r\n            <!-- Friends -->\r\n            <div style=\"background-color:#01579b; color:white;  width:50%;\" class=\"center\"  *ngIf=\"recent.firstName\">\r\n                <p>{{recent.date}}</p>\r\n                <p>Added New Friend: {{recent.firstName}}</p>\r\n                <p>New Friend</p>\r\n            </div><!-- Friends -->\r\n            <!-- Receipts -->\r\n            <div style=\"background-color:#1b5e20; color:white; width:50%;\" class=\"center\"  *ngIf=\"recent.name\">\r\n                <p>{{recent.date}}</p>\r\n                <p>Added New Receipt</p>\r\n                <img src=\"{{recent.link}}\" alt=\"Receipt\" class=\"img tn\" >\r\n            </div><!-- Receipts -->\r\n        </div><!-- *ngFor -->\r\n    </div>\r\n  </div>\r\n<!-- </div> -->"
 
 /***/ }),
 
@@ -291,6 +294,10 @@ module.exports = "<!-- <div class=\"container w3-animate-left\" id=\"menuContent
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_lodash__ = __webpack_require__("./node_modules/lodash/lodash.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_lodash__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -301,10 +308,173 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+ // to help loop over array
 var DashboardComponent = /** @class */ (function () {
-    function DashboardComponent() {
+    function DashboardComponent(authService, router) {
+        this.authService = authService;
+        this.router = router;
+        this.fri = [];
+        this.arrived = false;
     }
     DashboardComponent.prototype.ngOnInit = function () {
+        this.getTheDashboard();
+    };
+    DashboardComponent.prototype.getTheDashboard = function () {
+        var _this = this;
+        // Make a call to the services for a HTTP GET request to the backend in routes/dashboard
+        this.authService.getDashboard().subscribe(function (data) {
+            // Received the data back, get the right list of json objects to the right variable:
+            _this.transactions = data['trans'];
+            _this.receipts = data['receipts'];
+            _this.friends = data['friends'];
+            // Reverse the list so the most recent days first:
+            _this.transactions = _this.transactions.reverse();
+            _this.receipts = _this.receipts.reverse();
+            _this.friends = _this.friends.reverse();
+            _this.filtersLoaded = Promise.resolve(true);
+        }); // End of getDashboard()
+        // setTimeout(this.click(), 5000);
+        // this.click();
+        // console.log('Here****', this.friends);
+    };
+    DashboardComponent.prototype.hack = function (list) {
+        return list;
+    };
+    DashboardComponent.prototype.getData = function () {
+        console.log('Here****', this.friends);
+        // Init. and declared variables
+        var i = 0, x = 0, y = 0, z = 0;
+        var array = [];
+        var recent = [];
+        var len = 0;
+        var temp = this.friends[0].date; // April 5th
+        var tempTran = this.transactions[0].date; // April 6th
+        var tempRe = this.receipts[0].date; // April 7th
+        array.push(temp);
+        // Check if the date is already in the array, 
+        // if not add it and change the temp(most recent date)
+        if (!array.includes(this.transactions[0].date)) {
+            array.push(tempTran);
+            temp = tempTran;
+        }
+        if (!array.includes(this.receipts[0].date)) {
+            array.push(tempRe);
+            temp = tempRe;
+        }
+        len = Math.max(this.friends.length, Math.max(this.transactions.length, this.receipts.length));
+        // Only add distinct date
+        for (i = 0; i < len; i++) {
+            // if((i < this.friends.length) && (this.friends[i].date ===  temp)){
+            //   continue;
+            // }
+            // if((i < this.transactions.length) && (this.transactions[i].date ===  temp) ){
+            //   continue;
+            // }
+            // if(( i < this.receipts.length) && (this.receipts[i].date ===  temp)){
+            //   continue;
+            // }
+            if ((i < this.friends.length) && (temp !== this.friends[i].date)) {
+                temp = this.friends[i].date;
+                array.push(temp);
+            }
+            if ((i < this.transactions.length) && (temp !== this.transactions[i].date)) {
+                temp = this.transactions[i].date;
+                array.push(temp);
+            }
+            if ((i < this.receipts.length) && (temp !== this.receipts[i].date)) {
+                temp = this.receipts[i].date;
+                array.push(temp);
+            }
+        }
+        for (i = 0; i <= array.length; i++) {
+            for (x = 0; x < this.transactions.length; x++) {
+                if (this.transactions[x].date === array[i]) {
+                    recent.push(this.transactions[x]);
+                }
+            }
+            for (y = 0; y < this.receipts.length; y++) {
+                if (this.receipts[y].date === array[i]) {
+                    recent.push(this.receipts[y]);
+                }
+            }
+            for (z = 0; z < this.friends.length; z++) {
+                if (this.friends[z].date === array[i]) {
+                    recent.push(this.friends[z]);
+                }
+            }
+        }
+        this.recentActivities = recent;
+        console.log('Final: ', this.recentActivities);
+    };
+    DashboardComponent.prototype.click = function () {
+        console.log('Here****', this.friends);
+        var lengthFriends = __WEBPACK_IMPORTED_MODULE_3_lodash__["range"](this.friends.length);
+        var theLen = this.friends.length;
+        console.log('theLen days: ', theLen);
+        console.log('theLen days: ', this.friends[(theLen - 1)].date);
+        console.log('theLen days: ', (this.friends[0].date));
+        var first = new Date(this.friends[0].date);
+        var last = new Date(this.friends[(theLen - 1)].date);
+        var retval = Math.abs(first - last) / (1000 * 24 * 60 * 60);
+        console.log('retval is: ', retval);
+        var dayLen = String((this.friends[0].date) - (this.friends[(theLen - 1)].date));
+        console.log('running for this many days: ', dayLen);
+        console.log('Len: ', lengthFriends);
+        var i = 0;
+        var temp = this.friends[0].date;
+        var array = [];
+        array.push(temp);
+        console.log('array: ', array);
+        console.log('Contains: ', array.includes(temp));
+        for (i = 0; i < this.friends.length; i++) {
+            if (this.friends[i].date === temp) {
+                console.log('In here**** wont add', i);
+                continue;
+            }
+            if (temp !== this.friends[i].date) {
+                console.log('In here**** adding', i);
+                temp = this.friends[i].date;
+                array.push(temp);
+            }
+        }
+        console.log('array: ', array);
+        console.log('array len: ', array.length);
+        var recent = [];
+        var x = 0, y = 0, z = 0;
+        // console.log('Object ** :', this.friends[0])
+        for (i = 0; i <= array.length; i++) {
+            for (x = 0; x < this.transactions.length; x++) {
+                if (this.transactions[x].date === array[i]) {
+                    console.log('In x adding: ', this.transactions[x].date);
+                    recent.push(this.transactions[x]);
+                }
+            }
+            for (y = 0; y < this.receipts.length; y++) {
+                if (this.receipts[y].date === array[i]) {
+                    console.log('In y adding: ', this.receipts[y].date);
+                    recent.push(this.receipts[y]);
+                }
+            }
+            for (z = 0; z < this.friends.length; z++) {
+                if (this.friends[z].date === array[i]) {
+                    console.log('In z adding: ', this.friends[z].date);
+                    recent.push(this.friends[z]);
+                }
+            }
+        }
+        this.recentActivities = recent;
+        console.log('Final: ', this.recentActivities);
+        // _.each(2, (days) => {
+        //   _.each(lengthFriends, (index) => {
+        //     // console.log('index: ', index);
+        //       if(this.friends[index].date ===  "Wed Apr 04 2018"){
+        //         console.log('In here****', index);
+        //       }
+        //       // this.fri.unshift(this.friends[index].date);
+        //     }); 
+        // });
     };
     DashboardComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -312,7 +482,8 @@ var DashboardComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/dashboard/dashboard.component.html"),
             styles: [__webpack_require__("./src/app/dashboard/dashboard.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]])
     ], DashboardComponent);
     return DashboardComponent;
 }());
@@ -1204,6 +1375,20 @@ var AuthService = /** @class */ (function () {
         this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', this.authToken);
         return this.http.get(this.baseUri + '/user/transactions', { headers: this.headers });
     };
+    // POST: save the receipts to the mLab database under "receipts" collection
+    // addReceipts(receipts){
+    //   this.loadToken();
+    //   this.headers = new HttpHeaders().set('Authorization', this.authToken);
+    //   return this.http.post(this.baseUri+'/user/receipts/upload', receipts, {headers:this.headers})
+    // }
+    // ====================== Dashboard ======================================================
+    // GET request to the backend for dashboard Info
+    AuthService.prototype.getDashboard = function () {
+        // Load the token into the authToken const:
+        this.loadToken();
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', this.authToken);
+        return this.http.get(this.baseUri + '/user/dashboard', { headers: this.headers });
+    };
     AuthService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
@@ -1675,7 +1860,7 @@ module.exports = ""
 /***/ "./src/app/sidebar/sidebar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Sidebar -->\n\n\n<!-- <body> -->\n\n<div *ngIf=\"authService.isLoggedIn()\" \nclass=\"w3-sidebar w3-bar-block w3-xxlarge w3-animate-left\" \nstyle=\"width:200px; height:100%; background-color:#71e7bb;\" id=\"mySidebar\"\n>\n\n<!-- Dashboard -->\n  <a ui-sref=\"dashboard\" \n  [routerLink]=\"['/user/dashboard']\" \n  class=\"w3-bar-item w3-button w3-hover-white\" \n  style=\"height: 80px;border-bottom: 1px solid white;\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n\n  >\n  <img style=\"max-height: 40px; padding-left:5px;\" src=\"..\\..\\assets\\M.png\">\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:20px;\">Dashboard</p></a> \n  <!-- End Dashboard -->\n\n  <!-- Friends -->\n  <a ui-sref=\"friends\" \n  [routerLink]=\"['/user/friends']\" \n  class=\"w3-bar-item w3-button w3-hover-white\" \n  style=\"height: 80px; border-bottom: 1px solid white;\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n\n  >\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\friends.png\">\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:20px;\">Friends</p></a> \n  <!-- End Friends -->\n\n  <!-- Transactions -->\n  <a ui-sref=\"transactions\" \n  [routerLink]=\"['/user/transactions']\" \n  class=\"w3-bar-item w3-button w3-hover-white\" \n  style=\"height: 80px; border-bottom: 1px solid white;\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n  \n  >\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\transactions.png\">\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:20px;\">Transactions</p></a> \n  <!-- End Transactions -->\n\n  <!-- Receipts -->\n  <a ui-sref=\"receipts\" \n  [routerLink]=\"['/user/receipts']\" \n  class=\"w3-bar-item w3-button w3-hover-white\" \n  style=\"height: 80px; border-bottom: 1px solid white;\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n  \n  >\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\receipts.png\">\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:20px;\">Receipts</p></a>\n  <!-- End Receipts -->\n\n  <!-- Settings -->\n  <a ui-sref=\"settings\" \n  [routerLink]=\"['/user/setting']\" \n  class=\"w3-bar-item w3-button w3-hover-white\" \n  style=\"height: 80px; border-bottom: 1px solid white;\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n  \n  >\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\settings.png\">\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:20px;\">Settings</p></a> \n  <!-- End Settings -->\n\n  <!-- Download -->\n  <a ui-sref=\"download\" \n  [routerLink]=\"['/user/download']\" \n  class=\"w3-bar-item w3-button w3-hover-white\" \n  style=\"height: 80px; position:absolute; bottom:61px; border-top: 1px solid white; border-bottom: 1px solid white;\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n  \n  >\n  <!-- style=\"height: 80px; margin-top:26.94vh; border-bottom: 1px solid white;\" -->\n  \n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\download.png\">\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:20px;\">Download</p></a> \n  <!-- End Download -->\n\n</div>\n\n\n<!-- </body> -->\n\n<!-- End sidebar -->\n"
+module.exports = "<!-- Sidebar -->\r\n\r\n\r\n<!-- <body> -->\r\n\r\n<div *ngIf=\"authService.isLoggedIn()\" \r\nclass=\"w3-sidebar w3-bar-block w3-xxlarge w3-animate-left\" \r\nstyle=\"width:210px; height:100%; background-color:#71e7bb;\" id=\"mySidebar\"\r\n>\r\n\r\n<!-- Dashboard -->\r\n  <a ui-sref=\"dashboard\" \r\n  [routerLink]=\"['/user/dashboard']\" \r\n  class=\"w3-bar-item w3-button w3-hover-white\" \r\n  style=\"height: 80px;border-bottom: 1px solid white;\"\r\n  [routerLinkActive]=\"['active']\"\r\n  [routerLinkActiveOptions] =\"{exact:true}\"\r\n\r\n  >\r\n  <img style=\"max-height: 40px; padding-left:5px;\" src=\"..\\..\\assets\\M.png\">\r\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:16px;\">Dashboard</p></a> \r\n  <!-- End Dashboard -->\r\n\r\n  <!-- Friends -->\r\n  <a ui-sref=\"friends\" \r\n  [routerLink]=\"['/user/friends']\" \r\n  class=\"w3-bar-item w3-button w3-hover-white\" \r\n  style=\"height: 80px; border-bottom: 1px solid white;\"\r\n  [routerLinkActive]=\"['active']\"\r\n  [routerLinkActiveOptions] =\"{exact:true}\"\r\n\r\n  >\r\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\friends.png\">\r\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:16px;\">Friends</p></a> \r\n  <!-- End Friends -->\r\n\r\n  <!-- Transactions -->\r\n  <a ui-sref=\"transactions\" \r\n  [routerLink]=\"['/user/transactions']\" \r\n  class=\"w3-bar-item w3-button w3-hover-white\" \r\n  style=\"height: 80px; border-bottom: 1px solid white;\"\r\n  [routerLinkActive]=\"['active']\"\r\n  [routerLinkActiveOptions] =\"{exact:true}\"\r\n  \r\n  >\r\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\transactions.png\">\r\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:16px;\">Transactions</p></a>\r\n  <!-- End Transactions -->\r\n\r\n  <!-- Receipts -->\r\n  <a ui-sref=\"receipts\" \r\n  [routerLink]=\"['/user/receipts']\" \r\n  class=\"w3-bar-item w3-button w3-hover-white\" \r\n  style=\"height: 80px; border-bottom: 1px solid white;\"\r\n  [routerLinkActive]=\"['active']\"\r\n  [routerLinkActiveOptions] =\"{exact:true}\"\r\n  \r\n  >\r\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\receipts.png\">\r\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:16px;\">Receipts</p></a>\r\n  <!-- End Receipts -->\r\n\r\n  <!-- Settings -->\r\n  <a ui-sref=\"settings\" \r\n  [routerLink]=\"['/user/setting']\" \r\n  class=\"w3-bar-item w3-button w3-hover-white\" \r\n  style=\"height: 80px; border-bottom: 1px solid white;\"\r\n  [routerLinkActive]=\"['active']\"\r\n  [routerLinkActiveOptions] =\"{exact:true}\"\r\n  \r\n  >\r\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\settings.png\">\r\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:16px;\">Settings</p></a> \r\n  <!-- End Settings -->\r\n\r\n  <!-- Download -->\r\n  <a ui-sref=\"download\" \r\n  [routerLink]=\"['/user/download']\" \r\n  class=\"w3-bar-item w3-button w3-hover-white\" \r\n  style=\"height: 80px; position:absolute; bottom:61px; border-top: 1px solid white; border-bottom: 1px solid white;\"\r\n  [routerLinkActive]=\"['active']\"\r\n  [routerLinkActiveOptions] =\"{exact:true}\"\r\n  \r\n  >\r\n  <!-- style=\"height: 80px; margin-top:26.94vh; border-bottom: 1px solid white;\" -->\r\n  \r\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\download.png\">\r\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:16px;\">Download</p></a> \r\n  <!-- End Download -->\r\n\r\n</div>\r\n\r\n\r\n<!-- </body> -->\r\n\r\n<!-- End sidebar -->\r\n"
 
 /***/ }),
 

@@ -1,7 +1,34 @@
-<!-- <div class="container w3-animate-left" id="menuContent"> -->
-  <h5>Recent Activities</h5>
-  <!-- <div class="container"> -->
-    <p>Send helps! :/</p>
 
-  <!-- </div> -->
+<!-- The days got messed up for this one, need a better approach -->
+<button class="btn btn-success" (click)="getData()">Get The Data Version 1</button>
+<!-- Correct date by order but the logic based on friend list of json objects(no good), need a better approach -->
+<button class="btn btn-success" (click)="click()">Get The Data Version 2</button>
+<!-- <div *ngIf="friends | async"> -->
+<div class="row">
+    <div class="col">
+        <h6><strong>Recent Activities</strong></h6>
+        <div style="margin-left:25%" *ngFor="let recent of hack(recentActivities) ">
+            <br>
+            <!-- Transactions -->
+            <div style="background-color:#4a148c; color:white; width:50%;" class="center" *ngIf="recent.group_name">
+                <p>{{recent.date}}</p>
+                <p>{{recent.total}}</p>
+                <p>Split With: {{recent.friend_names}}</p>
+                <p>{{recent.transaction_type}}</p>
+            </div><!-- Transactions -->
+            <!-- Friends -->
+            <div style="background-color:#01579b; color:white;  width:50%;" class="center"  *ngIf="recent.firstName">
+                <p>{{recent.date}}</p>
+                <p>Added New Friend: {{recent.firstName}}</p>
+                <p>New Friend</p>
+            </div><!-- Friends -->
+            <!-- Receipts -->
+            <div style="background-color:#1b5e20; color:white; width:50%;" class="center"  *ngIf="recent.name">
+                <p>{{recent.date}}</p>
+                <p>Added New Receipt</p>
+                <img src="{{recent.link}}" alt="Receipt" class="img tn" >
+            </div><!-- Receipts -->
+        </div><!-- *ngFor -->
+    </div>
+  </div>
 <!-- </div> -->
