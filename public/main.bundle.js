@@ -213,7 +213,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 // all the routes:
 var appRoutes = [
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_13__home_home_component__["a" /* HomeComponent */] },
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_13__home_home_component__["a" /* HomeComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_28__services_loggedinguard_service__["a" /* LoggedinguardService */]] },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_14__register_register_component__["a" /* RegisterComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_28__services_loggedinguard_service__["a" /* LoggedinguardService */]] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_26__login_login_component__["a" /* LoginComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_28__services_loggedinguard_service__["a" /* LoggedinguardService */]] },
     { path: 'user/dashboard', component: __WEBPACK_IMPORTED_MODULE_15__dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_27__services_guard_service__["a" /* GuardService */]] },
@@ -670,7 +670,7 @@ module.exports = ""
 /***/ "./src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\" id=\"row\">\r\n    <div class=\"col\" id=\"col\">\r\n        <img src=\"../../assets/rumi logo.png\" width=\"400\" href=\"/\" class=\"align-self-center\">\r\n    </div>\r\n  \r\n    <div class=\"col align-self-center\" id=\"col\">\r\n      <!-- {{ tagline }} -->\r\n      <p>\r\n      <p>\r\n        <a ui-sref=\"register\" [routerLink]=\"['/register']\" class=\"btn\" id=\"button_main_color\">Get Started!</a>\r\n        <a ui-sref=\"download\" href=\"https://www.youtube.com/watch?v=vTcf4Io209E\" class=\"btn\" id=\"button_main_color\">Download</a>\r\n      </p>\r\n      <p>\r\n      <p>Already have an account?  <a ui-sref=\"login\" [routerLink]=\"['/login']\" >Login here</a>.\r\n    </div>\r\n  </div>\r\n  "
+module.exports = "<div class=\"row\" id=\"row\">\r\n    <div class=\"col\" id=\"col\">\r\n        <img src=\"../../assets/rumi logo.png\" width=\"400\" href=\"/\" class=\"align-self-center\">\r\n    </div>\r\n  \r\n    <div class=\"col align-self-center\" id=\"col\">\r\n      <!-- {{ tagline }} -->\r\n      <p>\r\n      <p>\r\n        <a ui-sref=\"register\" [routerLink]=\"['/register']\" class=\"btn\" id=\"button_main_color\">Get Started!</a>\r\n        <a ui-sref=\"download\" href=\"https://www.youtube.com/watch?v=vTcf4Io209E\" class=\"btn\" id=\"button_main_color\">Download</a>\r\n      </p>\r\n      <p>\r\n      <p>Already have an account?  <a ui-sref=\"login\" [routerLink]=\"['/login']\" >Login here</a>.\r\n    </div>\r\n</div>\r\n  "
 
 /***/ }),
 
@@ -680,6 +680,8 @@ module.exports = "<div class=\"row\" id=\"row\">\r\n    <div class=\"col\" id=\"
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -690,8 +692,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent() {
+    function HomeComponent(router, authService) {
+        this.router = router;
+        this.authService = authService;
     }
     HomeComponent.prototype.ngOnInit = function () {
     };
@@ -701,7 +707,8 @@ var HomeComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/home/home.component.html"),
             styles: [__webpack_require__("./src/app/home/home.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]])
     ], HomeComponent);
     return HomeComponent;
 }());
