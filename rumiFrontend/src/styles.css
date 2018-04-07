@@ -51,7 +51,7 @@ body {
   margin-left: 15%; /* Same as the width of the sidenav */
   padding: 0px 15px;
 }
-  
+
 #menuContent {
   margin-left:210px;
 }
@@ -59,12 +59,12 @@ body {
   /* .recentA {
     background-color: rgb(198, 223, 215);
   }
-  
+
   .addfriend {
     width: 80%;
     background-color: rgb(198, 223, 215);
   } */
-  
+
   /* .right {
       position: absolute;
       right: 30px;
@@ -72,7 +72,7 @@ body {
       background-color:  #59b68e;
       padding: 10px;
   }
-  
+
   .right2 {
     position: absolute;
     right: 134px;
@@ -80,45 +80,45 @@ body {
     background-color:  #59b68e;
     padding: 10px;
   } */
-  
+
   .center{
     text-align: center;
   }
-  
+
   /* .widebutton {
-    
+
     margin-left: -15px;
     padding: 15px 499px;
-  
+
     background-color: #59b68e;
   } */
 
 
   /* .widebutton2 {
-    
+
     margin-left: -15px;
     padding: 15px 371px;
-  
+
     background-color: #59b68e;
   } */
-  
+
   div{
     resize: both;
   }
 
-  
+
   a {
     color: #59b68e;
   }
-  
+
   a:hover {
     color: #ffffff;
   }
-  
+
   #navbar {
     background-color: #59b68e;
   }
-  
+
   /* Changed this to col-sidebar */
   /* #col {
     padding:10px;
@@ -127,24 +127,18 @@ body {
   #col-sidebar {
     padding:10px;
   }
-  
+
   #button_main_color {
     color: #fff;
     background-color: #59b68e;
   }
-  
+
   #user_form {
     width:35%;
     position: absolute;
     top: 50%;
     left:50%;
     transform: translate(-50%,-50%);
-  }
-
-  /* Hacky way to  combat the app.component.html container class*/
-  .expandToPageWidth{
-    margin-left:-20%; 
-    margin-right:-20%;
   }
 
 .recentA {
@@ -273,13 +267,14 @@ a:hover {
 }
 
 #home {
-  text-align: center;
-  min-width: 70%;
-  width:75%;
-  top: 50%;
-  left:50%;
-  position:absolute;
-  transform: translate(-50%, -50%);
+  top:100px;
+  position: relative;
+}
+
+#footer {
+  background-color:#59b68e;
+  width:100%;
+  position: relative;
 }
 
 #roommate-list-item {
