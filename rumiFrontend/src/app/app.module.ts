@@ -41,7 +41,7 @@ import { UploadService } from './services/upload.service';
 
 // all the routes:
 const appRoutes: Routes =[
-  { path: '', component: HomeComponent },//home page  
+  { path: '', component: HomeComponent , canActivate: [LoggedinguardService]},//home page  
   { path: 'register', component: RegisterComponent, canActivate: [LoggedinguardService] },
   { path: 'login', component: LoginComponent, canActivate: [LoggedinguardService] },
   { path: 'user/dashboard', component: DashboardComponent, canActivate: [GuardService]},// after logged in
