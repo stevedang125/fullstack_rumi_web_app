@@ -77,7 +77,7 @@ module.exports = ""
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<!-- Nav bar -->\r\n<div style=\"position:sticky;top:0;\" >\r\n<app-navbar></app-navbar>\r\n</div>\r\n<!-- Sidebar -->\r\n<app-sidebar></app-sidebar>\r\n<div class=\"w3-animate-left\" id=\"menuContent\">\r\n    <!-- <div class=\"w3-container\"> -->\r\n      <router-outlet></router-outlet>\r\n    <!-- </div> -->\r\n  <!-- <router-outlet></router-outlet> -->\r\n</div>\r\n\r\n<!-- <div *ngIf=\"!authService.isLoggedIn()\">\r\n    <router-outlet></router-outlet>\r\n</div> -->\r\n\r\n<!-- Other routes -->\r\n<!-- <router-outlet></router-outlet> -->\r\n\r\n  \r\n"
+module.exports = "\r\n<!-- Nav bar -->\r\n<!-- <div style=\"position:sticky;top:0;\" > -->\r\n<app-navbar></app-navbar>\r\n<!-- </div> -->\r\n<!-- Sidebar -->\r\n<app-sidebar></app-sidebar>\r\n<div class=\"w3-animate-left\" id=\"menuContent\">\r\n    <!-- <div class=\"w3-container\"> -->\r\n    <div class=\"container\">\r\n      <router-outlet></router-outlet>\r\n    </div>\r\n    <!-- </div> -->\r\n  <!-- <router-outlet></router-outlet> -->\r\n</div>\r\n\r\n<!-- <div *ngIf=\"!authService.isLoggedIn()\">\r\n    <router-outlet></router-outlet>\r\n</div> -->\r\n\r\n<!-- Other routes -->\r\n<!-- <router-outlet></router-outlet> -->\r\n\r\n  \r\n"
 
 /***/ }),
 
@@ -140,40 +140,42 @@ var AppComponent = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/platform-browser.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_toastr_ng2_toastr__ = __webpack_require__("./node_modules/ng2-toastr/ng2-toastr.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_toastr_ng2_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_ng2_toastr_ng2_toastr__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/animations.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2__ = __webpack_require__("./node_modules/angularfire2/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2_database__ = __webpack_require__("./node_modules/angularfire2/database/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__home_home_component__ = __webpack_require__("./src/app/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__register_register_component__ = __webpack_require__("./src/app/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__dashboard_dashboard_component__ = __webpack_require__("./src/app/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__friends_friends_component__ = __webpack_require__("./src/app/friends/friends.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__transactions_transactions_component__ = __webpack_require__("./src/app/transactions/transactions.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__receipts_receipts_component__ = __webpack_require__("./src/app/receipts/receipts.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__setting_setting_component__ = __webpack_require__("./src/app/setting/setting.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_filter_pipe__ = __webpack_require__("./src/app/services/filter.pipe.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__about_about_component__ = __webpack_require__("./src/app/about/about.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__navbar_navbar_component__ = __webpack_require__("./src/app/navbar/navbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__sidebar_sidebar_component__ = __webpack_require__("./src/app/sidebar/sidebar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_validation_service__ = __webpack_require__("./src/app/services/validation.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__login_login_component__ = __webpack_require__("./src/app/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_guard_service__ = __webpack_require__("./src/app/services/guard.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__services_loggedinguard_service__ = __webpack_require__("./src/app/services/loggedinguard.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__services_upload_service__ = __webpack_require__("./src/app/services/upload.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ng2_toastr_ng2_toastr__ = __webpack_require__("./node_modules/ng2-toastr/ng2-toastr.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ng2_toastr_ng2_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_ng2_toastr_ng2_toastr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/animations.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2__ = __webpack_require__("./node_modules/angularfire2/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_angularfire2_database__ = __webpack_require__("./node_modules/angularfire2/database/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__home_home_component__ = __webpack_require__("./src/app/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__register_register_component__ = __webpack_require__("./src/app/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__dashboard_dashboard_component__ = __webpack_require__("./src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__friends_friends_component__ = __webpack_require__("./src/app/friends/friends.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__transactions_transactions_component__ = __webpack_require__("./src/app/transactions/transactions.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__receipts_receipts_component__ = __webpack_require__("./src/app/receipts/receipts.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__setting_setting_component__ = __webpack_require__("./src/app/setting/setting.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_filter_pipe__ = __webpack_require__("./src/app/services/filter.pipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__about_about_component__ = __webpack_require__("./src/app/about/about.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__navbar_navbar_component__ = __webpack_require__("./src/app/navbar/navbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__sidebar_sidebar_component__ = __webpack_require__("./src/app/sidebar/sidebar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__services_validation_service__ = __webpack_require__("./src/app/services/validation.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__login_login_component__ = __webpack_require__("./src/app/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__services_guard_service__ = __webpack_require__("./src/app/services/guard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__services_loggedinguard_service__ = __webpack_require__("./src/app/services/loggedinguard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__services_upload_service__ = __webpack_require__("./src/app/services/upload.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 // import array:
@@ -211,15 +213,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 // all the routes:
 var appRoutes = [
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_12__home_home_component__["a" /* HomeComponent */] },
-    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_13__register_register_component__["a" /* RegisterComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_27__services_loggedinguard_service__["a" /* LoggedinguardService */]] },
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_25__login_login_component__["a" /* LoginComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_27__services_loggedinguard_service__["a" /* LoggedinguardService */]] },
-    { path: 'user/dashboard', component: __WEBPACK_IMPORTED_MODULE_14__dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_26__services_guard_service__["a" /* GuardService */]] },
-    { path: 'user/friends', component: __WEBPACK_IMPORTED_MODULE_15__friends_friends_component__["a" /* FriendsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_26__services_guard_service__["a" /* GuardService */]] },
-    { path: 'user/transactions', component: __WEBPACK_IMPORTED_MODULE_16__transactions_transactions_component__["a" /* TransactionsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_26__services_guard_service__["a" /* GuardService */]] },
-    { path: 'user/receipts', component: __WEBPACK_IMPORTED_MODULE_17__receipts_receipts_component__["a" /* ReceiptsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_26__services_guard_service__["a" /* GuardService */]] },
-    { path: 'user/setting', component: __WEBPACK_IMPORTED_MODULE_18__setting_setting_component__["a" /* SettingComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_26__services_guard_service__["a" /* GuardService */]] },
-    { path: 'about', component: __WEBPACK_IMPORTED_MODULE_20__about_about_component__["a" /* AboutComponent */] },
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_13__home_home_component__["a" /* HomeComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_28__services_loggedinguard_service__["a" /* LoggedinguardService */]] },
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_14__register_register_component__["a" /* RegisterComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_28__services_loggedinguard_service__["a" /* LoggedinguardService */]] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_26__login_login_component__["a" /* LoginComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_28__services_loggedinguard_service__["a" /* LoggedinguardService */]] },
+    { path: 'user/dashboard', component: __WEBPACK_IMPORTED_MODULE_15__dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_27__services_guard_service__["a" /* GuardService */]] },
+    { path: 'user/friends', component: __WEBPACK_IMPORTED_MODULE_16__friends_friends_component__["a" /* FriendsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_27__services_guard_service__["a" /* GuardService */]] },
+    { path: 'user/transactions', component: __WEBPACK_IMPORTED_MODULE_17__transactions_transactions_component__["a" /* TransactionsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_27__services_guard_service__["a" /* GuardService */]] },
+    { path: 'user/receipts', component: __WEBPACK_IMPORTED_MODULE_18__receipts_receipts_component__["a" /* ReceiptsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_27__services_guard_service__["a" /* GuardService */]] },
+    { path: 'user/setting', component: __WEBPACK_IMPORTED_MODULE_19__setting_setting_component__["a" /* SettingComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_27__services_guard_service__["a" /* GuardService */]] },
+    { path: 'about', component: __WEBPACK_IMPORTED_MODULE_21__about_about_component__["a" /* AboutComponent */] },
     { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 var AppModule = /** @class */ (function () {
@@ -228,40 +230,41 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__home_home_component__["a" /* HomeComponent */],
-                __WEBPACK_IMPORTED_MODULE_13__register_register_component__["a" /* RegisterComponent */],
-                __WEBPACK_IMPORTED_MODULE_14__dashboard_dashboard_component__["a" /* DashboardComponent */],
-                __WEBPACK_IMPORTED_MODULE_15__friends_friends_component__["a" /* FriendsComponent */],
-                __WEBPACK_IMPORTED_MODULE_16__transactions_transactions_component__["a" /* TransactionsComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__receipts_receipts_component__["a" /* ReceiptsComponent */],
-                __WEBPACK_IMPORTED_MODULE_18__setting_setting_component__["a" /* SettingComponent */],
-                __WEBPACK_IMPORTED_MODULE_19__services_filter_pipe__["a" /* FilterPipe */],
-                __WEBPACK_IMPORTED_MODULE_20__about_about_component__["a" /* AboutComponent */],
-                __WEBPACK_IMPORTED_MODULE_21__navbar_navbar_component__["a" /* NavbarComponent */],
-                __WEBPACK_IMPORTED_MODULE_25__login_login_component__["a" /* LoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_22__sidebar_sidebar_component__["a" /* SidebarComponent */]
+                __WEBPACK_IMPORTED_MODULE_12__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__home_home_component__["a" /* HomeComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__register_register_component__["a" /* RegisterComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__dashboard_dashboard_component__["a" /* DashboardComponent */],
+                __WEBPACK_IMPORTED_MODULE_16__friends_friends_component__["a" /* FriendsComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__transactions_transactions_component__["a" /* TransactionsComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__receipts_receipts_component__["a" /* ReceiptsComponent */],
+                __WEBPACK_IMPORTED_MODULE_19__setting_setting_component__["a" /* SettingComponent */],
+                __WEBPACK_IMPORTED_MODULE_20__services_filter_pipe__["a" /* FilterPipe */],
+                __WEBPACK_IMPORTED_MODULE_21__about_about_component__["a" /* AboutComponent */],
+                __WEBPACK_IMPORTED_MODULE_22__navbar_navbar_component__["a" /* NavbarComponent */],
+                __WEBPACK_IMPORTED_MODULE_26__login_login_component__["a" /* LoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_23__sidebar_sidebar_component__["a" /* SidebarComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["BrowserModule"],
-                __WEBPACK_IMPORTED_MODULE_5__angular_http__["a" /* HttpModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["b" /* HttpClientModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-                __WEBPACK_IMPORTED_MODULE_6_ng2_toastr_ng2_toastr__["ToastModule"].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* RouterModule */].forRoot(appRoutes),
-                __WEBPACK_IMPORTED_MODULE_8_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_10__environments_environment__["a" /* environment */].firebase),
-                __WEBPACK_IMPORTED_MODULE_9_angularfire2_database__["b" /* AngularFireDatabaseModule */]
+                __WEBPACK_IMPORTED_MODULE_2__angular_common__["CommonModule"],
+                __WEBPACK_IMPORTED_MODULE_6__angular_http__["a" /* HttpModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+                __WEBPACK_IMPORTED_MODULE_7_ng2_toastr_ng2_toastr__["ToastModule"].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* RouterModule */].forRoot(appRoutes),
+                __WEBPACK_IMPORTED_MODULE_9_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_11__environments_environment__["a" /* environment */].firebase),
+                __WEBPACK_IMPORTED_MODULE_10_angularfire2_database__["b" /* AngularFireDatabaseModule */]
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_23__services_auth_service__["a" /* AuthService */],
-                __WEBPACK_IMPORTED_MODULE_24__services_validation_service__["a" /* ValidationService */],
-                __WEBPACK_IMPORTED_MODULE_26__services_guard_service__["a" /* GuardService */],
-                __WEBPACK_IMPORTED_MODULE_27__services_loggedinguard_service__["a" /* LoggedinguardService */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["b" /* HttpClientModule */],
-                __WEBPACK_IMPORTED_MODULE_5__angular_http__["a" /* HttpModule */],
-                __WEBPACK_IMPORTED_MODULE_28__services_upload_service__["a" /* UploadService */]
+            providers: [__WEBPACK_IMPORTED_MODULE_24__services_auth_service__["a" /* AuthService */],
+                __WEBPACK_IMPORTED_MODULE_25__services_validation_service__["a" /* ValidationService */],
+                __WEBPACK_IMPORTED_MODULE_27__services_guard_service__["a" /* GuardService */],
+                __WEBPACK_IMPORTED_MODULE_28__services_loggedinguard_service__["a" /* LoggedinguardService */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_6__angular_http__["a" /* HttpModule */],
+                __WEBPACK_IMPORTED_MODULE_29__services_upload_service__["a" /* UploadService */]
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* AppComponent */]]
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_12__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -274,14 +277,14 @@ var AppModule = /** @class */ (function () {
 /***/ "./src/app/dashboard/dashboard.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".tn {\r\n    margin:6px 6px;\r\n    border: 4px solid #eee;\r\n    -webkit-box-shadow:#555 1px 1px 8px 1px;\r\n            box-shadow:#555 1px 1px 8px 1px;\r\n    cursor: pointer;\r\n    width: 300px;\r\n  }"
 
 /***/ }),
 
 /***/ "./src/app/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div class=\"container w3-animate-left\" id=\"menuContent\"> -->\r\n  <h5>Recent Activities</h5>\r\n  <!-- <div class=\"container\"> -->\r\n    <p>Send helps! :/</p>\r\n\r\n  <!-- </div> -->\r\n<!-- </div> -->\r\n"
+module.exports = "\r\n<!-- <div *ngIf=\"friends | async\"> -->\r\n<div class=\"row\">\r\n    <div class=\"col\">\r\n        <h6><strong>Recent Activities</strong></h6>\r\n        <div style=\"margin-left:25%\" *ngFor=\"let recent of hack(recentActivities)\">\r\n            <br>\r\n            <!-- Transactions -->\r\n            <div style=\"background-color:#4a148c; color:white; width:50%;\" class=\"center\" *ngIf=\"recent.group_name\">\r\n                <p>{{recent.date}}</p>\r\n                <p>${{recent.total}}</p>\r\n                <p>Split With: {{recent.friend_names}}</p>\r\n                <p>{{recent.transaction_type}}</p>\r\n            </div><!-- Transactions -->\r\n            <!-- Friends -->\r\n            <div style=\"background-color:#01579b; color:white;  width:50%;\" class=\"center\"  *ngIf=\"recent.firstName\">\r\n                <p>{{recent.date}}</p>\r\n                <p>Added New Friend: {{recent.firstName}}</p>\r\n                <p>New Friend</p>\r\n            </div><!-- Friends -->\r\n            <!-- Receipts -->\r\n            <div style=\"background-color:#1b5e20; color:white; width:50%;\" class=\"center\"  *ngIf=\"recent.name\">\r\n                <p>{{recent.date}}</p>\r\n                <p>Added New Receipt</p>\r\n                <img src=\"{{recent.link}}\" alt=\"Receipt\" class=\"img tn\" >\r\n            </div><!-- Receipts -->\r\n        </div><!-- *ngFor -->\r\n    </div>\r\n  </div>\r\n<!-- </div> -->"
 
 /***/ }),
 
@@ -291,6 +294,8 @@ module.exports = "<!-- <div class=\"container w3-animate-left\" id=\"menuContent
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -301,18 +306,139 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var DashboardComponent = /** @class */ (function () {
-    function DashboardComponent() {
+    function DashboardComponent(authService, router) {
+        this.authService = authService;
+        this.router = router;
+        this.debug = false;
+        this.recentActivities = [];
+        this.arrived = false;
     }
     DashboardComponent.prototype.ngOnInit = function () {
+        this.getTheDashboard();
     };
+    DashboardComponent.prototype.ngOnChanges = function () {
+        // this.getTheDashboard();
+        // this.click();
+    };
+    // ========================== Helper functions ===========================
+    DashboardComponent.prototype.compareDate = function (a, b) {
+        return (Date.parse(a) > Date.parse(b)) ? a : b;
+    };
+    DashboardComponent.prototype.hack = function (list) {
+        return list;
+    };
+    DashboardComponent.prototype.sortDateArray = function (array) {
+        var i = 0;
+        for (i = 0; i < array.length; i++)
+            array[i] = Date.parse(array[i]);
+        array = array.sort().reverse();
+        for (i = 0; i < array.length; i++)
+            array[i] = new Date(array[i]).toDateString();
+        return array;
+    };
+    // =========================== HTTP GET request ==========================
+    DashboardComponent.prototype.getTheDashboard = function () {
+        var _this = this;
+        // Make a call to the services for a HTTP GET request to the backend in routes/dashboard
+        this.authService.getDashboard().subscribe(function (data) {
+            // Received the data back, get the right list of json objects to the right variable:
+            _this.transactions = data['trans'];
+            _this.receipts = data['receipts'];
+            _this.friends = data['friends'];
+            // Reverse the list so the most recent days first:
+            _this.transactions = _this.transactions.reverse();
+            _this.receipts = _this.receipts.reverse();
+            _this.friends = _this.friends.reverse();
+            _this.clickForData();
+        }); // End of getDashboard()
+    };
+    DashboardComponent.prototype.clickForData = function () {
+        var mostRecentDate = "";
+        var maxLen = 0, i = 0, x = 0, y = 0, z = 0;
+        var arrayOfDate = [];
+        var tempDate = "";
+        var recent = [];
+        // This part will get the most recent date out of all three list of json objects
+        if (this.debug) {
+            console.log('mostRecentDate friends: ', this.friends[0].date);
+            console.log('mostRecentDate transactions: ', this.transactions[0].date);
+            console.log('mostRecentDate receipts: ', this.receipts[0].date);
+        }
+        mostRecentDate = this.compareDate(this.friends[0].date, this.transactions[0].date);
+        mostRecentDate = this.compareDate(mostRecentDate, this.receipts[0].date);
+        if (this.debug)
+            console.log('mostRecentDate: ', mostRecentDate);
+        // This part will get the max len 
+        maxLen = Math.max(this.friends.length, Math.max(this.transactions.length, this.receipts.length));
+        if (this.debug)
+            console.log('maxLen: ', maxLen);
+        // This part will get all the date added from all the lists
+        arrayOfDate.push(mostRecentDate);
+        // tempDate = mostRecentDate;
+        if (this.debug)
+            console.log('arrayOfDate: ', arrayOfDate);
+        for (i = 0; i < maxLen; i++) {
+            // If the date is already there, skip
+            if ((i < this.transactions.length) && (tempDate === this.transactions[i].date)) {
+                continue;
+            }
+            if ((i < this.friends.length) && (tempDate === this.friends[i].date)) {
+                continue;
+            }
+            if ((i < this.receipts.length) && (tempDate === this.receipts[i].date)) {
+                continue;
+            }
+            // If the date is not in the array, change the tempDate and add it to the array
+            if ((i < this.transactions.length) && (tempDate !== this.transactions[i].date) && (!arrayOfDate.includes(this.transactions[i].date))) {
+                tempDate = this.transactions[i].date;
+                arrayOfDate.push(tempDate);
+            }
+            if ((i < this.friends.length) && (tempDate !== this.friends[i].date) && (!arrayOfDate.includes(this.friends[i].date))) {
+                tempDate = this.friends[i].date;
+                arrayOfDate.push(tempDate);
+            }
+            if ((i < this.receipts.length) && (tempDate !== this.receipts[i].date) && (!arrayOfDate.includes(this.receipts[i].date))) {
+                tempDate = this.receipts[i].date;
+                arrayOfDate.push(tempDate);
+            }
+        } // End of for loop
+        // Array of Date all sorted from most recent date.
+        arrayOfDate = this.sortDateArray(arrayOfDate);
+        if (this.debug)
+            console.log('arrayOfDate all sorted: ', arrayOfDate);
+        // Loop through all the list of json Objects to add the objects sort by the date:
+        for (i = 0; i <= arrayOfDate.length; i++) {
+            for (x = 0; x < this.transactions.length; x++) {
+                if (this.transactions[x].date === arrayOfDate[i]) {
+                    recent.push(this.transactions[x]);
+                }
+            }
+            for (y = 0; y < this.receipts.length; y++) {
+                if (this.receipts[y].date === arrayOfDate[i]) {
+                    recent.push(this.receipts[y]);
+                }
+            }
+            for (z = 0; z < this.friends.length; z++) {
+                if (this.friends[z].date === arrayOfDate[i]) {
+                    recent.push(this.friends[z]);
+                }
+            }
+        } // End of the big for loop
+        if (this.debug)
+            console.log("Recent array: ", recent);
+        this.recentActivities = recent;
+    }; // End of the clickForData()
     DashboardComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-dashboard',
             template: __webpack_require__("./src/app/dashboard/dashboard.component.html"),
             styles: [__webpack_require__("./src/app/dashboard/dashboard.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]])
     ], DashboardComponent);
     return DashboardComponent;
 }());
@@ -331,7 +457,7 @@ module.exports = ""
 /***/ "./src/app/friends/friends.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n\r\n  <div class=\"container-fluid\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-2\">\r\n        <!-- Search -->\r\n        <!-- <div class=\"card\"> -->\r\n            <form>\r\n                <!-- <div class=\"card-body\"> -->\r\n                  <!-- <h6 class=\"card-title\"> -->\r\n                  <h6>\r\n                    <strong>Search</strong>\r\n                  </h6>\r\n                  \r\n                  <table class=\"table table-hover\">\r\n                    <tbody>\r\n                      <tr>\r\n                        <td>\r\n                          <div class=\"form-group\">\r\n                              <input placeholder=\"*Enter Name\" type=\"text\" name=\"inputString\" [(ngModel)] = \"inputString\" class=\"form-control\">\r\n                          </div>\r\n                        </td>\r\n                      </tr>\r\n                      <tr>\r\n                        <button class=\"btn btn-success\" (click)=\"search_contact()\">Search</button>&nbsp;\r\n                        <button class=\"btn btn-danger\" (click)=\"clearSearch()\">Clear</button>\r\n                      </tr>\r\n                    </tbody>\r\n                  </table>\r\n                <!-- </div> -->\r\n              </form>\r\n          <!-- </div> -->\r\n        <!-- End Search -->\r\n  \r\n        <!-- Add -->\r\n        <form>\r\n            <!-- <div class=\"card-body half\"> -->\r\n              <!-- <h4 class=\"card-title\"><strong>Add Contact</strong></h4> -->\r\n              <h6><strong>Add Contact</strong></h6>\r\n              <table class=\"table table-hover\">\r\n                <tbody>\r\n                  <tr>\r\n                    <td>\r\n                      <div class=\"form-group\">\r\n                        <!-- <label><h6><strong>Firstname:</strong></h6></label> -->\r\n                        <input placeholder=\"*Enter Firstname\" type=\"text\" name=\"firstName\" [(ngModel)] = \"firstName\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Lastname:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Lastname\" type=\"text\" name=\"lastName\" [(ngModel)] = \"lastName\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Preferred Name:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Preferred Name\" type=\"text\" name=\"preferredName\" [(ngModel)] = \"preferredName\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Address:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Address\" type=\"text\" name=\"address\" [(ngModel)] = \"address\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Email:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Email\" type=\"text\" name=\"email\" [(ngModel)] = \"email\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Home Phone:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Home Phone\" type=\"text\" name=\"homePhone\" [(ngModel)] = \"homePhone\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Cell Phone:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Cell Phone\" type=\"text\" name=\"cellPhone\" [(ngModel)] = \"cellPhone\" class=\"form-control\">\r\n                      </div>\r\n                    </td>\r\n                  </tr>\r\n                  <tr>\r\n                    <td>\r\n                        <!-- <input type=\"submit\" value=\"Submit\" class=\"btn btn-success\"> -->\r\n                        <button class=\"btn btn-success\" (click)=\"onSubmitButton()\">Submit</button>&nbsp;\r\n                        <button class=\"btn btn-danger\" (click)=\"clear()\">Clear</button>\r\n                    </td>\r\n                  </tr>\r\n                </tbody>\r\n              </table>\r\n            <!-- </div> -->\r\n          </form>\r\n        <!-- End add -->\r\n      </div>\r\n  \r\n  \r\n      <div class=\"col-md-10\">\r\n        <!-- Contact list -->\r\n        <!-- Contact list -->\r\n    <!-- <div class=\"card\"> -->\r\n        <!-- <div class=\"card-body\"> -->\r\n          <!-- <h4 class=\"card-title\"><strong>Contact List</strong></h4> -->\r\n          <h6><strong>Contact List</strong></h6>\r\n          <table class=\"table table-hover\">\r\n            <thead>\r\n              <tr>\r\n                <th><h6><strong>Number</strong></h6></th>\r\n                <th><h6><strong>Firstname</strong></h6></th>\r\n                <th><h6><strong>Lastname</strong></h6></th>\r\n                <th><h6><strong>Preferred Name</strong></h6></th>\r\n                <th><h6><strong>Address</strong></h6></th>\r\n                <th><h6><strong>Email</strong></h6></th>\r\n                <th><h6><strong>Home Phone</strong></h6></th>\r\n                <th><h6><strong>Cell Phone</strong></h6></th>\r\n                <th><h6><strong>Date Added</strong></h6></th>\r\n                <th><h6><strong>Options</strong></h6></th>\r\n              </tr>\r\n            </thead>\r\n            <tbody>\r\n                <!-- <tr *ngFor=\"let contact of hack(contactlist); let i = index\"> -->\r\n                <tr *ngFor=\"let contact of hack(contactlist) | filter:inputString; let i = index\">\r\n                  <td>{{i+1}}</td>\r\n                  <td>{{contact.firstName}}</td>\r\n                  <td>{{contact.lastName}}</td>\r\n                  <td>{{contact.preferredName}}</td>\r\n                  <td>{{contact.address}}</td>\r\n                  <td>{{contact.email}}</td>\r\n                  <td>{{contact.homePhone}}</td>\r\n                  <td>{{contact.cellPhone}}</td>\r\n                  <td>{{contact.date}}</td>\r\n                  <td>\r\n                      <button class=\"btn btn-danger\" (click)=\"onDeleteButton(contact)\">Delete</button>&nbsp;\r\n                      <button class=\"btn btn-info\" (click)=\"onEditButton(contact)\" >Edit</button>\r\n                  </td>\r\n              </tr>\r\n            </tbody>\r\n          </table>\r\n        <!-- </div> -->\r\n  \r\n        <!-- End of contact list -->\r\n      </div>\r\n    </div>\r\n  </div>\r\n  \r\n  \r\n"
+module.exports = "\r\n\r\n  <!-- <div class=\"container-fluid\"> -->\r\n    <div class=\"row\">\r\n      <div class=\"col-md-2\">\r\n        <!-- Search -->\r\n        <!-- <div class=\"card\"> -->\r\n            <form>\r\n                <!-- <div class=\"card-body\"> -->\r\n                  <!-- <h6 class=\"card-title\"> -->\r\n                  <h6>\r\n                    <strong>Search</strong>\r\n                  </h6>\r\n                  \r\n                  <table class=\"table table-hover\">\r\n                    <tbody>\r\n                      <tr>\r\n                        <td>\r\n                          <div class=\"form-group\">\r\n                              <input placeholder=\"*Enter Name\" type=\"text\" name=\"inputString\" [(ngModel)] = \"inputString\" class=\"form-control\">\r\n                          </div>\r\n                        </td>\r\n                      </tr>\r\n                      <tr>\r\n                        <button class=\"btn btn-success\" (click)=\"search_contact()\">Search</button>&nbsp;\r\n                        <button class=\"btn btn-danger\" (click)=\"clearSearch()\">Clear</button>\r\n                      </tr>\r\n                    </tbody>\r\n                  </table>\r\n                <!-- </div> -->\r\n              </form>\r\n          <!-- </div> -->\r\n        <!-- End Search -->\r\n  \r\n        <!-- Add -->\r\n        <form>\r\n            <!-- <div class=\"card-body half\"> -->\r\n              <!-- <h4 class=\"card-title\"><strong>Add Contact</strong></h4> -->\r\n              <h6><strong>Add Contact</strong></h6>\r\n              <table class=\"table table-hover\">\r\n                <tbody>\r\n                  <tr>\r\n                    <td>\r\n                      <div class=\"form-group\">\r\n                        <!-- <label><h6><strong>Firstname:</strong></h6></label> -->\r\n                        <input placeholder=\"*Enter Firstname\" type=\"text\" name=\"firstName\" [(ngModel)] = \"firstName\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Lastname:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Lastname\" type=\"text\" name=\"lastName\" [(ngModel)] = \"lastName\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Preferred Name:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Preferred Name\" type=\"text\" name=\"preferredName\" [(ngModel)] = \"preferredName\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Address:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Address\" type=\"text\" name=\"address\" [(ngModel)] = \"address\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Email:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Email\" type=\"text\" name=\"email\" [(ngModel)] = \"email\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Home Phone:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Home Phone\" type=\"text\" name=\"homePhone\" [(ngModel)] = \"homePhone\" class=\"form-control\">\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                          <!-- <label><h6><strong>Cell Phone:</strong></h6></label> -->\r\n                          <input placeholder=\"*Enter Cell Phone\" type=\"text\" name=\"cellPhone\" [(ngModel)] = \"cellPhone\" class=\"form-control\">\r\n                      </div>\r\n                    </td>\r\n                  </tr>\r\n                  <tr>\r\n                    <td>\r\n                        <!-- <input type=\"submit\" value=\"Submit\" class=\"btn btn-success\"> -->\r\n                        <button class=\"btn btn-success\" (click)=\"onSubmitButton()\">Submit</button>&nbsp;\r\n                        <button class=\"btn btn-danger\" (click)=\"clear()\">Clear</button>\r\n                    </td>\r\n                  </tr>\r\n                </tbody>\r\n              </table>\r\n            <!-- </div> -->\r\n          </form>\r\n        <!-- End add -->\r\n      </div>\r\n  \r\n  \r\n      <div class=\"col-md-10\">\r\n        <!-- Contact list -->\r\n        <!-- Contact list -->\r\n    <!-- <div class=\"card\"> -->\r\n        <!-- <div class=\"card-body\"> -->\r\n          <!-- <h4 class=\"card-title\"><strong>Contact List</strong></h4> -->\r\n          <h6><strong>Contact List</strong></h6>\r\n          <table class=\"table table-hover\">\r\n            <thead>\r\n              <tr>\r\n                <th><h6><strong>Number</strong></h6></th>\r\n                <th><h6><strong>Firstname</strong></h6></th>\r\n                <th><h6><strong>Lastname</strong></h6></th>\r\n                <th><h6><strong>Preferred Name</strong></h6></th>\r\n                <th><h6><strong>Address</strong></h6></th>\r\n                <th><h6><strong>Email</strong></h6></th>\r\n                <th><h6><strong>Home Phone</strong></h6></th>\r\n                <th><h6><strong>Cell Phone</strong></h6></th>\r\n                <th><h6><strong>Date Added</strong></h6></th>\r\n                <th><h6><strong>Options</strong></h6></th>\r\n              </tr>\r\n            </thead>\r\n            <tbody>\r\n                <!-- <tr *ngFor=\"let contact of hack(contactlist); let i = index\"> -->\r\n                <tr *ngFor=\"let contact of hack(contactlist) | filter:inputString; let i = index\">\r\n                  <td>{{i+1}}</td>\r\n                  <td>{{contact.firstName}}</td>\r\n                  <td>{{contact.lastName}}</td>\r\n                  <td>{{contact.preferredName}}</td>\r\n                  <td>{{contact.address}}</td>\r\n                  <td>{{contact.email}}</td>\r\n                  <td>{{contact.homePhone}}</td>\r\n                  <td>{{contact.cellPhone}}</td>\r\n                  <td>{{contact.date}}</td>\r\n                  <td>\r\n                      <button class=\"btn btn-danger\" (click)=\"onDeleteButton(contact)\">Delete</button>&nbsp;\r\n                      <button class=\"btn btn-info\" (click)=\"onEditButton(contact)\" >Edit</button>\r\n                  </td>\r\n              </tr>\r\n            </tbody>\r\n          </table>\r\n        <!-- </div> -->\r\n  \r\n        <!-- End of contact list -->\r\n      </div>\r\n    </div>\r\n  <!-- </div> -->\r\n  \r\n  \r\n"
 
 /***/ }),
 
@@ -544,7 +670,7 @@ module.exports = ""
 /***/ "./src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\" id=\"row\">\r\n    <div class=\"col\" id=\"col\">\r\n        <img src=\"../../assets/rumi logo.png\" width=\"400\" href=\"/\" class=\"align-self-center\">\r\n    </div>\r\n  \r\n    <div class=\"col align-self-center\" id=\"col\">\r\n      <!-- {{ tagline }} -->\r\n      <p>\r\n      <p>\r\n        <a ui-sref=\"register\" [routerLink]=\"['/register']\" class=\"btn\" id=\"button_main_color\">Get Started!</a>\r\n        <a ui-sref=\"download\" href=\"https://www.youtube.com/watch?v=vTcf4Io209E\" class=\"btn\" id=\"button_main_color\">Download</a>\r\n      </p>\r\n      <p>\r\n      <p>Already have an account?  <a ui-sref=\"login\" [routerLink]=\"['/login']\" >Login here</a>.\r\n    </div>\r\n  </div>\r\n  "
+module.exports = "<div class=\"row\" id=\"row\">\r\n    <div class=\"col\" id=\"col\">\r\n        <img src=\"../../assets/rumi logo.png\" width=\"400\" href=\"/\" class=\"align-self-center\">\r\n    </div>\r\n  \r\n    <div class=\"col align-self-center\" id=\"col\">\r\n      <!-- {{ tagline }} -->\r\n      <p>\r\n      <p>\r\n        <a ui-sref=\"register\" [routerLink]=\"['/register']\" class=\"btn\" id=\"button_main_color\">Get Started!</a>\r\n        <a ui-sref=\"download\" href=\"https://www.youtube.com/watch?v=_xjp2wkgAJQ\" class=\"btn\" id=\"button_main_color\">Download</a>\r\n      </p>\r\n      <p>\r\n      <p>Already have an account?  <a ui-sref=\"login\" [routerLink]=\"['/login']\" >Login here</a>.\r\n    </div>\r\n</div>\r\n  "
 
 /***/ }),
 
@@ -554,6 +680,8 @@ module.exports = "<div class=\"row\" id=\"row\">\r\n    <div class=\"col\" id=\"
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -564,8 +692,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent() {
+    function HomeComponent(router, authService) {
+        this.router = router;
+        this.authService = authService;
     }
     HomeComponent.prototype.ngOnInit = function () {
     };
@@ -575,7 +707,8 @@ var HomeComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/home/home.component.html"),
             styles: [__webpack_require__("./src/app/home/home.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]])
     ], HomeComponent);
     return HomeComponent;
 }());
@@ -747,7 +880,7 @@ module.exports = ""
 /***/ "./src/app/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Navbar -->\r\n<nav  class=\"navbar navbar-expand-lg navbar-dark justify-content-between\" id=\"navbar\">\r\n  <!-- Rumi logo -->\r\n  <a class=\"navbar-brand\" [routerLink]=\"['/']\"><img src=\"../assets/rumi logo.png\" width=\"50\" alt=\"\"></a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <!-- Links -->\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\r\n\r\n      <!-- Left links -->\r\n      <ul class=\"navbar-nav mr-auto navbar-left\">\r\n        \r\n      </ul>\r\n      <!-- End left links -->\r\n\r\n      <!-- Right links -->\r\n      <ul class=\"navbar-nav navbar-right\">\r\n\r\n        <!-- After logged in: Dashboard -->\r\n        <!-- <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\"\r\n        *ngIf=\"authService.isLoggedIn()\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/user/dashboard']\">Dashboard <span class=\"sr-only\">(current)</span></a>\r\n        </li>\r\n        &nbsp;&nbsp; -->\r\n\r\n        <!-- Home -->\r\n        <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/user/dashboard']\">Home</a>\r\n        </li>\r\n        \r\n        &nbsp;&nbsp;\r\n\r\n        <!-- About -->\r\n        <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/about']\">About</a>\r\n        </li>\r\n\r\n        <!-- After logged in: Register wont show -->\r\n        <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\"\r\n        *ngIf=\"!authService.isLoggedIn()\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/register']\">Register</a>\r\n        </li>\r\n        &nbsp;&nbsp;\r\n\r\n         <!-- Before logged in: Log out wont show -->\r\n        <li class=\"nav-item active\"\r\n        *ngIf=\"authService.isLoggedIn()\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/']\" (click)=\"onLogoutClick()\">Log out</a>\r\n        </li>\r\n        \r\n      </ul>\r\n      <!-- End right links -->\r\n  \r\n    </div>\r\n\r\n</nav>\r\n\r\n<!-- <li class=\"nav-item active\"\r\n[routerLinkActive]=\"['active']\"\r\n[routerLinkActiveOptions] =\"{exact:true}\"\r\n*ngIf=\"authService.isLoggedIn()\">\r\n  <a class=\"nav-link btn\" [routerLink]=\"['/user/dashboard']\">Dashboard <span class=\"sr-only\">(current)</span></a>\r\n</li>\r\n&nbsp;&nbsp; -->\r\n\r\n"
+module.exports = "<!-- Navbar -->\r\n<nav  class=\"navbar navbar-expand-lg navbar-dark justify-content-between\" id=\"navbar\">\r\n  <!-- Rumi logo -->\r\n  <a class=\"navbar-brand\" [routerLink]=\"['/']\"><img src=\"../assets/rumi logo.png\" width=\"50\" alt=\"\"></a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <!-- Links -->\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\r\n\r\n      <!-- Left links -->\r\n      <ul class=\"navbar-nav mr-auto navbar-left\">\r\n        \r\n      </ul>\r\n      <!-- End left links -->\r\n\r\n      <!-- Right links -->\r\n      <ul class=\"navbar-nav navbar-right\">\r\n\r\n        <!-- After logged in: Dashboard -->\r\n        <!-- <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\"\r\n        *ngIf=\"authService.isLoggedIn()\">\r\n          <a class=\"nav-link btn\" [routerLink]=\"['/user/dashboard']\">Dashboard <span class=\"sr-only\">(current)</span></a>\r\n        </li>\r\n        &nbsp;&nbsp; -->\r\n\r\n        <!-- Home -->\r\n        <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\">\r\n          <a style=\"color:black;\" class=\"nav-link btn\" [routerLink]=\"['/user/dashboard']\">Home</a>\r\n        </li>\r\n        \r\n        &nbsp;&nbsp;\r\n\r\n        <!-- About -->\r\n        <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\">\r\n          <a  style=\"color:black;\" class=\"nav-link btn\" [routerLink]=\"['/about']\">About</a>\r\n        </li>\r\n\r\n        <!-- After logged in: Register wont show -->\r\n        <li class=\"nav-item active\"\r\n        [routerLinkActive]=\"['active']\"\r\n        [routerLinkActiveOptions] =\"{exact:true}\"\r\n        *ngIf=\"!authService.isLoggedIn()\">\r\n          <a  style=\"color:black;\" class=\"nav-link btn\" [routerLink]=\"['/register']\">Register</a>\r\n        </li>\r\n        &nbsp;&nbsp;\r\n\r\n         <!-- Before logged in: Log out wont show -->\r\n        <li class=\"nav-item active\"\r\n        *ngIf=\"authService.isLoggedIn()\">\r\n          <a  style=\"color:black;\" class=\"nav-link btn\" [routerLink]=\"['/']\" (click)=\"onLogoutClick()\">Log out</a>\r\n        </li>\r\n        \r\n      </ul>\r\n      <!-- End right links -->\r\n  \r\n    </div>\r\n\r\n</nav>\r\n\r\n<!-- <li class=\"nav-item active\"\r\n[routerLinkActive]=\"['active']\"\r\n[routerLinkActiveOptions] =\"{exact:true}\"\r\n*ngIf=\"authService.isLoggedIn()\">\r\n  <a class=\"nav-link btn\" [routerLink]=\"['/user/dashboard']\">Dashboard <span class=\"sr-only\">(current)</span></a>\r\n</li>\r\n&nbsp;&nbsp; -->\r\n\r\n"
 
 /***/ }),
 
@@ -1203,6 +1336,20 @@ var AuthService = /** @class */ (function () {
         this.loadToken();
         this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', this.authToken);
         return this.http.get(this.baseUri + '/user/transactions', { headers: this.headers });
+    };
+    // POST: save the receipts to the mLab database under "receipts" collection
+    // addReceipts(receipts){
+    //   this.loadToken();
+    //   this.headers = new HttpHeaders().set('Authorization', this.authToken);
+    //   return this.http.post(this.baseUri+'/user/receipts/upload', receipts, {headers:this.headers})
+    // }
+    // ====================== Dashboard ======================================================
+    // GET request to the backend for dashboard Info
+    AuthService.prototype.getDashboard = function () {
+        // Load the token into the authToken const:
+        this.loadToken();
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', this.authToken);
+        return this.http.get(this.baseUri + '/user/dashboard', { headers: this.headers });
     };
     AuthService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
@@ -1675,7 +1822,7 @@ module.exports = ""
 /***/ "./src/app/sidebar/sidebar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Sidebar -->\n\n\n<!-- <body> -->\n\n<div *ngIf=\"authService.isLoggedIn()\" \nclass=\"w3-sidebar w3-bar-block w3-xxlarge w3-animate-left\" \nstyle=\"width:200px; height:100%; background-color:#71e7bb;\" id=\"mySidebar\"\n>\n\n<!-- Dashboard -->\n  <a ui-sref=\"dashboard\" \n  [routerLink]=\"['/user/dashboard']\" \n  class=\"w3-bar-item w3-button w3-hover-white\" \n  style=\"height: 80px;border-bottom: 1px solid white;\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n\n  >\n  <img style=\"max-height: 40px; padding-left:5px;\" src=\"..\\..\\assets\\M.png\">\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:20px;\">Dashboard</p></a> \n  <!-- End Dashboard -->\n\n  <!-- Friends -->\n  <a ui-sref=\"friends\" \n  [routerLink]=\"['/user/friends']\" \n  class=\"w3-bar-item w3-button w3-hover-white\" \n  style=\"height: 80px; border-bottom: 1px solid white;\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n\n  >\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\friends.png\">\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:20px;\">Friends</p></a> \n  <!-- End Friends -->\n\n  <!-- Transactions -->\n  <a ui-sref=\"transactions\" \n  [routerLink]=\"['/user/transactions']\" \n  class=\"w3-bar-item w3-button w3-hover-white\" \n  style=\"height: 80px; border-bottom: 1px solid white;\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n  \n  >\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\transactions.png\">\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:20px;\">Transactions</p></a> \n  <!-- End Transactions -->\n\n  <!-- Receipts -->\n  <a ui-sref=\"receipts\" \n  [routerLink]=\"['/user/receipts']\" \n  class=\"w3-bar-item w3-button w3-hover-white\" \n  style=\"height: 80px; border-bottom: 1px solid white;\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n  \n  >\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\receipts.png\">\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:20px;\">Receipts</p></a>\n  <!-- End Receipts -->\n\n  <!-- Settings -->\n  <a ui-sref=\"settings\" \n  [routerLink]=\"['/user/setting']\" \n  class=\"w3-bar-item w3-button w3-hover-white\" \n  style=\"height: 80px; border-bottom: 1px solid white;\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n  \n  >\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\settings.png\">\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:20px;\">Settings</p></a> \n  <!-- End Settings -->\n\n  <!-- Download -->\n  <a ui-sref=\"download\" \n  [routerLink]=\"['/user/download']\" \n  class=\"w3-bar-item w3-button w3-hover-white\" \n  style=\"height: 80px; position:absolute; bottom:61px; border-top: 1px solid white; border-bottom: 1px solid white;\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n  \n  >\n  <!-- style=\"height: 80px; margin-top:26.94vh; border-bottom: 1px solid white;\" -->\n  \n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\download.png\">\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:20px;\">Download</p></a> \n  <!-- End Download -->\n\n</div>\n\n\n<!-- </body> -->\n\n<!-- End sidebar -->\n"
+module.exports = "<!-- Sidebar -->\r\n\r\n\r\n<!-- <body> -->\r\n\r\n<div *ngIf=\"authService.isLoggedIn()\" \r\nclass=\"w3-sidebar w3-bar-block w3-xxlarge w3-animate-left\" \r\nstyle=\"width:210px; height:100%; background-color:#71e7bb;\" id=\"mySidebar\"\r\n>\r\n\r\n<!-- Dashboard -->\r\n  <a ui-sref=\"dashboard\" \r\n  [routerLink]=\"['/user/dashboard']\" \r\n  class=\"w3-bar-item w3-button w3-hover-white\" \r\n  style=\"height: 80px;border-bottom: 1px solid white;\"\r\n  [routerLinkActive]=\"['active']\"\r\n  [routerLinkActiveOptions] =\"{exact:true}\"\r\n\r\n  >\r\n  <img style=\"max-height: 40px; padding-left:5px;\" src=\"..\\..\\assets\\M.png\">\r\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:16px;\">Dashboard</p></a> \r\n  <!-- End Dashboard -->\r\n\r\n  <!-- Friends -->\r\n  <a ui-sref=\"friends\" \r\n  [routerLink]=\"['/user/friends']\" \r\n  class=\"w3-bar-item w3-button w3-hover-white\" \r\n  style=\"height: 80px; border-bottom: 1px solid white;\"\r\n  [routerLinkActive]=\"['active']\"\r\n  [routerLinkActiveOptions] =\"{exact:true}\"\r\n\r\n  >\r\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\friends.png\">\r\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:16px;\">Friends</p></a> \r\n  <!-- End Friends -->\r\n\r\n  <!-- Transactions -->\r\n  <a ui-sref=\"transactions\" \r\n  [routerLink]=\"['/user/transactions']\" \r\n  class=\"w3-bar-item w3-button w3-hover-white\" \r\n  style=\"height: 80px; border-bottom: 1px solid white;\"\r\n  [routerLinkActive]=\"['active']\"\r\n  [routerLinkActiveOptions] =\"{exact:true}\"\r\n  \r\n  >\r\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\transactions.png\">\r\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:16px;\">Transactions</p></a>\r\n  <!-- End Transactions -->\r\n\r\n  <!-- Receipts -->\r\n  <a ui-sref=\"receipts\" \r\n  [routerLink]=\"['/user/receipts']\" \r\n  class=\"w3-bar-item w3-button w3-hover-white\" \r\n  style=\"height: 80px; border-bottom: 1px solid white;\"\r\n  [routerLinkActive]=\"['active']\"\r\n  [routerLinkActiveOptions] =\"{exact:true}\"\r\n  \r\n  >\r\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\receipts.png\">\r\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:16px;\">Receipts</p></a>\r\n  <!-- End Receipts -->\r\n\r\n  <!-- Settings -->\r\n  <a ui-sref=\"settings\" \r\n  [routerLink]=\"['/user/setting']\" \r\n  class=\"w3-bar-item w3-button w3-hover-white\" \r\n  style=\"height: 80px; border-bottom: 1px solid white;\"\r\n  [routerLinkActive]=\"['active']\"\r\n  [routerLinkActiveOptions] =\"{exact:true}\"\r\n  \r\n  >\r\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\settings.png\">\r\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:16px;\">Settings</p></a> \r\n  <!-- End Settings -->\r\n  \r\n  <!-- Goku Vs Jiren (Mastered Ultra Instinct) -->\r\n  <!-- [routerLink]=\"['/user/download']\" -->\r\n  <!-- Download -->\r\n  <a ui-sref=\"download\" \r\n  href=\"https://www.youtube.com/watch?v=pDW5pWkvBno\"\r\n  class=\"w3-bar-item w3-button w3-hover-white\" \r\n  style=\"height: 80px; position:absolute; bottom:61px; border-top: 1px solid white; border-bottom: 1px solid white;\"\r\n  [routerLinkActive]=\"['active']\"\r\n  [routerLinkActiveOptions] =\"{exact:true}\"\r\n  \r\n  >\r\n  <!-- style=\"height: 80px; margin-top:26.94vh; border-bottom: 1px solid white;\" -->\r\n  \r\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\download.png\">\r\n  <p style=\"padding-left:8px; display:inline; font-family:Cousine; font-size:16px;\">Download</p></a> \r\n  <!-- End Download -->\r\n\r\n</div>\r\n\r\n\r\n<!-- </body> -->\r\n\r\n<!-- End sidebar -->\r\n"
 
 /***/ }),
 

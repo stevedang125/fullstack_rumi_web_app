@@ -18,8 +18,8 @@ const Transaction = require('../models/transaction');
 const ObjectId = mongoose.Types.ObjectId;
 const Schema = mongoose.Schema;
 
-// =========================== Receipt list ================================================
-// Fetch the contact list from the database to the template
+// =========================== transactions list ================================================
+// Fetch the transactions list from the database to the template
 router.get('/transactions', passport.authenticate('jwt', {session: false}), (req,res,next)=>{
     const user_id = new ObjectId(req.user.id);
     const query = Transaction.find({});
@@ -37,43 +37,10 @@ router.put('/transactions/names', passport.authenticate('jwt', {session: false})
             res.status(500).json({errmsg:'Failed to find user to send back, here is the err: '+err});
         }
         // Successful found the user
-        console.log('The fuking name is ====== : ', user.name);
         const name = user.name
         res.status(200).json({name : name});
     });
     
-    
-    
-    
-
-
-    // res.json({success: true, msg: "Got you"});
-
-    // Contact.getContactById(req.body._id, (err, contact)=>{
-    //     if(err){
-    //         res.status(500).json({errmsg:'Failed to find contact to update, here is the err: '+err});
-    //     }
-    //     // Successful found the contact, ready to update it:
-    //     contact._id = req.body._id,
-    //     contact.firstName = req.body.firstName,
-    //     contact.lastName = req.body.lastName,
-    //     contact.preferredName = req.body.preferredName,
-    //     contact.address = req.body.address,
-    //     contact.email = req.body.email,
-    //     contact.homePhone = req.body.homePhone,
-    //     contact.cellPhone = req.body.cellPhone,
-    //     contact.user_id = req.body.user_id
-
-    //     Contact.addContact(contact, (err, savedContact)=>{
-    //         if(err){
-    //             res.status(500).json({success: false, msg:'Failed to update, here is the err: '+err});
-    //         }else{
-    //             res.status(200).json({success: true, msg: 'Friend Info updated!'});
-    //         }
-    //     });
-
-    // });
-
 });
 
 // Add a new receipt
