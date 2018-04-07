@@ -29,110 +29,162 @@
   border: 1px solid rgba(192, 204, 175, 0.616);
   color: #021316;
   background-color: lightblue;
-  
+
 }
 
 .after-box {
   clear: left;
-  border: 1px solid rgba(192, 204, 175, 0.616);      
+  border: 1px solid rgba(192, 204, 175, 0.616);
 }
 
 /* Other CSS */
 
-* {
+/* * {
     box-sizing: border-box;
+} */
+
+body {
+  font-size:14px;
 }
-  
+
 .main {
   margin-left: 15%; /* Same as the width of the sidenav */
   padding: 0px 15px;
 }
-  
-#menuContent {
-  margin-left:210px;
+
+.recentA {
+  background-color: rgb(198, 223, 215);
 }
 
-  /* .recentA {
-    background-color: rgb(198, 223, 215);
-  }
-  
-  .addfriend {
-    width: 80%;
-    background-color: rgb(198, 223, 215);
-  } */
-  
-  /* .right {
-      position: absolute;
-      right: 30px;
-      width: 100px;
-      background-color:  #59b68e;
-      padding: 10px;
-  }
-  
-  .right2 {
-    position: absolute;
-    right: 134px;
-    width: 100px;
-    background-color:  #59b68e;
-    padding: 10px;
-  } */
-  
-  .center{
-    text-align: center;
-  }
-  
-  /* .widebutton {
-    
-    margin-left: -15px;
-    padding: 15px 499px;
-  
-    background-color: #59b68e;
-  } */
+.addfriend {
+  width: 80%;
+  background-color: rgb(198, 223, 215);
+}
 
+.center{
+  text-align: center;
+}
 
-  /* .widebutton2 {
-    
-    margin-left: -15px;
-    padding: 15px 371px;
-  
-    background-color: #59b68e;
-  } */
-  
-  div{
-    resize: both;
-  }
+a {
+  color: #346751;
+}
 
-  
-  a {
-    color: #59b68e;
-  }
-  
-  a:hover {
-    color: #ffffff;
-  }
-  
-  #navbar {
-    background-color: #59b68e;
-  }
-  
-  /* Changed this to col-sidebar */
-  /* #col {
-    padding:10px;
-  } */
+a:hover {
+  color: #ffffff;
+}
 
-  #col-sidebar {
-    padding:10px;
-  }
-  
-  #button_main_color {
-    color: #fff;
-    background-color: #59b68e;
-  }
-  
-  #user_form {
-    width:35%;
-    position: absolute;
-    top: 50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-  }
+#row {
+  width:80%;
+  min-width: 500px;
+  top: -50%;
+  left:35%;
+  position:absolute;
+  transform: translate(-35%, 50%);
+}
+
+#navbar {
+  position:fixed;
+  left:0px;
+  width:100%;
+  z-index:99999 !important;
+  background-color: #59b68e;
+}
+
+#sidebar {
+  top:8%;
+  height:100vh;
+  background-color: #59b68e;
+}
+
+#sidebar_text {
+  padding-left:8px;
+  display:inline;
+  font-size:15px;
+}
+
+#sidebar a {
+  display: block;
+  background-color: #59b68e;
+  padding:15px;
+  height:80px;
+  text-decoration: none;
+}
+
+#sidebar a:hover {
+  text-decoration:none;
+}
+
+#content {
+  overflow: none;
+  width:80%;
+  left:7%;
+  min-left:7%;
+  position: relative;
+  padding-top: 80px;
+}
+
+#button_main_color {
+  color: #fff;
+  background-color: #59b68e;
+}
+
+#card-img {
+  padding:10px;
+  overflow: hidden;
+  width:300px;
+  height:250px;
+  display:block;
+  margin:auto;
+}
+
+#card-img img {
+  width:280px;
+  border-radius: none;
+}
+
+#card {
+  width: 300px;
+  height: 300px;
+  margin:10px;
+  float:left;
+  position: relative;
+}
+
+#transaction-card {
+  background-color:#678EB7;
+  color:#fff;
+  border-color:#678EB7;
+}
+
+#receipt-card {
+  background-color:#B5B76B;
+  color:#fff;
+}
+
+#roommate-card {
+  background-color:#C289A7;
+  color:#fff;
+}
+
+#user_form {
+  width:40%;
+  min-width: 300px;
+  top: 50%;
+  left:50%;
+  position:absolute;
+  transform: translate(-50%, -50%);
+}
+
+#home {
+  text-align: center;
+  min-width: 70%;
+  width:75%;
+  top: 50%;
+  left:50%;
+  position:absolute;
+  transform: translate(-50%, -50%);
+}
+
+#roommate-list-item {
+  margin-bottom:10px;
+}

@@ -11,7 +11,7 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit, OnChanges{
+export class DashboardComponent implements OnInit, OnChanges {
 
   debug: boolean = false;
 
@@ -36,7 +36,7 @@ export class DashboardComponent implements OnInit, OnChanges{
     // this.getTheDashboard();
     // this.click();
   }
-  
+
   // ========================== Helper functions ===========================
   compareDate(a, b){
     return (Date.parse(a) > Date.parse(b)) ? a : b;
@@ -50,12 +50,12 @@ export class DashboardComponent implements OnInit, OnChanges{
     var i = 0;
     for(i = 0; i < array.length; i++)
       array[i] = Date.parse(array[i]);
-    
+
     array = array.sort().reverse();
 
     for(i = 0; i < array.length; i++)
-      array[i] = new Date(array[i]).toDateString(); 
-    
+      array[i] = new Date(array[i]).toDateString();
+
     return array;
   }
 
@@ -63,7 +63,7 @@ export class DashboardComponent implements OnInit, OnChanges{
   getTheDashboard(){
       // Make a call to the services for a HTTP GET request to the backend in routes/dashboard
       this.authService.getDashboard().subscribe(data => {
-      
+
       // Received the data back, get the right list of json objects to the right variable:
       this.transactions = data['trans'];
       this.receipts = data['receipts'];
@@ -74,7 +74,7 @@ export class DashboardComponent implements OnInit, OnChanges{
       this.receipts = this.receipts.reverse();
       this.friends = this.friends.reverse();
 
-      
+
       this.clickForData();
     });// End of getDashboard()
 
@@ -98,9 +98,9 @@ export class DashboardComponent implements OnInit, OnChanges{
     if(this.debug)
       console.log('mostRecentDate: ',mostRecentDate);
 
-    // This part will get the max len 
+    // This part will get the max len
     maxLen = Math.max( this.friends.length , Math.max( this.transactions.length , this.receipts.length));
-    
+
     if(this.debug)
       console.log('maxLen: ', maxLen);
 
@@ -117,11 +117,11 @@ export class DashboardComponent implements OnInit, OnChanges{
         continue;
       }
       if( (i < this.friends.length) && (tempDate === this.friends[i].date) ){
-        
+
         continue;
       }
       if( (i < this.receipts.length) && (tempDate === this.receipts[i].date) ){
-        
+
         continue;
       }
       // If the date is not in the array, change the tempDate and add it to the array
@@ -138,13 +138,13 @@ export class DashboardComponent implements OnInit, OnChanges{
         arrayOfDate.push(tempDate);
       }
     } // End of for loop
-    
+
     // Array of Date all sorted from most recent date.
     arrayOfDate = this.sortDateArray(arrayOfDate);
 
     if(this.debug)
       console.log('arrayOfDate all sorted: ', arrayOfDate);
-    
+
     // Loop through all the list of json Objects to add the objects sort by the date:
     for(i=0; i <= arrayOfDate.length; i++){
 
@@ -171,9 +171,6 @@ export class DashboardComponent implements OnInit, OnChanges{
     if(this.debug)
       console.log("Recent array: ", recent);
     this.recentActivities = recent;
-    
+
   }// End of the clickForData()
-
-  
-
 }

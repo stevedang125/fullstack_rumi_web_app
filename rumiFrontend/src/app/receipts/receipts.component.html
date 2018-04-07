@@ -1,6 +1,5 @@
-
-<div class="container">
-  <h2 class="heading">Upload New Images</h2>
+<div class="container" id="content">
+  <h2>Upload New Images</h2>
   <!-- Progress Bar -->
   <div *ngIf="upload">
     <div class="progress">
@@ -9,16 +8,19 @@
       </div>
     </div>
     Progress: {{upload?.progress}}% Complete
-  </div><hr>
+  </div>
+
+  <hr>
+
   <!-- Input and Upload Button -->
   <input type="file" (change)="handleFiles($event)" multiple>
-  <button class="btn btn-primary" (click)="uploadFiles()">Upload Images</button>  
+  <button class="btn btn-primary" (click)="uploadFiles()">Upload Images</button>
   <button class="btn btn-danger" (click)="reload()">Refesh ittt</button>
-</div>
 
 <!-- Display Images -->
-<div class="row">
+  <p></p>
   <h2>Latest Photos</h2>
+
   <ul id="thumbnailsList">
       <li *ngFor="let image of receiptsList" class="img">
           <!-- <a [routerLink]="['/image', image.key]"> -->

@@ -11,7 +11,7 @@ import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 export class SidebarComponent implements OnInit {
 
   constructor(public authService: AuthService,
-    public toastr: ToastsManager, vcr: ViewContainerRef) { 
+    public toastr: ToastsManager, vcr: ViewContainerRef) {
       this.toastr.setRootViewContainerRef(vcr);
     }
 
@@ -22,7 +22,7 @@ export class SidebarComponent implements OnInit {
    showSuccess(msg) {
     this.toastr.info(msg, 'Success!');
   }
-  
+
   onLogoutClick(){
     this.showSuccess('You have logged out!');
     this.authService.logout();
