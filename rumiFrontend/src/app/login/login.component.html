@@ -1,7 +1,6 @@
-<div class="left" style="padding-top:500px;">
-<div class="row" id="user_form" *ngIf="!authService.isLoggedIn()">
+<div class="container-fluid" id="user_form" *ngIf="!authService.isLoggedIn()">
   <div class="col align-self-center">
-    <h2 class="page-header">Login</h2>
+    <h2>Login</h2>
 
     <!-- Start form -->
     <form class="form-signin">
@@ -27,9 +26,8 @@
       <button class="btn btn-danger" (click)="onCancelSubmit()">Cancel</button><br><br>
 
       <!-- Navigate back to register page -->
-      <p>Don't have an account yet? <a [routerLink] = "['/register']">Register Here</a></p> 
+      <p>Don't have an account yet? <a [routerLink] = "['/register']">Register Here</a></p>
     </form>
 
   </div>
-</div>
 </div>

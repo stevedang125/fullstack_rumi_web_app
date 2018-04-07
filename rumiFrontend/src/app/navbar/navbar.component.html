@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<nav  class="navbar navbar-expand-lg navbar-dark justify-content-between" id="navbar">
+<nav class="navbar navbar-expand-lg justify-content-between" id="navbar">
   <!-- Rumi logo -->
   <a class="navbar-brand" [routerLink]="['/']"><img src="../assets/rumi logo.png" width="50" alt=""></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,7 +11,7 @@
 
       <!-- Left links -->
       <ul class="navbar-nav mr-auto navbar-left">
-        
+
       </ul>
       <!-- End left links -->
 
@@ -33,13 +33,14 @@
         [routerLinkActiveOptions] ="{exact:true}">
           <a style="color:black;" class="nav-link btn" [routerLink]="['/user/dashboard']">Home</a>
         </li>
-        
+
         &nbsp;&nbsp;
 
         <!-- About -->
         <li class="nav-item active"
         [routerLinkActive]="['active']"
-        [routerLinkActiveOptions] ="{exact:true}">
+        [routerLinkActiveOptions] ="{exact:true}"
+        *ngIf="!authService.isLoggedIn()">
           <a  style="color:black;" class="nav-link btn" [routerLink]="['/about']">About</a>
         </li>
 
@@ -57,10 +58,10 @@
         *ngIf="authService.isLoggedIn()">
           <a  style="color:black;" class="nav-link btn" [routerLink]="['/']" (click)="onLogoutClick()">Log out</a>
         </li>
-        
+
       </ul>
       <!-- End right links -->
-  
+
     </div>
 
 </nav>
@@ -72,4 +73,3 @@
   <a class="nav-link btn" [routerLink]="['/user/dashboard']">Dashboard <span class="sr-only">(current)</span></a>
 </li>
 &nbsp;&nbsp; -->
-

@@ -3,91 +3,84 @@
 
 <!-- <body> -->
 
-<div *ngIf="authService.isLoggedIn()" 
-class="w3-sidebar w3-bar-block w3-xxlarge w3-animate-left" 
-style="width:210px; height:100%; background-color:#71e7bb;" id="mySidebar"
->
+<div *ngIf="authService.isLoggedIn()"
+class="w3-sidebar w3-bar-block w3-xxlarge w3-animate-left"
+style="width:200px; height:100%;" id="sidebar">
 
 <!-- Dashboard -->
-  <a ui-sref="dashboard" 
-  [routerLink]="['/user/dashboard']" 
-  class="w3-bar-item w3-button w3-hover-white" 
-  style="height: 80px;border-bottom: 1px solid white;"
+  <a ui-sref="dashboard"
+  [routerLink]="['/user/dashboard']"
+  class="w3-bar-item w3-button w3-hover-white"
   [routerLinkActive]="['active']"
   [routerLinkActiveOptions] ="{exact:true}"
 
   >
   <img style="max-height: 40px; padding-left:5px;" src="..\..\assets\M.png">
-  <p style="padding-left:8px; display:inline; font-family:Cousine; font-size:16px;">Dashboard</p></a> 
+  <p id="sidebar_text">Dashboard</p></a>
   <!-- End Dashboard -->
 
-  <!-- Friends -->
-  <a ui-sref="friends" 
-  [routerLink]="['/user/friends']" 
-  class="w3-bar-item w3-button w3-hover-white" 
-  style="height: 80px; border-bottom: 1px solid white;"
+  <!-- Roommates -->
+  <a ui-sref="friends"
+  [routerLink]="['/user/friends']"
+  class="w3-bar-item w3-button w3-hover-white"
   [routerLinkActive]="['active']"
   [routerLinkActiveOptions] ="{exact:true}"
 
   >
   <img style="max-height: 40px;" src="..\..\assets\friends.png">
-  <p style="padding-left:8px; display:inline; font-family:Cousine; font-size:16px;">Friends</p></a> 
+  <p id="sidebar_text">Roommates</p></a>
   <!-- End Friends -->
 
   <!-- Transactions -->
-  <a ui-sref="transactions" 
-  [routerLink]="['/user/transactions']" 
-  class="w3-bar-item w3-button w3-hover-white" 
-  style="height: 80px; border-bottom: 1px solid white;"
+  <a ui-sref="transactions"
+  [routerLink]="['/user/transactions']"
+  class="w3-bar-item w3-button w3-hover-white"
   [routerLinkActive]="['active']"
   [routerLinkActiveOptions] ="{exact:true}"
-  
+
   >
   <img style="max-height: 40px;" src="..\..\assets\transactions.png">
-  <p style="padding-left:8px; display:inline; font-family:Cousine; font-size:16px;">Transactions</p></a>
+  <p id="sidebar_text">Transactions</p></a>
   <!-- End Transactions -->
 
   <!-- Receipts -->
-  <a ui-sref="receipts" 
-  [routerLink]="['/user/receipts']" 
-  class="w3-bar-item w3-button w3-hover-white" 
-  style="height: 80px; border-bottom: 1px solid white;"
+  <a ui-sref="receipts"
+  [routerLink]="['/user/receipts']"
+  class="w3-bar-item w3-button w3-hover-white"
   [routerLinkActive]="['active']"
   [routerLinkActiveOptions] ="{exact:true}"
-  
+
   >
   <img style="max-height: 40px;" src="..\..\assets\receipts.png">
-  <p style="padding-left:8px; display:inline; font-family:Cousine; font-size:16px;">Receipts</p></a>
+  <p id="sidebar_text">Receipts</p></a>
   <!-- End Receipts -->
 
   <!-- Settings -->
-  <a ui-sref="settings" 
-  [routerLink]="['/user/setting']" 
-  class="w3-bar-item w3-button w3-hover-white" 
-  style="height: 80px; border-bottom: 1px solid white;"
+  <a ui-sref="settings"
+  [routerLink]="['/user/setting']"
+  class="w3-bar-item w3-button w3-hover-white"
   [routerLinkActive]="['active']"
   [routerLinkActiveOptions] ="{exact:true}"
-  
+
   >
   <img style="max-height: 40px;" src="..\..\assets\settings.png">
-  <p style="padding-left:8px; display:inline; font-family:Cousine; font-size:16px;">Settings</p></a> 
+  <p id="sidebar_text">Settings</p></a>
   <!-- End Settings -->
-  
+
   <!-- Goku Vs Jiren (Mastered Ultra Instinct) -->
   <!-- [routerLink]="['/user/download']" -->
   <!-- Download -->
-  <a ui-sref="download" 
-  href="https://www.youtube.com/watch?v=pDW5pWkvBno"
-  class="w3-bar-item w3-button w3-hover-white" 
-  style="height: 80px; position:absolute; bottom:61px; border-top: 1px solid white; border-bottom: 1px solid white;"
+  <a ui-sref="download"
+  [routerLink]="['/user/download']"
+  class="w3-bar-item w3-button w3-hover-white"
   [routerLinkActive]="['active']"
   [routerLinkActiveOptions] ="{exact:true}"
-  
+
   >
   <!-- style="height: 80px; margin-top:26.94vh; border-bottom: 1px solid white;" -->
-  
+
   <img style="max-height: 40px;" src="..\..\assets\download.png">
-  <p style="padding-left:8px; display:inline; font-family:Cousine; font-size:16px;">Download</p></a> 
+  <p id="sidebar_text">Download</p></a>
   <!-- End Download -->
 
 </div>

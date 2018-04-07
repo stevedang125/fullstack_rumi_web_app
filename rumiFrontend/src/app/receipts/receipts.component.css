@@ -1,14 +1,24 @@
-ul { padding:0; width:1200px; margin:20px auto}
-li { display:inline;}
-
-.tn {
-  margin:6px 6px;
-  border: 4px solid #eee;
-  box-shadow:#555 1px 1px 8px 1px;
-  cursor: pointer;
-  width: 300px;
+ul {
+  padding:0;
+  idth:1200px;
+  margin:20px auto;
 }
 
-h2{
+ul img {
+  width:250px;
+}
+
+li {
+  display:inline;
+}
+
+h2 {
   margin-bottom: 20px;
+}
+
+#card {
+  width:250px;
+  position: relative;
+  padding:10px;
+  margin: auto;
 }

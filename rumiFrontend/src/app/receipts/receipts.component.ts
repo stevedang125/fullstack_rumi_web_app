@@ -1,14 +1,14 @@
-// Logic: 
+// Logic:
 // Get the file/image info in the list of files/images (handleFiles method)
 // Store the files/images into another database (firebase console).
 // (UploadFiles method will call uploadFile() in services/upload.service)
         // ^ The purpose of this is to store the file/img somewhere else
         // instead for mLab (which saved me some pains) and get the URL link
         // of the img/file then store the link in our mLab
-// Retrieve the file/img URL, and make a POST request to the backend and 
+// Retrieve the file/img URL, and make a POST request to the backend and
 // save the file/image info into our mLab remote database under
-// the "receipts" collection. 
-// (addPictureToMlab() method in services/upload.service will call 
+// the "receipts" collection.
+// (addPictureToMlab() method in services/upload.service will call
 // addReceipts() method in services/auth.service to make an http POST request)
 
 // If you have any question about he frontend or backend, let me know.
@@ -17,8 +17,8 @@
 import { Component, OnInit, OnChanges, Input, SimpleChanges  } from '@angular/core';
 import { UploadService } from '../services/upload.service';
 import { FileDetails } from '../models/fileDetails.model';
-import * as _ from 'lodash'; // to help loop over files 
-import { HttpClientModule } from '@angular/common/http'; 
+import * as _ from 'lodash'; // to help loop over files
+import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { ImgDetails } from '../models/imgDetails.model';
 import { AuthService } from '../services/auth.service';
@@ -27,8 +27,8 @@ import { AuthService } from '../services/auth.service';
 // in firebase console
 import { AngularFireModule } from 'angularfire2';
 import {  AngularFireDatabase,
-          AngularFireList, 
-          AngularFireObject, 
+          AngularFireList,
+          AngularFireObject,
           snapshotChanges } from 'angularfire2/database';
 import * as firebase from 'firebase';
 
@@ -39,7 +39,7 @@ import * as firebase from 'firebase';
 })
 export class ReceiptsComponent implements OnInit, OnChanges {
 
-  @Input() finishedProgress; 
+  @Input() finishedProgress;
 
   checkpoint: number = 0;
 
@@ -54,12 +54,12 @@ export class ReceiptsComponent implements OnInit, OnChanges {
   // This is will hold all the json objects retrieved from mlab database
   receiptsList: any[];
 
-   // user object and user ID holder 
+   // user object and user ID holder
    user: Object;
    userID: string;
 
-  // Inject the uploadservice and authservice 
-  // to upload the files/images and make a POST request 
+  // Inject the uploadservice and authservice
+  // to upload the files/images and make a POST request
   // to the backend and save the picture details into mLab
   constructor(private uploadService : UploadService,
               private authService: AuthService) { }
@@ -81,19 +81,19 @@ export class ReceiptsComponent implements OnInit, OnChanges {
     console.log(changes.finishedProgress.previousValue);// previous selected value
     this.getPictures();
 
-    
-    
+
+
   }
 
   // This method listener will watch for changes from the firebase console
-  // whenever a new file/img add to the database, this will fire and call the 
+  // whenever a new file/img add to the database, this will fire and call the
   // backend the load the new file/img to the receiptList.
   fbGetData(){
     firebase.database().ref('/uploads/').on('child_added', (result) => {
       console.log('Just ADDED a child !!!!');
       console.log(result.val());
       // this.receiptsList.push(result.val());
-      this.getPictures();     
+      this.getPictures();
     });
   }
 
@@ -114,22 +114,22 @@ export class ReceiptsComponent implements OnInit, OnChanges {
     });
   }
 
-  
+
   // Only take the files/images info from the $event
   handleFiles(event) {
-    // console.log(event.target.files); 
+    // console.log(event.target.files);
     this.files =  event.target.files;
   }
 
-  // Loop through each file/img in the file/img list and call 
+  // Loop through each file/img in the file/img list and call
   // upload service to upload each file/img to Firebase Console
   uploadFiles() {
     // Get the files from the global var "files"
     const filesToUpload = this.files;
     const length = _.range(filesToUpload.length);
-    
+
     _.each(length, (index) => {
-      // each log will print out the each file infor in the array filesToUpload 
+      // each log will print out the each file infor in the array filesToUpload
       // console.log(filesToUpload[index]);
       this.upload = new FileDetails(filesToUpload[index]);
       this.uploadService.uploadFile(this.upload);
@@ -137,6 +137,7 @@ export class ReceiptsComponent implements OnInit, OnChanges {
 
     this.fbGetData();
     // this.getPictures();
+    // reload();
   }
 
   // To be deleted :)
@@ -151,7 +152,7 @@ export class ReceiptsComponent implements OnInit, OnChanges {
     this.uploadService.clearList();
   }
 
-  
+
 
 
 
