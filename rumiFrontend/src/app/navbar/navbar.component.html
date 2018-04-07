@@ -31,7 +31,7 @@
         <li class="nav-item active"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions] ="{exact:true}">
-          <a class="nav-link btn" [routerLink]="['/user/dashboard']">Home</a>
+          <a style="color:black;" class="nav-link btn" [routerLink]="['/user/dashboard']">Home</a>
         </li>
         
         &nbsp;&nbsp;
@@ -40,7 +40,7 @@
         <li class="nav-item active"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions] ="{exact:true}">
-          <a class="nav-link btn" [routerLink]="['/about']">About</a>
+          <a  style="color:black;" class="nav-link btn" [routerLink]="['/about']">About</a>
         </li>
 
         <!-- After logged in: Register wont show -->
@@ -48,14 +48,14 @@
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions] ="{exact:true}"
         *ngIf="!authService.isLoggedIn()">
-          <a class="nav-link btn" [routerLink]="['/register']">Register</a>
+          <a  style="color:black;" class="nav-link btn" [routerLink]="['/register']">Register</a>
         </li>
         &nbsp;&nbsp;
 
          <!-- Before logged in: Log out wont show -->
         <li class="nav-item active"
         *ngIf="authService.isLoggedIn()">
-          <a class="nav-link btn" [routerLink]="['/']" (click)="onLogoutClick()">Log out</a>
+          <a  style="color:black;" class="nav-link btn" [routerLink]="['/']" (click)="onLogoutClick()">Log out</a>
         </li>
         
       </ul>
