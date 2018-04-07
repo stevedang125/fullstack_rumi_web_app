@@ -1,17 +1,80 @@
-<div class="row" id="row">
-    <div class="col" id="col">
-        <img src="../../assets/rumi logo.png" width="400" href="/" class="align-self-center">
-    </div>
+<body>
+  <div class="expandToPageWidth">
   
-    <div class="col align-self-center" id="col">
-      <!-- {{ tagline }} -->
-      <p>
-      <p>
-        <a ui-sref="register" [routerLink]="['/register']" class="btn" id="button_main_color">Get Started!</a>
-        <a ui-sref="download" href="https://www.youtube.com/watch?v=_xjp2wkgAJQ" class="btn" id="button_main_color">Download</a>
+  <div class="container">
+      <div class="row">
+        <div class="col-lg-6 text-center img-fluid">
+            <img src="../../assets/rumi logo.png" width="400" href="/">
+        </div>
+      
+        <div class="col-lg-6 align-self-center img-fluid">
+          <!-- {{ tagline }} -->
+          <p>
+          <p>
+            <a ui-sref="register" [routerLink]="['/register']" class="btn" id="button_main_color">Get Started!</a>
+            <a ui-sref="download" href="https://www.youtube.com/watch?v=_xjp2wkgAJQ" class="btn" id="button_main_color">Download</a>
+          </p>
+          <p>
+          <p>Already have an account?  <a ui-sref="login" [routerLink]="['/login']" >Login here</a>.
+        </div>
+    </div>
+  </div>
+
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-lg-2">
+            <div class="p-5">
+              <img class="img-fluid" src="../../assets/Receipts.jpg">
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1">
+            <div class="p-5">
+              <h2 class="display-4">Bills shouldn't have to be difficult!</h2>
+              <p>Organize receipts, bills, and roommates so
+                the only clutter you have is in the sink.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <section>
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-6">
+                <div class="p-5">
+                  <img class="img-fluid rounded-circle" src="../../assets/pay.jpg" alt="">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="p-5">
+                  <h2 class="display-4">Payment is a breeze!</h2>
+                  <p>Request for payment through Rumi so that 
+                     walk to the kitchen doesn't become so 
+                     awkward anymore.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+    <!-- Footer -->
+    <footer class="py-3" style="background-color:#59b000">
+      <p class="m-0 text-center text-white small">Copyright &copy; Rumi 2018</p>
+      <p class="m-0 text-center small">
+        <a ui-sref="about" [routerLink]="['/about']" style="color:white">About Us</a>
       </p>
-      <p>
-      <p>Already have an account?  <a ui-sref="login" [routerLink]="['/login']" >Login here</a>.
-    </div>
-</div>
-  
+      <!-- /.container -->
+    </footer>
+
+    <!-- Footer -->
+    <footer class="py-3" style="background-color:#59b68e">
+        <p class="m-0 text-center text-white small">Copyright &copy; Rumi 2018</p>
+        <p class="m-0 text-center small" ><a ui-sref="about" [routerLink]="['/about']" style="color:white">About Us</a></p>
+      <!-- /.container -->
+    </footer>
+
+  </div>
+</body>

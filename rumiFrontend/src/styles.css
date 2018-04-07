@@ -136,3 +136,9 @@
     left:50%;
     transform: translate(-50%,-50%);
   }
+
+  /* Hacky way to  combat the app.component.html container class*/
+  .expandToPageWidth{
+    margin-left:-20%; 
+    margin-right:-20%;
+  }
