@@ -85,13 +85,16 @@ a:hover {
 #navbar {
   position:fixed;
   left:0px;
+  min-height:55px;
+  max-height:55px;
   width:100%;
   z-index:99999 !important;
   background-color: #59b68e;
 }
 
 #sidebar {
-  top:8%;
+  top:55px;
+  width:140px;
   height:100vh;
   background-color: #59b68e;
 }
@@ -117,8 +120,7 @@ a:hover {
 #content {
   overflow: none;
   width:80%;
-  left:7%;
-  min-left:7%;
+  left:100px;
   position: relative;
   padding-top: 80px;
 }
