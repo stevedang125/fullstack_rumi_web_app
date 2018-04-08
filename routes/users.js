@@ -10,7 +10,7 @@ const User = require('../models/user');
 
 // Bring in password and jwt for authentication
 const passport = require('passport');
-const jwt = require('jsonwebtoken'); 
+const jwt = require('jsonwebtoken');
 
 // Register a new user
 router.post('/register', (req,res,next)=>{
@@ -29,7 +29,7 @@ router.post('/register', (req,res,next)=>{
         if(err){
             res.json({success: false, msg: 'Error! Failed to register user.'});
         }else{
-            res.json({success: true, msg: 'User registered!'});
+            res.json({success: true, msg: 'User registered!', user_id: newUser._id });
         }
     });
 
@@ -77,5 +77,19 @@ router.post('/login', (req,res,next)=>{
     // res.send('This is a http post login request.');
 });
 
-module.exports = router;
+router.post('/get_user_by_id', (req, res, next) => {
 
+    console.log('the id is: ', req.body._id);
+
+    const _id = req.body._id;
+
+    const query = User.find({});
+    query.where('_id', _id);
+
+    query.exec(function(err, userinfo){
+        (err) ? console.log('Error! ** Cannot find the user: '+ err) : res.status(200).json({userinfo: userinfo});
+    });
+
+});
+
+module.exports = router;
