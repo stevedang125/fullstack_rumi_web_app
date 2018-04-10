@@ -12,7 +12,7 @@ export class AuthService {
   loggedIn:any;   // logged in True/False
 
   // =========== Http base uri and headers =============================
-  private baseUri:string="http://localhost:8080";
+  // private baseUri:string="http://localhost:8080";
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient) { }
