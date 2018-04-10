@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Contact } from './contact';
+import { Userinfo } from './userinfo';
 
 @Injectable()
 export class AuthService {
@@ -8,12 +9,12 @@ export class AuthService {
   // =========== Declared Variables: ===================================
   authToken: any; // token holder
   user: any;      // user object holder
-  loggedIn:any;   // logged in True/False 
+  loggedIn:any;   // logged in True/False
 
   // =========== Http base uri and headers =============================
   private baseUri:string="http://localhost:8080";
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
-  
+
   constructor(private http: HttpClient) { }
 
 
@@ -62,22 +63,17 @@ export class AuthService {
     return this.http.post(this.baseUri+'/login', user, {headers:this.headers});
   }
 
-    // GET: user profile
-    userProfile(){
-      // Load the token into the authToken const:
-      this.loadToken();
-      this.headers = new HttpHeaders().set('Authorization', this.authToken);
-      return this.http.get(this.baseUri+'/user/setting', {headers:this.headers});
-    }
-  
-    // GET: user dashboard
-    userDashboard(){
-      // Load the token into the authToken const:
-      this.loadToken();
-      this.headers = new HttpHeaders().set('Authorization', this.authToken);
-      return this.http.get(this.baseUri+'/user/friends', {headers:this.headers});
-    }
-    
+
+
+  // GET: user dashboard
+  userDashboard(){
+    // Load the token into the authToken const:
+    this.loadToken();
+    console.log('userDashboard service: ', this.authToken)
+    this.headers = new HttpHeaders().set('Authorization', this.authToken);
+    return this.http.get(this.baseUri+'/user/friends', {headers:this.headers});
+  }
+
     // ========== Http Add, Update, Delete request functions =====
 
     addContact(contact: Contact){
@@ -92,6 +88,70 @@ export class AuthService {
       const id = contact._id;
       return this.http.delete(this.baseUri+'/user/friends/delete/'+id, {headers:this.headers});
     }
-  
+
+    // ===================== Setting =======================================================
+    // GET: user profile
+    userProfile(){
+      // Load the token into the authToken const:
+      this.loadToken();
+
+      this.headers = new HttpHeaders().set('Authorization', this.authToken);
+      return this.http.get(this.baseUri+'/user/setting', {headers:this.headers});
+    }
+
+    changePassword(update_user: Userinfo){
+      return this.http.put(this.baseUri+'/user/setting/changepassword', update_user, {headers:this.headers});
+
+    }
+
+    // ====================== Receipts ======================================================
+    // GET: getReceipts
+    getReceipts(){
+      // Load the token into the authToken const:
+      this.loadToken();
+      this.headers = new HttpHeaders().set('Authorization', this.authToken);
+      return this.http.get(this.baseUri+'/user/receipts', {headers:this.headers});
+    }
+
+    // POST: save the receipts to the mLab database under "receipts" collection
+    addReceipts(receipts){
+      this.loadToken();
+      this.headers = new HttpHeaders().set('Authorization', this.authToken);
+      return this.http.post(this.baseUri+'/user/receipts/upload', receipts, {headers:this.headers})
+    }
+
+    // ====================== Transactions ======================================================
+    get_names(friend_id){
+      // this.loadToken();
+      console.log('auth ', friend_id);
+      // this.headers = new HttpHeaders().set('Authorization', this.authToken);
+      return this.http.put(this.baseUri+'/user/transactions/names', friend_id, {headers:this.headers});
+    }
+
+
+    // GET: getReceipts
+    getTransactions(){
+      // Load the token into the authToken const:
+      this.loadToken();
+      this.headers = new HttpHeaders().set('Authorization', this.authToken);
+      return this.http.get(this.baseUri+'/user/transactions', {headers:this.headers});
+    }
+
+    // POST: save the receipts to the mLab database under "receipts" collection
+    // addReceipts(receipts){
+    //   this.loadToken();
+    //   this.headers = new HttpHeaders().set('Authorization', this.authToken);
+    //   return this.http.post(this.baseUri+'/user/receipts/upload', receipts, {headers:this.headers})
+    // }
+
+    // ====================== Dashboard ======================================================
+    // GET request to the backend for dashboard Info
+    getDashboard() {
+      // Load the token into the authToken const:
+      this.loadToken();
+      this.headers = new HttpHeaders().set('Authorization', this.authToken);
+      return this.http.get(this.baseUri+'/user/dashboard', {headers:this.headers});
+    }
+
 
 }

@@ -1,8 +1,8 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, ViewContainerRef, ComponentFactoryResolver, NgZone, ApplicationRef } from '@angular/core';
 import { Router, Route } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { ValidationService } from '../services/validation.service';
-import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import { ToastsManager, ToastOptions} from 'ng2-toastr/ng2-toastr';
 
 @Component({
   selector: 'app-register',
@@ -20,8 +20,15 @@ export class RegisterComponent implements OnInit {
   constructor(private router: Router,
               private validateService : ValidationService,
               public authService: AuthService,
-              public toastr: ToastsManager, vcr: ViewContainerRef) { 
+              public toastr: ToastsManager, vcr: ViewContainerRef,
+              componentFactoryResolver: ComponentFactoryResolver, ngZone: NgZone, appRef: ApplicationRef, options: ToastOptions) { 
                 this.toastr.setRootViewContainerRef(vcr);
+                Object.assign(options, {
+                  maxShown: 1,
+                  positionClass: "toast-top-center",
+                  showCloseButton: true,
+                  toastLife: 3000
+                  });
               }
 
   ngOnInit() {
@@ -79,6 +86,7 @@ export class RegisterComponent implements OnInit {
     this.name = undefined;
     this.email = undefined;
     this.password = undefined;
+    this.router.navigate(['/']);
   }
 
 

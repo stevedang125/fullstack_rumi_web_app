@@ -1,0 +1,24 @@
+ul {
+  padding:0;
+  idth:1200px;
+  margin:20px auto;
+}
+
+ul img {
+  width:250px;
+}
+
+li {
+  display:inline;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+#card {
+  width:250px;
+  position: relative;
+  padding:10px;
+  margin: auto;
+}

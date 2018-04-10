@@ -1,3 +1,32 @@
-<p>
-  receipts works!
-</p>
+<div class="container" id="content">
+  <h2>Upload New Images</h2>
+  <!-- Progress Bar -->
+  <div *ngIf="upload">
+    <div class="progress">
+      <div class="progress-bar progress-bar-animated"
+        [ngStyle]="{ 'width': upload?.progress + '%' }">
+      </div>
+    </div>
+    Progress: {{upload?.progress}}% Complete
+  </div>
+
+  <hr>
+
+  <!-- Input and Upload Button -->
+  <input type="file" (change)="handleFiles($event)" multiple>
+  <button class="btn btn-primary" (click)="uploadFiles()">Upload Images</button>
+  <button class="btn btn-danger" (click)="reload()">Refesh ittt</button>
+
+<!-- Display Images -->
+  <p></p>
+  <h2>Latest Photos</h2>
+
+  <ul id="thumbnailsList">
+      <li *ngFor="let image of receiptsList" class="img">
+          <!-- <a [routerLink]="['/image', image.key]"> -->
+          <a href="{{image.link}}">
+          <img src="{{image.link}}" class="tn">
+          </a>
+      </li>
+  </ul>
+</div>

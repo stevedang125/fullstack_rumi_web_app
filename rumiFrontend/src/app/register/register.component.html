@@ -1,7 +1,6 @@
-
 <div class="row" id="user_form" *ngIf="!authService.isLoggedIn()">
     <div class="col align-self-center">
-    <h2 class="page-header">Register</h2>
+    <h2>Register</h2>
     <form class="form-signin">
         <!-- <div class="form-group row">
           <label for="firstname" class="col-sm-3 col-form-label">First Name</label>
@@ -16,40 +15,40 @@
               <input type="text" class="form-control" placeholder="*Scott" [(ngModel)]="lastname" name="lastname">
             </div>
         </div> -->
-        
+
         <div class="form-group row">
             <label for="name" class="col-sm-3 col-form-label">Name</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" placeholder="*Michael Scott" [(ngModel)]="name" name="name">
+              <input type="text" class="form-control" placeholder="*Enter Name" [(ngModel)]="name" name="name">
             </div>
         </div>
-    
+
         <div class="form-group row">
             <label for="email" class="col-sm-3 col-form-label">Email</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" placeholder="*mscott@dundermifflin.com" [(ngModel)]="email" name="email">
+              <input type="text" class="form-control" placeholder="*Enter Valid Email" [(ngModel)]="email" name="email">
             </div>
         </div>
 
         <div class="form-group row">
             <label for="username" class="col-sm-3 col-form-label">Username</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" placeholder="*michaelscott" [(ngModel)]="username" name="username">
+              <input type="text" class="form-control" placeholder="*Enter Username" [(ngModel)]="username" name="username">
             </div>
         </div>
 
         <div class="form-group row">
             <label for="password" class="col-sm-3 col-form-label">Password</label>
             <div class="col-sm-9">
-              <input type="password" class="form-control" placeholder="*******" [(ngModel)]="password" name="password">
+              <input type="password" class="form-control" placeholder="*Enter Password" [(ngModel)]="password" name="password">
             </div>
         </div>
 
       </form>
-      
+
       <button class="btn btn-success" (click)="onRegisterSubmit()">Register</button>&nbsp;
       <button class="btn btn-danger" (click)="onCancelSubmit()">Cancel</button><br><br>
       <p>Already have an account? <a [routerLink] = "['/login']">Login Here</a></p>
- 
+
 </div>
 </div>

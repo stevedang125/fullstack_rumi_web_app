@@ -1,3 +1,44 @@
-<p>
-  transactions works!
-</p>
+
+<div class="container-fluid" id="content">
+  <h2>Transactions</h2>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th><h6><strong>Number</strong></h6></th>
+        <th><h6><strong>Receipt Name</strong></h6></th>
+        <!-- <th><h6><strong>Receipt Link</strong></h6></th> -->
+        <th><h6><strong>Company Name</strong></h6></th>
+        <th><h6><strong>Type</strong></h6></th>
+        <th><h6><strong>Items</strong></h6></th>
+        <th><h6><strong>Prices</strong></h6></th>
+        <th><h6><strong>Total</strong></h6></th>
+        <th><h6><strong>Roommates</strong></h6></th>
+        <!-- <th><h6><strong>Friend's IDs</strong></h6></th>            -->
+        <th><h6><strong>Numfriends</strong></h6></th>
+        <th><h6><strong>Each Pay</strong></h6></th>
+        <th><h6><strong>Date</strong></h6></th>
+
+        <!-- <th><h6><strong>User_ID</strong></h6></th> -->
+      </tr>
+    </thead>
+    <tbody>
+        <!-- <tr *ngFor="let contact of hack(contactlist); let i = index"> -->
+        <tr *ngFor="let tran of hack(transactionsList); let friend of hack(testing);  let i = index">
+          <td>{{i+1}}</td>
+          <td><a href="{{tran.receipt_link}}">{{tran.group_name}}</a></td>
+          <!-- <td><a href="{{tran.receipt_link}}">{{tran.receipt_link}}</a></td> -->
+          <td>{{tran.company_name}}</td>
+          <td>{{tran.transaction_type}}</td>
+          <td>{{tran.items}}</td>
+          <td>${{tran.prices}}</td>
+          <td>${{tran.total}}</td>
+          <td>{{tran.friend_names}}</td>
+          <!-- <td>{{tran.friends_ids}}</td>                                     -->
+          <td>{{tran.num_friends}}</td>
+          <td>${{tran.each_pay}}</td>
+          <td>{{tran.date}}</td>
+          <!-- <td>{{tran.user_id}}</td> -->
+      </tr>
+    </tbody>
+  </table>
+</div>

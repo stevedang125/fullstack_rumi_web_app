@@ -1,135 +1,147 @@
-
-
-  <div class="container-fluid">
+  <div class="container-fluid" id="content">
+    <h2>Roommates</h2>
     <div class="row">
-      <div class="col-md-2">
-        <!-- Search -->
-        <!-- <div class="card"> -->
+      <!-- Add Roommate -->
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-header">
+            Add New Roommate
+          </div>
+          <div class="card-body">
             <form>
-                <!-- <div class="card-body"> -->
-                  <!-- <h6 class="card-title"> -->
-                  <h6>
-                    <strong>Search</strong>
-                  </h6>
-                  
-                  <table class="table table-hover">
-                    <tbody>
-                      <tr>
-                        <td>
-                          <div class="form-group">
-                              <input placeholder="*Enter Name" type="text" name="inputString" [(ngModel)] = "inputString" class="form-control">
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <button class="btn btn-success" (click)="search_contact()">Search</button>&nbsp;
-                        <button class="btn btn-danger" (click)="clearSearch()">Clear</button>
-                      </tr>
-                    </tbody>
-                  </table>
-                <!-- </div> -->
-              </form>
-          <!-- </div> -->
-        <!-- End Search -->
-  
-        <!-- Add -->
-        <form>
-            <!-- <div class="card-body half"> -->
-              <!-- <h4 class="card-title"><strong>Add Contact</strong></h4> -->
-              <h6><strong>Add Contact</strong></h6>
-              <table class="table table-hover">
-                <tbody>
-                  <tr>
-                    <td>
-                      <div class="form-group">
-                        <!-- <label><h6><strong>Firstname:</strong></h6></label> -->
-                        <input placeholder="*Enter Firstname" type="text" name="firstName" [(ngModel)] = "firstName" class="form-control">
-                      </div>
-                      <div class="form-group">
-                          <!-- <label><h6><strong>Lastname:</strong></h6></label> -->
-                          <input placeholder="*Enter Lastname" type="text" name="lastName" [(ngModel)] = "lastName" class="form-control">
-                      </div>
-                      <div class="form-group">
-                          <!-- <label><h6><strong>Preferred Name:</strong></h6></label> -->
-                          <input placeholder="*Enter Preferred Name" type="text" name="preferredName" [(ngModel)] = "preferredName" class="form-control">
-                      </div>
-                      <div class="form-group">
-                          <!-- <label><h6><strong>Address:</strong></h6></label> -->
-                          <input placeholder="*Enter Address" type="text" name="address" [(ngModel)] = "address" class="form-control">
-                      </div>
-                      <div class="form-group">
-                          <!-- <label><h6><strong>Email:</strong></h6></label> -->
-                          <input placeholder="*Enter Email" type="text" name="email" [(ngModel)] = "email" class="form-control">
-                      </div>
-                      <div class="form-group">
-                          <!-- <label><h6><strong>Home Phone:</strong></h6></label> -->
-                          <input placeholder="*Enter Home Phone" type="text" name="homePhone" [(ngModel)] = "homePhone" class="form-control">
-                      </div>
-                      <div class="form-group">
-                          <!-- <label><h6><strong>Cell Phone:</strong></h6></label> -->
-                          <input placeholder="*Enter Cell Phone" type="text" name="cellPhone" [(ngModel)] = "cellPhone" class="form-control">
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                        <!-- <input type="submit" value="Submit" class="btn btn-success"> -->
-                        <button class="btn btn-success" (click)="onSubmitButton()">Submit</button>&nbsp;
-                        <button class="btn btn-danger" (click)="clear()">Clear</button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            <!-- </div> -->
-          </form>
-        <!-- End add -->
+              <div class="form-group row">
+                <label for="inputFirstName" class="col-sm-4 col-form-label">First Name</label>
+                <div class="col-sm-8">
+                  <input placeholder="First Name" type="text" name="firstName" [(ngModel)] = "firstName" class="form-control">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputLastName" class="col-sm-4 col-form-label">Last Name</label>
+                <div class="col-sm-8">
+                  <input placeholder="Last Name" type="text" name="lastName" [(ngModel)] = "lastName" class="form-control">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputLastName" class="col-sm-4 col-form-label">Preferred Name</label>
+                <div class="col-sm-8">
+                  <input placeholder="Preferred Name" type="text" name="preferredName" [(ngModel)] = "preferredName" class="form-control">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputLastName" class="col-sm-4 col-form-label">Address</label>
+                <div class="col-sm-8">
+                  <input placeholder="Address" type="text" name="address" [(ngModel)] = "address" class="form-control">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputLastName" class="col-sm-4 col-form-label">Email</label>
+                <div class="col-sm-8">
+                  <input placeholder="Email" type="text" name="email" [(ngModel)] = "email" class="form-control">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputLastName" class="col-sm-4 col-form-label">Home Phone</label>
+                <div class="col-sm-8">
+                  <input placeholder="Home Phone" type="text" name="homePhone" [(ngModel)] = "homePhone" class="form-control">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputLastName" class="col-sm-4 col-form-label">Cell Phone</label>
+                <div class="col-sm-8">
+                  <input placeholder="Cell Phone" type="text" name="cellPhone" [(ngModel)] = "cellPhone" class="form-control">
+                </div>
+              </div>
+
+              <button class="btn btn-success" (click)="onSubmitButton()">Add</button>
+              <button class="btn btn-danger" (click)="clear()">Clear</button>
+            </form>
+          </div>
+          <!-- End Add Roommate -->
+
+          <!-- Search Roommate -->
+          <div class="card-header">
+            Search Roommate
+          </div>
+          <div class="card-body">
+            <!--- Search Form -->
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-12">
+                  <input placeholder="Search Name" type="text" name="inputString" [(ngModel)] = "inputString" class="form-control">
+                </div>
+
+                <!-- <div class="col-sm-5">
+                  <button class="btn btn-success" (click)="search_contact()">Search</button>
+                  <button class="btn btn-danger" (click)="clearSearch()">Clear</button>
+                </div> -->
+              </div>
+            </form>
+            <!--- End Search Form -->
+          </div>
+        </div>
       </div>
-  
-  
-      <div class="col-md-10">
-        <!-- Contact list -->
-        <!-- Contact list -->
-    <!-- <div class="card"> -->
-        <!-- <div class="card-body"> -->
-          <!-- <h4 class="card-title"><strong>Contact List</strong></h4> -->
-          <h6><strong>Contact List</strong></h6>
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th><h6><strong>Number</strong></h6></th>
-                <th><h6><strong>Firstname</strong></h6></th>
-                <th><h6><strong>Lastname</strong></h6></th>
-                <th><h6><strong>Preferred Name</strong></h6></th>
-                <th><h6><strong>Address</strong></h6></th>
-                <th><h6><strong>Email</strong></h6></th>
-                <th><h6><strong>Home Phone</strong></h6></th>
-                <th><h6><strong>Cell Phone</strong></h6></th>
-                <th><h6><strong>Options</strong></h6></th>
-              </tr>
-            </thead>
-            <tbody>
-                <!-- <tr *ngFor="let contact of hack(contactlist); let i = index"> -->
-                <tr *ngFor="let contact of hack(contactlist) | filter:inputString; let i = index">
-                  <td>{{i+1}}</td>
-                  <td>{{contact.firstName}}</td>
-                  <td>{{contact.lastName}}</td>
-                  <td>{{contact.preferredName}}</td>
-                  <td>{{contact.address}}</td>
-                  <td>{{contact.email}}</td>
-                  <td>{{contact.homePhone}}</td>
-                  <td>{{contact.cellPhone}}</td>
-                  <td>
-                      <button class="btn btn-danger" (click)="onDeleteButton(contact)">Delete</button>&nbsp;
-                      <button class="btn btn-info" (click)="onEditButton(contact)" >Edit</button>
-                  </td>
-              </tr>
-            </tbody>
-          </table>
-        <!-- </div> -->
-  
-        <!-- End of contact list -->
+
+      <!--- Roommates List -->
+      <div class="col-sm-6">
+        <div class="list-group" *ngFor="let contact of hack(contactlist) | filter:inputString; let i = index">
+          <div class="list-group-item list-group-item-action flex-column align-items-start" id="roommate-list-item">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 id="roommate-list-header">{{contact.firstName}} {{contact.lastName}}</h5>
+              <small class="text-muted">Added {{contact.date}}</small>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                Preferred Name:
+              </div>
+              <div class="col">
+                {{contact.preferredName}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                Address:
+              </div>
+              <div class="col">
+                {{contact.address}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                Email:
+              </div>
+              <div class="col">
+                {{contact.email}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                Home Phone:
+              </div>
+              <div class="col">
+                {{contact.homePhone}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                Cell Phone:
+              </div>
+              <div class="col">
+                {{contact.cellPhone}}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+      <!--- End Roommates List -->
   </div>
-  
-  

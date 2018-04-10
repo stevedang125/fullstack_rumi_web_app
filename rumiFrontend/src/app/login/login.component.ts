@@ -1,27 +1,48 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, ViewContainerRef, ComponentFactoryResolver, NgZone, ApplicationRef } from '@angular/core';
 import { Router, Route } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { ValidationService } from '../services/validation.service';
-import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import { ToastsManager, ToastOptions } from 'ng2-toastr/ng2-toastr';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit  {
 
   // Declared variables:
   token: any;
   username:String;
   password:String;
 
+
+  warning :any;
+  warningMsg: string = "Please fill in all fields!";
+
   // Inject into the constructor
   constructor(private router: Router,
     private validateService : ValidationService,
     public authService: AuthService,
-    public toastr: ToastsManager, vcr: ViewContainerRef) { 
+    public toastr: ToastsManager, vcr: ViewContainerRef,
+    componentFactoryResolver: ComponentFactoryResolver, ngZone: NgZone, appRef: ApplicationRef, options: ToastOptions) { 
       this.toastr.setRootViewContainerRef(vcr);
+      Object.assign(options, {
+      maxShown: 1,
+      positionClass: "toast-top-center",
+      showCloseButton: true,
+      toastLife: 3000
+      });
+
+      // =============== More Toastr message options here: ===============
+      // toast-top-right (Default)
+      // toast-top-center
+      // toast-top-left
+      // toast-top-full-width
+      // toast-bottom-right
+      // toast-bottom-center
+      // toast-bottom-left
+      // toast-bottom-full-width
     }
 
   ngOnInit() {
@@ -33,6 +54,7 @@ export class LoginComponent implements OnInit {
     }
   
     showWarning(msg) {
+      // this.toastr.setupToast(toast:Toas, Position='toast-top-right');
       this.toastr.warning(msg, 'Alert!');
     }
   
@@ -48,6 +70,7 @@ export class LoginComponent implements OnInit {
     };
 
     if(!this.validateService.validateLogin(user)){
+      this.warning = true;
       this.showWarning('Please fill in all fields!');
       return false;
     }
@@ -81,6 +104,7 @@ export class LoginComponent implements OnInit {
   onCancelSubmit(){
     this.username = undefined;
     this.password = undefined;
+    this.router.navigate(['/']);
   }
 
 }
