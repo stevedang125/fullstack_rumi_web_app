@@ -40,14 +40,14 @@ router.put('/transactions/names', passport.authenticate('jwt', {session: false})
         const name = user.name
         res.status(200).json({name : name});
     });
-    
+
 });
 
 // Add a new receipt
 router.post('/transactions/add', passport.authenticate('jwt', {session: false}), (req,res,next)=>{
     // Create a new object to hold the new contact informaiton from the request.body
     const user_id = new ObjectId(req.user.id);
-   
+
     let newTransaction = new Transaction({
         _id: req.body._id,
         group_name: req.body.group_name,

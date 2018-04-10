@@ -78,16 +78,13 @@ router.post('/login', (req,res,next)=>{
 });
 
 router.post('/get_user_by_id', (req, res, next) => {
+    const _id = req.body.user_id;
+    console.log('the id is: ', _id);
 
-    console.log('the id is: ', req.body._id);
-
-    const _id = req.body._id;
-
-    const query = User.find({});
-    query.where('_id', _id);
-
-    query.exec(function(err, userinfo){
-        (err) ? console.log('Error! ** Cannot find the user: '+ err) : res.status(200).json({userinfo: userinfo});
+    User.findById(_id, function(err, user) {
+      if(err)
+        return res.json({ success : false, msg : "Cannot find user."});
+      return res.json({ success : true, user : user });
     });
 
 });

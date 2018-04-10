@@ -19,13 +19,13 @@ const Schema = mongoose.Schema;
 
 // ========================== Setting/Profile =============================================
 router.get('/setting', passport.authenticate('jwt', {session: false}), (req,res,next)=>{
-    
+
     res.json({user: req.user});
 });
 
 // Change an existing contact password
 router.put('/setting/changepassword', passport.authenticate('jwt', {session: false}), (req,res,next)=>{
-    
+
 
     User.encryptPassword(req.body.password, (err, encyptedPassword)=>{
         if(err){
@@ -49,9 +49,9 @@ router.put('/setting/changepassword', passport.authenticate('jwt', {session: fal
             if(err){
                 console.log('this is an err in hash new password : '+err);
             }
-            
+
             updateUser.password = encyptedPassword;
-           
+
 
             User.saveUserUpdate(updateUser, (err, savedUser)=>{
                 if(err){
@@ -61,7 +61,7 @@ router.put('/setting/changepassword', passport.authenticate('jwt', {session: fal
                 }
             });
         });
-        
+
 
     });
 
@@ -72,6 +72,8 @@ router.put('/setting/changepassword', passport.authenticate('jwt', {session: fal
 
 // Fetch the contact list from the database to the template
 router.get('/friends', passport.authenticate('jwt', {session: false}), (req,res,next)=>{
+    console.log("Listing friends...");
+
     const user_id = new ObjectId(req.user.id);
     const query = Contact.find({});
     query.where('user_id', user_id);
@@ -84,6 +86,8 @@ router.get('/friends', passport.authenticate('jwt', {session: false}), (req,res,
 
 // Add a new friend
 router.post('/friends/add', passport.authenticate('jwt', {session: false}), (req,res,next)=>{
+    console.log("Adding new friend...");
+
     // Create a new object to hold the new contact informaiton from the request.body
     let newContact = new Contact({
         _id : req.body._id,
@@ -106,7 +110,7 @@ router.post('/friends/add', passport.authenticate('jwt', {session: false}), (req
 
 // Update an existing contact
 router.put('/friends/update', passport.authenticate('jwt', {session: false}), (req,res,next)=>{
-    
+
     Contact.getContactById(req.body._id, (err, contact)=>{
         if(err){
             res.status(500).json({errmsg:'Failed to find contact to update, here is the err: '+err});
@@ -134,7 +138,7 @@ router.put('/friends/update', passport.authenticate('jwt', {session: false}), (r
 
 });
 
-// Delete a contact from database 
+// Delete a contact from database
 router.delete('/friends/delete/:id', passport.authenticate('jwt', {session: false}), (req,res,next)=>{
     Contact.findOneAndRemove({_id: req.params.id}, (err, contact)=>{
         if(err){
@@ -146,4 +150,3 @@ router.delete('/friends/delete/:id', passport.authenticate('jwt', {session: fals
 });
 
 module.exports = router;
-
