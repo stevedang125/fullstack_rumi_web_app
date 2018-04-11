@@ -26,7 +26,6 @@ router.get('/setting', passport.authenticate('jwt', {session: false}), (req,res,
 // Change an existing contact password
 router.put('/setting/changepassword', passport.authenticate('jwt', {session: false}), (req,res,next)=>{
 
-
     User.encryptPassword(req.body.password, (err, encyptedPassword)=>{
         if(err){
             console.log('this is an err in hash: '+err);
@@ -51,8 +50,6 @@ router.put('/setting/changepassword', passport.authenticate('jwt', {session: fal
             }
 
             updateUser.password = encyptedPassword;
-
-
             User.saveUserUpdate(updateUser, (err, savedUser)=>{
                 if(err){
                     res.status(500).json({success: false, msg:'Failed to update password, here is the err: '+err});
