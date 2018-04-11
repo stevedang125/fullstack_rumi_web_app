@@ -10,6 +10,7 @@ var receiptSchema = new Schema({
     name: { type: String },
     link: { type: String },
     date: { type: String },
+    date_unix: { type: Date, default: Date.now },
     user_id: { type : String }
 });
 

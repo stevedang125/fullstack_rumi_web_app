@@ -18,6 +18,7 @@ var transactionSchema = new Schema({
     each_pay: { type: String },
     friend_names: [],
     date: { type: String },
+    date_unix: { type: Date, default: Date.now },
     user_id: { type : String }
 });
 

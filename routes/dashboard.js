@@ -75,4 +75,39 @@ router.get('/dashboard', passport.authenticate('jwt', {session: false}), (req,re
 
 });
 
+router.get('/dashboard_mobile', passport.authenticate('jwt', {session: false}), (req, res, next) => {
+  const user_id = new ObjectId(req.user.id);
+
+  var transactionQuery = Transaction.find({ user_id : user_id }).sort('-date_unix').limit(5);
+  var receiptQuery = Receipt.find({ user_id : user_id }).sort('-date_unix').limit(5);
+  var roommateQuery = Contact.find({ user_id : user_id }).sort('-date_unix').limit(5);
+
+  transactionQuery.exec(function(err, transactions) {
+    if(err) {
+      console.log('Error getting recent transactions: ' + err);
+    }
+
+    receiptQuery.exec(function(err, receipts) {
+      if(err) {
+        console.log('Error getting recent receipts: ' + err);
+      }
+
+      roommateQuery.exec(function(err, roommates) {
+        if(err) {
+          console.log('Error getting recent roommates: ' + err);
+        }
+
+        res.json({
+          success: true,
+          msg: 'Success!',
+          user_id: user_id,
+          transactions: transactions,
+          receipts: receipts,
+          roommates: roommates
+        });
+      });
+    });
+  });
+});
+
 module.exports = router;

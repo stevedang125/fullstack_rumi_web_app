@@ -14,6 +14,7 @@ var contactSchema = new Schema({
     homePhone: { type: String, required: true },
     cellPhone: { type: String, required: true },
     date: { type: String },
+    date_unix: { type: Date, default: Date.now },
     user_id: { type : String }
 });
 
