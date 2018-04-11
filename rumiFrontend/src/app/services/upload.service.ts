@@ -6,8 +6,8 @@ import { FileDetails } from '../models/fileDetails.model';
 // Bring in firebase
 import { AngularFireModule } from 'angularfire2';
 import {  AngularFireDatabase,
-          AngularFireList, 
-          AngularFireObject, 
+          AngularFireList,
+          AngularFireObject,
           snapshotChanges } from 'angularfire2/database';
 import * as firebase from 'firebase';
 
@@ -25,10 +25,10 @@ import { AuthService } from '../services/auth.service';
 export class UploadService {
 
   private basePath = '/uploads';
-  
+
   finishedProgress: any;
 
-  // These variables will return the picture url and its id 
+  // These variables will return the picture url and its id
   pic_link:string;
   pic_id:string;
   pic_name:string;
@@ -61,7 +61,7 @@ export class UploadService {
   uploadFile(upload: FileDetails) {
 
     const new_name = Math.random().toString(36).substring(7) + new Date().getTime();
-    
+
     console.log('New name is: ', new_name);
 
     // Get the the ref of storage in firebse console
@@ -69,17 +69,17 @@ export class UploadService {
     // Upload the file to storage
     const uploadTask = storageRef.child(`${this.basePath}/${new_name}`)
     .put(upload.file);
-    
-    
 
-    // All of these are for the progress bar beauty >___< 
+
+
+    // All of these are for the progress bar beauty >___<
     uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED ,
     // Three observers
     // 1) State_changed observer
     (snapshot) => {
       //upload in progress
       upload.progress = Math.round(
-      (uploadTask.snapshot.bytesTransferred 
+      (uploadTask.snapshot.bytesTransferred
         / uploadTask.snapshot.totalBytes ) * 100);
       console.log(upload.progress+'%');
     },
@@ -101,8 +101,8 @@ export class UploadService {
   // This method will save the file/img data to the database
   // because we stored the img/file into the storage already.
   // Easy for later if we need to look up the file/img in the
-  // firebase console, maybe delete/edit feature? :) 
-  // NOTE: *********** delete/edit the file/img in the firebase 
+  // firebase console, maybe delete/edit feature? :)
+  // NOTE: *********** delete/edit the file/img in the firebase
   // console database.(FEATURES!)
   public saveFileData(upload: FileDetails) {
 
@@ -111,14 +111,14 @@ export class UploadService {
         pic_key: res.key,
         pic_name: upload.name,
         pic_link: upload.url,
-        pic_date: upload.createOn     
+        pic_date: upload.createOn
       };
       console.log("in upload servic: ", picture.pic_date);
       this.imageList.push(picture);
       // console.log('this is the LIST ******', this.imageList);
       this.image = picture;
       this.addPictureToMlab();
-    });    
+    });
   }
 
   clearList(){
@@ -138,5 +138,5 @@ export class UploadService {
     });
 
   }
-              
+
 }

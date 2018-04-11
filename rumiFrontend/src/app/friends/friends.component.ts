@@ -16,7 +16,7 @@ export class FriendsComponent implements OnInit {
   // Search input string:
   inputString:string;
 
-  // user object and user ID holder 
+  // user object and user ID holder
   user: Object;
   userID: string;
 
@@ -39,7 +39,7 @@ export class FriendsComponent implements OnInit {
               private router: Router,
               private validationService: ValidationService,
               public toastr: ToastsManager, vcr: ViewContainerRef,
-              componentFactoryResolver: ComponentFactoryResolver, ngZone: NgZone, appRef: ApplicationRef, options: ToastOptions) 
+              componentFactoryResolver: ComponentFactoryResolver, ngZone: NgZone, appRef: ApplicationRef, options: ToastOptions)
     {
       this.toastr.setRootViewContainerRef(vcr);
       Object.assign(options, {
@@ -68,11 +68,11 @@ export class FriendsComponent implements OnInit {
     showSuccess(msg) {
       this.toastr.success(msg, 'Success!');
     }
-  
+
     showWarning(msg) {
       this.toastr.warning(msg, 'Alert!');
     }
-  
+
     showError(msg) {
       this.toastr.error(msg, 'Oops!');
     }
@@ -99,7 +99,7 @@ export class FriendsComponent implements OnInit {
       this.inputString = undefined;
       this.showInfo('Cleared Search!');
     }
-  
+
     hack(val){
       console.log("hack: "+val);
       return val;
@@ -151,7 +151,7 @@ export class FriendsComponent implements OnInit {
     if(new_contact._id != undefined){
       this.edit_contact(new_contact);
     }
-    
+
 }
 
 onEditButton(contact){

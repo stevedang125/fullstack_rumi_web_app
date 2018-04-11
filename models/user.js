@@ -49,7 +49,7 @@ module.exports.getUserById = function(id, callback){
 }
 
 // Add a new user to the database with the new password
-module.exports.saveUserUpdate = function(newContact, callback){   
+module.exports.saveUserUpdate = function(newContact, callback){
     newContact.save(callback);
 }
 
@@ -63,4 +63,3 @@ module.exports.encryptPassword = function(password, callback){
         });
     });
 }
-

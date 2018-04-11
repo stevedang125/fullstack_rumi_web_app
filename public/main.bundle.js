@@ -1556,7 +1556,7 @@ var UploadService = /** @class */ (function () {
         // Upload the file to storage
         var uploadTask = storageRef.child(this.basePath + "/" + new_name)
             .put(upload.file);
-        // All of these are for the progress bar beauty >___< 
+        // All of these are for the progress bar beauty >___<
         uploadTask.on(__WEBPACK_IMPORTED_MODULE_3_firebase__["storage"].TaskEvent.STATE_CHANGED, 
         // Three observers
         // 1) State_changed observer
@@ -1582,8 +1582,8 @@ var UploadService = /** @class */ (function () {
     // This method will save the file/img data to the database
     // because we stored the img/file into the storage already.
     // Easy for later if we need to look up the file/img in the
-    // firebase console, maybe delete/edit feature? :) 
-    // NOTE: *********** delete/edit the file/img in the firebase 
+    // firebase console, maybe delete/edit feature? :)
+    // NOTE: *********** delete/edit the file/img in the firebase
     // console database.(FEATURES!)
     UploadService.prototype.saveFileData = function (upload) {
         var _this = this;
