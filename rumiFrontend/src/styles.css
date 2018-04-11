@@ -155,11 +155,19 @@ body {
 }
 
 a {
-  color: #346751;
+  color: #59b68e;
 }
 
 a:hover {
-  color: #ffffff;
+  color: #346751;
+}
+
+#navbar a, #footer a {
+  color:#ffffff;
+}
+
+#navbar a:hover, #footer a:hover {
+  text-decoration: underline;
 }
 
 #row {
@@ -242,19 +250,22 @@ a:hover {
 }
 
 #transaction-card {
-  background-color:#678EB7;
-  color:#fff;
-  border-color:#678EB7;
+  background-color:#E4C1E2;
+  color:#857284;
 }
 
 #receipt-card {
-  background-color:#B5B76B;
-  color:#fff;
+  background-color:#C1D0E4;
+  color:#606771;
+}
+
+#roommate-list-header {
+  color:#59b68e;
 }
 
 #roommate-card {
-  background-color:#C289A7;
-  color:#fff;
+  background-color:#C1E4D5;
+  color:#697C74;
 }
 
 #user_form {

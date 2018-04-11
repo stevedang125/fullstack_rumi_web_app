@@ -92,7 +92,7 @@
         <div class="list-group" *ngFor="let contact of hack(contactlist) | filter:inputString; let i = index">
           <div class="list-group-item list-group-item-action flex-column align-items-start" id="roommate-list-item">
             <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">{{contact.firstName}} {{contact.lastName}}</h5>
+              <h5 id="roommate-list-header">{{contact.firstName}} {{contact.lastName}}</h5>
               <small class="text-muted">Added {{contact.date}}</small>
             </div>
 
