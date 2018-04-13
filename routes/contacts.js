@@ -149,4 +149,25 @@ router.delete('/friends/delete/:id', passport.authenticate('jwt', {session: fals
 
 });
 
+// ======== ROOMAMTES -> MOBILE FUNCTIONALITY ========
+router.get('/findUsers', passport.authenticate('jwt', { session : false }), (req, res, next) => {
+  var roommate_name = req.params.roommate_name;
+
+  console.log(roommate_name);
+
+  User.find({
+    $or:[
+      { 'name' : roommate_name },
+      { 'email' : roommate_name },
+      { 'username' : roommate_name }
+    ]}, function(err, docs){
+      if(error) {
+        res.json({ success : false, msg : "Cannot find any users."});
+      }
+
+      res.json({ success : true, users : docs });
+  });
+
+});
+
 module.exports = router;

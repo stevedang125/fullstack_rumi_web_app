@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm install && cd rumiFrontend && npm install && ng build && cd .. && node server.js"
+    "start": "cd rumiFrontend && ng build && cd .. && node server.js"
   },
   "dependencies": {
     "@angular/animations": "^5.2.0",
@@ -52,6 +52,9 @@
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
     "typescript": "~2.5.3"
+  },
+  "engines": {
+    "node": "6.11.3"
   },
   "author": "Abe, Alana, Dita, Joshua, John, Steve, Subhash",
   "license": "ISC"
