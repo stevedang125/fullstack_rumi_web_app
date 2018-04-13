@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "This is a web app using the MEAN stack.",
   "main": "server.js",
+  "author": "Abe, Alana, Dita, Joshua, John, Steve, Subhash",
+  "license": "ISC",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd rumiFrontend && ng build && cd .. && node server.js"
+    "start": "cd rumiFrontend && ng build"
   },
   "dependencies": {
     "@angular/animations": "^5.2.0",
@@ -54,8 +56,7 @@
     "typescript": "~2.5.3"
   },
   "engines": {
-    "node": "6.11.3"
-  },
-  "author": "Abe, Alana, Dita, Joshua, John, Steve, Subhash",
-  "license": "ISC"
+    "node": "~6.11.3",
+    "npm": "~5.7.1"
+  }
 }
