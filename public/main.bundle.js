@@ -1248,7 +1248,7 @@ var AuthService = /** @class */ (function () {
     function AuthService(http) {
         this.http = http;
         // =========== Http base uri and headers =============================
-        this.baseUri = "http://localhost:8080";
+        this.baseUri = "";
         this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Content-Type', 'application/json');
     }
     // =========== Helper functions =====================================
