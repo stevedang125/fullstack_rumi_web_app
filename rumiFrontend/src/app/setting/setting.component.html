@@ -2,7 +2,7 @@
   <div *ngIf="user">
       <h2 class="page-header">Hi, {{user.name}}!</h2>
       <ul class="list-group">
-        <li class="list-group-item"><b>ID</b>: {{user._id}}</li>
+        <!-- <li class="list-group-item"><b>ID</b>: {{user._id}}</li> -->
         <li class="list-group-item"><b>Name</b>: {{user.name}}</li>
         <li class="list-group-item"><b>Username</b>: {{user.username}}</li>
         <li class="list-group-item"><b>Email</b>: {{user.email}}</li>
@@ -10,7 +10,7 @@
           <button class="btn btn-info" (click)="onChangeButton()">Change Password</button></li>
         <li *ngIf="buttonclicked" class="list-group-item">
             <div class="form-group">
-                <input placeholder="*New Password" type="text" name="newpassword" [(ngModel)] = "newpassword" class="form-control">
+                <input placeholder="*New Password" type="password" name="newpassword" [(ngModel)] = "newpassword" class="form-control">
             </div>
             <button class="btn btn-info" (click)="onSubmitButton()">Submit</button>
             <button class="btn btn-danger" (click)="onCancelButton()">Cancel</button>
