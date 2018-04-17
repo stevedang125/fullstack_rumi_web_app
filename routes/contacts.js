@@ -173,13 +173,20 @@ router.get('/roommates', passport.authenticate('jwt', { session : false }), (req
 // Find users with a name, email, or username containing the request's string
 router.post('/roommates/find', passport.authenticate('jwt', { session : false }), (req, res, next) => {
   var roommate_name = req.body.roommate_name;
+  var currUser = req.user.id;
+
   // console.log("Trying to find " + roommate_name + "...");
 
+  // Find roommates who are users but not static users, and not yourself
   User.find({
-    $or:[
-      { name : { $regex : roommate_name } },
-      { email : { $regex : roommate_name } },
-      { username : { $regex : roommate_name } }
+    $and:[
+      { $or:[
+        { name : { $regex : roommate_name } },
+        { email : { $regex : roommate_name } },
+        { username : { $regex : roommate_name } }
+      ]},
+      { username : { $exists: true } },
+      { _id : { $ne : currUser } }
     ]}).exec(function(err, docs){
       if(err) {
         res.json({ success : false, msg : "Cannot find any users."});

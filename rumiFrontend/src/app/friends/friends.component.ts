@@ -101,6 +101,7 @@ export class FriendsComponent implements OnInit {
     clear(){
       this.roommateSearch = undefined;
       this.staticRoommateForm = false;
+      this.roommateSearchList = [];
 
       // this._id = undefined;
       // this.firstName = undefined;
@@ -234,6 +235,7 @@ export class FriendsComponent implements OnInit {
       if(data['success']) {
         this.showSuccess("Added roommate!");
         this.getRoommates();
+        this.clear();
       }
     }, err => {
       this.showError('Error adding roommate');

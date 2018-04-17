@@ -540,6 +540,7 @@ var FriendsComponent = /** @class */ (function () {
     FriendsComponent.prototype.clear = function () {
         this.roommateSearch = undefined;
         this.staticRoommateForm = false;
+        this.roommateSearchList = [];
         // this._id = undefined;
         // this.firstName = undefined;
         // this.lastName = undefined;
@@ -660,6 +661,7 @@ var FriendsComponent = /** @class */ (function () {
             if (data['success']) {
                 _this.showSuccess("Added roommate!");
                 _this.getRoommates();
+                _this.clear();
             }
         }, function (err) {
             _this.showError('Error adding roommate');

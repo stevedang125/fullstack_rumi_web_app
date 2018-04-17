@@ -21,7 +21,8 @@ router.post('/register', (req,res,next)=>{
         name: req.body.name,
         email: req.body.email,
         username: req.body.username,
-        password: req.body.password
+        password: req.body.password,
+        isRegistered: true
     });
 
     // Call helper function in the models/user.js
