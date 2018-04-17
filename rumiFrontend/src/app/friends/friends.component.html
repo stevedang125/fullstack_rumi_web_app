@@ -5,18 +5,50 @@
       <div class="col-sm-6">
         <div class="card">
           <div class="card-header">
-            Add New Roommate
+            Add New Roommates
           </div>
           <div class="card-body">
-            <form>
-              <div class="form-group row">
-                <label for="inputFirstName" class="col-sm-4 col-form-label">First Name</label>
-                <div class="col-sm-8">
-                  <input placeholder="First Name" type="text" name="firstName" [(ngModel)] = "firstName" class="form-control">
-                </div>
-              </div>
+            <!-- <form> -->
+              <!-- <div class="form-group row"> -->
+                <!-- <label for="inputRoommateSearch" class="col-sm-4 col-form-label"></label> -->
+                <div class="input-group">
+                  <!-- Add roommate input field -->
+                  <input placeholder="Name, username, or email" type="text" name="roommateSearch" [(ngModel)] = "roommateSearch" class="form-control">
 
-              <div class="form-group row">
+                  <!-- Add roommate results -->
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-success dropdown-toggle" (click)="onSubmitButton()" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Find Users</button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" *ngFor="let roomie of hack(roommateSearchList)" (click)="addRoommate(roomie)"><b>{{roomie.name}}</b> <small>@{{roomie.username}}</small></a>
+                      <!-- Cannot find user option -->
+                      <div role="separator" class="dropdown-divider"></div>
+                      <a class="dropdown-item" (click)="showStaticRoommateForm()">Can't find user? Click here.</a>
+                    </div>
+                  </div>
+
+                  &nbsp;
+                  <button class="btn btn-dark" (click)="clear()">Clear</button>
+
+                </div>
+
+                <div role="separator" class="dropdown-divider"></div>
+
+                <!-- Static roommate add form -->
+                <div *ngIf="staticRoommateForm">
+                  <div class="form-group">
+                    <label for="staticRoommateName">Name</label>
+                    <input type="text" class="form-control" id="staticRoommateName" name="staticRoommateName" [(ngModel)]="staticRoommateName" placeholder="Rumi">
+                  </div>
+                  <div class="form-group">
+                    <label for="staticRoommateEmail">Email address</label>
+                    <input type="email" class="form-control" id="staticRoommateEmail" name="staticRoommateEmail" [(ngModel)]="staticRoommateEmail" aria-describedby="emailHelp" placeholder="hello@rumi.com">
+                  </div>
+
+                  <button class="btn btn-primary" (click)="addStaticRoommate()">Add roommate</button>
+                </div>
+              <!-- </div> -->
+
+              <!-- <div class="form-group row">
                 <label for="inputLastName" class="col-sm-4 col-form-label">Last Name</label>
                 <div class="col-sm-8">
                   <input placeholder="Last Name" type="text" name="lastName" [(ngModel)] = "lastName" class="form-control">
@@ -56,11 +88,9 @@
                 <div class="col-sm-8">
                   <input placeholder="Cell Phone" type="text" name="cellPhone" [(ngModel)] = "cellPhone" class="form-control">
                 </div>
-              </div>
+              </div> -->
 
-              <button class="btn btn-success" (click)="onSubmitButton()">Add</button>
-              <button class="btn btn-danger" (click)="clear()">Clear</button>
-            </form>
+            <!-- </form> -->
           </div>
           <!-- End Add Roommate -->
 
@@ -70,18 +100,15 @@
           </div>
           <div class="card-body">
             <!--- Search Form -->
-            <form>
-              <div class="form-group row">
-                <div class="col-sm-12">
+              <div class="input-group">
                   <input placeholder="Search Name" type="text" name="inputString" [(ngModel)] = "inputString" class="form-control">
-                </div>
 
-                <!-- <div class="col-sm-5">
-                  <button class="btn btn-success" (click)="search_contact()">Search</button>
-                  <button class="btn btn-danger" (click)="clearSearch()">Clear</button>
+                  &nbsp;
+                  <button class="btn btn-dark" (click)="clearSearch()">Clear</button>
+                <!-- <div class="col-sm-6">
+                  <button class="btn btn-dark" (click)="clearSearch()">Clear</button>
                 </div> -->
               </div>
-            </form>
             <!--- End Search Form -->
           </div>
         </div>
@@ -89,29 +116,11 @@
 
       <!--- Roommates List -->
       <div class="col-sm-6">
-        <div class="list-group" *ngFor="let contact of hack(contactlist) | filter:inputString; let i = index">
+        <div class="list-group" *ngFor="let currRoommate of hack(roommateList) | filter : inputString; let i = index">
           <div class="list-group-item list-group-item-action flex-column align-items-start" id="roommate-list-item">
             <div class="d-flex w-100 justify-content-between">
-              <h5 id="roommate-list-header">{{contact.firstName}} {{contact.lastName}}</h5>
-              <small class="text-muted">Added {{contact.date}}</small>
-            </div>
-
-            <div class="row">
-              <div class="col">
-                Preferred Name:
-              </div>
-              <div class="col">
-                {{contact.preferredName}}
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col">
-                Address:
-              </div>
-              <div class="col">
-                {{contact.address}}
-              </div>
+              <h5 id="roommate-list-header">{{currRoommate.name}}</h5>
+              <small class="text-muted"><button class="btn btn-danger btn-sm" (click)="deleteRoommate(currRoommate)">Delete</button></small>
             </div>
 
             <div class="row">
@@ -119,25 +128,16 @@
                 Email:
               </div>
               <div class="col">
-                {{contact.email}}
+                {{currRoommate.email}}
               </div>
             </div>
 
-            <div class="row">
+            <div class="row" *ngIf="currRoommate.isRegistered">
               <div class="col">
-                Home Phone:
+                Username:
               </div>
               <div class="col">
-                {{contact.homePhone}}
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col">
-                Cell Phone:
-              </div>
-              <div class="col">
-                {{contact.cellPhone}}
+                @{{currRoommate.username}}
               </div>
             </div>
           </div>

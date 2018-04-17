@@ -11,6 +11,7 @@ const passport = require('passport');
 // Bring in the contact schema from models
 const Contact = require('../models/contact');
 const User = require('../models/user');
+const StaticUser = require('../models/staticUser');
 
 // These will be used to get the object id
 // to fetch the contact list from the database to the template:
@@ -146,25 +147,162 @@ router.delete('/friends/delete/:id', passport.authenticate('jwt', {session: fals
 
 });
 
-// ======== ROOMAMTES -> MOBILE FUNCTIONALITY ========
-router.get('/findUsers', passport.authenticate('jwt', { session : false }), (req, res, next) => {
-  var roommate_name = req.params.roommate_name;
+// ======== ROOMAMTES -> MOBILE FUNCTIONALITY/MODIFIED FUNCTIONALITY ========
 
-  console.log(roommate_name);
+// GET list of roomates from JWT and return array of Userinfo's
+router.get('/roommates', passport.authenticate('jwt', { session : false }), (req, res, next) => {
+  const user_id = new ObjectId(req.user.id);
+
+  // console.log("Finding roommates for " + req.user.name + "...");
+
+  User.findOne({ _id : user_id }, function(err, user) {
+    if(err) {
+      res.json({ success : false, msg : "Cannot fetch list of roommates." });
+    }
+
+    User.find({ _id : { $in : user.roommates }}, function(err, results) {
+      if(err) {
+        res.json({ success : false, msg : "Cannot fetch list of roommate data."});
+      }
+
+      res.json({ success : true, user : user, roommates : results });
+    });
+  });
+});
+
+// Find users with a name, email, or username containing the request's string
+router.post('/roommates/find', passport.authenticate('jwt', { session : false }), (req, res, next) => {
+  var roommate_name = req.body.roommate_name;
+  // console.log("Trying to find " + roommate_name + "...");
 
   User.find({
     $or:[
-      { 'name' : roommate_name },
-      { 'email' : roommate_name },
-      { 'username' : roommate_name }
-    ]}, function(err, docs){
-      if(error) {
+      { name : { $regex : roommate_name } },
+      { email : { $regex : roommate_name } },
+      { username : { $regex : roommate_name } }
+    ]}).exec(function(err, docs){
+      if(err) {
         res.json({ success : false, msg : "Cannot find any users."});
       }
 
+      // console.log("Found roommates: " + JSON.stringify(docs));
       res.json({ success : true, users : docs });
   });
 
+});
+
+// Add a new roommate into the current user's roommates array
+router.post('/roommates/add', passport.authenticate('jwt', { session : false }), (req, res, next) => {
+  var currUser = req.user.id;
+  var currRoommate = req.body._id;
+
+  // console.log("Roommate id: " + currRoommate);
+  // console.log("User id: " + currUser);
+
+  if(currRoommate != undefined) {
+    User.findOne({ _id : currUser }, function(err, doc) {
+      if(err) {
+        res.json({ success : false, msg : "Cannot find user." });
+      }
+
+      if(doc.roommates.indexOf(currRoommate) < 0) {
+        doc.roommates.push(currRoommate);
+        doc.save();
+        res.json({ success : true, msg : "Added roommate!" });
+      }
+      else {
+        res.json({ success : false, msg : "Roommate already added." });
+      }
+    });
+  }
+});
+
+router.post('/roommates/add/static', passport.authenticate('jwt', { session : false }), (req, res, next) => {
+  var currUser = new ObjectId(req.user.id);
+  var staticUser = req.body.roommate;
+
+  // console.log(JSON.stringify(req.body.roommate));
+
+  // User.findOne({ _id : currUser }, function(err, doc) {
+  //   if(err) {
+  //     res.json({ success : false, msg : "Cannot find user."});
+  //   }
+  //
+  //   console.log("Found user: " + JSON.stringify(doc));
+  //   var newStaticUser = new User(staticUser);
+  //
+  //   newStaticUser.save(staticUser, function(err) {
+  //     if(err) {
+  //       res.json({ success : false, msg : "Cannot create static user."});
+  //     }
+  //
+  //     console.log("Created static user: " + JSON.stringify(newStaticUser));
+  //
+  //     doc.roommates.push(static_roommate._id);
+  //     doc.save(function(err) {
+  //       if(err) {
+  //         console.log(err);
+  //       }
+  //     });
+  //
+  //     console.log("Added static roommate to user array");
+  //
+  //     res.json({ success : true, static_roommate : static_roommate });
+  //   });
+  // });
+
+  // Create a static roommate
+  StaticUser.create(staticUser, function(err, newUser) {
+    if(err) {
+      res.status(401).json({ success : false, msg : "Cannot create static user."});
+    }
+
+    // console.log("Created static user: " + JSON.stringify(newUser));
+
+    // Update the current user's roommates array with the static roommate's ID
+    User.findByIdAndUpdate(currUser, { $push : { roommates : newUser._id } }, {safe: true, new : true}, function(err, doc) {
+      if(err) {
+        res.status(401).json({ success : false, msg : "Cannot add new static user."});
+      }
+
+      // console.log("Updated user:" + JSON.stringify(doc));
+
+      res.status(200).json({ success : true, msg : "Added roommate!" });
+    });
+  });
+});
+
+router.delete('/roommates/delete/:id', passport.authenticate('jwt', { session: false }), (req,res,next) => {
+  var deleteId = req.params.id;
+  var userId = req.user.id;
+
+  // Find the user to modify it's roommates array
+  User.findOneAndUpdate({ _id : userId }, { $pullAll : { roommates : [deleteId] } }, function(err, user) {
+    if(err) {
+      res.status(401).json({ success : false, msg : "Cannot delete roommate." });
+    }
+
+    // Find the static user associated with the ID to delete
+    StaticUser.findOne({ _id : deleteId, isRegistered : false }, function(err, deleteUser) {
+      if(err) {
+        res.status(401).json({ success : false, msg : "Cannot delete roommate." });
+      }
+
+      // If the roommate to delete is a static user, delete their document entirely
+      // from the collection
+      if(deleteUser) {
+        StaticUser.remove({ _id : deleteId }, function(err, res) {
+          if(err) {
+            res.status(401).json({ success : false, msg : "Cannot delete roommate." });
+          }
+        });
+      }
+
+      // Return success if roommate has been unlinked
+      res.status(200).json({ success : true, msg : "Deleted roommate!" });
+    });
+
+  });
 });
 
 module.exports = router;

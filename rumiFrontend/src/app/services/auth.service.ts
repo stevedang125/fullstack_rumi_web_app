@@ -2,6 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Contact } from './contact';
 import { Userinfo } from './userinfo';
+import { StaticUserinfo } from './staticuserinfo';
+
+// transactionObject
+//  store_name
+//  item
+//  roommates []
+//  price
+
 
 @Injectable()
 export class AuthService {
@@ -63,8 +71,6 @@ export class AuthService {
     return this.http.post(this.baseUri+'/login', user, {headers:this.headers});
   }
 
-
-
   // GET: user dashboard
   userDashboard(){
     // Load the token into the authToken const:
@@ -87,6 +93,30 @@ export class AuthService {
     deleteContact(contact: Contact){
       const id = contact._id;
       return this.http.delete(this.baseUri+'/user/friends/delete/'+id, {headers:this.headers});
+    }
+
+    // ===== ROOMMATE REQUESTS ======
+    getRoommates() {
+      this.loadToken();
+      this.headers = new HttpHeaders().set('Authorization', this.authToken);
+
+      return this.http.get(this.baseUri + '/user/roommates', { headers : this.headers });
+    }
+
+    findRoommates(roommate: Userinfo) {
+      return this.http.post(this.baseUri + '/user/roommates/find', roommate, { headers : this.headers });
+    }
+
+    addRoommate(roommate: Userinfo) {
+      return this.http.post(this.baseUri + '/user/roommates/add', roommate, { headers : this.headers });
+    }
+
+    addStaticRoommate(static_roommate: StaticUserinfo) {
+      return this.http.post(this.baseUri + '/user/roommates/add/static', { roommate : static_roommate }, { headers : this.headers });
+    }
+
+    deleteRoommate(roommate) {
+      return this.http.delete(this.baseUri + '/user/roommates/delete/' + roommate._id, { headers : this.headers });
     }
 
     // ===================== Setting =======================================================

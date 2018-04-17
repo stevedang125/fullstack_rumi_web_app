@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit  {
     private validateService : ValidationService,
     public authService: AuthService,
     public toastr: ToastsManager, vcr: ViewContainerRef,
-    componentFactoryResolver: ComponentFactoryResolver, ngZone: NgZone, appRef: ApplicationRef, options: ToastOptions) { 
+    componentFactoryResolver: ComponentFactoryResolver, ngZone: NgZone, appRef: ApplicationRef, options: ToastOptions) {
       this.toastr.setRootViewContainerRef(vcr);
       Object.assign(options, {
       maxShown: 1,
@@ -52,12 +52,12 @@ export class LoginComponent implements OnInit  {
     showSuccess(msg) {
       this.toastr.success(msg, 'Success!');
     }
-  
+
     showWarning(msg) {
       // this.toastr.setupToast(toast:Toas, Position='toast-top-right');
       this.toastr.warning(msg, 'Alert!');
     }
-  
+
     showError(msg) {
       this.toastr.error(msg, 'Oops!');
     }
@@ -94,7 +94,7 @@ export class LoginComponent implements OnInit  {
 
     }, err =>{
       // When the server is not running on the backend
-      this.showError('Oh no! Something went wrong. Please try again!');
+      this.showError('Oh no! Something went wrong. Please try again!' + JSON.stringify(err));
       console.log(err);
       this.router.navigate(['/login']);
     })

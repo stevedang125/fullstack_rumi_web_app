@@ -460,14 +460,14 @@ var DashboardComponent = /** @class */ (function () {
 /***/ "./src/app/friends/friends.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "#roommateResults {\n  position: absolute;\n  z-index:20;\n  /* margin-top:-5px; */\n}\n"
 
 /***/ }),
 
 /***/ "./src/app/friends/friends.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "  <div class=\"container-fluid\" id=\"content\">\n    <h2>Roommates</h2>\n    <div class=\"row\">\n      <!-- Add Roommate -->\n      <div class=\"col-sm-6\">\n        <div class=\"card\">\n          <div class=\"card-header\">\n            Add New Roommate\n          </div>\n          <div class=\"card-body\">\n            <form>\n              <div class=\"form-group row\">\n                <label for=\"inputFirstName\" class=\"col-sm-4 col-form-label\">First Name</label>\n                <div class=\"col-sm-8\">\n                  <input placeholder=\"First Name\" type=\"text\" name=\"firstName\" [(ngModel)] = \"firstName\" class=\"form-control\">\n                </div>\n              </div>\n\n              <div class=\"form-group row\">\n                <label for=\"inputLastName\" class=\"col-sm-4 col-form-label\">Last Name</label>\n                <div class=\"col-sm-8\">\n                  <input placeholder=\"Last Name\" type=\"text\" name=\"lastName\" [(ngModel)] = \"lastName\" class=\"form-control\">\n                </div>\n              </div>\n\n              <div class=\"form-group row\">\n                <label for=\"inputLastName\" class=\"col-sm-4 col-form-label\">Preferred Name</label>\n                <div class=\"col-sm-8\">\n                  <input placeholder=\"Preferred Name\" type=\"text\" name=\"preferredName\" [(ngModel)] = \"preferredName\" class=\"form-control\">\n                </div>\n              </div>\n\n              <div class=\"form-group row\">\n                <label for=\"inputLastName\" class=\"col-sm-4 col-form-label\">Address</label>\n                <div class=\"col-sm-8\">\n                  <input placeholder=\"Address\" type=\"text\" name=\"address\" [(ngModel)] = \"address\" class=\"form-control\">\n                </div>\n              </div>\n\n              <div class=\"form-group row\">\n                <label for=\"inputLastName\" class=\"col-sm-4 col-form-label\">Email</label>\n                <div class=\"col-sm-8\">\n                  <input placeholder=\"Email\" type=\"text\" name=\"email\" [(ngModel)] = \"email\" class=\"form-control\">\n                </div>\n              </div>\n\n              <div class=\"form-group row\">\n                <label for=\"inputLastName\" class=\"col-sm-4 col-form-label\">Home Phone</label>\n                <div class=\"col-sm-8\">\n                  <input placeholder=\"Home Phone\" type=\"text\" name=\"homePhone\" [(ngModel)] = \"homePhone\" class=\"form-control\">\n                </div>\n              </div>\n\n              <div class=\"form-group row\">\n                <label for=\"inputLastName\" class=\"col-sm-4 col-form-label\">Cell Phone</label>\n                <div class=\"col-sm-8\">\n                  <input placeholder=\"Cell Phone\" type=\"text\" name=\"cellPhone\" [(ngModel)] = \"cellPhone\" class=\"form-control\">\n                </div>\n              </div>\n\n              <button class=\"btn btn-success\" (click)=\"onSubmitButton()\">Add</button>\n              <button class=\"btn btn-danger\" (click)=\"clear()\">Clear</button>\n            </form>\n          </div>\n          <!-- End Add Roommate -->\n\n          <!-- Search Roommate -->\n          <div class=\"card-header\">\n            Search Roommate\n          </div>\n          <div class=\"card-body\">\n            <!--- Search Form -->\n            <form>\n              <div class=\"form-group row\">\n                <div class=\"col-sm-12\">\n                  <input placeholder=\"Search Name\" type=\"text\" name=\"inputString\" [(ngModel)] = \"inputString\" class=\"form-control\">\n                </div>\n\n                <!-- <div class=\"col-sm-5\">\n                  <button class=\"btn btn-success\" (click)=\"search_contact()\">Search</button>\n                  <button class=\"btn btn-danger\" (click)=\"clearSearch()\">Clear</button>\n                </div> -->\n              </div>\n            </form>\n            <!--- End Search Form -->\n          </div>\n        </div>\n      </div>\n\n      <!--- Roommates List -->\n      <div class=\"col-sm-6\">\n        <div class=\"list-group\" *ngFor=\"let contact of hack(contactlist) | filter:inputString; let i = index\">\n          <div class=\"list-group-item list-group-item-action flex-column align-items-start\" id=\"roommate-list-item\">\n            <div class=\"d-flex w-100 justify-content-between\">\n              <h5 id=\"roommate-list-header\">{{contact.firstName}} {{contact.lastName}}</h5>\n              <small class=\"text-muted\">Added {{contact.date}}</small>\n            </div>\n\n            <div class=\"row\">\n              <div class=\"col\">\n                Preferred Name:\n              </div>\n              <div class=\"col\">\n                {{contact.preferredName}}\n              </div>\n            </div>\n\n            <div class=\"row\">\n              <div class=\"col\">\n                Address:\n              </div>\n              <div class=\"col\">\n                {{contact.address}}\n              </div>\n            </div>\n\n            <div class=\"row\">\n              <div class=\"col\">\n                Email:\n              </div>\n              <div class=\"col\">\n                {{contact.email}}\n              </div>\n            </div>\n\n            <div class=\"row\">\n              <div class=\"col\">\n                Home Phone:\n              </div>\n              <div class=\"col\">\n                {{contact.homePhone}}\n              </div>\n            </div>\n\n            <div class=\"row\">\n              <div class=\"col\">\n                Cell Phone:\n              </div>\n              <div class=\"col\">\n                {{contact.cellPhone}}\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <!--- End Roommates List -->\n  </div>\n"
+module.exports = "  <div class=\"container-fluid\" id=\"content\">\n    <h2>Roommates</h2>\n    <div class=\"row\">\n      <!-- Add Roommate -->\n      <div class=\"col-sm-6\">\n        <div class=\"card\">\n          <div class=\"card-header\">\n            Add New Roommates\n          </div>\n          <div class=\"card-body\">\n            <!-- <form> -->\n              <!-- <div class=\"form-group row\"> -->\n                <!-- <label for=\"inputRoommateSearch\" class=\"col-sm-4 col-form-label\"></label> -->\n                <div class=\"input-group\">\n                  <!-- Add roommate input field -->\n                  <input placeholder=\"Name, username, or email\" type=\"text\" name=\"roommateSearch\" [(ngModel)] = \"roommateSearch\" class=\"form-control\">\n\n                  <!-- Add roommate results -->\n                  <div class=\"input-group-append\">\n                    <button class=\"btn btn-outline-success dropdown-toggle\" (click)=\"onSubmitButton()\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Find Users</button>\n                    <div class=\"dropdown-menu\">\n                      <a class=\"dropdown-item\" *ngFor=\"let roomie of hack(roommateSearchList)\" (click)=\"addRoommate(roomie)\"><b>{{roomie.name}}</b> <small>@{{roomie.username}}</small></a>\n                      <!-- Cannot find user option -->\n                      <div role=\"separator\" class=\"dropdown-divider\"></div>\n                      <a class=\"dropdown-item\" (click)=\"showStaticRoommateForm()\">Can't find user? Click here.</a>\n                    </div>\n                  </div>\n\n                  &nbsp;\n                  <button class=\"btn btn-dark\" (click)=\"clear()\">Clear</button>\n\n                </div>\n\n                <div role=\"separator\" class=\"dropdown-divider\"></div>\n\n                <!-- Static roommate add form -->\n                <div *ngIf=\"staticRoommateForm\">\n                  <div class=\"form-group\">\n                    <label for=\"staticRoommateName\">Name</label>\n                    <input type=\"text\" class=\"form-control\" id=\"staticRoommateName\" name=\"staticRoommateName\" [(ngModel)]=\"staticRoommateName\" placeholder=\"Rumi\">\n                  </div>\n                  <div class=\"form-group\">\n                    <label for=\"staticRoommateEmail\">Email address</label>\n                    <input type=\"email\" class=\"form-control\" id=\"staticRoommateEmail\" name=\"staticRoommateEmail\" [(ngModel)]=\"staticRoommateEmail\" aria-describedby=\"emailHelp\" placeholder=\"hello@rumi.com\">\n                  </div>\n\n                  <button class=\"btn btn-primary\" (click)=\"addStaticRoommate()\">Add roommate</button>\n                </div>\n              <!-- </div> -->\n\n              <!-- <div class=\"form-group row\">\n                <label for=\"inputLastName\" class=\"col-sm-4 col-form-label\">Last Name</label>\n                <div class=\"col-sm-8\">\n                  <input placeholder=\"Last Name\" type=\"text\" name=\"lastName\" [(ngModel)] = \"lastName\" class=\"form-control\">\n                </div>\n              </div>\n\n              <div class=\"form-group row\">\n                <label for=\"inputLastName\" class=\"col-sm-4 col-form-label\">Preferred Name</label>\n                <div class=\"col-sm-8\">\n                  <input placeholder=\"Preferred Name\" type=\"text\" name=\"preferredName\" [(ngModel)] = \"preferredName\" class=\"form-control\">\n                </div>\n              </div>\n\n              <div class=\"form-group row\">\n                <label for=\"inputLastName\" class=\"col-sm-4 col-form-label\">Address</label>\n                <div class=\"col-sm-8\">\n                  <input placeholder=\"Address\" type=\"text\" name=\"address\" [(ngModel)] = \"address\" class=\"form-control\">\n                </div>\n              </div>\n\n              <div class=\"form-group row\">\n                <label for=\"inputLastName\" class=\"col-sm-4 col-form-label\">Email</label>\n                <div class=\"col-sm-8\">\n                  <input placeholder=\"Email\" type=\"text\" name=\"email\" [(ngModel)] = \"email\" class=\"form-control\">\n                </div>\n              </div>\n\n              <div class=\"form-group row\">\n                <label for=\"inputLastName\" class=\"col-sm-4 col-form-label\">Home Phone</label>\n                <div class=\"col-sm-8\">\n                  <input placeholder=\"Home Phone\" type=\"text\" name=\"homePhone\" [(ngModel)] = \"homePhone\" class=\"form-control\">\n                </div>\n              </div>\n\n              <div class=\"form-group row\">\n                <label for=\"inputLastName\" class=\"col-sm-4 col-form-label\">Cell Phone</label>\n                <div class=\"col-sm-8\">\n                  <input placeholder=\"Cell Phone\" type=\"text\" name=\"cellPhone\" [(ngModel)] = \"cellPhone\" class=\"form-control\">\n                </div>\n              </div> -->\n\n            <!-- </form> -->\n          </div>\n          <!-- End Add Roommate -->\n\n          <!-- Search Roommate -->\n          <div class=\"card-header\">\n            Search Roommate\n          </div>\n          <div class=\"card-body\">\n            <!--- Search Form -->\n              <div class=\"input-group\">\n                  <input placeholder=\"Search Name\" type=\"text\" name=\"inputString\" [(ngModel)] = \"inputString\" class=\"form-control\">\n\n                  &nbsp;\n                  <button class=\"btn btn-dark\" (click)=\"clearSearch()\">Clear</button>\n                <!-- <div class=\"col-sm-6\">\n                  <button class=\"btn btn-dark\" (click)=\"clearSearch()\">Clear</button>\n                </div> -->\n              </div>\n            <!--- End Search Form -->\n          </div>\n        </div>\n      </div>\n\n      <!--- Roommates List -->\n      <div class=\"col-sm-6\">\n        <div class=\"list-group\" *ngFor=\"let currRoommate of hack(roommateList) | filter : inputString; let i = index\">\n          <div class=\"list-group-item list-group-item-action flex-column align-items-start\" id=\"roommate-list-item\">\n            <div class=\"d-flex w-100 justify-content-between\">\n              <h5 id=\"roommate-list-header\">{{currRoommate.name}}</h5>\n              <small class=\"text-muted\"><button class=\"btn btn-danger btn-sm\" (click)=\"deleteRoommate(currRoommate)\">Delete</button></small>\n            </div>\n\n            <div class=\"row\">\n              <div class=\"col\">\n                Email:\n              </div>\n              <div class=\"col\">\n                {{currRoommate.email}}\n              </div>\n            </div>\n\n            <div class=\"row\" *ngIf=\"currRoommate.isRegistered\">\n              <div class=\"col\">\n                Username:\n              </div>\n              <div class=\"col\">\n                @{{currRoommate.username}}\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <!--- End Roommates List -->\n  </div>\n"
 
 /***/ }),
 
@@ -520,7 +520,8 @@ var FriendsComponent = /** @class */ (function () {
         // toast-bottom-full-width
     }
     FriendsComponent.prototype.ngOnInit = function () {
-        this.getDashboard();
+        this.getRoommates();
+        this.staticRoommateForm = false;
     };
     // ========== Toastr Messages =======================================
     FriendsComponent.prototype.showSuccess = function (msg) {
@@ -537,20 +538,22 @@ var FriendsComponent = /** @class */ (function () {
     };
     // ========= Helper functions ============================
     FriendsComponent.prototype.clear = function () {
-        this._id = undefined;
-        this.firstName = undefined;
-        this.lastName = undefined;
-        this.preferredName = undefined;
-        this.address = undefined;
-        this.email = undefined;
-        this.homePhone = undefined;
-        this.cellPhone = undefined;
-        this.user_id = undefined;
+        this.roommateSearch = undefined;
+        this.staticRoommateForm = false;
+        // this._id = undefined;
+        // this.firstName = undefined;
+        // this.lastName = undefined;
+        // this.preferredName = undefined;
+        // this.address = undefined;
+        // this.email = undefined;
+        // this.homePhone = undefined;
+        // this.cellPhone = undefined;
+        // this.user_id = undefined;
         // this.showInfo('Cleared!');
     };
     FriendsComponent.prototype.clearSearch = function () {
         this.inputString = undefined;
-        this.showInfo('Cleared Search!');
+        // this.showInfo('Cleared Search!');
     };
     FriendsComponent.prototype.hack = function (val) {
         console.log("hack: " + val);
@@ -570,34 +573,108 @@ var FriendsComponent = /** @class */ (function () {
             return false;
         });
     };
+    // ====== Fetch roommates =======
+    FriendsComponent.prototype.getRoommates = function () {
+        var _this = this;
+        this.authService.getRoommates().subscribe(function (data) {
+            _this.user = data['user'];
+            _this.userID = data['user']._id;
+            _this.roommateList = data['roommates'];
+        }, function (err) {
+            // Error out
+            _this.router.navigate(['']);
+            return false;
+        });
+    };
     // ============= Add, Search, Edit, Delete =================
+    FriendsComponent.prototype.showStaticRoommateForm = function () {
+        this.staticRoommateForm = true;
+    };
     FriendsComponent.prototype.onSubmitButton = function () {
-        var new_contact = {
-            _id: this._id,
-            firstName: this.firstName,
-            lastName: this.lastName,
-            preferredName: this.preferredName,
-            address: this.address,
-            email: this.email,
-            homePhone: this.homePhone,
-            cellPhone: this.cellPhone,
-            date: new Date().toDateString(),
-            user_id: this.userID
+        // const new_contact = {
+        //   _id: this._id,
+        //   firstName: this.firstName,
+        //   lastName: this.lastName,
+        //   preferredName: this.preferredName,
+        //   address: this.address,
+        //   email: this.email,
+        //   homePhone: this.homePhone,
+        //   cellPhone: this.cellPhone,
+        //   date: new Date().toDateString(),
+        //   user_id: this.userID
+        // }
+        var roommate_name = {
+            roommate_name: this.roommateSearch
         };
-        if (!this.validationService.validateAdd(new_contact)) {
-            this.showWarning('Please fill in all fields');
-            return false;
+        if (this.roommateSearch != undefined) {
+            this.findRoommates(roommate_name);
         }
-        if (!this.validationService.validateEmail(new_contact.email)) {
-            this.showWarning('Please use a valid email.');
-            return false;
-        }
-        if (new_contact._id == undefined) {
-            this.add_contact(new_contact);
-        }
-        if (new_contact._id != undefined) {
-            this.edit_contact(new_contact);
-        }
+        // if(!this.validationService.validateAdd(new_contact)){
+        //   this.showWarning('Please fill in all fields');
+        //   return false;
+        // }
+        //
+        // if(!this.validationService.validateEmail(new_contact.email)){
+        //   this.showWarning('Please use a valid email.');
+        //   return false;
+        // }
+        // if(new_contact._id == undefined){
+        //   this.add_contact(new_contact);
+        // }
+        // if(new_contact._id != undefined){
+        //   this.edit_contact(new_contact);
+        // }
+    };
+    FriendsComponent.prototype.findRoommates = function (roommate) {
+        var _this = this;
+        this.authService.findRoommates(roommate).subscribe(function (data) {
+            if (data['success']) {
+                _this.roommateSearchList = data['users'];
+            }
+        }, function (err) {
+            // error stuff
+            _this.showError(err);
+        });
+    };
+    FriendsComponent.prototype.addRoommate = function (roommate) {
+        var _this = this;
+        this.authService.addRoommate(roommate).subscribe(function (data) {
+            if (data['success']) {
+                _this.getRoommates();
+                _this.clear();
+                _this.showSuccess('Added roommate!');
+            }
+        }, function (err) {
+            _this.showError('Error adding roommate');
+        });
+    };
+    FriendsComponent.prototype.addStaticRoommate = function () {
+        var _this = this;
+        var static_roommate = {
+            _id: undefined,
+            name: this.staticRoommateName,
+            email: this.staticRoommateEmail,
+            isRegistered: false,
+        };
+        this.authService.addStaticRoommate(static_roommate).subscribe(function (data) {
+            if (data['success']) {
+                _this.showSuccess("Added roommate!");
+                _this.getRoommates();
+            }
+        }, function (err) {
+            _this.showError('Error adding roommate');
+        });
+    };
+    FriendsComponent.prototype.deleteRoommate = function (roommate) {
+        var _this = this;
+        this.authService.deleteRoommate(roommate).subscribe(function (data) {
+            if (data['success']) {
+                _this.getRoommates();
+                _this.showSuccess("Deleted roommate");
+            }
+        }, function (err) {
+            _this.showError("Error deleting roommate");
+        });
     };
     FriendsComponent.prototype.onEditButton = function (contact) {
         this._id = contact._id;
@@ -615,7 +692,7 @@ var FriendsComponent = /** @class */ (function () {
         var _this = this;
         this.authService.addContact(newContact).subscribe(function (data) {
             _this.showSuccess('Friend added!');
-            _this.getDashboard();
+            // this.getDashboard();
         }, function (err) {
             _this.showError('Failed to add a contact!' + err);
         });
@@ -833,7 +910,7 @@ var LoginComponent = /** @class */ (function () {
             }
         }, function (err) {
             // When the server is not running on the backend
-            _this.showError('Oh no! Something went wrong. Please try again!');
+            _this.showError('Oh no! Something went wrong. Please try again!' + JSON.stringify(err));
             console.log(err);
             _this.router.navigate(['/login']);
         });
@@ -1244,6 +1321,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+// transactionObject
+//  store_name
+//  item
+//  roommates []
+//  price
 var AuthService = /** @class */ (function () {
     function AuthService(http) {
         this.http = http;
@@ -1308,6 +1390,24 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.deleteContact = function (contact) {
         var id = contact._id;
         return this.http.delete(this.baseUri + '/user/friends/delete/' + id, { headers: this.headers });
+    };
+    // ===== ROOMMATE REQUESTS ======
+    AuthService.prototype.getRoommates = function () {
+        this.loadToken();
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', this.authToken);
+        return this.http.get(this.baseUri + '/user/roommates', { headers: this.headers });
+    };
+    AuthService.prototype.findRoommates = function (roommate) {
+        return this.http.post(this.baseUri + '/user/roommates/find', roommate, { headers: this.headers });
+    };
+    AuthService.prototype.addRoommate = function (roommate) {
+        return this.http.post(this.baseUri + '/user/roommates/add', roommate, { headers: this.headers });
+    };
+    AuthService.prototype.addStaticRoommate = function (static_roommate) {
+        return this.http.post(this.baseUri + '/user/roommates/add/static', { roommate: static_roommate }, { headers: this.headers });
+    };
+    AuthService.prototype.deleteRoommate = function (roommate) {
+        return this.http.delete(this.baseUri + '/user/roommates/delete/' + roommate._id, { headers: this.headers });
     };
     // ===================== Setting =======================================================
     // GET: user profile
@@ -1389,14 +1489,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var FilterPipe = /** @class */ (function () {
     function FilterPipe() {
     }
-    FilterPipe.prototype.transform = function (contactlist, inputString) {
+    FilterPipe.prototype.transform = function (roommateList, inputString) {
         // Check if the search inputString is empty/undefined
         if (inputString === undefined) {
-            return contactlist;
+            return roommateList;
         }
         // If there is input string to search:
-        return contactlist.filter(function (retVal) {
-            return retVal.firstName.toLowerCase().includes(inputString.toLowerCase());
+        return roommateList.filter(function (retVal) {
+            return retVal.name.toLowerCase().includes(inputString.toLowerCase());
         });
     };
     FilterPipe = __decorate([
@@ -1788,7 +1888,9 @@ var SettingComponent = /** @class */ (function () {
             name: this.name,
             username: this.username,
             email: this.email,
-            password: this.newpassword
+            password: this.newpassword,
+            isRegistered: true,
+            roommates: this.roommates
         };
         if (update_user.password == undefined) {
             this.showError("Please enter your new password!");

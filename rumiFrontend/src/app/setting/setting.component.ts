@@ -13,12 +13,14 @@ export class SettingComponent implements OnInit {
   // user Object holder
   user: Object;
 
-  // These will hold the old data before any changes 
+  // These will hold the old data before any changes
   userID: string;
   name: string;
   username: string;
   email: string;
   password: string;
+  isRegistered: boolean;
+  roommates: string[];
 
   // new password to update
   newpassword: any;
@@ -29,7 +31,7 @@ export class SettingComponent implements OnInit {
   constructor(private authService: AuthService,
     private router: Router,
     public toastr: ToastsManager, vcr: ViewContainerRef,
-    componentFactoryResolver: ComponentFactoryResolver, ngZone: NgZone, appRef: ApplicationRef, options: ToastOptions) 
+    componentFactoryResolver: ComponentFactoryResolver, ngZone: NgZone, appRef: ApplicationRef, options: ToastOptions)
     {
       this.toastr.setRootViewContainerRef(vcr);
       Object.assign(options, {
@@ -38,7 +40,7 @@ export class SettingComponent implements OnInit {
         showCloseButton: true,
         toastLife: 3000
         });
-  
+
         // =============== More Toastr message options here: ===============
         // toast-top-right (Default)
         // toast-top-center
@@ -89,14 +91,16 @@ export class SettingComponent implements OnInit {
   }
 
   onSubmitButton(){
-    
+
     // Get the data from the user with the new password to change it
     const update_user = {
       _id: this.userID,
       name: this.name,
       username: this.username,
       email: this.email,
-      password: this.newpassword
+      password: this.newpassword,
+      isRegistered: true,
+      roommates: this.roommates
     }
 
     if(update_user.password == undefined){
@@ -106,7 +110,7 @@ export class SettingComponent implements OnInit {
 
     // User authService (services/auth.service.ts) to make a call to the backend, routes/contacts.js
     this.authService.changePassword(update_user).subscribe(data=>{
-      this.showSuccess('Password Updated!');      
+      this.showSuccess('Password Updated!');
       // Get the new updated data
       this.getUserProfile();
       // Clear out the input form and close/hide it
@@ -114,10 +118,10 @@ export class SettingComponent implements OnInit {
     }, err=>{
       console.log('this is an err with http client '+err);
     });
- 
+
 
   }
 
-  
+
 
 }

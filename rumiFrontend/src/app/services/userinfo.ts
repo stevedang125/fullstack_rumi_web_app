@@ -3,5 +3,7 @@ export class Userinfo {
     public name: string;
     public username: string;
     public email: string;
+    public isRegistered: boolean;
+    public roommates:string[];
     public password: string;
 }

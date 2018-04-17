@@ -3,6 +3,7 @@ import { ToastsManager, ToastOptions } from 'ng2-toastr/ng2-toastr';
 import { AuthService }  from '../services/auth.service';
 import { Router, Route } from '@angular/router';
 import { Contact } from '../services/contact';
+import { Userinfo } from '../services/userinfo';
 import { ValidationService  } from '../services/validation.service';
 
 
@@ -35,6 +36,20 @@ export class FriendsComponent implements OnInit {
   cellPhone: string;
   user_id: string;
 
+  // Roommate search variables
+  roommateSearch:string;
+  roomie:Userinfo;
+  roommateSearchList:Userinfo[];
+  staticRoommateForm:boolean;
+
+  // Roommate list variables
+  currRoommate:Userinfo;
+  roommateList:Userinfo[];
+
+  // Static roommate variables
+  staticRoommateName:string;
+  staticRoommateEmail:string;
+
   constructor(private authService: AuthService,
               private router: Router,
               private validationService: ValidationService,
@@ -61,7 +76,8 @@ export class FriendsComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.getDashboard();
+    this.getRoommates();
+    this.staticRoommateForm = false;
   }
 
     // ========== Toastr Messages =======================================
@@ -83,21 +99,24 @@ export class FriendsComponent implements OnInit {
 
     // ========= Helper functions ============================
     clear(){
-      this._id = undefined;
-      this.firstName = undefined;
-      this.lastName = undefined;
-      this.preferredName = undefined;
-      this.address = undefined;
-      this.email = undefined;
-      this.homePhone = undefined;
-      this.cellPhone = undefined;
-      this.user_id = undefined;
+      this.roommateSearch = undefined;
+      this.staticRoommateForm = false;
+
+      // this._id = undefined;
+      // this.firstName = undefined;
+      // this.lastName = undefined;
+      // this.preferredName = undefined;
+      // this.address = undefined;
+      // this.email = undefined;
+      // this.homePhone = undefined;
+      // this.cellPhone = undefined;
+      // this.user_id = undefined;
       // this.showInfo('Cleared!');
     }
 
     clearSearch(){
       this.inputString = undefined;
-      this.showInfo('Cleared Search!');
+      // this.showInfo('Cleared Search!');
     }
 
     hack(val){
@@ -109,50 +128,128 @@ export class FriendsComponent implements OnInit {
   // Get the user data from the database:
   getDashboard(){
     this.authService.userDashboard().subscribe(dashboard =>{
-    this.user = dashboard['user'];
-    this.userID = dashboard['user']._id;
-    this.contactlist = dashboard['contactlist'];
-  }, err =>{
-    console.log('Failed to get the dashboard! err: '+err);
-    this.router.navigate(['']);
-    return false;
-  });
-}
+      this.user = dashboard['user'];
+      this.userID = dashboard['user']._id;
+      this.contactlist = dashboard['contactlist'];
+    }, err =>{
+      console.log('Failed to get the dashboard! err: '+err);
+      this.router.navigate(['']);
+      return false;
+    });
+  }
+
+  // ====== Fetch roommates =======
+  getRoommates() {
+    this.authService.getRoommates().subscribe(data => {
+      this.user = data['user'];
+      this.userID = data['user']._id;
+      this.roommateList = data['roommates'];
+    }, err => {
+      // Error out
+      this.router.navigate(['']);
+      return false;
+    });
+  }
 
    // ============= Add, Search, Edit, Delete =================
 
+   showStaticRoommateForm() {
+     this.staticRoommateForm = true;
+   }
+
    onSubmitButton(){
-    const new_contact = {
-      _id: this._id,
-      firstName: this.firstName,
-      lastName: this.lastName,
-      preferredName: this.preferredName,
-      address: this.address,
-      email: this.email,
-      homePhone: this.homePhone,
-      cellPhone: this.cellPhone,
-      date: new Date().toDateString(),
-      user_id: this.userID
+    // const new_contact = {
+    //   _id: this._id,
+    //   firstName: this.firstName,
+    //   lastName: this.lastName,
+    //   preferredName: this.preferredName,
+    //   address: this.address,
+    //   email: this.email,
+    //   homePhone: this.homePhone,
+    //   cellPhone: this.cellPhone,
+    //   date: new Date().toDateString(),
+    //   user_id: this.userID
+    // }
+
+    const roommate_name = {
+      roommate_name: this.roommateSearch
+    };
+
+    if(this.roommateSearch != undefined) {
+      this.findRoommates(roommate_name);
     }
 
-    if(!this.validationService.validateAdd(new_contact)){
-      this.showWarning('Please fill in all fields');
-      return false;
+    // if(!this.validationService.validateAdd(new_contact)){
+    //   this.showWarning('Please fill in all fields');
+    //   return false;
+    // }
+    //
+    // if(!this.validationService.validateEmail(new_contact.email)){
+    //   this.showWarning('Please use a valid email.');
+    //   return false;
+    // }
+
+    // if(new_contact._id == undefined){
+    //   this.add_contact(new_contact);
+    // }
+    // if(new_contact._id != undefined){
+    //   this.edit_contact(new_contact);
+    // }
+
+  }
+
+  findRoommates(roommate) {
+    this.authService.findRoommates(roommate).subscribe(data => {
+      if(data['success']) {
+        this.roommateSearchList = data['users'];
+      }
+    }, err => {
+      // error stuff
+      this.showError(err);
+    });
+
+  }
+
+  addRoommate(roommate) {
+    this.authService.addRoommate(roommate).subscribe(data => {
+      if(data['success']) {
+        this.getRoommates();
+        this.clear();
+        this.showSuccess('Added roommate!');
+      }
+    }, err => {
+      this.showError('Error adding roommate');
+    });
+  }
+
+  addStaticRoommate() {
+    const static_roommate = {
+      _id: undefined,
+      name: this.staticRoommateName,
+      email: this.staticRoommateEmail,
+      isRegistered: false,
     }
 
-    if(!this.validationService.validateEmail(new_contact.email)){
-      this.showWarning('Please use a valid email.');
-      return false;
-    }
+    this.authService.addStaticRoommate(static_roommate).subscribe(data => {
+      if(data['success']) {
+        this.showSuccess("Added roommate!");
+        this.getRoommates();
+      }
+    }, err => {
+      this.showError('Error adding roommate');
+    });
+  }
 
-    if(new_contact._id == undefined){
-      this.add_contact(new_contact);
-    }
-    if(new_contact._id != undefined){
-      this.edit_contact(new_contact);
-    }
-
-}
+  deleteRoommate(roommate) {
+    this.authService.deleteRoommate(roommate).subscribe(data => {
+      if(data['success']) {
+        this.getRoommates();
+        this.showSuccess("Deleted roommate");
+      }
+    }, err => {
+      this.showError("Error deleting roommate");
+    });
+  }
 
 onEditButton(contact){
   this._id = contact._id;
@@ -168,12 +265,13 @@ onEditButton(contact){
 }
 
 add_contact(newContact){
-    this.authService.addContact(newContact).subscribe(data=>{
+    this.authService.addContact(newContact).subscribe(data => {
     this.showSuccess('Friend added!');
-    this.getDashboard();
-  }, err=>{
+    // this.getDashboard();
+  }, err => {
     this.showError('Failed to add a contact!'+err);
   });
+
   this.getDashboard();
   this.clear();
 }

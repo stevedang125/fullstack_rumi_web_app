@@ -5,15 +5,15 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(contactlist: any, inputString: any): any {
+  transform(roommateList: any, inputString: any): any {
     // Check if the search inputString is empty/undefined
     if(inputString === undefined){
-      return contactlist;
+      return roommateList;
     }
     // If there is input string to search:
-    return contactlist.filter(function(retVal){
-      return retVal.firstName.toLowerCase().includes(inputString.toLowerCase());
-    }); 
+    return roommateList.filter(function(retVal){
+      return retVal.name.toLowerCase().includes(inputString.toLowerCase());
+    });
   }
 
 }

@@ -6,10 +6,12 @@ const Schema = mongoose.Schema;
 
 // Create an object or Schema to hold the new user info
 var userSchema = Schema({
-    name: { type: String },
+    name: { type: String, required: true },
     email: { type: String, required: true },
     username: { type: String, required: true },
-    password: { type: String, required: true }
+    password: { type: String, required: true },
+    roommates: { type: [String] },
+    isRegistered: { type: Boolean, default: true }
 });
 
 const User = module.exports = mongoose.model('User', userSchema, 'users');
@@ -25,6 +27,7 @@ module.exports.registerUser = function(newUser, callback){
         bcrypt.hash(newUser.password, salt, (err, hash)=>{
             if(err) throw err;
             newUser.password = hash;
+            newUser.isRegistered = true;
             newUser.save(callback);
         });
     });
