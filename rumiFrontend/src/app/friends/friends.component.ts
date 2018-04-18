@@ -125,7 +125,7 @@ export class FriendsComponent implements OnInit {
       return val;
     }
 
-    // ========= Fetch the contact list ======================
+  // ========= Fetch the contact list ======================
   // Get the user data from the database:
   getDashboard(){
     this.authService.userDashboard().subscribe(dashboard =>{
@@ -144,7 +144,7 @@ export class FriendsComponent implements OnInit {
     this.authService.getRoommates().subscribe(data => {
       this.user = data['user'];
       this.userID = data['user']._id;
-      this.roommateList = data['roommates'];
+      this.roommateList = data['roommates'].reverse();
     }, err => {
       // Error out
       this.router.navigate(['']);

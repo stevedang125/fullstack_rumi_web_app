@@ -1,11 +1,14 @@
 export const environment = {
   production: true,
   firebase : {
-    apiKey: "AIzaSyCrFHf3gTQZYgFK6IyHn2qdynxfPcZwEMM",
-    authDomain: "rumi-web-app-dc4af.firebaseapp.com",
-    databaseURL: "https://rumi-web-app-dc4af.firebaseio.com",
-    projectId: "rumi-web-app-dc4af",
-    storageBucket: "rumi-web-app-dc4af.appspot.com",
-    messagingSenderId: "353669083115"
+    apiKey: "AIzaSyDLmiEfb3saF_A2xYBhGTKN0sqrg2VPlgA",
+    authDomain: "rumi-website-mobile-app.firebaseapp.com",
+    databaseURL: "https://rumi-website-mobile-app.firebaseio.com",
+    projectId: "rumi-website-mobile-app",
+    storageBucket: "rumi-website-mobile-app.appspot.com",
+    messagingSenderId: "391392634983"
   }
 };
+
+
+    

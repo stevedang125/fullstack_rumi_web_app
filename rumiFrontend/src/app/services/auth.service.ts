@@ -20,7 +20,13 @@ export class AuthService {
   loggedIn:any;   // logged in True/False
 
   // =========== Http base uri and headers =============================
-  private baseUri:string="";
+
+  // DEV_MODE
+  private baseUri:string="http://localhost:8080";
+
+  // DEPLOYMENT: ==================== OVER HERE DITA ===============>>>>>>>>
+  // private baseUri:string="";
+
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient) { }
