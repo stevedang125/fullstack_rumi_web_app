@@ -38,10 +38,12 @@ import { LoginComponent } from './login/login.component';
 import { GuardService } from './services/guard.service';
 import { LoggedinguardService } from './services/loggedinguard.service';
 import { UploadService } from './services/upload.service';
+import { BillcodeComponent } from './billcode/billcode.component';
 
 // all the routes:
 const appRoutes: Routes =[
   { path: '', component: HomeComponent , canActivate: [LoggedinguardService]},//home page  
+  { path: 'billcode', component: BillcodeComponent , canActivate: [LoggedinguardService]},//bill code page    
   { path: 'register', component: RegisterComponent, canActivate: [LoggedinguardService] },
   { path: 'login', component: LoginComponent, canActivate: [LoggedinguardService] },
   { path: 'user/dashboard', component: DashboardComponent, canActivate: [GuardService]},// after logged in
@@ -67,7 +69,8 @@ const appRoutes: Routes =[
     AboutComponent,
     NavbarComponent,
     LoginComponent,
-    SidebarComponent
+    SidebarComponent,
+    BillcodeComponent
   ],
   imports: [
     BrowserModule,

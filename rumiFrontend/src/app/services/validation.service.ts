@@ -5,6 +5,16 @@ export class ValidationService {
 
   constructor() { }
 
+
+  
+  validateBillCodeInput(info){
+    if(info.name == undefined || info.bill_code == undefined){
+      return false;
+    }else{
+      return true;
+    }
+  }
+
   validateRegister(user){
     if(user.name == undefined || user.email == undefined || user.username == undefined || user.password == undefined){
       return false;

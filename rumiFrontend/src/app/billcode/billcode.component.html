@@ -1,0 +1,60 @@
+<div class="container-fluid" style="position: relative; padding-top: 80px;">
+<!-- <div class="row" id="user_form" *ngIf="!authService.isLoggedIn()"> -->
+  <div class="col align-self-center">
+  <h2>Fast Bill</h2>
+  <form class="form-signin">
+
+      <div class="form-group row">
+          <label for="code" class="col-sm-3 col-form-label">Code</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" placeholder="*Enter Code" [(ngModel)]="inputCode" name="inputCode">
+          </div>
+      </div>
+
+      <div class="form-group row">
+          <label for="name" class="col-sm-3 col-form-label">Name</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" placeholder="*Enter Your Name" [(ngModel)]="inputName" name="inputName">
+          </div>
+      </div>
+
+
+
+    </form>
+
+    <button class="btn btn-success" (click)="onSubmit()">Submit</button>&nbsp;
+    <button class="btn btn-danger" (click)="onCancel()">Cancel</button><br><br>
+    <p>Already fell in love with rumi? <a [routerLink] = "['/register']">Register Here!</a></p>
+
+
+</div>
+<!-- </div> -->
+</div>
+
+
+
+
+<div class="container" style="margin-bottom: 5%;">
+    <div *ngIf="name">
+        <header class="card-header" 
+        style="background-color: rgb(0, 140, 255);  
+        width: 100%; text-align: center;" 
+        >
+        This bill is for: {{name}}
+        </header>
+       
+        <ul class="list-group" *ngFor="let element of hack(trans_info)">
+          
+          <li class="list-group-item"><b>Store Name </b>: {{element.store_name}}</li>
+          <li class="list-group-item"><b>On </b>: {{bill_date}}</li>
+          <li class="list-group-item"><b>Bill Code </b>: {{element.bill_code}}</li>
+          
+          <li class="list-group-item"><b>Type </b>: {{element.transaction_type}}</li>
+          <li class="list-group-item"><b>Items bought </b>: {{items}}</li>
+          <li class="list-group-item"><b>Original Prices </b>: {{og_prices}}</li>
+          <li class="list-group-item"><b>Split Prices </b>: {{split_prices}}</li>
+  
+        </ul>
+      </div>
+  
+    </div>

@@ -10,7 +10,7 @@
             </div>
             <div class="card-body">
               <h5 class="card-title">{{recent.transaction_type}}</h5>
-              <h6 class="card-subtitle mb-2 text-muted">{{recent.date}}</h6>
+              <h6 class="card-subtitle mb-2 text-muted">{{recent.bill_date}}</h6>
               <p class="card-text">Split with: {{recent.friend_names}}</p>
             </div>
           </div>
@@ -45,7 +45,7 @@
             <img class="card-img-top" src="{{recent.link}}" alt="Receipt">
           </div>
           <div class="card-body">
-            <h6 class="card-subtitle mb-2 text-muted">{{recent.date}}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">{{recent.bill_date}}</h6>
           </div>
         </div>
       <!-- <div style="background-color:#1b5e20; color:white; width:50%;" class="center"  *ngIf="recent.name">

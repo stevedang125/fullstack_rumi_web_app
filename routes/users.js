@@ -12,6 +12,8 @@ const User = require('../models/user');
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 
+// Bring in Transaction Model
+const Transaction = require('../models/transaction');
 // Register a new user
 router.post('/register', (req,res,next)=>{
     // Create a new object for the new user,
@@ -86,6 +88,27 @@ router.post('/get_user_by_id', (req, res, next) => {
       if(err)
         return res.json({ success : false, msg : "Cannot find user."});
       return res.json({ success : true, user : user });
+    });
+
+});
+
+router.post('/billcode', (req, res, next) => {
+    console.log('Code: '+req.body.bill_code);
+    console.log('Name: '+req.body.name);
+
+    
+
+    const query = Transaction.find({});
+    query.where('bill_code', req.body.bill_code);
+
+    query.exec(function(err, fast_info){
+        if(err){
+            console.log('Error! ** Failed to search for transaction with bill code: '+err);
+            res.json({success: false, msg: err});            
+        }
+        // Successful got the data back, let do some work!!!
+        
+        res.status(200).json({fast_info: fast_info});
     });
 
 });

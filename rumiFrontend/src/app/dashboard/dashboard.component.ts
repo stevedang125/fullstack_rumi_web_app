@@ -45,7 +45,7 @@ export class DashboardComponent implements OnInit, OnChanges {
   hack(list){
     return list;
   }
-
+  
   sortDateArray(array: any[]){
     var i = 0;
     for(i = 0; i < array.length; i++)
@@ -90,10 +90,10 @@ export class DashboardComponent implements OnInit, OnChanges {
     // This part will get the most recent date out of all three list of json objects
     if(this.debug) {
       console.log('mostRecentDate friends: ',this.friends[0].date);
-      console.log('mostRecentDate transactions: ',this.transactions[0].date);
+      console.log('mostRecentDate transactions: ',this.transactions[0].bill_date);
       console.log('mostRecentDate receipts: ',this.receipts[0].date);
     }
-    mostRecentDate = this.compareDate(this.friends[0].date , this.transactions[0].date);
+    mostRecentDate = this.compareDate(this.friends[0].date , this.transactions[0].bill_date);
     mostRecentDate = this.compareDate(mostRecentDate , this.receipts[0].date);
     if(this.debug)
       console.log('mostRecentDate: ',mostRecentDate);
@@ -112,7 +112,7 @@ export class DashboardComponent implements OnInit, OnChanges {
 
     for(i = 0; i < maxLen; i++){
       // If the date is already there, skip
-      if( (i < this.transactions.length) && (tempDate === this.transactions[i].date) ){
+      if( (i < this.transactions.length) && (tempDate === this.transactions[i].bill_date) ){
 
         continue;
       }
@@ -125,8 +125,8 @@ export class DashboardComponent implements OnInit, OnChanges {
         continue;
       }
       // If the date is not in the array, change the tempDate and add it to the array
-      if(  (i < this.transactions.length) && (tempDate !== this.transactions[i].date) && (!arrayOfDate.includes(this.transactions[i].date))  ){
-        tempDate = this.transactions[i].date;
+      if(  (i < this.transactions.length) && (tempDate !== this.transactions[i].bill_date) && (!arrayOfDate.includes(this.transactions[i].bill_date))  ){
+        tempDate = this.transactions[i].bill_date;
         arrayOfDate.push(tempDate);
       }
       if(  (i < this.friends.length) && (tempDate !== this.friends[i].date) && (!arrayOfDate.includes(this.friends[i].date))  ){
@@ -149,7 +149,7 @@ export class DashboardComponent implements OnInit, OnChanges {
     for(i=0; i <= arrayOfDate.length; i++){
 
       for(x = 0; x < this.transactions.length; x++){
-        if(this.transactions[x].date === arrayOfDate[i]){
+        if(this.transactions[x].bill_date === arrayOfDate[i]){
           recent.push(this.transactions[x]);
         }
       }

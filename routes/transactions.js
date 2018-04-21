@@ -75,22 +75,33 @@ router.post('/transactions/add', passport.authenticate('jwt', {session: false}),
     // Create a new object to hold the new contact informaiton from the request.body
     const user_id = new ObjectId(req.user.id);
 
-    let newTransaction = new Transaction({
-        _id: req.body._id,
-        group_name: req.body.group_name,
-        company_name: req.body.company_name,
-        receipt_link: req.body.receipt_link,
+    // let newTransaction = new Transaction({
+    //     _id: req.body._id,
+    //     group_name: req.body.group_name,
+    //     company_name: req.body.company_name,
+    //     receipt_link: req.body.receipt_link,
+    //     transaction_type : req.body.transaction_type,
+    //     items: req.body.items,
+    //     prices: req.body.prices,
+    //     total: req.body.total,
+    //     friends_ids: req.body.friends_ids,
+    //     num_friends: req.body.num_friends,
+    //     friend_names:  req.body.friend_names,
+    //     each_pay: req.body.each_pay,
+    //     date: req.body.date,
+    //     user_id: user_id
+    // });
+
+    var newTransaction = new Schema({
+        bill_code: req.body.bill_code,
+        roommates: req.body.roommates,
+        store_name : req.body.store_name,
+        receipt_link : req.body.receipt_link,
         transaction_type : req.body.transaction_type,
-        items: req.body.items,
-        prices: req.body.prices,
-        total: req.body.total,
-        friends_ids: req.body.friends_ids,
-        num_friends: req.body.num_friends,
-        friend_names:  req.body.friend_names,
-        each_pay: req.body.each_pay,
-        date: req.body.date,
-        user_id: user_id
-    });
+        bill_date :  new Date().toDateString() , // Format if *only* bill_date is used so sorting works: YYYYMMDD
+        owner_id : user_id,
+        transaction_list : req.body.transaction_list
+      });
 
     Transaction.addTransaction(newTransaction, (err, transaction)=>{
         (err) ? res.json({success: false, msg: 'Error! Failed to add new transaction.'}) : res.json({success: true, msg: 'Transaction added!'});

@@ -20,7 +20,13 @@ export class AuthService {
   loggedIn:any;   // logged in True/False
 
   // =========== Http base uri and headers =============================
+
+  // DEV_MODE
   private baseUri:string="http://localhost:8080";
+
+  // DEPLOYMENT: ==================== OVER HERE DITA ===============>>>>>>>>
+  // private baseUri:string="";
+
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient) { }
@@ -124,7 +130,7 @@ export class AuthService {
     userProfile(){
       // Load the token into the authToken const:
       this.loadToken();
-
+      console.log('debug mode: getting the token for postman: '+this.authToken);
       this.headers = new HttpHeaders().set('Authorization', this.authToken);
       return this.http.get(this.baseUri+'/user/setting', {headers:this.headers});
     }
@@ -181,6 +187,10 @@ export class AuthService {
       this.loadToken();
       this.headers = new HttpHeaders().set('Authorization', this.authToken);
       return this.http.get(this.baseUri+'/user/dashboard', {headers:this.headers});
+    }
+
+    getTransactionByCode(info_code_name){
+      return this.http.post(this.baseUri+'/billcode', info_code_name, {headers:this.headers});
     }
 
 
