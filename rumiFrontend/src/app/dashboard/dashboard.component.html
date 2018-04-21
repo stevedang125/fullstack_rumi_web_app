@@ -1,9 +1,18 @@
+<div class="container-fluid" id="content">
+  <button class="btn btn-success" (click)="clickForData()">Click for Data</button>
+</div>
 
 <div class="container-fluid" id="content">
-<!-- <div *ngIf="friends | async"> -->
+  <h2>Recent Transactions</h2>
+  
+</div>
+
+<!-- 
+<div class="container-fluid" id="content">
+
   <h2>Recent Activities</h2>
   <div *ngFor="let recent of hack(recentActivities)">
-          <!-- Transactions -->
+          
           <div class="card" id="card" style="border-color:#E4C1E2;" *ngIf="recent.group_name">
             <div class="card-header" id="transaction-card">
               New Transaction
@@ -14,13 +23,7 @@
               <p class="card-text">Split with: {{recent.friend_names}}</p>
             </div>
           </div>
-      <!-- <div style="background-color:#4a148c; color:white; width:50%;" class="center" *ngIf="recent.group_name">
-          <p>{{recent.date}}</p>
-          <p>{{recent.total}}</p>
-          <p>Split With: {{recent.friend_names}}</p>
-          <p>{{recent.transaction_type}}</p>
-      </div> -->
-        <!-- Friends -->
+
         <div class="card" id="card" *ngIf="recent.firstName">
           <div class="card-header" id="roommate-card">
             New Roommate
@@ -30,13 +33,7 @@
             <h6 class="card-subtitle mb-2 text-muted">{{recent.date}}</h6>
           </div>
         </div>
-      <!-- <div style="background-color:#01579b; color:white;  width:50%;" class="center"  *ngIf="recent.firstName">
-          <p>{{recent.date}}</p>
-          <p>Added New Friend: {{recent.firstName}}</p>
-          <p>New Friend</p>
-      </div> -->
-
-      <!-- Receipts -->
+  
         <div class="card" id="card" *ngIf="recent.name">
           <div class="card-header" id="receipt-card">
             New Receipt
@@ -48,10 +45,6 @@
             <h6 class="card-subtitle mb-2 text-muted">{{recent.bill_date}}</h6>
           </div>
         </div>
-      <!-- <div style="background-color:#1b5e20; color:white; width:50%;" class="center"  *ngIf="recent.name">
-          <p>{{recent.date}}</p>
-          <p>Added New Receipt</p>
-          <img src="{{recent.link}}" alt="Receipt" class="img tn" >
-      </div> -->
-  </div><!-- *ngFor -->
-</div>
+
+  </div>
+</div> -->

@@ -21,6 +21,8 @@ export class TransactionsComponent implements OnInit {
 
   transactionsList : Transactions[];
 
+  bill_date = [];
+
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
@@ -31,7 +33,12 @@ export class TransactionsComponent implements OnInit {
     this.authService.getTransactions().subscribe(transactions =>{
       this.user = transactions['user'];
       this.userID = transactions['user']._id;
-      this.transactionsList = transactions['transactions'];
+      this.transactionsList = transactions['transactions'].reverse();
+
+ 
+      
+      this.getTheDate(this.transactionsList);
+
       console.log('Sucess! got the transactions list from the backend.');
     }, err =>{
       console.log('Failed to get the transactions list! err: '+err);
@@ -56,4 +63,40 @@ export class TransactionsComponent implements OnInit {
   hack(list){
     return list;
   }
+
+  getTheDate(list)
+  {
+
+    list.forEach(element => {
+        
+        var date = new Date(element.bill_date).toDateString();
+        console.log(date);
+        this.bill_date.push(date);
+
+        console.log(this.bill_date.toString());
+    });
+
+    // getDataArrayList(list)
+    // {
+    //   list.forEach(element => {
+    //     this.bill_date = new Date(element.bill_date).toDateString();
+
+    //     for(let object in element.transaction_list)
+    //     {
+    //       console.log(element.transaction_list[object].name);
+    //       if(this.inputName == element.transaction_list[object].name)
+    //       {
+    //         this.name = element.transaction_list[object].name;
+    //         this.items = element.transaction_list[object].items;
+    //         this.og_prices = element.transaction_list[object].og_prices;
+    //         this.split_prices = element.transaction_list[object].split_prices;
+    //       }
+    //     }
+    //   });
+    // }
+
+
+
+  }
+
 }
