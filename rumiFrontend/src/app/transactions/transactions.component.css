@@ -1,0 +1,13 @@
+#transaction_image {
+  width:200px;
+  max-height: 400px;
+  overflow: hidden;
+}
+
+#transaction_card {
+  margin-bottom:10px;
+}
+
+#user_transaction {
+  margin-bottom:5px;
+}

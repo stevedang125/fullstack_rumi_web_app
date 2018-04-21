@@ -228,43 +228,11 @@ router.post('/roommates/add/static', passport.authenticate('jwt', { session : fa
   var currUser = new ObjectId(req.user.id);
   var staticUser = req.body.roommate;
 
-  // console.log(JSON.stringify(req.body.roommate));
-
-  // User.findOne({ _id : currUser }, function(err, doc) {
-  //   if(err) {
-  //     res.json({ success : false, msg : "Cannot find user."});
-  //   }
-  //
-  //   console.log("Found user: " + JSON.stringify(doc));
-  //   var newStaticUser = new User(staticUser);
-  //
-  //   newStaticUser.save(staticUser, function(err) {
-  //     if(err) {
-  //       res.json({ success : false, msg : "Cannot create static user."});
-  //     }
-  //
-  //     console.log("Created static user: " + JSON.stringify(newStaticUser));
-  //
-  //     doc.roommates.push(static_roommate._id);
-  //     doc.save(function(err) {
-  //       if(err) {
-  //         console.log(err);
-  //       }
-  //     });
-  //
-  //     console.log("Added static roommate to user array");
-  //
-  //     res.json({ success : true, static_roommate : static_roommate });
-  //   });
-  // });
-
   // Create a static roommate
   StaticUser.create(staticUser, function(err, newUser) {
     if(err) {
       res.status(401).json({ success : false, msg : "Cannot create static user."});
     }
-
-    // console.log("Created static user: " + JSON.stringify(newUser));
 
     // Update the current user's roommates array with the static roommate's ID
     User.findByIdAndUpdate(currUser, { $push : { roommates : newUser._id } }, {safe: true, new : true}, function(err, doc) {

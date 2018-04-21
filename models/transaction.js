@@ -3,23 +3,22 @@ const mongoose = require('mongoose');
 const config = require('../config/database');
 const Schema = mongoose.Schema;
 
-
-// Create an object or Schema to hold the new receipt info
 var transactionSchema = new Schema({
-    group_name: { type: String },
-    receipt_link: { type: String },
-    company_name: { type: String },
-    transaction_type: { type: String },// Rent? Restaurant? and so on...
-    items: [],
-    prices: [],
-    total: { type: String },
-    friends_ids: [],
-    num_friends: { type: String },
-    each_pay: { type: String },
-    friend_names: [],
-    date: { type: String },
-    date_unix: { type: Date, default: Date.now },
-    user_id: { type : String }
+  bill_code: { type : String },
+  roommates: { type : [String] },
+  store_name : { type : String },
+  receipt_link : { type : String },
+  bill_date : { type : Date },
+  bill_date_unix : { type : Date , default : Date.now },
+  owner_id : { type : String },
+  transaction_list : [
+    {
+      name : { type : String },
+      items : { type : [String] },
+      og_prices : { type : [String] },
+      split_prices : { type : [String] }
+    }
+  ]
 });
 
 const Transaction = module.exports = mongoose.model('Transaction', transactionSchema, 'transactions');

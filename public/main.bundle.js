@@ -1332,7 +1332,7 @@ var AuthService = /** @class */ (function () {
     function AuthService(http) {
         this.http = http;
         // =========== Http base uri and headers =============================
-        this.baseUri = "";
+        this.baseUri = "http://localhost:8080";
         this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Content-Type', 'application/json');
     }
     // =========== Helper functions =====================================
@@ -1997,14 +1997,14 @@ var SidebarComponent = /** @class */ (function () {
 /***/ "./src/app/transactions/transactions.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "#transaction_image {\n  width:200px;\n  max-height: 400px;\n  overflow: hidden;\n}\n\n#transaction_card {\n  margin-bottom:10px;\n}\n\n#user_transaction {\n  margin-bottom:5px;\n}\n"
 
 /***/ }),
 
 /***/ "./src/app/transactions/transactions.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"container-fluid\" id=\"content\">\n  <h2>Transactions</h2>\n  <table class=\"table table-hover\">\n    <thead>\n      <tr>\n        <th><h6><strong>Number</strong></h6></th>\n        <th><h6><strong>Receipt Name</strong></h6></th>\n        <!-- <th><h6><strong>Receipt Link</strong></h6></th> -->\n        <th><h6><strong>Company Name</strong></h6></th>\n        <th><h6><strong>Type</strong></h6></th>\n        <th><h6><strong>Items</strong></h6></th>\n        <th><h6><strong>Prices</strong></h6></th>\n        <th><h6><strong>Total</strong></h6></th>\n        <th><h6><strong>Roommates</strong></h6></th>\n        <!-- <th><h6><strong>Friend's IDs</strong></h6></th>            -->\n        <th><h6><strong>Numfriends</strong></h6></th>\n        <th><h6><strong>Each Pay</strong></h6></th>\n        <th><h6><strong>Date</strong></h6></th>\n\n        <!-- <th><h6><strong>User_ID</strong></h6></th> -->\n      </tr>\n    </thead>\n    <tbody>\n        <!-- <tr *ngFor=\"let contact of hack(contactlist); let i = index\"> -->\n        <tr *ngFor=\"let tran of hack(transactionsList); let friend of hack(testing);  let i = index\">\n          <td>{{i+1}}</td>\n          <td><a href=\"{{tran.receipt_link}}\">{{tran.group_name}}</a></td>\n          <!-- <td><a href=\"{{tran.receipt_link}}\">{{tran.receipt_link}}</a></td> -->\n          <td>{{tran.company_name}}</td>\n          <td>{{tran.transaction_type}}</td>\n          <td>{{tran.items}}</td>\n          <td>${{tran.prices}}</td>\n          <td>${{tran.total}}</td>\n          <td>{{tran.friend_names}}</td>\n          <!-- <td>{{tran.friends_ids}}</td>                                     -->\n          <td>{{tran.num_friends}}</td>\n          <td>${{tran.each_pay}}</td>\n          <td>{{tran.date}}</td>\n          <!-- <td>{{tran.user_id}}</td> -->\n      </tr>\n    </tbody>\n  </table>\n</div>\n"
+module.exports = "\n<div class=\"container-fluid\" id=\"content\">\n  <h2>Transactions</h2>\n\n  <div class=\"card\" id=\"transaction_card\" *ngFor=\"let tran of hack(transactionsList); let friend of hack(testing); let i = index\">\n  <div class=\"card-header\">\n    {{tran.store_name}}\n  </div>\n  <div class=\"card-body\">\n    <!-- <h5 class=\"card-title\">{{tran.transaction_type}}</h5> -->\n    <div class=\"float-left\" id=\"transaction_image\">\n      <img src=\"{{tran.receipt_link}}\" width=\"200px\">\n    </div>\n\n    <div class=\"card-text float-right\">\n      <div id=\"user_transaction\" *ngFor=\"let subTran of tran.transaction_list\">\n        User: {{subTran.name}}\n        <br>Items: {{subTran.items}}\n        <br>Split prices: {{subTran.split_prices}}\n      </div>\n      <!-- <br>Roommates: {{tran.roommates}} -->\n    </div>\n  </div>\n\n  <div class=\"card-footer\">\n    {{tran.bill_date}}\n  </div>\n</div>\n\n  <!-- <table class=\"table table-hover\">\n    <thead>\n      <tr>\n        <th><h6><strong>Number</strong></h6></th>\n        <th><h6><strong>Receipt Name</strong></h6></th>\n        <th><h6><strong>Receipt Link</strong></h6></th>\n        <th><h6><strong>Company Name</strong></h6></th>\n        <th><h6><strong>Type</strong></h6></th>\n        <th><h6><strong>Items</strong></h6></th>\n        <th><h6><strong>Prices</strong></h6></th>\n        <th><h6><strong>Total</strong></h6></th>\n        <th><h6><strong>Roommates</strong></h6></th>\n        <th><h6><strong>Friend's IDs</strong></h6></th>\n        <th><h6><strong>Numfriends</strong></h6></th>\n        <th><h6><strong>Each Pay</strong></h6></th>\n        <th><h6><strong>Date</strong></h6></th>\n\n        <th><h6><strong>User_ID</strong></h6></th>\n      </tr>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let tran of hack(transactionsList); let friend of hack(testing);  let i = index\">\n          <td>{{i+1}}</td>\n          <td><a href=\"{{tran.receipt_link}}\">{{tran.group_name}}</a></td>\n          <td><a href=\"{{tran.receipt_link}}\">{{tran.receipt_link}}</a></td>\n          <td>{{tran.company_name}}</td>\n          <td>{{tran.transaction_type}}</td>\n          <td>{{tran.items}}</td>\n          <td>${{tran.prices}}</td>\n          <td>${{tran.total}}</td>\n          <td>{{tran.friend_names}}</td>\n          <td>{{tran.friends_ids}}</td>\n          <td>{{tran.num_friends}}</td>\n          <td>${{tran.each_pay}}</td>\n          <td>{{tran.date}}</td>\n          <td>{{tran.user_id}}</td>\n      </tr>\n    </tbody>\n  </table> -->\n</div>\n"
 
 /***/ }),
 
@@ -2038,7 +2038,7 @@ var TransactionsComponent = /** @class */ (function () {
         this.authService.getTransactions().subscribe(function (transactions) {
             _this.user = transactions['user'];
             _this.userID = transactions['user']._id;
-            _this.transactionsList = transactions['transactionList'];
+            _this.transactionsList = transactions['transactions'];
             console.log('Sucess! got the transactions list from the backend.');
         }, function (err) {
             console.log('Failed to get the transactions list! err: ' + err);

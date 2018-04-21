@@ -20,13 +20,40 @@ const Schema = mongoose.Schema;
 
 // =========================== transactions list ================================================
 // Fetch the transactions list from the database to the template
-router.get('/transactions', passport.authenticate('jwt', {session: false}), (req,res,next)=>{
-    const user_id = new ObjectId(req.user.id);
-    const query = Transaction.find({});
-    query.where('user_id', user_id);
+router.get('/transactions', passport.authenticate('jwt', {session: false}), (req,res,next) => {
+    const user_id = req.user.id;
+    var success = true;
 
-    query.exec(function(err, transactionList){
-        (err) ? console.log('Error! ** Search for transaction with same owner: '+err) : res.status(200).json({user: req.user, transactionList: transactionList});
+    // Find all transactions that this user made or took part in
+    Transaction.find({
+      $or : [
+        { owner_id : user_id },
+        { roommates : user_id }
+      ]}, function(err, docs) {
+        if(err) {
+          success = false;
+        }
+
+        res.json({ success : success, user : req.user, transactions : docs });
+    });
+});
+
+router.get('/transactions/recent', passport.authenticate('jwt', {session: false}), (req,res,next) => {
+    const user_id = new ObjectId(req.user.id);
+    var success = true;
+
+    var transactionQuery =  Transaction.find({
+      $or : [
+        { owner_id : user_id },
+        { roommates : user_id }
+      ]}).sort('-bill_date_unix').limit(5);
+
+    transactionQuery.exec(function(err, transactions) {
+      if(err) {
+        success = false;
+      }
+
+      res.status(200).json({ success : true, user : req.user, transactions : transactions });
     });
 });
 

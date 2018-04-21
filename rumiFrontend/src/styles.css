@@ -291,3 +291,35 @@ a:hover {
 #roommate-list-item {
   margin-bottom:10px;
 }
+
+.card-header, .card-footer {
+  background-color:#59b68e;
+  color:#fff;
+}
+
+.btn-primary, .btn-success {
+  background-color:#59b68e;
+  color:#fff;
+  border:1px solid #59b68e;
+}
+
+.btn-primary:hover, .btn-success:hover {
+  background-color:#3E946F;
+  color:#fff;
+  border:1px solid #3E946F;
+}
+
+.btn-outline-success {
+  border:1px solid #59b68e;
+  color:#59b68e;
+}
+
+.btn-outline-success:hover {
+  border:1px solid #59b68e;
+  background-color:#59b68e;
+  color:#fff;
+}
+
+.card {
+  border:1px solid #59b68e;
+}

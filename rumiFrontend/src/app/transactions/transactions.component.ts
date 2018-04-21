@@ -5,7 +5,7 @@ import { AuthService }  from '../services/auth.service';
 import { Router, Route } from '@angular/router';
 import { Transactions } from '../models/transactions.model';
 import { ArrayType } from '@angular/compiler/src/output/output_ast';
-import * as _ from 'lodash'; // to help loop over files 
+import * as _ from 'lodash'; // to help loop over files
 
 
 @Component({
@@ -15,7 +15,7 @@ import * as _ from 'lodash'; // to help loop over files
 })
 export class TransactionsComponent implements OnInit {
 
-  // user object and user ID holder 
+  // user object and user ID holder
   user: Object;
   userID: string;
 
@@ -31,7 +31,7 @@ export class TransactionsComponent implements OnInit {
     this.authService.getTransactions().subscribe(transactions =>{
       this.user = transactions['user'];
       this.userID = transactions['user']._id;
-      this.transactionsList = transactions['transactionList'];
+      this.transactionsList = transactions['transactions'];
       console.log('Sucess! got the transactions list from the backend.');
     }, err =>{
       console.log('Failed to get the transactions list! err: '+err);
