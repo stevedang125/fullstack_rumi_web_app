@@ -1,3 +1,50 @@
-<p>
-  billcode works!
-</p>
+<div class="container-fluid" style="position: relative; padding-top: 80px;">
+<!-- <div class="row" id="user_form" *ngIf="!authService.isLoggedIn()"> -->
+  <div class="col align-self-center">
+  <h2>Fast Bill</h2>
+  <form class="form-signin">
+
+      <div class="form-group row">
+          <label for="code" class="col-sm-3 col-form-label">Code</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" placeholder="*Enter Code" [(ngModel)]="inputCode" name="inputCode">
+          </div>
+      </div>
+
+      <div class="form-group row">
+          <label for="name" class="col-sm-3 col-form-label">Name</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" placeholder="*Enter Your Name" [(ngModel)]="inputName" name="inputName">
+          </div>
+      </div>
+
+
+
+    </form>
+
+    <button class="btn btn-success" (click)="onSubmit()">Submit</button>&nbsp;
+    <button class="btn btn-danger" (click)="onCancel()">Cancel</button><br><br>
+    <p>Already fell in love with rumi? <a [routerLink] = "['/register']">Register Here!</a></p>
+
+    <div *ngIf="name" class="card" id="card" style="width: 25%;">
+      <header class="card-header" 
+      style="background-color: rgb(0, 140, 255);  
+      width: 100%; text-align: center;" 
+      >
+      This bill is for: {{name}}
+    </header>
+
+      <div *ngFor="let element of hack(trans_info)" >
+          <!-- <p>This bill is for: {{name}}</p> -->
+          <p>Store Name: {{element.store_name}}</p>
+          <p>On: {{element.bill_date}}</p>
+          <p>Bill Code: {{element.bill_code}}</p>
+          <p>Type: {{element.transaction_type}}</p>
+          <p>Items bought: {{items}}</p>
+          <p>Original Prices: {{og_prices}}</p>
+          <p>Split Prices: {{split_prices}}</p>
+      </div>
+    </div>
+</div>
+<!-- </div> -->
+</div>
