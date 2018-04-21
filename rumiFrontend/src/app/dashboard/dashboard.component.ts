@@ -24,6 +24,8 @@ export class DashboardComponent implements OnInit, OnChanges {
   arrived: boolean = false;
   // Declaring the Promise, yes! Promise!
   filtersLoaded: Promise<boolean>;
+  
+  bill_date = [];
 
   constructor(private authService: AuthService,
               private router: Router) { }
@@ -48,17 +50,22 @@ export class DashboardComponent implements OnInit, OnChanges {
       this.authService.getDashboard().subscribe(data => {
       // Received the data back, get the right list of json objects to the right variable:
       this.transactions = data['tranList'].reverse();
-      this.clickForData();
+      this.getTheDate(this.transactions);
     });// End of getDashboard()
 
   }
 
-  clickForData()
+  getTheDate(list)
   {
-    console.log(this.transactions);
-    
+    list.forEach(element => {
+        
+        var date = new Date(element.bill_date).toDateString();
+        console.log(date);
+        this.bill_date.push(date);
 
-  }// End of the clickForData()
+        console.log(this.bill_date.toString());
+    });
+  }
 }
 
 

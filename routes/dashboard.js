@@ -25,6 +25,7 @@ router.get('/dashboard', passport.authenticate('jwt', {session: false}), (req,re
       const user_id = new ObjectId(req.user.id);
   
       const transactionCollection = Transaction.find({}).where('owner_id', user_id).limit(5);
+    
       
       transactionCollection.exec(function(err, tranList){
           if(err){

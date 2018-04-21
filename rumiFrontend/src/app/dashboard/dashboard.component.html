@@ -1,11 +1,100 @@
 <div class="container-fluid" id="content">
-  <button class="btn btn-success" (click)="clickForData()">Click for Data</button>
+  <h2>Recent Transactions</h2>
+
+  <!-- Header -->
+  <div class="card" id="transaction_card" *ngFor="let tran of hack(transactions); let i = index" style="margin-bottom: 5%;">
+  <div class="card-header">
+    <a href="{{tran.receipt_link}}" style="color: black"> {{tran.store_name}}: </a>
+    {{tran.bill_code}}
+  </div>
+
+  <!-- Body -->
+  <div class="card-body">
+
+    <!-- All users and their bill -->
+    <div class="container" style="margin-bottom: 5%;">
+                   
+            <ul class="list-group" *ngFor="let element of hack(tran.transaction_list)">
+                <header class="card-header" 
+                style="background-color: rgb(0, 140, 255);  
+                width: 100%; text-align: center;" 
+                >
+                This bill is for: {{element.name}}
+                </header>
+              <!-- <li class="list-group-item"><b>User: </b>: {{element.name}}</li> -->
+              <li class="list-group-item"><b>Items bought </b>: {{element.items}}</li>
+              <li class="list-group-item"><b>Original Prices </b>: {{element.og_prices}}</li>
+              <li class="list-group-item"><b>Split Prices </b>: {{element.split_prices}}</li>
+      
+            </ul>
+          
+      
+        </div>
+
+  </div>
+
+  <!-- Foooter  -->
+  <div class="card-footer">
+    {{bill_date[i]}}
+  </div>
 </div>
 
-<div class="container-fluid" id="content">
-  <h2>Recent Transactions</h2>
-  
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- 
 <div class="container-fluid" id="content">
