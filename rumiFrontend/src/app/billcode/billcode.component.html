@@ -26,25 +26,35 @@
     <button class="btn btn-danger" (click)="onCancel()">Cancel</button><br><br>
     <p>Already fell in love with rumi? <a [routerLink] = "['/register']">Register Here!</a></p>
 
-    <div *ngIf="name" class="card" id="card" style="width: 25%;">
-      <header class="card-header" 
-      style="background-color: rgb(0, 140, 255);  
-      width: 100%; text-align: center;" 
-      >
-      This bill is for: {{name}}
-    </header>
 
-      <div *ngFor="let element of hack(trans_info)" >
-          <!-- <p>This bill is for: {{name}}</p> -->
-          <p>Store Name: {{element.store_name}}</p>
-          <p>On: {{element.bill_date}}</p>
-          <p>Bill Code: {{element.bill_code}}</p>
-          <p>Type: {{element.transaction_type}}</p>
-          <p>Items bought: {{items}}</p>
-          <p>Original Prices: {{og_prices}}</p>
-          <p>Split Prices: {{split_prices}}</p>
-      </div>
-    </div>
 </div>
 <!-- </div> -->
 </div>
+
+
+
+
+<div class="container" style="margin-bottom: 5%;">
+    <div *ngIf="name">
+        <header class="card-header" 
+        style="background-color: rgb(0, 140, 255);  
+        width: 100%; text-align: center;" 
+        >
+        This bill is for: {{name}}
+        </header>
+       
+        <ul class="list-group" *ngFor="let element of hack(trans_info)">
+          
+          <li class="list-group-item"><b>Store Name </b>: {{element.store_name}}</li>
+          <li class="list-group-item"><b>On </b>: {{bill_date}}</li>
+          <li class="list-group-item"><b>Bill Code </b>: {{element.bill_code}}</li>
+          
+          <li class="list-group-item"><b>Type </b>: {{element.transaction_type}}</li>
+          <li class="list-group-item"><b>Items bought </b>: {{items}}</li>
+          <li class="list-group-item"><b>Original Prices </b>: {{og_prices}}</li>
+          <li class="list-group-item"><b>Split Prices </b>: {{split_prices}}</li>
+  
+        </ul>
+      </div>
+  
+    </div>

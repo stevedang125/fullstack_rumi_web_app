@@ -13,8 +13,18 @@ import * as _ from 'lodash'; // to help loop over files
 export class BillcodeComponent implements OnInit {
 
     // Declared variables:
-    inputName: String = "Dita Dewindita";
-    inputCode: String = "576HJK";
+
+    // Debugging:
+    inputName: String = "Abe";
+    inputCode: String = "777HLK";
+
+    // Debugging:
+    // inputName: String = "Dita Dewindita";
+    // inputCode: String = "576HJK";
+
+    // Default variables:
+    // inputName: String;
+    // inputCode: String;
 
     trans_info: any[];
 
@@ -24,6 +34,8 @@ export class BillcodeComponent implements OnInit {
    items: any[];
    og_prices: any[];
    split_prices: any[];
+
+   bill_date: any;
 
 
   constructor(private router: Router,
@@ -65,35 +77,32 @@ export class BillcodeComponent implements OnInit {
     // ========= Submit and Cancel functions =====================
     onSubmit(){
       
+      this.name = null;
+      this.items = [];
+      this.og_prices = [];
+      this.split_prices = [];
+
+
       const info = {
         bill_code: this.inputCode,
         name: this.inputName
       };
       
-      // if(!this.validateService.validateRegister(user)){
-      //   this.showWarning('Please fill in all fields');
-      //   return false;
-      // }
-  
-      // if(!this.validateService.validateEmail(user.email)){
-      //   this.showWarning('Please use a valid email');
-      //   return false;
-      // }
+      if(!this.validateService.validateBillCodeInput(info)){
+        this.showWarning('Please fill in all fields');
+        return false;
+      }
+
   
       this.authService.getTransactionByCode(info).subscribe(
         data =>{
-          // this.showSuccess('You are registered and now can log in.');
-          this.showSuccess('Found you bill!! eyyyyyyyyyy ^^');
+
           this.trans_info = data['fast_info'];
           this.transactionlist = data['fast_info'].transaction_list;
-          // console.log(this.trans_info);
-          // console.log(this.transactionlist);
-
           this.getDataArrayList(this.trans_info);
 
       }, error => {
           this.showError('Something went wrong, please try again');
-         // this.showError();
           this.router.navigate(['/billcode']);
       });
   
@@ -108,46 +117,21 @@ export class BillcodeComponent implements OnInit {
 
     getDataArrayList(list)
     {
-      // const length = _.range(list.length );
-
-    // _.each(length, (index) => {
-    //   // each log will print out the each file infor in the array filesToUpload
-    //   // console.log(filesToUpload[index]);
-    //   console.log(list.transaction_list[index]);
-    //   this.transactionlist.push(list.transaction_list[index]);
-
-    //   // this.upload = new FileDetails(filesToUpload[index]);
-    //   // this.uploadService.uploadFile(this.upload);
-    // });
-      var index = 0;
       list.forEach(element => {
-        console.log(element.transaction_list[0]);
-        console.log(element.transaction_list[1]);
-        
-        if(element.transaction_list[index].name == this.inputName){
+        this.bill_date = new Date(element.bill_date).toDateString();
 
-          this.name = element.transaction_list[index].name;
-          this.items = element.transaction_list[index].items;
-          this.og_prices = element.transaction_list[index].og_prices;
-          this.split_prices = element.transaction_list[index].split_prices;
-
-
-          // this.transactionlist.push(element.transaction_list[index]);
-          index++;
+        for(let object in element.transaction_list)
+        {
+          console.log(element.transaction_list[object].name);
+          if(this.inputName == element.transaction_list[object].name)
+          {
+            this.name = element.transaction_list[object].name;
+            this.items = element.transaction_list[object].items;
+            this.og_prices = element.transaction_list[object].og_prices;
+            this.split_prices = element.transaction_list[object].split_prices;
+          }
         }
-
-
-
       });
-
-
-      console.log(this.name);
-      console.log(this.items);
-      console.log(this.og_prices);
-      console.log(this.split_prices);
-      
-      
-
     }
 
 }

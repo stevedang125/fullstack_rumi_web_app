@@ -102,14 +102,15 @@ router.post('/billcode', (req, res, next) => {
     query.where('bill_code', req.body.bill_code);
 
     query.exec(function(err, fast_info){
-        if(err)
+        if(err){
             console.log('Error! ** Failed to search for transaction with bill code: '+err);
+            res.json({success: false, msg: err});            
+        }
         // Successful got the data back, let do some work!!!
         
         res.status(200).json({fast_info: fast_info});
     });
 
-    //res.json({success: true, msg: 'Got cha!'});
 });
 
 module.exports = router;
