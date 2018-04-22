@@ -24,7 +24,7 @@ router.post('/register', (req,res,next)=>{
         email: req.body.email,
         username: req.body.username,
         password: req.body.password,
-        isRegistered: true
+        isRegistered: true,
     });
 
     // Call helper function in the models/user.js
@@ -68,7 +68,9 @@ router.post('/login', (req,res,next)=>{
                         id: user._id,
                         name: user.name,
                         username: user.username,
-                        email: user.email
+                        email: user.email,
+                        isRegistered: user.isRegistered,
+                        roommates: user.roommates
                     }
                 });
             }else{
@@ -96,7 +98,7 @@ router.post('/billcode', (req, res, next) => {
     console.log('Code: '+req.body.bill_code);
     console.log('Name: '+req.body.name);
 
-    
+
 
     const query = Transaction.find({});
     query.where('bill_code', req.body.bill_code);
@@ -104,10 +106,10 @@ router.post('/billcode', (req, res, next) => {
     query.exec(function(err, fast_info){
         if(err){
             console.log('Error! ** Failed to search for transaction with bill code: '+err);
-            res.json({success: false, msg: err});            
+            res.json({success: false, msg: err});
         }
         // Successful got the data back, let do some work!!!
-        
+
         res.status(200).json({fast_info: fast_info});
     });
 
