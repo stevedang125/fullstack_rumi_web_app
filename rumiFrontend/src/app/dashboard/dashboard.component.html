@@ -1,9 +1,107 @@
-
 <div class="container-fluid" id="content">
-<!-- <div *ngIf="friends | async"> -->
+  <h2>Recent Transactions</h2>
+
+  <!-- Header -->
+  <div class="card" id="transaction_card" *ngFor="let tran of hack(transactions); let i = index" style="margin-bottom: 5%;">
+  <div class="card-header">
+    <a href="{{tran.receipt_link}}" style="color: black"> {{tran.store_name}}: </a>
+    {{tran.bill_code}}
+  </div>
+
+  <!-- Body -->
+  <div class="card-body">
+
+    <!-- All users and their bill -->
+    <div class="container" style="margin-bottom: 5%;">
+                   
+            <ul class="list-group" *ngFor="let element of hack(tran.transaction_list)">
+                <header class="card-header" 
+                style="background-color: rgb(0, 140, 255);  
+                width: 100%; text-align: center;" 
+                >
+                This bill is for: {{element.name}}
+                </header>
+              <!-- <li class="list-group-item"><b>User: </b>: {{element.name}}</li> -->
+              <li class="list-group-item"><b>Items bought </b>: {{element.items}}</li>
+              <li class="list-group-item"><b>Original Prices </b>: {{element.og_prices}}</li>
+              <li class="list-group-item"><b>Split Prices </b>: {{element.split_prices}}</li>
+      
+            </ul>
+          
+      
+        </div>
+
+  </div>
+
+  <!-- Foooter  -->
+  <div class="card-footer">
+    {{bill_date[i]}}
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div class="container-fluid" id="content">
+
   <h2>Recent Activities</h2>
   <div *ngFor="let recent of hack(recentActivities)">
-          <!-- Transactions -->
+          
           <div class="card" id="card" style="border-color:#E4C1E2;" *ngIf="recent.group_name">
             <div class="card-header" id="transaction-card">
               New Transaction
@@ -14,13 +112,7 @@
               <p class="card-text">Split with: {{recent.friend_names}}</p>
             </div>
           </div>
-      <!-- <div style="background-color:#4a148c; color:white; width:50%;" class="center" *ngIf="recent.group_name">
-          <p>{{recent.date}}</p>
-          <p>{{recent.total}}</p>
-          <p>Split With: {{recent.friend_names}}</p>
-          <p>{{recent.transaction_type}}</p>
-      </div> -->
-        <!-- Friends -->
+
         <div class="card" id="card" *ngIf="recent.firstName">
           <div class="card-header" id="roommate-card">
             New Roommate
@@ -30,13 +122,7 @@
             <h6 class="card-subtitle mb-2 text-muted">{{recent.date}}</h6>
           </div>
         </div>
-      <!-- <div style="background-color:#01579b; color:white;  width:50%;" class="center"  *ngIf="recent.firstName">
-          <p>{{recent.date}}</p>
-          <p>Added New Friend: {{recent.firstName}}</p>
-          <p>New Friend</p>
-      </div> -->
-
-      <!-- Receipts -->
+  
         <div class="card" id="card" *ngIf="recent.name">
           <div class="card-header" id="receipt-card">
             New Receipt
@@ -48,10 +134,6 @@
             <h6 class="card-subtitle mb-2 text-muted">{{recent.bill_date}}</h6>
           </div>
         </div>
-      <!-- <div style="background-color:#1b5e20; color:white; width:50%;" class="center"  *ngIf="recent.name">
-          <p>{{recent.date}}</p>
-          <p>Added New Receipt</p>
-          <img src="{{recent.link}}" alt="Receipt" class="img tn" >
-      </div> -->
-  </div><!-- *ngFor -->
-</div>
+
+  </div>
+</div> -->

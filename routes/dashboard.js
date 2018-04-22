@@ -19,61 +19,30 @@ const Receipt = require('../models/receipt');           // receipt      date ava
 const ObjectId = mongoose.Types.ObjectId;
 const Schema = mongoose.Schema;
 
+
+
+router.get('/dashboard', passport.authenticate('jwt', {session: false}), (req,res,next)=>{
+      const user_id = new ObjectId(req.user.id);
+  
+      const transactionCollection = Transaction.find({}).where('owner_id', user_id).limit(5);
+    
+      
+      transactionCollection.exec(function(err, tranList){
+          if(err){
+              console.log('Error tranList: ',err);
+          }
+          res.json({msg: 'Success!', user_id: user_id, tranList: tranList});
+      });
+});
+  
+
+  
+ 
+
+
 // =========================== Receipt list ================================================
 // Fetch the contact list from the database to the template
-router.get('/dashboard', passport.authenticate('jwt', {session: false}), (req,res,next)=>{
-    const user_id = new ObjectId(req.user.id);
-
-    const transactionCollection = Transaction.find({});
-    const receiptCollection = Receipt.find({});
-    const friendCollection = Contact.find({});
-
-
-    transactionCollection.where('user_id', user_id);
-    receiptCollection.where('user_id', user_id);
-    friendCollection.where('user_id', user_id);
-
-    transactionCollection.exec(function(err, tranList){
-        if(err){
-            console.log('Error tranList: ',err);
-        }
-        // console.log('=================================');
-        // console.log('******** TranList example: ', tranList);
-
-        receiptCollection.exec(tranList, function(error, receiptList){
-            if(error){
-                console.log('Error receiptList: ',error);
-            }
-            // console.log('=================================');
-            // console.log('******** TranList example: ', tranList);
-            // console.log('=================================');
-            // console.log('******** ReceiptList example: ', receiptList);
-
-
-            const array = [];
-            array.push(tranList);
-            array.push(receiptList);
-
-            friendCollection.exec(array, function(error, friendList){
-                if(error){
-                    console.log('Error friendList: ', error);
-                }
-                // console.log('=================================');
-                // console.log('***** Array: ',array);
-
-                res.json({msg: 'Success!',
-                user_id: user_id,
-                trans: tranList,
-                receipts: receiptList,
-                friends: friendList
-                });
-            });
-        });
-
-
-    });
-
-});
+// 
 
 router.get('/dashboard_mobile', passport.authenticate('jwt', {session: false}), (req, res, next) => {
   const user_id = new ObjectId(req.user.id);
@@ -113,3 +82,59 @@ router.get('/dashboard_mobile', passport.authenticate('jwt', {session: false}), 
 });
 
 module.exports = router;
+
+
+
+// router.get('/dashboard', passport.authenticate('jwt', {session: false}), (req,res,next)=>{
+  //     const user_id = new ObjectId(req.user.id);
+  
+  //     const transactionCollection = Transaction.find({});
+  //     const receiptCollection = Receipt.find({});
+  //     const friendCollection = Contact.find({});
+  
+  
+  //     transactionCollection.where('user_id', user_id);
+  //     receiptCollection.where('user_id', user_id);
+  //     friendCollection.where('user_id', user_id);
+  
+  //     transactionCollection.exec(function(err, tranList){
+  //         if(err){
+  //             console.log('Error tranList: ',err);
+  //         }
+  //         // console.log('=================================');
+  //         // console.log('******** TranList example: ', tranList);
+  
+  //         receiptCollection.exec(tranList, function(error, receiptList){
+  //             if(error){
+  //                 console.log('Error receiptList: ',error);
+  //             }
+  //             // console.log('=================================');
+  //             // console.log('******** TranList example: ', tranList);
+  //             // console.log('=================================');
+  //             // console.log('******** ReceiptList example: ', receiptList);
+  
+  
+  //             const array = [];
+  //             array.push(tranList);
+  //             array.push(receiptList);
+  
+  //             friendCollection.exec(array, function(error, friendList){
+  //                 if(error){
+  //                     console.log('Error friendList: ', error);
+  //                 }
+  //                 // console.log('=================================');
+  //                 // console.log('***** Array: ',array);
+  
+  //                 res.json({msg: 'Success!',
+  //                 user_id: user_id,
+  //                 trans: tranList,
+  //                 receipts: receiptList,
+  //                 friends: friendList
+  //                 });
+  //             });
+  //         });
+  
+  
+  //     });
+  
+  // });

@@ -1,16 +1,13 @@
 export class Transactions {
     public _id: string;
-    public group_name: string;
-    public company_name: string;
+    public bill_code: string;
+    public store_name: string;
     public receipt_link: string;
     public transaction_type : string;
-    public items: string;
-    public prices: string;
+    public tax: string;
+    public sub_total: string;
     public total: string;
-    public friends_ids: string;
-    public num_friends: string;
-    public each_pay: string;
-    public friend_names :  string ;
-    public user_id: string;
+    public transaction_list: any[]
+    public owner_id: string;
     
 }

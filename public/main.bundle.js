@@ -291,7 +291,7 @@ var AppModule = /** @class */ (function () {
 /***/ "./src/app/billcode/billcode.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".inline {\n    display: inline;\n    padding: 10px;\n}"
 
 /***/ }),
 
@@ -433,7 +433,7 @@ module.exports = ".tn {\n    margin:6px 6px;\n    border: 4px solid #eee;\n    -
 /***/ "./src/app/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"container-fluid\" id=\"content\">\n<!-- <div *ngIf=\"friends | async\"> -->\n  <h2>Recent Activities</h2>\n  <div *ngFor=\"let recent of hack(recentActivities)\">\n          <!-- Transactions -->\n          <div class=\"card\" id=\"card\" style=\"border-color:#E4C1E2;\" *ngIf=\"recent.group_name\">\n            <div class=\"card-header\" id=\"transaction-card\">\n              New Transaction\n            </div>\n            <div class=\"card-body\">\n              <h5 class=\"card-title\">{{recent.transaction_type}}</h5>\n              <h6 class=\"card-subtitle mb-2 text-muted\">{{recent.bill_date}}</h6>\n              <p class=\"card-text\">Split with: {{recent.friend_names}}</p>\n            </div>\n          </div>\n      <!-- <div style=\"background-color:#4a148c; color:white; width:50%;\" class=\"center\" *ngIf=\"recent.group_name\">\n          <p>{{recent.date}}</p>\n          <p>{{recent.total}}</p>\n          <p>Split With: {{recent.friend_names}}</p>\n          <p>{{recent.transaction_type}}</p>\n      </div> -->\n        <!-- Friends -->\n        <div class=\"card\" id=\"card\" *ngIf=\"recent.firstName\">\n          <div class=\"card-header\" id=\"roommate-card\">\n            New Roommate\n          </div>\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">{{recent.firstName}}</h5>\n            <h6 class=\"card-subtitle mb-2 text-muted\">{{recent.date}}</h6>\n          </div>\n        </div>\n      <!-- <div style=\"background-color:#01579b; color:white;  width:50%;\" class=\"center\"  *ngIf=\"recent.firstName\">\n          <p>{{recent.date}}</p>\n          <p>Added New Friend: {{recent.firstName}}</p>\n          <p>New Friend</p>\n      </div> -->\n\n      <!-- Receipts -->\n        <div class=\"card\" id=\"card\" *ngIf=\"recent.name\">\n          <div class=\"card-header\" id=\"receipt-card\">\n            New Receipt\n          </div>\n          <div id=\"card-img\">\n            <img class=\"card-img-top\" src=\"{{recent.link}}\" alt=\"Receipt\">\n          </div>\n          <div class=\"card-body\">\n            <h6 class=\"card-subtitle mb-2 text-muted\">{{recent.bill_date}}</h6>\n          </div>\n        </div>\n      <!-- <div style=\"background-color:#1b5e20; color:white; width:50%;\" class=\"center\"  *ngIf=\"recent.name\">\n          <p>{{recent.date}}</p>\n          <p>Added New Receipt</p>\n          <img src=\"{{recent.link}}\" alt=\"Receipt\" class=\"img tn\" >\n      </div> -->\n  </div><!-- *ngFor -->\n</div>\n"
+module.exports = "<div class=\"container-fluid\" id=\"content\">\n  <h2>Recent Transactions</h2>\n\n  <!-- Header -->\n  <div class=\"card\" id=\"transaction_card\" *ngFor=\"let tran of hack(transactions); let i = index\" style=\"margin-bottom: 5%;\">\n  <div class=\"card-header\">\n    <a href=\"{{tran.receipt_link}}\" style=\"color: black\"> {{tran.store_name}}: </a>\n    {{tran.bill_code}}\n  </div>\n\n  <!-- Body -->\n  <div class=\"card-body\">\n\n    <!-- All users and their bill -->\n    <div class=\"container\" style=\"margin-bottom: 5%;\">\n                   \n            <ul class=\"list-group\" *ngFor=\"let element of hack(tran.transaction_list)\">\n                <header class=\"card-header\" \n                style=\"background-color: rgb(0, 140, 255);  \n                width: 100%; text-align: center;\" \n                >\n                This bill is for: {{element.name}}\n                </header>\n              <!-- <li class=\"list-group-item\"><b>User: </b>: {{element.name}}</li> -->\n              <li class=\"list-group-item\"><b>Items bought </b>: {{element.items}}</li>\n              <li class=\"list-group-item\"><b>Original Prices </b>: {{element.og_prices}}</li>\n              <li class=\"list-group-item\"><b>Split Prices </b>: {{element.split_prices}}</li>\n      \n            </ul>\n          \n      \n        </div>\n\n  </div>\n\n  <!-- Foooter  -->\n  <div class=\"card-footer\">\n    {{bill_date[i]}}\n  </div>\n</div>\n\n</div>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<!-- \n<div class=\"container-fluid\" id=\"content\">\n\n  <h2>Recent Activities</h2>\n  <div *ngFor=\"let recent of hack(recentActivities)\">\n          \n          <div class=\"card\" id=\"card\" style=\"border-color:#E4C1E2;\" *ngIf=\"recent.group_name\">\n            <div class=\"card-header\" id=\"transaction-card\">\n              New Transaction\n            </div>\n            <div class=\"card-body\">\n              <h5 class=\"card-title\">{{recent.transaction_type}}</h5>\n              <h6 class=\"card-subtitle mb-2 text-muted\">{{recent.bill_date}}</h6>\n              <p class=\"card-text\">Split with: {{recent.friend_names}}</p>\n            </div>\n          </div>\n\n        <div class=\"card\" id=\"card\" *ngIf=\"recent.firstName\">\n          <div class=\"card-header\" id=\"roommate-card\">\n            New Roommate\n          </div>\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">{{recent.firstName}}</h5>\n            <h6 class=\"card-subtitle mb-2 text-muted\">{{recent.date}}</h6>\n          </div>\n        </div>\n  \n        <div class=\"card\" id=\"card\" *ngIf=\"recent.name\">\n          <div class=\"card-header\" id=\"receipt-card\">\n            New Receipt\n          </div>\n          <div id=\"card-img\">\n            <img class=\"card-img-top\" src=\"{{recent.link}}\" alt=\"Receipt\">\n          </div>\n          <div class=\"card-body\">\n            <h6 class=\"card-subtitle mb-2 text-muted\">{{recent.bill_date}}</h6>\n          </div>\n        </div>\n\n  </div>\n</div> -->\n"
 
 /***/ }),
 
@@ -464,29 +464,16 @@ var DashboardComponent = /** @class */ (function () {
         this.debug = false;
         this.recentActivities = [];
         this.arrived = false;
+        this.bill_date = [];
     }
     DashboardComponent.prototype.ngOnInit = function () {
         this.getTheDashboard();
     };
     DashboardComponent.prototype.ngOnChanges = function () {
-        // this.getTheDashboard();
-        // this.click();
     };
     // ========================== Helper functions ===========================
-    DashboardComponent.prototype.compareDate = function (a, b) {
-        return (Date.parse(a) > Date.parse(b)) ? a : b;
-    };
     DashboardComponent.prototype.hack = function (list) {
         return list;
-    };
-    DashboardComponent.prototype.sortDateArray = function (array) {
-        var i = 0;
-        for (i = 0; i < array.length; i++)
-            array[i] = Date.parse(array[i]);
-        array = array.sort().reverse();
-        for (i = 0; i < array.length; i++)
-            array[i] = new Date(array[i]).toDateString();
-        return array;
     };
     // =========================== HTTP GET request ==========================
     DashboardComponent.prototype.getTheDashboard = function () {
@@ -494,92 +481,19 @@ var DashboardComponent = /** @class */ (function () {
         // Make a call to the services for a HTTP GET request to the backend in routes/dashboard
         this.authService.getDashboard().subscribe(function (data) {
             // Received the data back, get the right list of json objects to the right variable:
-            _this.transactions = data['trans'];
-            _this.receipts = data['receipts'];
-            _this.friends = data['friends'];
-            // Reverse the list so the most recent days first:
-            _this.transactions = _this.transactions.reverse();
-            _this.receipts = _this.receipts.reverse();
-            _this.friends = _this.friends.reverse();
-            _this.clickForData();
+            _this.transactions = data['tranList'].reverse();
+            _this.getTheDate(_this.transactions);
         }); // End of getDashboard()
     };
-    DashboardComponent.prototype.clickForData = function () {
-        var mostRecentDate = "";
-        var maxLen = 0, i = 0, x = 0, y = 0, z = 0;
-        var arrayOfDate = [];
-        var tempDate = "";
-        var recent = [];
-        // This part will get the most recent date out of all three list of json objects
-        if (this.debug) {
-            console.log('mostRecentDate friends: ', this.friends[0].date);
-            console.log('mostRecentDate transactions: ', this.transactions[0].bill_date);
-            console.log('mostRecentDate receipts: ', this.receipts[0].date);
-        }
-        mostRecentDate = this.compareDate(this.friends[0].date, this.transactions[0].bill_date);
-        mostRecentDate = this.compareDate(mostRecentDate, this.receipts[0].date);
-        if (this.debug)
-            console.log('mostRecentDate: ', mostRecentDate);
-        // This part will get the max len
-        maxLen = Math.max(this.friends.length, Math.max(this.transactions.length, this.receipts.length));
-        if (this.debug)
-            console.log('maxLen: ', maxLen);
-        // This part will get all the date added from all the lists
-        arrayOfDate.push(mostRecentDate);
-        // tempDate = mostRecentDate;
-        if (this.debug)
-            console.log('arrayOfDate: ', arrayOfDate);
-        for (i = 0; i < maxLen; i++) {
-            // If the date is already there, skip
-            if ((i < this.transactions.length) && (tempDate === this.transactions[i].bill_date)) {
-                continue;
-            }
-            if ((i < this.friends.length) && (tempDate === this.friends[i].date)) {
-                continue;
-            }
-            if ((i < this.receipts.length) && (tempDate === this.receipts[i].date)) {
-                continue;
-            }
-            // If the date is not in the array, change the tempDate and add it to the array
-            if ((i < this.transactions.length) && (tempDate !== this.transactions[i].bill_date) && (!arrayOfDate.includes(this.transactions[i].bill_date))) {
-                tempDate = this.transactions[i].bill_date;
-                arrayOfDate.push(tempDate);
-            }
-            if ((i < this.friends.length) && (tempDate !== this.friends[i].date) && (!arrayOfDate.includes(this.friends[i].date))) {
-                tempDate = this.friends[i].date;
-                arrayOfDate.push(tempDate);
-            }
-            if ((i < this.receipts.length) && (tempDate !== this.receipts[i].date) && (!arrayOfDate.includes(this.receipts[i].date))) {
-                tempDate = this.receipts[i].date;
-                arrayOfDate.push(tempDate);
-            }
-        } // End of for loop
-        // Array of Date all sorted from most recent date.
-        arrayOfDate = this.sortDateArray(arrayOfDate);
-        if (this.debug)
-            console.log('arrayOfDate all sorted: ', arrayOfDate);
-        // Loop through all the list of json Objects to add the objects sort by the date:
-        for (i = 0; i <= arrayOfDate.length; i++) {
-            for (x = 0; x < this.transactions.length; x++) {
-                if (this.transactions[x].bill_date === arrayOfDate[i]) {
-                    recent.push(this.transactions[x]);
-                }
-            }
-            for (y = 0; y < this.receipts.length; y++) {
-                if (this.receipts[y].date === arrayOfDate[i]) {
-                    recent.push(this.receipts[y]);
-                }
-            }
-            for (z = 0; z < this.friends.length; z++) {
-                if (this.friends[z].date === arrayOfDate[i]) {
-                    recent.push(this.friends[z]);
-                }
-            }
-        } // End of the big for loop
-        if (this.debug)
-            console.log("Recent array: ", recent);
-        this.recentActivities = recent;
-    }; // End of the clickForData()
+    DashboardComponent.prototype.getTheDate = function (list) {
+        var _this = this;
+        list.forEach(function (element) {
+            var date = new Date(element.bill_date).toDateString();
+            console.log(date);
+            _this.bill_date.push(date);
+            console.log(_this.bill_date.toString());
+        });
+    };
     DashboardComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-dashboard',
@@ -592,6 +506,144 @@ var DashboardComponent = /** @class */ (function () {
     return DashboardComponent;
 }());
 
+// =============================== OLD DASHBOARD VERSION ====================================================
+// import { Component, OnInit, OnChanges } from '@angular/core';
+// import { AuthService }  from '../services/auth.service';
+// import { Router, Route } from '@angular/router';
+// import * as _ from 'lodash'; // to help loop over array
+// import { AsyncPipe } from '@angular/common';
+// import { Observable } from 'rxjs/Observable';
+// @Component({
+//   selector: 'app-dashboard',
+//   templateUrl: './dashboard.component.html',
+//   styleUrls: ['./dashboard.component.css']
+// })
+// export class DashboardComponent implements OnInit, OnChanges {
+//   debug: boolean = false;
+//   transactions : any[];
+//   receipts : any[];
+//   friends : any[];
+//   recentActivities = [];
+//   arrived: boolean = false;
+//   // Declaring the Promise, yes! Promise!
+//   filtersLoaded: Promise<boolean>;
+//   constructor(private authService: AuthService,
+//               private router: Router) { }
+//   ngOnInit() {
+//     this.getTheDashboard();
+//   }
+//   ngOnChanges(){
+//     // this.getTheDashboard();
+//     // this.click();
+//   }
+//   // ========================== Helper functions ===========================
+//   compareDate(a, b){
+//     return (Date.parse(a) > Date.parse(b)) ? a : b;
+//   }
+//   hack(list){
+//     return list;
+//   }
+//   sortDateArray(array: any[]){
+//     var i = 0;
+//     for(i = 0; i < array.length; i++)
+//       array[i] = Date.parse(array[i]);
+//     array = array.sort().reverse();
+//     for(i = 0; i < array.length; i++)
+//       array[i] = new Date(array[i]).toDateString();
+//     return array;
+//   }
+//   // =========================== HTTP GET request ==========================
+//   getTheDashboard(){
+//       // Make a call to the services for a HTTP GET request to the backend in routes/dashboard
+//       this.authService.getDashboard().subscribe(data => {
+//       // Received the data back, get the right list of json objects to the right variable:
+//       this.transactions = data['trans'];
+//       this.receipts = data['receipts'];
+//       this.friends = data['friends'];
+//           // Reverse the list so the most recent days first:
+//       this.transactions = this.transactions.reverse();
+//       this.receipts = this.receipts.reverse();
+//       this.friends = this.friends.reverse();
+//       this.clickForData();
+//     });// End of getDashboard()
+//   }
+//   clickForData(){
+//     var mostRecentDate : string = "";
+//     var maxLen = 0, i = 0, x = 0, y = 0, z = 0;
+//     var arrayOfDate = [];
+//     var tempDate : string = "";
+//     var recent = [];
+//     // This part will get the most recent date out of all three list of json objects
+//     if(this.debug) {
+//       console.log('mostRecentDate friends: ',this.friends[0].date);
+//       console.log('mostRecentDate transactions: ',this.transactions[0].bill_date);
+//       console.log('mostRecentDate receipts: ',this.receipts[0].date);
+//     }
+//     mostRecentDate = this.compareDate(this.friends[0].date , this.transactions[0].bill_date);
+//     mostRecentDate = this.compareDate(mostRecentDate , this.receipts[0].date);
+//     if(this.debug)
+//       console.log('mostRecentDate: ',mostRecentDate);
+//     // This part will get the max len
+//     maxLen = Math.max( this.friends.length , Math.max( this.transactions.length , this.receipts.length));
+//     if(this.debug)
+//       console.log('maxLen: ', maxLen);
+//     // This part will get all the date added from all the lists
+//     arrayOfDate.push(mostRecentDate);
+//     // tempDate = mostRecentDate;
+//     if(this.debug)
+//       console.log('arrayOfDate: ', arrayOfDate);
+//     for(i = 0; i < maxLen; i++){
+//       // If the date is already there, skip
+//       if( (i < this.transactions.length) && (tempDate === this.transactions[i].bill_date) ){
+//         continue;
+//       }
+//       if( (i < this.friends.length) && (tempDate === this.friends[i].date) ){
+//         continue;
+//       }
+//       if( (i < this.receipts.length) && (tempDate === this.receipts[i].date) ){
+//         continue;
+//       }
+//       // If the date is not in the array, change the tempDate and add it to the array
+//       if(  (i < this.transactions.length) && (tempDate !== this.transactions[i].bill_date) && (!arrayOfDate.includes(this.transactions[i].bill_date))  ){
+//         tempDate = this.transactions[i].bill_date;
+//         arrayOfDate.push(tempDate);
+//       }
+//       if(  (i < this.friends.length) && (tempDate !== this.friends[i].date) && (!arrayOfDate.includes(this.friends[i].date))  ){
+//         tempDate = this.friends[i].date;
+//         arrayOfDate.push(tempDate);
+//       }
+//       if(  (i < this.receipts.length) && (tempDate !== this.receipts[i].date) && (!arrayOfDate.includes(this.receipts[i].date))  ){
+//         tempDate = this.receipts[i].date;
+//         arrayOfDate.push(tempDate);
+//       }
+//     } // End of for loop
+//     // Array of Date all sorted from most recent date.
+//     arrayOfDate = this.sortDateArray(arrayOfDate);
+//     if(this.debug)
+//       console.log('arrayOfDate all sorted: ', arrayOfDate);
+//     // Loop through all the list of json Objects to add the objects sort by the date:
+//     for(i=0; i <= arrayOfDate.length; i++){
+//       for(x = 0; x < this.transactions.length; x++){
+//         if(this.transactions[x].bill_date === arrayOfDate[i]){
+//           recent.push(this.transactions[x]);
+//         }
+//       }
+//       for(y = 0; y < this.receipts.length; y++){
+//         if(this.receipts[y].date === arrayOfDate[i]){
+//           recent.push(this.receipts[y]);
+//         }
+//       }
+//       for(z = 0; z < this.friends.length; z++){
+//         if(this.friends[z].date === arrayOfDate[i]){
+//           recent.push(this.friends[z]);
+//         }
+//       }
+//     }// End of the big for loop
+//     if(this.debug)
+//       console.log("Recent array: ", recent);
+//     this.recentActivities = recent;
+//   }// End of the clickForData()
+// }
 
 
 /***/ }),
@@ -2091,7 +2143,7 @@ module.exports = ""
 /***/ "./src/app/sidebar/sidebar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Sidebar -->\n\n\n<!-- <body> -->\n\n<div *ngIf=\"authService.isLoggedIn()\"\nclass=\"w3-sidebar w3-bar-block w3-xxlarge w3-animate-left\"\nstyle=\"width:15%; height:100%; min-width:70px;\" id=\"sidebar\">\n\n<!-- Dashboard -->\n  <a ui-sref=\"dashboard\"\n  [routerLink]=\"['/user/dashboard']\"\n  class=\"w3-bar-item w3-button w3-hover-white\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n\n  >\n  <img style=\"max-height: 40px; padding-left:5px;\" src=\"..\\..\\assets\\M.png\">\n  <p id=\"sidebar_text\">Dashboard</p></a>\n  <!-- End Dashboard -->\n\n  <!-- Roommates -->\n  <a ui-sref=\"friends\"\n  [routerLink]=\"['/user/friends']\"\n  class=\"w3-bar-item w3-button w3-hover-white\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n\n  >\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\friends.png\">\n  <p id=\"sidebar_text\">Roommates</p></a>\n  <!-- End Friends -->\n\n  <!-- Transactions -->\n  <a ui-sref=\"transactions\"\n  [routerLink]=\"['/user/transactions']\"\n  class=\"w3-bar-item w3-button w3-hover-white\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n\n  >\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\transactions.png\">\n  <p id=\"sidebar_text\">Transactions</p></a>\n  <!-- End Transactions -->\n\n  <!-- Receipts -->\n  <a ui-sref=\"receipts\"\n  [routerLink]=\"['/user/receipts']\"\n  class=\"w3-bar-item w3-button w3-hover-white\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n\n  >\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\receipts.png\">\n  <p id=\"sidebar_text\">Receipts</p></a>\n  <!-- End Receipts -->\n\n  <!-- Settings -->\n  <a ui-sref=\"settings\"\n  [routerLink]=\"['/user/setting']\"\n  class=\"w3-bar-item w3-button w3-hover-white\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n\n  >\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\settings.png\">\n  <p id=\"sidebar_text\">Settings</p></a>\n  <!-- End Settings -->\n\n  <!-- Goku Vs Jiren (Mastered Ultra Instinct) -->\n  <!-- [routerLink]=\"['/user/download']\" -->\n  <!-- Download -->\n  <a ui-sref=\"download\"\n  [routerLink]=\"['/user/download']\"\n  class=\"w3-bar-item w3-button w3-hover-white\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n\n  >\n  <!-- style=\"height: 80px; margin-top:26.94vh; border-bottom: 1px solid white;\" -->\n\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\download.png\">\n  <p id=\"sidebar_text\">Download</p></a>\n  <!-- End Download -->\n\n</div>\n\n\n<!-- </body> -->\n\n<!-- End sidebar -->\n"
+module.exports = "<!-- Sidebar -->\n\n\n<!-- <body> -->\n\n<div *ngIf=\"authService.isLoggedIn()\"\nclass=\"w3-sidebar w3-bar-block w3-xxlarge w3-animate-left\"\nstyle=\"width:15%; height:100%; min-width:70px;\" id=\"sidebar\">\n\n<!-- Dashboard -->\n  <a ui-sref=\"dashboard\"\n  [routerLink]=\"['/user/dashboard']\"\n  class=\"w3-bar-item w3-button w3-hover-white\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n\n  >\n  <img style=\"max-height: 40px; padding-left:5px;\" src=\"..\\..\\assets\\M.png\">\n  <p id=\"sidebar_text\">Dashboard</p></a>\n  <!-- End Dashboard -->\n\n  <!-- Roommates -->\n  <a ui-sref=\"friends\"\n  [routerLink]=\"['/user/friends']\"\n  class=\"w3-bar-item w3-button w3-hover-white\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n\n  >\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\friends.png\">\n  <p id=\"sidebar_text\">Roommates</p></a>\n  <!-- End Friends -->\n\n  <!-- Transactions -->\n  <a ui-sref=\"transactions\"\n  [routerLink]=\"['/user/transactions']\"\n  class=\"w3-bar-item w3-button w3-hover-white\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n\n  >\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\transactions.png\">\n  <p id=\"sidebar_text\">Transactions</p></a>\n  <!-- End Transactions -->\n\n  <!-- Receipts -->\n  <a ui-sref=\"receipts\"\n  [routerLink]=\"['/user/receipts']\"\n  class=\"w3-bar-item w3-button w3-hover-white\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n\n  >\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\receipts.png\">\n  <p id=\"sidebar_text\">Receipts</p></a>\n  <!-- End Receipts -->\n\n  <!-- Settings -->\n  <a ui-sref=\"settings\"\n  [routerLink]=\"['/user/setting']\"\n  class=\"w3-bar-item w3-button w3-hover-white\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n\n  >\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\settings.png\">\n  <p id=\"sidebar_text\">Settings</p></a>\n  <!-- End Settings -->\n\n  <!-- Goku Vs Jiren (Mastered Ultra Instinct) -->\n  <!-- [routerLink]=\"['/user/download']\" -->\n  <!-- Download -->\n  <a ui-sref=\"download\"\n\n  href=\"https://play.google.com/store/search?q=rumi&c=apps\"\n  class=\"w3-bar-item w3-button w3-hover-white\"\n  [routerLinkActive]=\"['active']\"\n  [routerLinkActiveOptions] =\"{exact:true}\"\n\n  >\n  <!-- style=\"height: 80px; margin-top:26.94vh; border-bottom: 1px solid white;\" -->\n  <img style=\"max-height: 40px;\" src=\"..\\..\\assets\\download.png\">\n  <p id=\"sidebar_text\">Download</p></a>\n  <!-- End Download -->\n\n</div>\n\n\n<!-- </body> -->\n\n<!-- End sidebar -->\n"
 
 /***/ }),
 
@@ -2158,7 +2210,7 @@ module.exports = "#transaction_image {\n  width:200px;\n  max-height: 400px;\n  
 /***/ "./src/app/transactions/transactions.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"container-fluid\" id=\"content\">\n  <h2>Transactions</h2>\n\n  <div class=\"card\" id=\"transaction_card\" *ngFor=\"let tran of hack(transactionsList); let friend of hack(testing); let i = index\">\n  <div class=\"card-header\">\n    {{tran.store_name}}\n  </div>\n  <div class=\"card-body\">\n    <!-- <h5 class=\"card-title\">{{tran.transaction_type}}</h5> -->\n    <div class=\"float-left\" id=\"transaction_image\">\n      <img src=\"{{tran.receipt_link}}\" width=\"200px\">\n    </div>\n\n    <div class=\"card-text float-right\">\n      <div id=\"user_transaction\" *ngFor=\"let subTran of tran.transaction_list\">\n        User: {{subTran.name}}\n        <br>Items: {{subTran.items}}\n        <br>Split prices: {{subTran.split_prices}}\n      </div>\n      <!-- <br>Roommates: {{tran.roommates}} -->\n    </div>\n  </div>\n\n  <div class=\"card-footer\">\n    {{tran.bill_date}}\n  </div>\n</div>\n\n  <!-- <table class=\"table table-hover\">\n    <thead>\n      <tr>\n        <th><h6><strong>Number</strong></h6></th>\n        <th><h6><strong>Receipt Name</strong></h6></th>\n        <th><h6><strong>Receipt Link</strong></h6></th>\n        <th><h6><strong>Company Name</strong></h6></th>\n        <th><h6><strong>Type</strong></h6></th>\n        <th><h6><strong>Items</strong></h6></th>\n        <th><h6><strong>Prices</strong></h6></th>\n        <th><h6><strong>Total</strong></h6></th>\n        <th><h6><strong>Roommates</strong></h6></th>\n        <th><h6><strong>Friend's IDs</strong></h6></th>\n        <th><h6><strong>Numfriends</strong></h6></th>\n        <th><h6><strong>Each Pay</strong></h6></th>\n        <th><h6><strong>Date</strong></h6></th>\n\n        <th><h6><strong>User_ID</strong></h6></th>\n      </tr>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let tran of hack(transactionsList); let friend of hack(testing);  let i = index\">\n          <td>{{i+1}}</td>\n          <td><a href=\"{{tran.receipt_link}}\">{{tran.group_name}}</a></td>\n          <td><a href=\"{{tran.receipt_link}}\">{{tran.receipt_link}}</a></td>\n          <td>{{tran.company_name}}</td>\n          <td>{{tran.transaction_type}}</td>\n          <td>{{tran.items}}</td>\n          <td>${{tran.prices}}</td>\n          <td>${{tran.total}}</td>\n          <td>{{tran.friend_names}}</td>\n          <td>{{tran.friends_ids}}</td>\n          <td>{{tran.num_friends}}</td>\n          <td>${{tran.each_pay}}</td>\n          <td>{{tran.date}}</td>\n          <td>{{tran.user_id}}</td>\n      </tr>\n    </tbody>\n  </table> -->\n</div>\n"
+module.exports = "\n<div class=\"container-fluid\" id=\"content\">\n  <h2>Transactions</h2>\n\n  <!-- Header -->\n  <div class=\"card\" id=\"transaction_card\" *ngFor=\"let tran of hack(transactionsList); let friend of hack(testing); let i = index\">\n  <div class=\"card-header\">\n    <a href=\"{{tran.receipt_link}}\" style=\"color: black\"> {{tran.store_name}}: </a>\n    {{tran.bill_code}}\n  </div>\n\n  <!-- Body -->\n  <div class=\"card-body\">\n\n    <!-- Picture of the receipt -->\n    <!-- <h5 class=\"card-title\">{{tran.transaction_type}}</h5> -->\n    <!-- <div class=\"float-left\" id=\"transaction_image\">\n      <img src=\"{{tran.receipt_link}}\" width=\"200px\">\n    </div> -->\n\n    <!-- All users and their bill -->\n    <div class=\"container\" style=\"margin-bottom: 5%;\">\n                   \n            <ul class=\"list-group\" *ngFor=\"let element of hack(tran.transaction_list)\">\n                <header class=\"card-header\" \n                style=\"background-color: rgb(0, 140, 255);  \n                width: 100%; text-align: center;\" \n                >\n                This bill is for: {{element.name}}\n                </header>\n              <!-- <li class=\"list-group-item\"><b>User: </b>: {{element.name}}</li> -->\n              <li class=\"list-group-item\"><b>Items bought </b>: {{element.items}}</li>\n              <li class=\"list-group-item\"><b>Original Prices </b>: {{element.og_prices}}</li>\n              <li class=\"list-group-item\"><b>Split Prices </b>: {{element.split_prices}}</li>\n      \n            </ul>\n          \n      \n        </div>\n\n    <!-- <div class=\"card-text float-center\" >\n      <div style=\"margin-left: 20px;\" id=\"user_transaction\" *ngFor=\"let subTran of tran.transaction_list\">\n        User: {{subTran.name}}\n        <br>Items: {{subTran.items}}\n        <br>Split prices: {{subTran.split_prices}}\n      </div>\n    </div> -->\n\n  </div>\n\n  <!-- Foooter  -->\n  <div class=\"card-footer\">\n    {{bill_date[i]}}\n  </div>\n</div>\n\n  <!-- <table class=\"table table-hover\">\n    <thead>\n      <tr>\n        <th><h6><strong>Number</strong></h6></th>\n        <th><h6><strong>Receipt Name</strong></h6></th>\n        <th><h6><strong>Receipt Link</strong></h6></th>\n        <th><h6><strong>Company Name</strong></h6></th>\n        <th><h6><strong>Type</strong></h6></th>\n        <th><h6><strong>Items</strong></h6></th>\n        <th><h6><strong>Prices</strong></h6></th>\n        <th><h6><strong>Total</strong></h6></th>\n        <th><h6><strong>Roommates</strong></h6></th>\n        <th><h6><strong>Friend's IDs</strong></h6></th>\n        <th><h6><strong>Numfriends</strong></h6></th>\n        <th><h6><strong>Each Pay</strong></h6></th>\n        <th><h6><strong>Date</strong></h6></th>\n\n        <th><h6><strong>User_ID</strong></h6></th>\n      </tr>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let tran of hack(transactionsList); let friend of hack(testing);  let i = index\">\n          <td>{{i+1}}</td>\n          <td><a href=\"{{tran.receipt_link}}\">{{tran.group_name}}</a></td>\n          <td><a href=\"{{tran.receipt_link}}\">{{tran.receipt_link}}</a></td>\n          <td>{{tran.company_name}}</td>\n          <td>{{tran.transaction_type}}</td>\n          <td>{{tran.items}}</td>\n          <td>${{tran.prices}}</td>\n          <td>${{tran.total}}</td>\n          <td>{{tran.friend_names}}</td>\n          <td>{{tran.friends_ids}}</td>\n          <td>{{tran.num_friends}}</td>\n          <td>${{tran.each_pay}}</td>\n          <td>{{tran.date}}</td>\n          <td>{{tran.user_id}}</td>\n      </tr>\n    </tbody>\n  </table> -->\n</div>\n"
 
 /***/ }),
 
@@ -2183,6 +2235,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var TransactionsComponent = /** @class */ (function () {
     function TransactionsComponent(authService) {
         this.authService = authService;
+        this.bill_date = [];
     }
     TransactionsComponent.prototype.ngOnInit = function () {
         this.getAllTransactions();
@@ -2192,7 +2245,8 @@ var TransactionsComponent = /** @class */ (function () {
         this.authService.getTransactions().subscribe(function (transactions) {
             _this.user = transactions['user'];
             _this.userID = transactions['user']._id;
-            _this.transactionsList = transactions['transactions'];
+            _this.transactionsList = transactions['transactions'].reverse();
+            _this.getTheDate(_this.transactionsList);
             console.log('Sucess! got the transactions list from the backend.');
         }, function (err) {
             console.log('Failed to get the transactions list! err: ' + err);
@@ -2214,6 +2268,32 @@ var TransactionsComponent = /** @class */ (function () {
     };
     TransactionsComponent.prototype.hack = function (list) {
         return list;
+    };
+    TransactionsComponent.prototype.getTheDate = function (list) {
+        var _this = this;
+        list.forEach(function (element) {
+            var date = new Date(element.bill_date).toDateString();
+            console.log(date);
+            _this.bill_date.push(date);
+            console.log(_this.bill_date.toString());
+        });
+        // getDataArrayList(list)
+        // {
+        //   list.forEach(element => {
+        //     this.bill_date = new Date(element.bill_date).toDateString();
+        //     for(let object in element.transaction_list)
+        //     {
+        //       console.log(element.transaction_list[object].name);
+        //       if(this.inputName == element.transaction_list[object].name)
+        //       {
+        //         this.name = element.transaction_list[object].name;
+        //         this.items = element.transaction_list[object].items;
+        //         this.og_prices = element.transaction_list[object].og_prices;
+        //         this.split_prices = element.transaction_list[object].split_prices;
+        //       }
+        //     }
+        //   });
+        // }
     };
     TransactionsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({

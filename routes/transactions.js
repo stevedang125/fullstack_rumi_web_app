@@ -25,17 +25,45 @@ router.get('/transactions', passport.authenticate('jwt', {session: false}), (req
     var success = true;
 
     // Find all transactions that this user made or took part in
-    Transaction.find({
+    // Transaction.find({
+    //   $or : [
+    //     { owner_id : user_id },
+    //     { roommates : user_id }
+    //   ]}, function(err, docs) {
+    //     if(err) {
+    //       success = false;
+    //     }
+        
+    //     res.json({ success : success, user : req.user, transactions : docs });
+    // });
+
+    // var trans = Transaction.find({
+
+    //   $or : [
+    //     { owner_id : user_id },
+    //     { roommates : user_id }
+    //   ]
+
+    // }).sort('-bill_date');
+
+
+    var trans = Transaction.find({
+
       $or : [
         { owner_id : user_id },
         { roommates : user_id }
-      ]}, function(err, docs) {
-        if(err) {
-          success = false;
-        }
+      ]
 
-        res.json({ success : success, user : req.user, transactions : docs });
     });
+
+    trans.exec(function(err, transactions){
+        if(err)
+          success = false;
+
+          res.json({ success : success, user : req.user, transactions : transactions });
+    });
+
+
 });
 
 router.get('/transactions/recent', passport.authenticate('jwt', {session: false}), (req,res,next) => {
@@ -52,6 +80,7 @@ router.get('/transactions/recent', passport.authenticate('jwt', {session: false}
       if(err) {
         success = false;
       }
+
 
       res.status(200).json({ success : true, user : req.user, transactions : transactions });
     });
