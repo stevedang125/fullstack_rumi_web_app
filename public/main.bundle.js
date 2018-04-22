@@ -27,7 +27,7 @@ module.exports = ""
 /***/ "./src/app/about/about.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\" style=\"position: relative; padding-top: 80px;\">\n  <!-- Introduction Row -->\n  <h1>About Us\n    <small>It's Nice to Meet You!</small>\n  </h1>\n  <p>Rumi is an app that's all about convenience. It blah blah blah...</p>\n\n  <!-- Team Members Row -->\n  <div class=\"row\">\n    <div class=\"col-lg-12\">\n      <h2 class=\"my-4\">Rumi Team</h2>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"http://placehold.it/200x200\" alt=\"\">\n      <h3>Dita Dewindita\n        <small>Job Title</small>\n      </h3>\n      <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"http://placehold.it/200x200\" alt=\"\">\n      <h3>Steve Dang\n        <small>Job Title</small>\n      </h3>\n      <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"http://placehold.it/200x200\" alt=\"\">\n      <h3>Abe Isleem\n        <small>Job Title</small>\n      </h3>\n      <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"http://placehold.it/200x200\" alt=\"\">\n      <h3>Alana Arjune\n        <small>Job Title</small>\n      </h3>\n      <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"http://placehold.it/200x200\" alt=\"\">\n      <h3>John Albury\n        <small>Job Title</small>\n      </h3>\n      <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"http://placehold.it/200x200\" alt=\"\">\n      <h3>Subhash Naidu\n        <small>Job Title</small>\n      </h3>\n      <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"http://placehold.it/200x200\" alt=\"\">\n      <h3>Joshua Sylvestre\n        <small>Job Title</small>\n      </h3>\n      <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"container-fluid\" style=\"position: relative; padding-top: 80px;\">\n  <!-- Introduction Row -->\n  <h1>About Us\n    <small>It's Nice to Meet You!</small>\n  </h1>\n  <p>Rumi is an app that's all about convenience. It blah blah blah...</p>\n\n  <!-- Team Members Row -->\n  <div class=\"row\">\n    <div class=\"col-lg-12\">\n      <h2 class=\"my-4\">Rumi Team</h2>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"http://placehold.it/200x200\" alt=\"\">\n      <h3>Dita Dewindita\n        <small>Job Title</small>\n      </h3>\n      <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"../../assets/20180421_013804.jpg\" alt=\"Steve's Pic\">\n      <h3>Steve Dang</h3>\n      <h4>Job Title: Small Fry</h4>\n      \n      <p>n.[proh-gram-er] an organism that turns caffeine and pizza into software! Nailed it!</p>\n      <p>Full stack website and Mobile App.</p>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"http://placehold.it/200x200\" alt=\"\">\n      <h3>Abe Isleem\n        <small>Job Title</small>\n      </h3>\n      <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"http://placehold.it/200x200\" alt=\"\">\n      <h3>Alana Arjune\n        <small>Job Title</small>\n      </h3>\n      <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"http://placehold.it/200x200\" alt=\"\">\n      <h3>John Albury\n        <small>Job Title</small>\n      </h3>\n      <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"http://placehold.it/200x200\" alt=\"\">\n      <h3>Subhash Naidu\n        <small>Job Title</small>\n      </h3>\n      <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"http://placehold.it/200x200\" alt=\"\">\n      <h3>Joshua Sylvestre\n        <small>Job Title</small>\n      </h3>\n      <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -179,6 +179,7 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__services_guard_service__ = __webpack_require__("./src/app/services/guard.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__services_loggedinguard_service__ = __webpack_require__("./src/app/services/loggedinguard.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__services_upload_service__ = __webpack_require__("./src/app/services/upload.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__billcode_billcode_component__ = __webpack_require__("./src/app/billcode/billcode.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -221,9 +222,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 // all the routes:
 var appRoutes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_13__home_home_component__["a" /* HomeComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_28__services_loggedinguard_service__["a" /* LoggedinguardService */]] },
+    { path: 'billcode', component: __WEBPACK_IMPORTED_MODULE_30__billcode_billcode_component__["a" /* BillcodeComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_28__services_loggedinguard_service__["a" /* LoggedinguardService */]] },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_14__register_register_component__["a" /* RegisterComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_28__services_loggedinguard_service__["a" /* LoggedinguardService */]] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_26__login_login_component__["a" /* LoginComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_28__services_loggedinguard_service__["a" /* LoggedinguardService */]] },
     { path: 'user/dashboard', component: __WEBPACK_IMPORTED_MODULE_15__dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_27__services_guard_service__["a" /* GuardService */]] },
@@ -252,7 +255,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_21__about_about_component__["a" /* AboutComponent */],
                 __WEBPACK_IMPORTED_MODULE_22__navbar_navbar_component__["a" /* NavbarComponent */],
                 __WEBPACK_IMPORTED_MODULE_26__login_login_component__["a" /* LoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_23__sidebar_sidebar_component__["a" /* SidebarComponent */]
+                __WEBPACK_IMPORTED_MODULE_23__sidebar_sidebar_component__["a" /* SidebarComponent */],
+                __WEBPACK_IMPORTED_MODULE_30__billcode_billcode_component__["a" /* BillcodeComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["BrowserModule"],
@@ -284,6 +288,141 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/billcode/billcode.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/billcode/billcode.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container-fluid\" style=\"position: relative; padding-top: 80px;\">\n<!-- <div class=\"row\" id=\"user_form\" *ngIf=\"!authService.isLoggedIn()\"> -->\n  <div class=\"col align-self-center\">\n  <h2>Fast Bill</h2>\n  <form class=\"form-signin\">\n\n      <div class=\"form-group row\">\n          <label for=\"code\" class=\"col-sm-3 col-form-label\">Code</label>\n          <div class=\"col-sm-9\">\n            <input type=\"text\" class=\"form-control\" placeholder=\"*Enter Code\" [(ngModel)]=\"inputCode\" name=\"inputCode\">\n          </div>\n      </div>\n\n      <div class=\"form-group row\">\n          <label for=\"name\" class=\"col-sm-3 col-form-label\">Name</label>\n          <div class=\"col-sm-9\">\n            <input type=\"text\" class=\"form-control\" placeholder=\"*Enter Your Name\" [(ngModel)]=\"inputName\" name=\"inputName\">\n          </div>\n      </div>\n\n\n\n    </form>\n\n    <button class=\"btn btn-success\" (click)=\"onSubmit()\">Submit</button>&nbsp;\n    <button class=\"btn btn-danger\" (click)=\"onCancel()\">Cancel</button><br><br>\n    <p>Already fell in love with rumi? <a [routerLink] = \"['/register']\">Register Here!</a></p>\n\n\n</div>\n<!-- </div> -->\n</div>\n\n\n\n\n<div class=\"container\" style=\"margin-bottom: 5%;\">\n    <div *ngIf=\"name\">\n        <header class=\"card-header\" \n        style=\"background-color: rgb(0, 140, 255);  \n        width: 100%; text-align: center;\" \n        >\n        This bill is for: {{name}}\n        </header>\n       \n        <ul class=\"list-group\" *ngFor=\"let element of hack(trans_info)\">\n          \n          <li class=\"list-group-item\"><b>Store Name </b>: {{element.store_name}}</li>\n          <li class=\"list-group-item\"><b>On </b>: {{bill_date}}</li>\n          <li class=\"list-group-item\"><b>Bill Code </b>: {{element.bill_code}}</li>\n          \n          <li class=\"list-group-item\"><b>Type </b>: {{element.transaction_type}}</li>\n          <li class=\"list-group-item\"><b>Items bought </b>: {{items}}</li>\n          <li class=\"list-group-item\"><b>Original Prices </b>: {{og_prices}}</li>\n          <li class=\"list-group-item\"><b>Split Prices </b>: {{split_prices}}</li>\n  \n        </ul>\n      </div>\n  \n    </div>"
+
+/***/ }),
+
+/***/ "./src/app/billcode/billcode.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BillcodeComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_validation_service__ = __webpack_require__("./src/app/services/validation.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_toastr_ng2_toastr__ = __webpack_require__("./node_modules/ng2-toastr/ng2-toastr.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_toastr_ng2_toastr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_ng2_toastr_ng2_toastr__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var BillcodeComponent = /** @class */ (function () {
+    function BillcodeComponent(router, validateService, authService, toastr, vcr, componentFactoryResolver, ngZone, appRef, options) {
+        this.router = router;
+        this.validateService = validateService;
+        this.authService = authService;
+        this.toastr = toastr;
+        // Declared variables:
+        // Debugging:
+        this.inputName = "Abe";
+        this.inputCode = "777HLK";
+        this.toastr.setRootViewContainerRef(vcr);
+        Object.assign(options, {
+            maxShown: 1,
+            positionClass: "toast-top-center",
+            showCloseButton: true,
+            toastLife: 3000
+        });
+    }
+    BillcodeComponent.prototype.ngOnInit = function () {
+    };
+    BillcodeComponent.prototype.hack = function (list) {
+        return list;
+    };
+    // ========== Toastr Messages =======================================
+    BillcodeComponent.prototype.showSuccess = function (msg) {
+        this.toastr.success(msg, 'Success!');
+    };
+    BillcodeComponent.prototype.showWarning = function (msg) {
+        this.toastr.warning(msg, 'Alert!');
+    };
+    BillcodeComponent.prototype.showError = function (msg) {
+        this.toastr.error(msg, 'Oops!');
+    };
+    // ========= Submit and Cancel functions =====================
+    BillcodeComponent.prototype.onSubmit = function () {
+        var _this = this;
+        this.name = null;
+        this.items = [];
+        this.og_prices = [];
+        this.split_prices = [];
+        var info = {
+            bill_code: this.inputCode,
+            name: this.inputName
+        };
+        if (!this.validateService.validateBillCodeInput(info)) {
+            this.showWarning('Please fill in all fields');
+            return false;
+        }
+        this.authService.getTransactionByCode(info).subscribe(function (data) {
+            _this.trans_info = data['fast_info'];
+            _this.transactionlist = data['fast_info'].transaction_list;
+            _this.getDataArrayList(_this.trans_info);
+        }, function (error) {
+            _this.showError('Something went wrong, please try again');
+            _this.router.navigate(['/billcode']);
+        });
+    };
+    BillcodeComponent.prototype.onCancel = function () {
+        this.inputName = undefined;
+        this.inputCode = undefined;
+        this.router.navigate(['/']);
+    };
+    BillcodeComponent.prototype.getDataArrayList = function (list) {
+        var _this = this;
+        list.forEach(function (element) {
+            _this.bill_date = new Date(element.bill_date).toDateString();
+            for (var object in element.transaction_list) {
+                console.log(element.transaction_list[object].name);
+                if (_this.inputName == element.transaction_list[object].name) {
+                    _this.name = element.transaction_list[object].name;
+                    _this.items = element.transaction_list[object].items;
+                    _this.og_prices = element.transaction_list[object].og_prices;
+                    _this.split_prices = element.transaction_list[object].split_prices;
+                }
+            }
+        });
+    };
+    BillcodeComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-billcode',
+            template: __webpack_require__("./src/app/billcode/billcode.component.html"),
+            styles: [__webpack_require__("./src/app/billcode/billcode.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_3__services_validation_service__["a" /* ValidationService */],
+            __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_4_ng2_toastr_ng2_toastr__["ToastsManager"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"],
+            __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentFactoryResolver"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ApplicationRef"], __WEBPACK_IMPORTED_MODULE_4_ng2_toastr_ng2_toastr__["ToastOptions"]])
+    ], BillcodeComponent);
+    return BillcodeComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/dashboard/dashboard.component.css":
 /***/ (function(module, exports) {
 
@@ -294,7 +433,7 @@ module.exports = ".tn {\n    margin:6px 6px;\n    border: 4px solid #eee;\n    -
 /***/ "./src/app/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"container-fluid\" id=\"content\">\n<!-- <div *ngIf=\"friends | async\"> -->\n  <h2>Recent Activities</h2>\n  <div *ngFor=\"let recent of hack(recentActivities)\">\n          <!-- Transactions -->\n          <div class=\"card\" id=\"card\" style=\"border-color:#E4C1E2;\" *ngIf=\"recent.group_name\">\n            <div class=\"card-header\" id=\"transaction-card\">\n              New Transaction\n            </div>\n            <div class=\"card-body\">\n              <h5 class=\"card-title\">{{recent.transaction_type}}</h5>\n              <h6 class=\"card-subtitle mb-2 text-muted\">{{recent.date}}</h6>\n              <p class=\"card-text\">Split with: {{recent.friend_names}}</p>\n            </div>\n          </div>\n      <!-- <div style=\"background-color:#4a148c; color:white; width:50%;\" class=\"center\" *ngIf=\"recent.group_name\">\n          <p>{{recent.date}}</p>\n          <p>{{recent.total}}</p>\n          <p>Split With: {{recent.friend_names}}</p>\n          <p>{{recent.transaction_type}}</p>\n      </div> -->\n        <!-- Friends -->\n        <div class=\"card\" id=\"card\" *ngIf=\"recent.firstName\">\n          <div class=\"card-header\" id=\"roommate-card\">\n            New Roommate\n          </div>\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">{{recent.firstName}}</h5>\n            <h6 class=\"card-subtitle mb-2 text-muted\">{{recent.date}}</h6>\n          </div>\n        </div>\n      <!-- <div style=\"background-color:#01579b; color:white;  width:50%;\" class=\"center\"  *ngIf=\"recent.firstName\">\n          <p>{{recent.date}}</p>\n          <p>Added New Friend: {{recent.firstName}}</p>\n          <p>New Friend</p>\n      </div> -->\n\n      <!-- Receipts -->\n        <div class=\"card\" id=\"card\" *ngIf=\"recent.name\">\n          <div class=\"card-header\" id=\"receipt-card\">\n            New Receipt\n          </div>\n          <div id=\"card-img\">\n            <img class=\"card-img-top\" src=\"{{recent.link}}\" alt=\"Receipt\">\n          </div>\n          <div class=\"card-body\">\n            <h6 class=\"card-subtitle mb-2 text-muted\">{{recent.date}}</h6>\n          </div>\n        </div>\n      <!-- <div style=\"background-color:#1b5e20; color:white; width:50%;\" class=\"center\"  *ngIf=\"recent.name\">\n          <p>{{recent.date}}</p>\n          <p>Added New Receipt</p>\n          <img src=\"{{recent.link}}\" alt=\"Receipt\" class=\"img tn\" >\n      </div> -->\n  </div><!-- *ngFor -->\n</div>\n"
+module.exports = "\n<div class=\"container-fluid\" id=\"content\">\n<!-- <div *ngIf=\"friends | async\"> -->\n  <h2>Recent Activities</h2>\n  <div *ngFor=\"let recent of hack(recentActivities)\">\n          <!-- Transactions -->\n          <div class=\"card\" id=\"card\" style=\"border-color:#E4C1E2;\" *ngIf=\"recent.group_name\">\n            <div class=\"card-header\" id=\"transaction-card\">\n              New Transaction\n            </div>\n            <div class=\"card-body\">\n              <h5 class=\"card-title\">{{recent.transaction_type}}</h5>\n              <h6 class=\"card-subtitle mb-2 text-muted\">{{recent.bill_date}}</h6>\n              <p class=\"card-text\">Split with: {{recent.friend_names}}</p>\n            </div>\n          </div>\n      <!-- <div style=\"background-color:#4a148c; color:white; width:50%;\" class=\"center\" *ngIf=\"recent.group_name\">\n          <p>{{recent.date}}</p>\n          <p>{{recent.total}}</p>\n          <p>Split With: {{recent.friend_names}}</p>\n          <p>{{recent.transaction_type}}</p>\n      </div> -->\n        <!-- Friends -->\n        <div class=\"card\" id=\"card\" *ngIf=\"recent.firstName\">\n          <div class=\"card-header\" id=\"roommate-card\">\n            New Roommate\n          </div>\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">{{recent.firstName}}</h5>\n            <h6 class=\"card-subtitle mb-2 text-muted\">{{recent.date}}</h6>\n          </div>\n        </div>\n      <!-- <div style=\"background-color:#01579b; color:white;  width:50%;\" class=\"center\"  *ngIf=\"recent.firstName\">\n          <p>{{recent.date}}</p>\n          <p>Added New Friend: {{recent.firstName}}</p>\n          <p>New Friend</p>\n      </div> -->\n\n      <!-- Receipts -->\n        <div class=\"card\" id=\"card\" *ngIf=\"recent.name\">\n          <div class=\"card-header\" id=\"receipt-card\">\n            New Receipt\n          </div>\n          <div id=\"card-img\">\n            <img class=\"card-img-top\" src=\"{{recent.link}}\" alt=\"Receipt\">\n          </div>\n          <div class=\"card-body\">\n            <h6 class=\"card-subtitle mb-2 text-muted\">{{recent.bill_date}}</h6>\n          </div>\n        </div>\n      <!-- <div style=\"background-color:#1b5e20; color:white; width:50%;\" class=\"center\"  *ngIf=\"recent.name\">\n          <p>{{recent.date}}</p>\n          <p>Added New Receipt</p>\n          <img src=\"{{recent.link}}\" alt=\"Receipt\" class=\"img tn\" >\n      </div> -->\n  </div><!-- *ngFor -->\n</div>\n"
 
 /***/ }),
 
@@ -374,10 +513,10 @@ var DashboardComponent = /** @class */ (function () {
         // This part will get the most recent date out of all three list of json objects
         if (this.debug) {
             console.log('mostRecentDate friends: ', this.friends[0].date);
-            console.log('mostRecentDate transactions: ', this.transactions[0].date);
+            console.log('mostRecentDate transactions: ', this.transactions[0].bill_date);
             console.log('mostRecentDate receipts: ', this.receipts[0].date);
         }
-        mostRecentDate = this.compareDate(this.friends[0].date, this.transactions[0].date);
+        mostRecentDate = this.compareDate(this.friends[0].date, this.transactions[0].bill_date);
         mostRecentDate = this.compareDate(mostRecentDate, this.receipts[0].date);
         if (this.debug)
             console.log('mostRecentDate: ', mostRecentDate);
@@ -392,7 +531,7 @@ var DashboardComponent = /** @class */ (function () {
             console.log('arrayOfDate: ', arrayOfDate);
         for (i = 0; i < maxLen; i++) {
             // If the date is already there, skip
-            if ((i < this.transactions.length) && (tempDate === this.transactions[i].date)) {
+            if ((i < this.transactions.length) && (tempDate === this.transactions[i].bill_date)) {
                 continue;
             }
             if ((i < this.friends.length) && (tempDate === this.friends[i].date)) {
@@ -402,8 +541,8 @@ var DashboardComponent = /** @class */ (function () {
                 continue;
             }
             // If the date is not in the array, change the tempDate and add it to the array
-            if ((i < this.transactions.length) && (tempDate !== this.transactions[i].date) && (!arrayOfDate.includes(this.transactions[i].date))) {
-                tempDate = this.transactions[i].date;
+            if ((i < this.transactions.length) && (tempDate !== this.transactions[i].bill_date) && (!arrayOfDate.includes(this.transactions[i].bill_date))) {
+                tempDate = this.transactions[i].bill_date;
                 arrayOfDate.push(tempDate);
             }
             if ((i < this.friends.length) && (tempDate !== this.friends[i].date) && (!arrayOfDate.includes(this.friends[i].date))) {
@@ -422,7 +561,7 @@ var DashboardComponent = /** @class */ (function () {
         // Loop through all the list of json Objects to add the objects sort by the date:
         for (i = 0; i <= arrayOfDate.length; i++) {
             for (x = 0; x < this.transactions.length; x++) {
-                if (this.transactions[x].date === arrayOfDate[i]) {
+                if (this.transactions[x].bill_date === arrayOfDate[i]) {
                     recent.push(this.transactions[x]);
                 }
             }
@@ -467,7 +606,7 @@ module.exports = "#roommateResults {\n  position: absolute;\n  z-index:20;\n  /*
 /***/ "./src/app/friends/friends.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "  <div class=\"container-fluid\" id=\"content\">\n    <h2>Roommates</h2>\n    <div class=\"row\">\n      <!-- Add Roommate -->\n      <div class=\"col-sm-6\">\n        <div class=\"card\">\n          <div class=\"card-header\">\n            Add New Roommates\n          </div>\n          <div class=\"card-body\">\n            <!-- <form> -->\n              <!-- <div class=\"form-group row\"> -->\n                <!-- <label for=\"inputRoommateSearch\" class=\"col-sm-4 col-form-label\"></label> -->\n                <div class=\"input-group\">\n                  <!-- Add roommate input field -->\n                  <input placeholder=\"Name, username, or email\" type=\"text\" name=\"roommateSearch\" [(ngModel)] = \"roommateSearch\" class=\"form-control\">\n\n                  <!-- Add roommate results -->\n                  <div class=\"input-group-append\">\n                    <button class=\"btn btn-outline-success dropdown-toggle\" (click)=\"onSubmitButton()\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Find Users</button>\n                    <div class=\"dropdown-menu\">\n                      <a class=\"dropdown-item\" *ngFor=\"let roomie of hack(roommateSearchList)\" (click)=\"addRoommate(roomie)\"><b>{{roomie.name}}</b> <small>@{{roomie.username}}</small></a>\n                      <!-- Cannot find user option -->\n                      <div role=\"separator\" class=\"dropdown-divider\"></div>\n                      <a class=\"dropdown-item\" (click)=\"showStaticRoommateForm()\">Can't find user? Click here.</a>\n                    </div>\n                  </div>\n\n                  &nbsp;\n                  <button class=\"btn btn-dark\" (click)=\"clear()\">Clear</button>\n\n                </div>\n\n                <div role=\"separator\" class=\"dropdown-divider\"></div>\n\n                <!-- Static roommate add form -->\n                <div *ngIf=\"staticRoommateForm\">\n                  <div class=\"form-group\">\n                    <label for=\"staticRoommateName\">Name</label>\n                    <input type=\"text\" class=\"form-control\" id=\"staticRoommateName\" name=\"staticRoommateName\" [(ngModel)]=\"staticRoommateName\" placeholder=\"Rumi\">\n                  </div>\n                  <div class=\"form-group\">\n                    <label for=\"staticRoommateEmail\">Email address</label>\n                    <input type=\"email\" class=\"form-control\" id=\"staticRoommateEmail\" name=\"staticRoommateEmail\" [(ngModel)]=\"staticRoommateEmail\" aria-describedby=\"emailHelp\" placeholder=\"hello@rumi.com\">\n                  </div>\n\n                  <button class=\"btn btn-primary\" (click)=\"addStaticRoommate()\">Add roommate</button>\n                </div>\n              <!-- </div> -->\n\n              <!-- <div class=\"form-group row\">\n                <label for=\"inputLastName\" class=\"col-sm-4 col-form-label\">Last Name</label>\n                <div class=\"col-sm-8\">\n                  <input placeholder=\"Last Name\" type=\"text\" name=\"lastName\" [(ngModel)] = \"lastName\" class=\"form-control\">\n                </div>\n              </div>\n\n              <div class=\"form-group row\">\n                <label for=\"inputLastName\" class=\"col-sm-4 col-form-label\">Preferred Name</label>\n                <div class=\"col-sm-8\">\n                  <input placeholder=\"Preferred Name\" type=\"text\" name=\"preferredName\" [(ngModel)] = \"preferredName\" class=\"form-control\">\n                </div>\n              </div>\n\n              <div class=\"form-group row\">\n                <label for=\"inputLastName\" class=\"col-sm-4 col-form-label\">Address</label>\n                <div class=\"col-sm-8\">\n                  <input placeholder=\"Address\" type=\"text\" name=\"address\" [(ngModel)] = \"address\" class=\"form-control\">\n                </div>\n              </div>\n\n              <div class=\"form-group row\">\n                <label for=\"inputLastName\" class=\"col-sm-4 col-form-label\">Email</label>\n                <div class=\"col-sm-8\">\n                  <input placeholder=\"Email\" type=\"text\" name=\"email\" [(ngModel)] = \"email\" class=\"form-control\">\n                </div>\n              </div>\n\n              <div class=\"form-group row\">\n                <label for=\"inputLastName\" class=\"col-sm-4 col-form-label\">Home Phone</label>\n                <div class=\"col-sm-8\">\n                  <input placeholder=\"Home Phone\" type=\"text\" name=\"homePhone\" [(ngModel)] = \"homePhone\" class=\"form-control\">\n                </div>\n              </div>\n\n              <div class=\"form-group row\">\n                <label for=\"inputLastName\" class=\"col-sm-4 col-form-label\">Cell Phone</label>\n                <div class=\"col-sm-8\">\n                  <input placeholder=\"Cell Phone\" type=\"text\" name=\"cellPhone\" [(ngModel)] = \"cellPhone\" class=\"form-control\">\n                </div>\n              </div> -->\n\n            <!-- </form> -->\n          </div>\n          <!-- End Add Roommate -->\n\n          <!-- Search Roommate -->\n          <div class=\"card-header\">\n            Search Roommate\n          </div>\n          <div class=\"card-body\">\n            <!--- Search Form -->\n              <div class=\"input-group\">\n                  <input placeholder=\"Search Name\" type=\"text\" name=\"inputString\" [(ngModel)] = \"inputString\" class=\"form-control\">\n\n                  &nbsp;\n                  <button class=\"btn btn-dark\" (click)=\"clearSearch()\">Clear</button>\n                <!-- <div class=\"col-sm-6\">\n                  <button class=\"btn btn-dark\" (click)=\"clearSearch()\">Clear</button>\n                </div> -->\n              </div>\n            <!--- End Search Form -->\n          </div>\n        </div>\n      </div>\n\n      <!--- Roommates List -->\n      <div class=\"col-sm-6\">\n        <div class=\"list-group\" *ngFor=\"let currRoommate of hack(roommateList) | filter : inputString; let i = index\">\n          <div class=\"list-group-item list-group-item-action flex-column align-items-start\" id=\"roommate-list-item\">\n            <div class=\"d-flex w-100 justify-content-between\">\n              <h5 id=\"roommate-list-header\">{{currRoommate.name}}</h5>\n              <small class=\"text-muted\"><button class=\"btn btn-danger btn-sm\" (click)=\"deleteRoommate(currRoommate)\">Delete</button></small>\n            </div>\n\n            <div class=\"row\">\n              <div class=\"col\">\n                Email:\n              </div>\n              <div class=\"col\">\n                {{currRoommate.email}}\n              </div>\n            </div>\n\n            <div class=\"row\" *ngIf=\"currRoommate.isRegistered\">\n              <div class=\"col\">\n                Username:\n              </div>\n              <div class=\"col\">\n                @{{currRoommate.username}}\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <!--- End Roommates List -->\n  </div>\n"
+module.exports = "  <div class=\"container-fluid\" id=\"content\">\n    <h2>Roommates</h2>\n    <div class=\"row\">\n      <!-- Add Roommate -->\n      <div class=\"col-sm-6\">\n        <div class=\"card\">\n          <div class=\"card-header\">\n            Add New Roommates\n          </div>\n          <div class=\"card-body\">\n            <!-- <form> -->\n              <!-- <div class=\"form-group row\"> -->\n                <!-- <label for=\"inputRoommateSearch\" class=\"col-sm-4 col-form-label\"></label> -->\n                <div class=\"input-group\">\n                  <!-- Add roommate input field -->\n                  <input placeholder=\"Name, @username, or email\" type=\"text\" name=\"roommateSearch\" [(ngModel)] = \"roommateSearch\" class=\"form-control\">\n\n                  <!-- Add roommate results -->\n                  <div class=\"input-group-append\">\n                    <button class=\"btn btn-outline-success dropdown-toggle\" (click)=\"onSubmitButton()\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Find Users</button>\n                    <div class=\"dropdown-menu\">\n                      <a class=\"dropdown-item\" *ngFor=\"let roomie of hack(roommateSearchList)\" (click)=\"addRoommate(roomie)\"><b>{{roomie.name}}</b> <small>@{{roomie.username}}</small></a>\n                      <!-- Cannot find user option -->\n                      <div role=\"separator\" class=\"dropdown-divider\"></div>\n                      <a class=\"dropdown-item\" (click)=\"showStaticRoommateForm()\">Can't find user? Click here.</a>\n                    </div>\n                  </div>\n\n                  &nbsp;\n                  <button class=\"btn btn-dark\" (click)=\"clear()\">Clear</button>\n\n                </div>\n\n                <div role=\"separator\" class=\"dropdown-divider\"></div>\n\n                <!-- Static roommate add form -->\n                <div *ngIf=\"staticRoommateForm\">\n                  <div class=\"form-group\">\n                    <label for=\"staticRoommateName\">Name</label>\n                    <input type=\"text\" class=\"form-control\" id=\"staticRoommateName\" name=\"staticRoommateName\" [(ngModel)]=\"staticRoommateName\" placeholder=\"Rumi\">\n                  </div>\n                  <div class=\"form-group\">\n                    <label for=\"staticRoommateEmail\">Email address</label>\n                    <input type=\"email\" class=\"form-control\" id=\"staticRoommateEmail\" name=\"staticRoommateEmail\" [(ngModel)]=\"staticRoommateEmail\" aria-describedby=\"emailHelp\" placeholder=\"hello@rumi.com\">\n                  </div>\n\n                  <button class=\"btn btn-primary\" (click)=\"addStaticRoommate()\">Add roommate</button>\n                </div>\n              <!-- </div> -->\n\n              <!-- <div class=\"form-group row\">\n                <label for=\"inputLastName\" class=\"col-sm-4 col-form-label\">Last Name</label>\n                <div class=\"col-sm-8\">\n                  <input placeholder=\"Last Name\" type=\"text\" name=\"lastName\" [(ngModel)] = \"lastName\" class=\"form-control\">\n                </div>\n              </div>\n\n              <div class=\"form-group row\">\n                <label for=\"inputLastName\" class=\"col-sm-4 col-form-label\">Preferred Name</label>\n                <div class=\"col-sm-8\">\n                  <input placeholder=\"Preferred Name\" type=\"text\" name=\"preferredName\" [(ngModel)] = \"preferredName\" class=\"form-control\">\n                </div>\n              </div>\n\n              <div class=\"form-group row\">\n                <label for=\"inputLastName\" class=\"col-sm-4 col-form-label\">Address</label>\n                <div class=\"col-sm-8\">\n                  <input placeholder=\"Address\" type=\"text\" name=\"address\" [(ngModel)] = \"address\" class=\"form-control\">\n                </div>\n              </div>\n\n              <div class=\"form-group row\">\n                <label for=\"inputLastName\" class=\"col-sm-4 col-form-label\">Email</label>\n                <div class=\"col-sm-8\">\n                  <input placeholder=\"Email\" type=\"text\" name=\"email\" [(ngModel)] = \"email\" class=\"form-control\">\n                </div>\n              </div>\n\n              <div class=\"form-group row\">\n                <label for=\"inputLastName\" class=\"col-sm-4 col-form-label\">Home Phone</label>\n                <div class=\"col-sm-8\">\n                  <input placeholder=\"Home Phone\" type=\"text\" name=\"homePhone\" [(ngModel)] = \"homePhone\" class=\"form-control\">\n                </div>\n              </div>\n\n              <div class=\"form-group row\">\n                <label for=\"inputLastName\" class=\"col-sm-4 col-form-label\">Cell Phone</label>\n                <div class=\"col-sm-8\">\n                  <input placeholder=\"Cell Phone\" type=\"text\" name=\"cellPhone\" [(ngModel)] = \"cellPhone\" class=\"form-control\">\n                </div>\n              </div> -->\n\n            <!-- </form> -->\n          </div>\n          <!-- End Add Roommate -->\n\n          <!-- Search Roommate -->\n          <div class=\"card-header\">\n            Search Roommate\n          </div>\n          <div class=\"card-body\">\n            <!--- Search Form -->\n              <div class=\"input-group\">\n                  <input placeholder=\"Search Name\" type=\"text\" name=\"inputString\" [(ngModel)] = \"inputString\" class=\"form-control\">\n\n                  &nbsp;\n                  <button class=\"btn btn-dark\" (click)=\"clearSearch()\">Clear</button>\n                <!-- <div class=\"col-sm-6\">\n                  <button class=\"btn btn-dark\" (click)=\"clearSearch()\">Clear</button>\n                </div> -->\n              </div>\n            <!--- End Search Form -->\n          </div>\n        </div>\n      </div>\n\n      <!--- Roommates List -->\n      <div class=\"col-sm-6\">\n        <div class=\"list-group\" *ngFor=\"let currRoommate of hack(roommateList) | filter : inputString; let i = index\">\n          <div class=\"list-group-item list-group-item-action flex-column align-items-start\" id=\"roommate-list-item\">\n            <div class=\"d-flex w-100 justify-content-between\">\n              <h5 id=\"roommate-list-header\">{{currRoommate.name}}</h5>\n              <small class=\"text-muted\"><button class=\"btn btn-danger btn-sm\" (click)=\"deleteRoommate(currRoommate)\">Delete</button></small>\n            </div>\n\n            <div class=\"row\">\n              <div class=\"col\">\n                Email:\n              </div>\n              <div class=\"col\">\n                {{currRoommate.email}}\n              </div>\n            </div>\n\n            <div class=\"row\" *ngIf=\"currRoommate.isRegistered\">\n              <div class=\"col\">\n                Username:\n              </div>\n              <div class=\"col\">\n                @{{currRoommate.username}}\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <!--- End Roommates List -->\n  </div>\n"
 
 /***/ }),
 
@@ -580,7 +719,7 @@ var FriendsComponent = /** @class */ (function () {
         this.authService.getRoommates().subscribe(function (data) {
             _this.user = data['user'];
             _this.userID = data['user']._id;
-            _this.roommateList = data['roommates'];
+            _this.roommateList = data['roommates'].reverse();
         }, function (err) {
             // Error out
             _this.router.navigate(['']);
@@ -759,7 +898,7 @@ module.exports = ""
 /***/ "./src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "  <div class=\"container-fluid\" id=\"home\">\n      <div class=\"row\">\n        <div class=\"col-lg-8 text-center img-fluid\">\n            <img src=\"../../assets/rumi logo.png\" width=\"400\" href=\"/\">\n        </div>\n\n        <div class=\"col-lg-4 align-self-center img-fluid\">\n          <!-- {{ tagline }} -->\n            <p>\n            <p>\n            <a ui-sref=\"register\" [routerLink]=\"['/register']\" class=\"btn\" id=\"button_main_color\">Get Started!</a>\n            <a ui-sref=\"download\" href=\"https://www.youtube.com/watch?v=_xjp2wkgAJQ\" class=\"btn\" id=\"button_main_color\">Download</a>\n          <p>\n          <p>Already have an account?  <a ui-sref=\"login\" [routerLink]=\"['/login']\" >Login here</a>.\n        </div>\n    </div>\n\n        <div class=\"row align-items-center\">\n          <div class=\"col-lg-6 order-lg-2\">\n            <div class=\"p-5\">\n              <img class=\"img-fluid\" src=\"../../assets/Receipts.jpg\">\n            </div>\n          </div>\n          <div class=\"col-lg-6 order-lg-1\">\n            <div class=\"p-5\">\n              <h2 class=\"display-4\">Bills shouldn't have to be difficult!</h2>\n              <p>Organize receipts, bills, and roommates so\n                the only clutter you have is in the sink.</p>\n            </div>\n          </div>\n        </div>\n\n            <div class=\"row align-items-center\">\n              <div class=\"col-lg-6\">\n                <div class=\"p-5\">\n                  <img class=\"img-fluid rounded-circle\" src=\"../../assets/pay.jpg\" alt=\"\" style=\"height:70%;width:70%\">\n                </div>\n              </div>\n              <div class=\"col-lg-6\">\n                <div class=\"p-5\">\n                  <h2 class=\"display-4\">Payment is a breeze!</h2>\n                  <p>Request for payment through Rumi so that\n                     walk to the kitchen doesn't become so\n                     awkward anymore.</p>\n                </div>\n              </div>\n            </div>\n\n\n    <!-- Footer -->\n    <!-- <footer class=\"py-3\" style=\"background-color:#59b000\">\n      <p class=\"m-0 text-center text-white small\">Copyright &copy; Rumi 2018</p>\n      <p class=\"m-0 text-center small\">\n        <a ui-sref=\"about\" [routerLink]=\"['/about']\" style=\"color:white\">About Us</a>\n      </p>\n    </footer> -->\n\n    <!-- Footer -->\n    <footer class=\"py-3\" id=\"footer\">\n        <p class=\"m-0 text-center text-white small\">Copyright &copy; Rumi 2018</p>\n        <p class=\"m-0 text-center small\" ><a ui-sref=\"about\" [routerLink]=\"['/about']\">About Us</a></p>\n      <!-- /.container -->\n    </footer>\n\n  </div>\n\n<!-- <div class=\"container-fluid\" id=\"home\">\n  <div class=\"row\">\n    <div class=\"col align-self-center\">\n        <img src=\"../../assets/rumi logo.png\" width=\"350\" href=\"/\" class=\"align-self-center\">\n    </div>\n\n    <div class=\"col align-self-center\">\n      <p>\n      <p>\n        <a ui-sref=\"register\" [routerLink]=\"['/register']\" class=\"btn\" id=\"button_main_color\">Get Started!</a>\n        <a ui-sref=\"download\" href=\"https://www.youtube.com/watch?v=_xjp2wkgAJQ\" class=\"btn\" id=\"button_main_color\">Download</a>\n      </p>\n      <p>\n      <p>Already have an account?  <a ui-sref=\"login\" [routerLink]=\"['/login']\" >Login here</a>.\n    </div>\n  </div>\n</div> -->\n"
+module.exports = "  <div class=\"container-fluid\" id=\"home\">\n      <div class=\"row\">\n        <div class=\"col-lg-8 text-center img-fluid\">\n            <img src=\"../../assets/rumi logo.png\" width=\"400\" href=\"/\">\n        </div>\n\n        <div class=\"col-lg-4 align-self-center img-fluid\">\n          <!-- {{ tagline }} -->\n            <p>\n            <p>\n            <a ui-sref=\"register\" [routerLink]=\"['/register']\" class=\"btn\" id=\"button_main_color\">Get Started!</a>\n            <a ui-sref=\"download\" href=\"https://www.youtube.com/watch?v=_xjp2wkgAJQ\" class=\"btn\" id=\"button_main_color\">Download</a>\n          <p>\n          <p>Already have an account?  <a ui-sref=\"login\" [routerLink]=\"['/login']\" >Login here</a>.\n          <P>Have a bill code? <a ui-sref=\"login\" [routerLink]=\"['/billcode']\" >Look it up here</a>. </P>\n        </div>\n    </div>\n\n        <div class=\"row align-items-center\">\n          <div class=\"col-lg-6 order-lg-2\">\n            <div class=\"p-5\">\n              <img class=\"img-fluid\" src=\"../../assets/Receipts.jpg\">\n            </div>\n          </div>\n          <div class=\"col-lg-6 order-lg-1\">\n            <div class=\"p-5\">\n              <h2 class=\"display-4\">Bills shouldn't have to be difficult!</h2>\n              <p>Organize receipts, bills, and roommates so\n                the only clutter you have is in the sink.</p>\n            </div>\n          </div>\n        </div>\n\n            <div class=\"row align-items-center\">\n              <div class=\"col-lg-6\">\n                <div class=\"p-5\">\n                  <img class=\"img-fluid rounded-circle\" src=\"../../assets/pay.jpg\" alt=\"\" style=\"height:70%;width:70%\">\n                </div>\n              </div>\n              <div class=\"col-lg-6\">\n                <div class=\"p-5\">\n                  <h2 class=\"display-4\">Payment is a breeze!</h2>\n                  <p>Request for payment through Rumi so that\n                     walk to the kitchen doesn't become so\n                     awkward anymore.</p>\n                </div>\n              </div>\n            </div>\n\n\n    <!-- Footer -->\n    <!-- <footer class=\"py-3\" style=\"background-color:#59b000\">\n      <p class=\"m-0 text-center text-white small\">Copyright &copy; Rumi 2018</p>\n      <p class=\"m-0 text-center small\">\n        <a ui-sref=\"about\" [routerLink]=\"['/about']\" style=\"color:white\">About Us</a>\n      </p>\n    </footer> -->\n\n    <!-- Footer -->\n    <footer class=\"py-3\" id=\"footer\">\n        <p class=\"m-0 text-center text-white small\">Copyright &copy; Rumi 2018</p>\n        <p class=\"m-0 text-center small\" ><a ui-sref=\"about\" [routerLink]=\"['/about']\">About Us</a></p>\n      <!-- /.container -->\n    </footer>\n\n  </div>\n\n<!-- <div class=\"container-fluid\" id=\"home\">\n  <div class=\"row\">\n    <div class=\"col align-self-center\">\n        <img src=\"../../assets/rumi logo.png\" width=\"350\" href=\"/\" class=\"align-self-center\">\n    </div>\n\n    <div class=\"col align-self-center\">\n      <p>\n      <p>\n        <a ui-sref=\"register\" [routerLink]=\"['/register']\" class=\"btn\" id=\"button_main_color\">Get Started!</a>\n        <a ui-sref=\"download\" href=\"https://www.youtube.com/watch?v=_xjp2wkgAJQ\" class=\"btn\" id=\"button_main_color\">Download</a>\n      </p>\n      <p>\n      <p>Already have an account?  <a ui-sref=\"login\" [routerLink]=\"['/login']\" >Login here</a>.\n    </div>\n  </div>\n</div> -->\n"
 
 /***/ }),
 
@@ -1332,7 +1471,10 @@ var AuthService = /** @class */ (function () {
     function AuthService(http) {
         this.http = http;
         // =========== Http base uri and headers =============================
+        // DEV_MODE
         this.baseUri = "http://localhost:8080";
+        // DEPLOYMENT: ==================== OVER HERE DITA ===============>>>>>>>>
+        // private baseUri:string="";
         this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Content-Type', 'application/json');
     }
     // =========== Helper functions =====================================
@@ -1416,6 +1558,7 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.userProfile = function () {
         // Load the token into the authToken const:
         this.loadToken();
+        console.log('debug mode: getting the token for postman: ' + this.authToken);
         this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', this.authToken);
         return this.http.get(this.baseUri + '/user/setting', { headers: this.headers });
     };
@@ -1463,6 +1606,9 @@ var AuthService = /** @class */ (function () {
         this.loadToken();
         this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', this.authToken);
         return this.http.get(this.baseUri + '/user/dashboard', { headers: this.headers });
+    };
+    AuthService.prototype.getTransactionByCode = function (info_code_name) {
+        return this.http.post(this.baseUri + '/billcode', info_code_name, { headers: this.headers });
     };
     AuthService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
@@ -1750,6 +1896,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ValidationService = /** @class */ (function () {
     function ValidationService() {
     }
+    ValidationService.prototype.validateBillCodeInput = function (info) {
+        if (info.name == undefined || info.bill_code == undefined) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    };
     ValidationService.prototype.validateRegister = function (user) {
         if (user.name == undefined || user.email == undefined || user.username == undefined || user.password == undefined) {
             return false;
@@ -2088,12 +2242,12 @@ var TransactionsComponent = /** @class */ (function () {
 var environment = {
     production: false,
     firebase: {
-        apiKey: "AIzaSyCrFHf3gTQZYgFK6IyHn2qdynxfPcZwEMM",
-        authDomain: "rumi-web-app-dc4af.firebaseapp.com",
-        databaseURL: "https://rumi-web-app-dc4af.firebaseio.com",
-        projectId: "rumi-web-app-dc4af",
-        storageBucket: "rumi-web-app-dc4af.appspot.com",
-        messagingSenderId: "353669083115"
+        apiKey: "AIzaSyDLmiEfb3saF_A2xYBhGTKN0sqrg2VPlgA",
+        authDomain: "rumi-website-mobile-app.firebaseapp.com",
+        databaseURL: "https://rumi-website-mobile-app.firebaseio.com",
+        projectId: "rumi-website-mobile-app",
+        storageBucket: "rumi-website-mobile-app.appspot.com",
+        messagingSenderId: "391392634983"
     }
 };
 
