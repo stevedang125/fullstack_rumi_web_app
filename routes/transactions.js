@@ -33,7 +33,7 @@ router.get('/transactions', passport.authenticate('jwt', {session: false}), (req
     //     if(err) {
     //       success = false;
     //     }
-        
+
     //     res.json({ success : success, user : req.user, transactions : docs });
     // });
 
@@ -126,7 +126,7 @@ router.post('/transactions/add', passport.authenticate('jwt', {session: false}),
         roommates: req.body.roommates,
         store_name : req.body.store_name,
         receipt_link : req.body.receipt_link,
-        transaction_type : req.body.transaction_type,
+        // transaction_type : req.body.transaction_type,
         bill_date :  new Date().toDateString() , // Format if *only* bill_date is used so sorting works: YYYYMMDD
         owner_id : user_id,
         transaction_list : req.body.transaction_list
