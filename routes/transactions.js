@@ -23,38 +23,12 @@ const Schema = mongoose.Schema;
 router.get('/transactions', passport.authenticate('jwt', {session: false}), (req,res,next) => {
     const user_id = req.user.id;
     var success = true;
-
-    // Find all transactions that this user made or took part in
-    // Transaction.find({
-    //   $or : [
-    //     { owner_id : user_id },
-    //     { roommates : user_id }
-    //   ]}, function(err, docs) {
-    //     if(err) {
-    //       success = false;
-    //     }
-
-    //     res.json({ success : success, user : req.user, transactions : docs });
-    // });
-
-    // var trans = Transaction.find({
-
-    //   $or : [
-    //     { owner_id : user_id },
-    //     { roommates : user_id }
-    //   ]
-
-    // }).sort('-bill_date');
-
-
     var trans = Transaction.find({
-
       $or : [
         { owner_id : user_id },
         { roommates : user_id }
       ]
-
-    });
+    }).sort('-bill_date_unix');
 
     trans.exec(function(err, transactions){
         if(err)
