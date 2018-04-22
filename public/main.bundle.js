@@ -1524,9 +1524,9 @@ var AuthService = /** @class */ (function () {
         this.http = http;
         // =========== Http base uri and headers =============================
         // DEV_MODE
-        this.baseUri = "http://localhost:8080";
+        // private baseUri:string="http://localhost:8080";
         // DEPLOYMENT: ==================== OVER HERE DITA ===============>>>>>>>>
-        // private baseUri:string="";
+        this.baseUri = "";
         this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Content-Type', 'application/json');
     }
     // =========== Helper functions =====================================

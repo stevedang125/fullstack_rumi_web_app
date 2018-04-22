@@ -22,10 +22,10 @@ export class AuthService {
   // =========== Http base uri and headers =============================
 
   // DEV_MODE
-  private baseUri:string="http://localhost:8080";
+  // private baseUri:string="http://localhost:8080";
 
   // DEPLOYMENT: ==================== OVER HERE DITA ===============>>>>>>>>
-  // private baseUri:string="";
+  private baseUri:string="";
 
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
 
