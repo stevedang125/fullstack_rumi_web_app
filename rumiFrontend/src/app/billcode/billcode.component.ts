@@ -15,8 +15,8 @@ export class BillcodeComponent implements OnInit {
     // Declared variables:
 
     // Debugging:
-    inputName: String = "Abe";
-    inputCode: String = "777HLK";
+    inputName: String = "";
+    inputCode: String = "";
 
     // Debugging:
     // inputName: String = "Dita Dewindita";
@@ -42,7 +42,7 @@ export class BillcodeComponent implements OnInit {
     private validateService : ValidationService,
     public authService: AuthService,
     public toastr: ToastsManager, vcr: ViewContainerRef,
-    componentFactoryResolver: ComponentFactoryResolver, ngZone: NgZone, appRef: ApplicationRef, options: ToastOptions) { 
+    componentFactoryResolver: ComponentFactoryResolver, ngZone: NgZone, appRef: ApplicationRef, options: ToastOptions) {
       this.toastr.setRootViewContainerRef(vcr);
       Object.assign(options, {
         maxShown: 1,
@@ -64,19 +64,19 @@ export class BillcodeComponent implements OnInit {
     showSuccess(msg) {
       this.toastr.success(msg, 'Success!');
     }
-  
+
     showWarning(msg) {
       this.toastr.warning(msg, 'Alert!');
     }
-  
+
     showError(msg) {
       this.toastr.error(msg, 'Oops!');
     }
-  
-  
+
+
     // ========= Submit and Cancel functions =====================
     onSubmit(){
-      
+
       this.name = null;
       this.items = [];
       this.og_prices = [];
@@ -87,13 +87,13 @@ export class BillcodeComponent implements OnInit {
         bill_code: this.inputCode,
         name: this.inputName
       };
-      
+
       if(!this.validateService.validateBillCodeInput(info)){
         this.showWarning('Please fill in all fields');
         return false;
       }
 
-  
+
       this.authService.getTransactionByCode(info).subscribe(
         data =>{
 
@@ -105,9 +105,9 @@ export class BillcodeComponent implements OnInit {
           this.showError('Something went wrong, please try again');
           this.router.navigate(['/billcode']);
       });
-  
+
     }
-  
+
     onCancel(){
       this.inputName = undefined;
       this.inputCode = undefined;

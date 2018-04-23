@@ -37,24 +37,24 @@
 <div class="container" style="margin-bottom: 5%;">
     <div *ngIf="name">
         <header class="card-header" 
-        style="background-color: rgb(0, 140, 255);  
-        width: 100%; text-align: center;" 
+        style="background-color: rgb(0, 140, 255);
+        width: 100%; text-align: center;"
         >
         This bill is for: {{name}}
         </header>
-       
+
         <ul class="list-group" *ngFor="let element of hack(trans_info)">
-          
+
           <li class="list-group-item"><b>Store Name </b>: {{element.store_name}}</li>
           <li class="list-group-item"><b>On </b>: {{bill_date}}</li>
           <li class="list-group-item"><b>Bill Code </b>: {{element.bill_code}}</li>
-          
+
           <li class="list-group-item"><b>Type </b>: {{element.transaction_type}}</li>
           <li class="list-group-item"><b>Items bought </b>: {{items}}</li>
           <li class="list-group-item"><b>Original Prices </b>: {{og_prices}}</li>
           <li class="list-group-item"><b>Split Prices </b>: {{split_prices}}</li>
-  
+
         </ul>
       </div>
-  
+
     </div>

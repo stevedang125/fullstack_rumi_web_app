@@ -13,11 +13,11 @@
 
     <!-- All users and their bill -->
     <div class="container" style="margin-bottom: 5%;">
-                   
+
             <ul class="list-group" *ngFor="let element of hack(tran.transaction_list)">
                 <header class="card-header" 
-                style="background-color: rgb(0, 140, 255);  
-                width: 100%; text-align: center;" 
+                style="background-color: rgb(0, 140, 255);
+                width: 100%; text-align: center;"
                 >
                 This bill is for: {{element.name}}
                 </header>
@@ -25,10 +25,10 @@
               <li class="list-group-item"><b>Items bought </b>: {{element.items}}</li>
               <li class="list-group-item"><b>Original Prices </b>: {{element.og_prices}}</li>
               <li class="list-group-item"><b>Split Prices </b>: {{element.split_prices}}</li>
-      
+
             </ul>
-          
-      
+
+
         </div>
 
   </div>
@@ -96,12 +96,12 @@
 
 
 
-<!-- 
+<!--
 <div class="container-fluid" id="content">
 
   <h2>Recent Activities</h2>
   <div *ngFor="let recent of hack(recentActivities)">
-          
+
           <div class="card" id="card" style="border-color:#E4C1E2;" *ngIf="recent.group_name">
             <div class="card-header" id="transaction-card">
               New Transaction
@@ -122,7 +122,7 @@
             <h6 class="card-subtitle mb-2 text-muted">{{recent.date}}</h6>
           </div>
         </div>
-  
+
         <div class="card" id="card" *ngIf="recent.name">
           <div class="card-header" id="receipt-card">
             New Receipt
