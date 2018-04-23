@@ -31,7 +31,6 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-
   // =========== Helper functions =====================================
   // Load the saved token from local storage into authToken val,
   // when a user logged in and came back to the website
